@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@strapi/sdk-js": "^1.0.0"
+  }
+}
