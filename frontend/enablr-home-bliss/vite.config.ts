@@ -21,12 +21,17 @@ export default defineConfig(({ mode }) => ({
     mode === 'production' && compression({
       algorithm: 'gzip',
       ext: '.gz',
+      // Set threshold to only compress files above certain size to save build memory
+      threshold: 10240, // 10KB
     }),
-    mode === 'production' && compression({
+    // Use only one compression format in production to reduce memory usage
+    mode !== 'production' && compression({
       algorithm: 'brotliCompress',
       ext: '.br',
+      threshold: 10240, // 10KB
     }),
-    mode === 'production' && viteImagemin({
+    // Only use imagemin in development 
+    mode !== 'production' && viteImagemin({
       gifsicle: {
         optimizationLevel: 7,
         interlaced: false,
@@ -53,10 +58,11 @@ export default defineConfig(({ mode }) => ({
         ],
       },
     }),
+    // Keep preload plugin as it's important for performance
     mode === 'production' && preload(),
-    // Bundle analyzer with proper options for rollup-plugin-visualizer
-    visualizer({
-      open: mode === 'development',
+    // Only use visualizer in development mode
+    mode === 'development' && visualizer({
+      open: true,
       filename: 'stats.html',
       gzipSize: true,
       brotliSize: true,
@@ -71,6 +77,12 @@ export default defineConfig(({ mode }) => ({
     // Optimize chunk size
     cssCodeSplit: true,
     chunkSizeWarningLimit: 1000,
+    // Add target for Vercel environment
+    target: 'es2019', // More compatible target
+    // Reduce memory usage during build
+    sourcemap: false, // Disable source maps in production
+    // Ensure Brotli compression is disabled in production build to save memory
+    brotliSize: false,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -107,13 +119,13 @@ export default defineConfig(({ mode }) => ({
       }
     },
     // Enable source maps in development only
-    sourcemap: mode === 'development',
+    // sourcemap: mode === 'development', // Already set above
     // Minimize for production
     minify: mode === 'production' ? 'esbuild' : false,
     // Generate output with file size profiling
-    reportCompressedSize: true,
+    reportCompressedSize: false, // Disable to save memory
     // Use modern browser targets for better optimization
-    target: 'es2020',
+    // target: 'es2020', // Already set above
   },
   // Optimize asset handling
   assetsInclude: ['**/*.jpg', '**/*.png', '**/*.webp', '**/*.svg'],
