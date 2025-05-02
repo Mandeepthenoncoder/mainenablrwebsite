@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, Building, Rocket, Check } from "lucide-react";
+import { Users, Rocket, Check, Star } from "lucide-react";
 import { typography } from "@/styles/typography";
 
 const differentiators = [
@@ -10,7 +10,7 @@ const differentiators = [
     description: "We don't just fill in the positions. We build high-performing teams that work as an extension of your core business. They're aligned to your culture, processes, and goals from day one."
   },
   {
-    icon: Building,
+    icon: Star,
     title: "Built for long-term value",
     description: "Our focus is on stability and retention so your team grows with you over time. You get continuity, consistency, quality, and true sense of ownership."
   },

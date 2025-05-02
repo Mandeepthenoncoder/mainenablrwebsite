@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Blocks, Target, Fuel, Globe } from "lucide-react";
+import { Blocks, Target, Workflow, Globe } from "lucide-react";
 import { typography } from "@/styles/typography";
 
 const differentiators = [
@@ -15,7 +15,7 @@ const differentiators = [
     description: "Every module is built with outcomes in mind, ensuring real, tangible results that you can track. We focus on what matters so you can see the value, not just feel it."
   },
   {
-    icon: Fuel,
+    icon: Workflow,
     title: "Decluttering the process",
     description: "From talent and tech to workspace and operations, we cover a wide range of needs without adding unnecessary complexity. You get what you need to scale smart, with none of the extra layers that slow you down."
   },

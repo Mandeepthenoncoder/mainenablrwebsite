@@ -6,7 +6,6 @@ import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 import { cn } from "@/lib/utils";
 import { typography } from "@/styles/typography";
-import { Building } from "lucide-react";
 import { TextStyled } from "@/components/ui/TextStyled";
 import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
 
@@ -17,7 +16,7 @@ const ContactUs = () => {
       address: "2601 Little Elm Pkwy, Suite# 701.\nLittle Elm, TX 75068, USA"
     },
     {
-      country: "INDIA",
+      country: "India",
       address: "Gowra Palladium, 3rd Floor, Unit : 303A,\nSilpa Gram Craft Village,\nHITEC City, Hyderabad, Telangana 500081"
     }
   ];
@@ -91,9 +90,10 @@ const ContactUs = () => {
                 variant="h2" 
                 className="mb-6 tracking-tight font-inter"
                 color="text-enablr-navy"
+                casing="sentenceCase"
               >
-                Got A Question, An Idea, Or Just Curious About <ResponsiveBreak breakOn="lg" />
-                How We Can Partner Together?
+                Got a question, an idea, <ResponsiveBreak breakOn="lg" />
+                or just curious about how we can partner together?
               </TextStyled>
             </motion.div>
           </motion.div>
@@ -160,27 +160,23 @@ const ContactUs = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-gray-50 p-8 rounded-lg"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 bg-enablr-navy/10 rounded-md">
-                      <Building className="w-6 h-6 text-enablr-navy" />
-                    </div>
-                    <div>
-                      <TextStyled 
-                        variant="h4" 
-                        className="font-bold mb-3"
-                        color="text-enablr-navy"
-                      >
-                        {office.country}
-                      </TextStyled>
-                      <TextStyled 
-                        variant="body" 
-                        className="whitespace-pre-line"
-                        color="text-gray-700"
-                        casing="preserve"
-                      >
-                        {office.address}
-                      </TextStyled>
-                    </div>
+                  <div>
+                    <TextStyled 
+                      variant="h4" 
+                      className="font-bold mb-3"
+                      color="text-enablr-navy"
+                      casing="preserve"
+                    >
+                      {office.country}
+                    </TextStyled>
+                    <TextStyled 
+                      variant="body" 
+                      className="whitespace-pre-line"
+                      color="text-gray-700"
+                      casing="preserve"
+                    >
+                      {office.address}
+                    </TextStyled>
                   </div>
                 </motion.div>
               ))}

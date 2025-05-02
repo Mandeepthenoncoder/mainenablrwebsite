@@ -1,11 +1,23 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { typography } from "@/styles/typography";
 import { Users, ArrowRight, UserPlus, Award, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const TalentImpact = () => {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const isInView = useInView(titleRef, { once: false, amount: 0.3 });
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  
+  const titleOpacity = useTransform(scrollYProgress, [0.1, 0.2, 0.8, 0.9], [0, 1, 1, 0]);
+  const titleY = useTransform(scrollYProgress, [0.1, 0.2, 0.8, 0.9], [50, 0, 0, -50]);
+
   const items = [
     {
       icon: UserPlus,
@@ -24,80 +36,93 @@ const TalentImpact = () => {
     }
   ];
 
+  // Card animation variants
+  const cardVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.7,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    }),
+  };
+
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-tr from-blue-50/70 to-gray-50">
-      {/* Grid pattern background */}
-      <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-[0.03]"></div>
-      
-      {/* Enhanced decorative elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-200 to-pink-200 rounded-full -ml-48 -mt-48 opacity-30 blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-pink-200 to-blue-200 rounded-full -mr-48 -mb-48 opacity-30 blur-3xl"></div>
-      <div className="absolute top-1/2 right-0 w-64 h-64 bg-gradient-to-l from-indigo-100 to-cyan-100 rounded-full -mr-32 opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/2 left-0 w-64 h-64 bg-gradient-to-r from-cyan-100 to-indigo-100 rounded-full -ml-32 opacity-20 blur-3xl"></div>
+    <section 
+      ref={sectionRef} 
+      className="py-24 relative overflow-hidden transition-all duration-1000 hover:bg-gradient-to-br hover:from-blue-50 hover:via-white hover:to-red-50"
+      style={{
+        background: "linear-gradient(135deg, rgba(254,242,242,0.7) 0%, rgba(255,255,255,1) 50%, rgba(239,246,255,0.7) 100%)"
+      }}
+    >
+      {/* Background gradient elements that animate on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-1000 ease-in-out"></div>
+      <div className="absolute inset-0 bg-gradient-to-tl from-blue-50/50 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-1000 ease-in-out delay-100"></div>
       
       {/* Content container with relative positioning */}
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
-          <div className="w-full md:w-2/5">
-            <motion.h2 
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className={`${typography.h2} text-enablr-navy tracking-tight mb-5`}
-            >
-              Maximize your talent impact
-            </motion.h2>
-            
+          <div className="w-full md:w-2/5 md:sticky md:top-24" ref={titleRef}>
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              style={{ 
+                opacity: titleOpacity,
+                y: titleY
+              }}
+              animate={isInView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mb-6"
             >
-              <div className="h-px w-16 bg-enablr-navy my-6"></div>
+              <h2 className={`${typography.h2} text-enablr-navy tracking-tight mb-5`}>
+                Maximize your talent impact
+              </h2>
+              
+              <div className="h-px w-16 bg-gradient-to-r from-red-500 to-blue-600 my-6"></div>
             </motion.div>
           </div>
           
           <div className="w-full md:w-3/5">
             <div className="grid grid-cols-1 gap-8">
-              {items.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 + (index * 0.1) }}
-                  className="group relative"
-                >
-                  <div className="p-8 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 overflow-hidden">
-                    {/* Decorative elements */}
-                    <div className="absolute top-0 left-0 w-full h-1 bg-enablr-navy opacity-70 group-hover:bg-gradient-to-r group-hover:from-blue-800 group-hover:to-red-600 transition-colors duration-300"></div>
-                    <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-50 to-red-50 rounded-tl-[80px] -mr-16 -mb-16 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    {/* Add the circle decoration that appears on hover */}
-                    <div className="absolute top-0 left-0 -ml-12 -mt-12 w-24 h-24 bg-gradient-to-br from-blue-100/30 to-red-100/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              {items.map((item, index) => {
+                const cardRef = useRef(null);
+                const isCardInView = useInView(cardRef, { once: false, amount: 0.3 });
+                
+                return (
+                  <motion.div
+                    key={item.title}
+                    ref={cardRef}
+                    custom={index}
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate={isCardInView ? "visible" : "hidden"}
+                    className="group"
+                  >
+                    <div className="p-8 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 overflow-hidden relative backdrop-blur-sm">
+                      {/* Subtle card accent */}
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                     
-                    <div className="flex items-start gap-4">
-                      <div className="relative w-12 h-12 flex-shrink-0">
-                        <div className="absolute inset-0 bg-enablr-navy/10 rounded-lg"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-red-100 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      {/* Dynamic gradient on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-red-50/0 to-blue-50/0 group-hover:from-red-50/50 group-hover:to-blue-50/50 transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100"></div>
+                      
+                      <div className="relative w-12 h-12 flex-shrink-0 mb-4">
+                        <div className="absolute inset-0 bg-gradient-to-r from-red-100 to-blue-100 rounded-lg group-hover:from-red-200 group-hover:to-blue-200 transition-all duration-300"></div>
                         <div className="absolute inset-0 flex items-center justify-center">
                           <item.icon className="w-5 h-5 text-enablr-navy" />
                         </div>
                       </div>
                       
-                      <div>
-                        <h3 className={`${typography.h4} text-enablr-navy group-hover:text-enablr-navy transition-colors duration-300 mb-2`}>
-                          {item.title}
-                        </h3>
-                        <p className={`${typography.body.base} text-gray-600 leading-relaxed font-light`}>
-                          {item.description}
-                        </p>
-                      </div>
+                      <h3 className={`${typography.h4} text-enablr-navy mb-2 relative z-10`}>
+                        {item.title}
+                      </h3>
+                      <p className={`${typography.body.base} text-gray-600 leading-relaxed font-light relative z-10`}>
+                        {item.description}
+                      </p>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -112,7 +137,7 @@ const TalentImpact = () => {
           <Button 
             asChild
             size="lg"
-            className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy hover:border hover:border-enablr-navy shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
+            className="bg-enablr-navy text-white hover:bg-transparent hover:text-enablr-navy hover:border-enablr-navy border border-transparent hover:shadow-md shadow-sm group transition-all duration-300 rounded-md"
           >
             <Link to="/contact" className="flex items-center gap-2">
               Talk to our experts today!

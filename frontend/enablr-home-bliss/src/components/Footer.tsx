@@ -10,9 +10,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <Image src="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//Updated%20Logo.svg" alt="Enablr Logo" className="h-14" />
+              <Image src="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//Updated%20Logo.svg" alt="Enablr Logo" className="h-[4.2rem]" />
             </Link>
-            <p className="text-base text-gray-600 mb-2 font-extrabold">Your GCC Catalyst</p>
           </div>
           
           <div>
@@ -43,7 +42,7 @@ const Footer = () => {
               <li><Link to="/about" className="text-gray-600 hover:text-enablr-navy text-sm">About Us</Link></li>
               <li><Link to="/careers" className="text-gray-600 hover:text-enablr-navy text-sm">Careers</Link></li>
               <li><Link to="/contact" className="text-gray-600 hover:text-enablr-navy text-sm">Contact</Link></li>
-              <li><Link to="/blog" className="text-gray-600 hover:text-enablr-navy text-sm">Blog</Link></li>
+              <li><Link to="/blog" className="text-gray-600 hover:text-enablr-navy text-sm">Blogs</Link></li>
             </ul>
           </div>
         </div>

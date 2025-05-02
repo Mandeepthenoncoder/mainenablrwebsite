@@ -9,13 +9,15 @@ interface HomeLayoutProps {
   showNewsletter?: boolean;
   showBlogHighlights?: boolean;
   newsletterVariant?: 'compact' | 'expanded';
+  showInsights?: boolean;
 }
 
 const HomeLayout: React.FC<HomeLayoutProps> = ({ 
   children, 
   showNewsletter = true,
   showBlogHighlights = true,
-  newsletterVariant = 'expanded'
+  newsletterVariant = 'expanded',
+  showInsights = true
 }) => {
   return (
     <div className="min-h-screen bg-white">
