@@ -16,8 +16,8 @@ const SolutionsHeading = () => {
         </h2>
       </div>
       <p className={`${typography.body.base} text-gray-600 max-w-2xl`}>
-        Power Your Operations With Technology-First Thinking,
-        <br/>Build Stronger Teams and Smarter Operations.
+        Power your operations with technology-first thinking,
+        <br/>Build stronger teams and smarter operations.
       </p>
     </motion.div>
   );

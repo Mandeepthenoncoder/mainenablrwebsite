@@ -49,7 +49,25 @@ export const imageToWebpMap: Record<string, string> = {
   '/Dedicated Team Models, Engage With Us, home.jpg': '/Dedicated Team Models, Engage With Us, home.webp',
   '/Engagement model landing page.jpg': '/Engagement model landing page.webp',
   '/Fueling Your Vision With the Right Talent and Tools -Our Pillars Home.jpg': '/Fueling Your Vision With the Right Talent and Tools -Our Pillars Home.webp',
-  '/solutions landing page hero image.png': '/solutions landing page hero image.webp'
+  '/solutions landing page hero image.png': '/solutions landing page hero image.webp',
+  
+  // Updated mappings for recently converted images
+  '/worksapce (1).png': '/worksapce (1).webp',
+  '/technology enablement (1).png': '/technology enablement (1).webp',
+  '/talent edited image (1).png': '/talent edited image (1).webp',
+  '/modular services.png': '/modular services.webp',
+  '/dedicated team.png': '/dedicated team.webp',
+  '/comprehensive managemenrt.png': '/comprehensive managemenrt.webp',
+  '/Bsuiness ops edited (1).png': '/Bsuiness ops edited (1).webp',
+  '/BOTengage with us section.png': '/BOTengage with us section.webp',
+  
+  // Solutions images
+  '/solutions/Power Your GCC with future ready-Technology Enablement.jpg': '/solutions/Power Your GCC with future ready-Technology Enablement.webp',
+  '/solutions/Power Business Growth With Seamless Operational Support- Business Operation.jpg': '/solutions/Power Business Growth With Seamless Operational Support- Business Operation.webp',
+  '/solutions/Build your GCC with ease and clarity -GCC as a Service.jpg': '/solutions/Build your GCC with ease and clarity -GCC as a Service.webp',
+  '/solutions/Build The Right Teams With Strategic Talent & Hr Solutions -TalentHR.jpg': '/solutions/Build The Right Teams With Strategic Talent & Hr Solutions -TalentHR.webp',
+  '/solutions/Build Smarter, Sustainable Workspaces - Workspace Solutions.jpg': '/solutions/Build Smarter, Sustainable Workspaces - Workspace Solutions.webp',
+  '/solutions/Build Agile, High-performance Teams With Enablr - Staff Augmentation.jpg': '/solutions/Build Agile, High-performance Teams With Enablr - Staff Augmentation.webp'
 };
 
 // Map of original image paths to their responsive srcset values
@@ -78,6 +96,26 @@ export const imageToSrcSetMap: Record<string, string> = {
   '/Blog Images/How GCCs can become a \'powerhouse\' of innovation with smarter workspace solutions.jpg': '/Blog Images/optimized/How GCCs can become a \'powerhouse\' of innovation with smarter workspace solutions-small.webp 640w, /Blog Images/optimized/How GCCs can become a \'powerhouse\' of innovation with smarter workspace solutions-medium.webp 1280w, /Blog Images/optimized/How GCCs can become a \'powerhouse\' of innovation with smarter workspace solutions-large.webp 1920w',
   '/Blog Images/How to build a high-performance GCC Best practices for talent, technology, and strategy.jpg': '/Blog Images/optimized/How to build a high-performance GCC Best practices for talent, technology, and strategy-small.webp 640w, /Blog Images/optimized/How to build a high-performance GCC Best practices for talent, technology, and strategy-medium.webp 1280w, /Blog Images/optimized/How to build a high-performance GCC Best practices for talent, technology, and strategy-large.webp 1920w',
   '/Blog Images/AI-powered transformation How GCCs are driving business innovation.jpg': '/Blog Images/optimized/AI-powered transformation How GCCs are driving business innovation-small.webp 640w, /Blog Images/optimized/AI-powered transformation How GCCs are driving business innovation-medium.webp 1280w, /Blog Images/optimized/AI-powered transformation How GCCs are driving business innovation-large.webp 1920w',
+  
+  // Updated mappings for recently converted images
+  '/worksapce (1).png': '/worksapce (1)-small.webp 640w, /worksapce (1)-medium.webp 1280w, /worksapce (1)-large.webp 1920w',
+  '/technology enablement (1).png': '/technology enablement (1)-small.webp 640w, /technology enablement (1)-medium.webp 1280w, /technology enablement (1)-large.webp 1920w',
+  '/talent edited image (1).png': '/talent edited image (1)-small.webp 640w, /talent edited image (1)-medium.webp 1280w, /talent edited image (1)-large.webp 1920w',
+  '/solutions landing page hero image.png': '/solutions landing page hero image-small.webp 640w, /solutions landing page hero image-medium.webp 1280w, /solutions landing page hero image-large.webp 1920w',
+  '/modular services.png': '/modular services-small.webp 640w, /modular services-medium.webp 1280w, /modular services-large.webp 1920w',
+  '/dedicated team.png': '/dedicated team-small.webp 640w, /dedicated team-medium.webp 1280w, /dedicated team-large.webp 1920w',
+  '/comprehensive managemenrt.png': '/comprehensive managemenrt-small.webp 640w, /comprehensive managemenrt-medium.webp 1280w, /comprehensive managemenrt-large.webp 1920w',
+  '/Careers page imaeg.png': '/Careers page imaeg-small.webp 640w, /Careers page imaeg-medium.webp 1280w, /Careers page imaeg-large.webp 1920w',
+  '/Bsuiness ops edited (1).png': '/Bsuiness ops edited (1)-small.webp 640w, /Bsuiness ops edited (1)-medium.webp 1280w, /Bsuiness ops edited (1)-large.webp 1920w',
+  '/BOTengage with us section.png': '/BOTengage with us section-small.webp 640w, /BOTengage with us section-medium.webp 1280w, /BOTengage with us section-large.webp 1920w',
+  
+  // Solutions images
+  '/solutions/Power Your GCC with future ready-Technology Enablement.jpg': '/solutions/Power Your GCC with future ready-Technology Enablement-small.webp 640w, /solutions/Power Your GCC with future ready-Technology Enablement-medium.webp 1280w, /solutions/Power Your GCC with future ready-Technology Enablement-large.webp 1920w',
+  '/solutions/Power Business Growth With Seamless Operational Support- Business Operation.jpg': '/solutions/Power Business Growth With Seamless Operational Support- Business Operation-small.webp 640w, /solutions/Power Business Growth With Seamless Operational Support- Business Operation-medium.webp 1280w, /solutions/Power Business Growth With Seamless Operational Support- Business Operation-large.webp 1920w',
+  '/solutions/Build your GCC with ease and clarity -GCC as a Service.jpg': '/solutions/Build your GCC with ease and clarity -GCC as a Service-small.webp 640w, /solutions/Build your GCC with ease and clarity -GCC as a Service-medium.webp 1280w, /solutions/Build your GCC with ease and clarity -GCC as a Service-large.webp 1920w',
+  '/solutions/Build The Right Teams With Strategic Talent & Hr Solutions -TalentHR.jpg': '/solutions/Build The Right Teams With Strategic Talent & Hr Solutions -TalentHR-small.webp 640w, /solutions/Build The Right Teams With Strategic Talent & Hr Solutions -TalentHR-medium.webp 1280w, /solutions/Build The Right Teams With Strategic Talent & Hr Solutions -TalentHR-large.webp 1920w',
+  '/solutions/Build Smarter, Sustainable Workspaces - Workspace Solutions.jpg': '/solutions/Build Smarter, Sustainable Workspaces - Workspace Solutions-small.webp 640w, /solutions/Build Smarter, Sustainable Workspaces - Workspace Solutions-medium.webp 1280w, /solutions/Build Smarter, Sustainable Workspaces - Workspace Solutions-large.webp 1920w',
+  '/solutions/Build Agile, High-performance Teams With Enablr - Staff Augmentation.jpg': '/solutions/Build Agile, High-performance Teams With Enablr - Staff Augmentation-small.webp 640w, /solutions/Build Agile, High-performance Teams With Enablr - Staff Augmentation-medium.webp 1280w, /solutions/Build Agile, High-performance Teams With Enablr - Staff Augmentation-large.webp 1920w'
 };
 
 /**

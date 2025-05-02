@@ -234,17 +234,7 @@ const Navbar = () => {
                 </Link>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link 
-                  to="/contact" 
-                  className={cn(
-                    "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300",
-                    isActive('/contact') && "text-[#BF0404]"
-                  )}
-                >
-                  Contact Us
-                </Link>
-              </NavigationMenuItem>
+             
 
               <NavigationMenuItem>
                 <Button 

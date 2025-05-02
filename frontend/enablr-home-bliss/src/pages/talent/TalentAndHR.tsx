@@ -92,32 +92,33 @@ const TalentAndHR = () => {
       >
         <Helmet>
           <title>Talent & HR Solutions - Enablr</title>
-          <meta 
-            name="description" 
-            content="Build high-performing teams with Enablr's comprehensive talent and HR solutions for your capability center." 
+          <meta
+            name="description"
+            content="Build high-performing teams with Enablr's comprehensive talent and HR solutions for your capability center."
           />
         </Helmet>
-        
+
         <motion.div variants={itemVariants}>
           <SolutionHeroCarousel slides={heroSlides} />
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           variants={itemVariants}
           viewport={{ once: true }}
         >
           <SolutionExplanation
             title="Build the Right Teams with Strategic Talent & HR Solutions"
-            content="Enablr provides end-to-end talent & HR solutions tailored to the unique requirements of your business. Whether you have to source high-quality talent, manage complex visa processes, onboard employees or manage compliance workflows—we help simplify people operations so that you can focus on business growth.
+            // Updated content prop with the three-paragraph version
+            content={`Enablr offers comprehensive, end-to-end talent and HR solutions specifically designed to meet the unique needs of your business. Our goal is to help you build the right teams by providing strategic support across the entire HR spectrum.
 
-As you set up your global capability center, we help you hire faster, stay compliant, and retain talent that drives impact.
+We streamline people operations to allow you to concentrate on core business growth. This includes managing crucial tasks such as sourcing high-quality talent, handling complex visa processes, efficiently onboarding new employees, and overseeing compliance workflows. By simplifying these essential functions, we free up your valuable time and resources.
 
-Build the dream team for your capability center with the help of experts who know the GCC domain."
+As you establish your global capability center (GCC), Enablr is your expert partner. We assist you in hiring talent more quickly, ensuring you remain compliant with regulations, and retaining employees who significantly contribute to your success. Leverage our deep understanding of the GCC domain to assemble your ideal team.`}
             imagePath="/solutions/Build The Right Teams With Strategic Talent & Hr Solutions -TalentHR.jpg"
           />
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           variants={itemVariants}
           viewport={{ once: true }}
         >
@@ -126,15 +127,15 @@ Build the dream team for your capability center with the help of experts who kno
             offerings={keyOfferings}
           />
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           variants={itemVariants}
           viewport={{ once: true }}
         >
           <SolutionWhyChooseUs reasons={whyChooseUsReasons} />
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           variants={itemVariants}
           viewport={{ once: true }}
         >

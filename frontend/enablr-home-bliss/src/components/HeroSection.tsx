@@ -14,7 +14,7 @@ const heroSlides = [
     imageSrc: "/images/supabase-images/optimized/hero-slide-1.webp",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
     title: "Build On Proven\nExperience and\nEnterprise-Grade Quality",
-    buttonText: "Get Started Today!",
+    buttonText: "Get Started Today",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
   },

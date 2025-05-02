@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
@@ -27,9 +28,11 @@ const BOTConclusion = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className={`${typography.h2} text-white mb-16`}
+          className={`${typography.h2} text-white mb-16 leading-[1.4] space-y-2`}
         >
-          With Enablr As Your Partner,<br />We Bring Experience, Flexibility, Speed To Launch<br />With No Compromise On Quality And Scale.
+          With Enablr as your partner,<br />
+          We bring experience, flexibility, speed to launch<br />
+          With no compromise on quality and scale.
         </motion.h2>
         
         <motion.div

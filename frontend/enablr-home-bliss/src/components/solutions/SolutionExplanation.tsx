@@ -31,35 +31,25 @@ const SolutionExplanation = ({ title, content, imagePath }: SolutionExplanationP
             <div className="relative">
               <span className="absolute -left-6 top-0 w-1 h-12 bg-brand-gradient" />
               {hasTitleBreak ? (
-                <TextStyled variant="h2" className="max-w-xl mb-8" color="text-enablr-navy">
+                <h2 className="max-w-xl mb-8 text-enablr-navy leading-tight text-2xl md:text-3xl lg:text-4xl font-semibold">
                   {titleParts[0]} <ResponsiveBreak breakOn="md" />
                   With {titleParts[1]}
-                </TextStyled>
+                </h2>
               ) : (
-                <TextStyled variant="h2" className="max-w-xl mb-8" color="text-enablr-navy">
+                <h2 className="max-w-xl mb-8 text-enablr-navy leading-tight text-2xl md:text-3xl lg:text-4xl font-semibold">
                   {title}
-                </TextStyled>
+                </h2>
               )}
             </div>
             
-            <div className="space-y-6">
+            <div>
               {content.split('\n\n').map((paragraph, index) => (
-                <motion.div
+                <p
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-base md:text-lg leading-relaxed text-gray-700 mb-6"
                 >
-                  <TextStyled 
-                    variant="bodyLg" 
-                    className="max-w-xl leading-relaxed" 
-                    color="text-gray-700"
-                    casing="sentenceCase"
-                  >
-                    {paragraph}
-                  </TextStyled>
-                </motion.div>
+                  {paragraph}
+                </p>
               ))}
             </div>
           </motion.div>

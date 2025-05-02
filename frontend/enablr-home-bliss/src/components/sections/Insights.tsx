@@ -1,5 +1,5 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
-import InsightCard from "./blog/InsightCard";
+import InsightCard from "../blog/InsightCard";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 import { useEffect, useRef } from "react";

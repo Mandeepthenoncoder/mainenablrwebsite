@@ -104,7 +104,7 @@ const BlogHighlights = () => {
             to="/blog" 
             className="inline-flex items-center gap-2 bg-enablr-navy text-white px-6 py-2.5 rounded-md hover:bg-enablr-navy/90 transition-colors font-medium"
           >
-            View All Articles
+            View all articles
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

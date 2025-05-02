@@ -1,10 +1,8 @@
-
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import EngageHeading from "./engage/EngageHeading";
-import EngagementModels from "./engage/EngagementTabs";
-import { Separator } from "./ui/separator";
+import EngageHeading from "../engage/EngageHeading";
 import { colors } from "@/styles/typography";
+import EngagementModels from "../engage/EngagementTabs";
 
 const EngageWithUs = () => {
   const sectionRef = useRef(null);

@@ -306,7 +306,7 @@ const Solutions = () => {
               <Button 
                 asChild
                 size="lg"
-                className="bg-white text-enablr-navy hover:bg-enablr-lime hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
+                className="bg-white text-enablr-navy hover:bg-enablr-lime hover:text-enablr-navy hover:border hover:border-enablr-navy shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Contact Us

@@ -4,6 +4,8 @@ import Image from "@/components/Image";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { typography, colors } from "@/styles/typography";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 interface Solution {
   id: string;
@@ -14,25 +16,28 @@ interface Solution {
 
 const solutions: Solution[] = [{
   id: "talent",
-  title: "Talent and HR",
-  description: "Streamline Hiring, Onboarding, and Workforce Management With Scalable HR Frameworks Tailored to Your Growth Needs.",
+  title: "Talent and HR", // "HR" kept capitalized as an acronym
+  description: "Streamline hiring, onboarding, and workforce management with scalable HR frameworks tailored to your growth needs.", // "HR" kept capitalized
   image: "/talent edited image (1).png"
 }, {
   id: "workspace",
   title: "Workspace",
-  description: "Access Flexible, Fully Serviced Workspaces in Prime Locations, Including Tier 2 and Tier 3 Cities in India.",
+  description: "Access flexible, fully serviced workspaces in prime locations, including Tier 2 and Tier 3 cities in India.", // "Tier 2", "Tier 3", "India" kept capitalized
   image: "/worksapce (1).png"
 }, {
   id: "operations",
-  title: "Business Operations",
-  description: "Ensure Seamless Operations With End-to-End Support for Compliance, Payroll, Finance, and Administrative Management.",
+  title: "Business operations",
+  description: "Ensure seamless operations with end-to-end support for compliance, payroll, finance, and administrative management.",
   image: "/Bsuiness ops edited (1).png"
 }, {
   id: "technology",
-  title: "Technology Enablement",
-  description: "Empower Your GCC With Cutting-Edge Technology, Across Technology and Domains to Drive Innovation and Efficiency.",
+  title: "Technology enablement",
+  description: "Empower your GCC with cutting-edge technology, across technology and domains to drive innovation and efficiency.", // "GCC" kept capitalized assuming it's an acronym
   image: "/technology enablement (1).png"
 }];
+const handleContactClick = () => {
+  window.location.href = "/contact";
+};
 
 const SolutionsTab = () => {
   const [activeTab, setActiveTab] = useState<string>("talent");
@@ -75,15 +80,12 @@ const SolutionsTab = () => {
               </AccordionContent>
             </AccordionItem>)}
         </Accordion>
-      <div className="mt-6">
-          <motion.button 
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 py-[12px] px-[27px] rounded-md"
-          >
-            Talk to Our Experts
-          </motion.button>
-        </div>
+        <Button 
+                      onClick={handleContactClick}
+                      className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 
+                                w-full sm:w-auto h-12 text-base">
+                        Talk to Our Experts
+                    </Button>
       </div>
     
       <div className="relative h-[400px] md:h-[450px] lg:h-[480px] rounded-lg overflow-hidden shadow-lg lg:-mt-16">

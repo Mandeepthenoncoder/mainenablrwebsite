@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import SolutionsContent from "./solutions/SolutionsContent";
+import SolutionsContent from "../solutions/SolutionsContent";
 import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
 

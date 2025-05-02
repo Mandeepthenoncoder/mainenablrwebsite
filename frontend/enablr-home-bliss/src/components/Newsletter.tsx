@@ -40,7 +40,7 @@ const Newsletter = ({ variant = 'expanded' }: NewsletterProps) => {
               />
               <Button 
                 type="submit" 
-                className="bg-white text-enablr-navy hover:bg-enablr-lime hover:text-white shadow-sm hover:shadow-md transition-all duration-300 group font-medium px-6"
+                className="bg-white text-enablr-navy hover:bg-enablr-lime hover:text-enablr-navy shadow-sm hover:shadow-md transition-all duration-300 group font-medium px-6"
               >
                 Subscribe
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -81,7 +81,7 @@ const Newsletter = ({ variant = 'expanded' }: NewsletterProps) => {
                 />
                 <Button 
                   type="submit"
-                  className="bg-white text-enablr-navy hover:bg-enablr-lime hover:text-white shadow-sm hover:shadow-md transition-all duration-300 group"
+                  className="bg-white text-enablr-navy hover:bg-enablr-lime hover:text-enablr-navy shadow-sm hover:shadow-md transition-all duration-300 group"
                 >
                   Subscribe
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

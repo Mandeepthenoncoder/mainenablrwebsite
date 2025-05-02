@@ -14,6 +14,7 @@ const heroSlides = [
     title: "Staff Augmentation Services",
     description: "",
     image: "/images/New%20images/Main%20Pic-Staff%20Augmentation.jpeg",
+    
     ctaText: "Get Started",
     ctaLink: "/contact"
   }
@@ -108,15 +109,11 @@ const StaffAugmentation = () => {
         >
           <SolutionExplanation
             title="Build Agile, High-Performance Teams with Enablr"
-            content="At Enablr, we understand the importance of setting up high-performance teams for your capability center.
+            content={`Enablr helps simplify and optimize business operations in your capability center, enabling you to move faster and scale smarter.
 
-Ramping up business operations requires skilled staff without much hassle.
+From administration and procurement to HR, payroll, and regulatory support, we work as your behind-the-scenes engine, so that you can focus on business growth, strategy, and execution.
 
-We help you find ready-to-deploy professionals who are well versed in domains, such as software development, engineering, logistics, etc.
-
-They can cater to the unique business needs of your global capability center.
-
-With Enablr as your GCC staff augmentation partner, you can scale quickly with pre-vetted, locally compliant talent."
+If you are setting up a global capability center, then you can trust Enablr for the local expertise and operational muscle to make it seamless. Partner with Enablr to accelerate your GCC plans.`}
             imagePath="/solutions/Build Agile, High-performance Teams With Enablr - Staff Augmentation.jpg"
           />
         </motion.div>

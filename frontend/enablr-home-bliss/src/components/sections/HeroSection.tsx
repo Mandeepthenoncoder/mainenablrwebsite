@@ -15,7 +15,7 @@ const heroSlides = [
   {
     image: "https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//hero-slide-1.png",
     title: "Build on proven experience\nand enterprise-grade quality",
-    buttonText: "Get Started",
+    buttonText: "Get Started Today",
     align: "left"
   },
   {

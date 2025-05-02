@@ -20,16 +20,16 @@ const Pillars = () => {
       title: "Guided By Leaders With Extensive Industry Experience"
     },
     {
-      image: "/Fueling Your Vision With the Right Talent and Tools -Our Pillars Home.jpg",
+      image: "/two.jpg",
       title: "Fueling Your Vision With the Right Talent and Tools"
     },
     {
-      image: "/images/lot 2/optimized/FlexibleEngagemmentModel Our Pillars-Home.webp",
+      image: "/three.jpg",
       srcSet: "/images/lot 2/optimized/FlexibleEngagemmentModel Our Pillars-Home-small.webp 640w, /images/lot 2/optimized/FlexibleEngagemmentModel Our Pillars-Home-medium.webp 1280w, /images/lot 2/optimized/FlexibleEngagemmentModel Our Pillars-Home-large.webp 1920w",
       title: "Flexible Engagement Models for Seamless Growth"
     },
     {
-      image: "/images/lot 2/optimized/Transparent ProcessOurPillars-Home.webp",
+      image: "/four.jpg",
       srcSet: "/images/lot 2/optimized/Transparent ProcessOurPillars-Home-small.webp 640w, /images/lot 2/optimized/Transparent ProcessOurPillars-Home-medium.webp 1280w, /images/lot 2/optimized/Transparent ProcessOurPillars-Home-large.webp 1920w",
       title: "Transparent Processes, Powered by On-Ground Expertise"
     }

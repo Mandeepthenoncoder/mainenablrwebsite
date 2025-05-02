@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -33,7 +34,7 @@ const CareerIntro = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className={cn(typography.body.lg, "text-gray-700 font-medium")}
               >
-                At Enablr, We Build More Than GCCs, We Build High-Performing Teams That Power Them.
+                At Enablr, we build more than GCCs, we build high-performing teams that power them.
               </motion.p>
               
               <motion.p 

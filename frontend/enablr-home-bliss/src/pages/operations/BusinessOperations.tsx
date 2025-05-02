@@ -103,14 +103,12 @@ const BusinessOperations = () => {
         >
           <SolutionExplanation
             title="Power Business Growth with Seamless Operational Support"
-            content="Enablr helps simplify and optimize business operations in your capability center, enabling you to move faster and scale smarter.
+            content={`Enablr helps simplify and optimize business operations in your capability center, enabling you to move faster and scale smarter.
 
 From administration and procurement to HR, payroll, and regulatory support, we work as your behind-the-scenes engine, so that you can focus on business growth, strategy, and execution.
 
-If you are setting up a global capability center, then you can trust Enablr for the local expertise and operational muscle to make it seamless.
-
-Partner with Enablr to accelerate your GCC plans."
-            imagePath="/solutions/Power Business Growth With Seamless Operational Support- Business Operation.jpg"
+If you are setting up a global capability center, then you can trust Enablr for the local expertise and operational muscle to make it seamless. Partner with Enablr to accelerate your GCC plans.`}
+            imagePath="/business-operations.jpeg"
           />
         </motion.div>
         
@@ -147,3 +145,4 @@ Partner with Enablr to accelerate your GCC plans."
 };
 
 export default BusinessOperations;
+

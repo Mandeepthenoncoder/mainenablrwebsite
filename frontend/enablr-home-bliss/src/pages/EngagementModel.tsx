@@ -3,7 +3,20 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, HandshakeIcon, Package, Power, Clock, CheckCircle2, ArrowUpRight, Users, BarChart3, Building, Blocks } from "lucide-react";
+import {
+  ArrowRight,
+  Zap,
+  HandshakeIcon,
+  Package,
+  Power,
+  Clock,
+  CheckCircle2,
+  ArrowUpRight,
+  Users,
+  BarChart3,
+  Building,
+  Blocks,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
@@ -16,35 +29,39 @@ const EngagementModel = () => {
     {
       id: 1,
       title: "Comprehensive management",
-      description: "We handle your GCC end-to-end—from infrastructure and compliance to talent, operations, and innovation.",
+      description:
+        "We handle your GCC end-to-end—from infrastructure and compliance to talent, operations, and innovation.",
       image: "/comprehensive managemenrt.png",
       icon: <Building className="w-6 h-6 text-enablr-navy" />,
-      link: "/engagement/comprehensive-management"
+      link: "/engagement/comprehensive-management",
     },
     {
       id: 2,
       title: "Modular services",
-      description: "Pick only what you need from our catalog of services that align perfectly with your GCC's evolving needs.",
+      description:
+        "Pick only what you need from our catalog of services that align perfectly with your GCC's evolving needs.",
       image: "/modular services.png",
       icon: <Blocks className="w-6 h-6 text-enablr-navy" />,
-      link: "/engagement/modular-services"
+      link: "/engagement/modular-services",
     },
     {
       id: 3,
       title: "Build-operate-transfer (B-O-T)",
-      description: "We set up, scale, and manage your GCC, and then transition ownership when you're ready.",
+      description:
+        "We set up, scale, and manage your GCC, and then transition ownership when you're ready.",
       image: "/BOT model image 1.png",
       icon: <BarChart3 className="w-6 h-6 text-enablr-navy" />,
-      link: "/engagement/bot-model"
+      link: "/engagement/bot",
     },
     {
       id: 4,
       title: "Dedicated teams",
-      description: "We take full ownership of recruitment, onboarding, and daily operations to build high-performing teams.",
+      description:
+        "We take full ownership of recruitment, onboarding, and daily operations to build high-performing teams.",
       image: "/dedicated team.png",
       icon: <Users className="w-6 h-6 text-enablr-navy" />,
-      link: "/engagement/dedicated-teams"
-    }
+      link: "/engagement/dedicated-team",
+    },
   ];
 
   // Benefits data
@@ -52,45 +69,50 @@ const EngagementModel = () => {
     {
       id: 1,
       title: "Flexibility",
-      description: "Choose the engagement model that best aligns with your business goals and requirements.",
-      icon: <Zap className="w-5 h-5 text-enablr-navy" />
+      description:
+        "Choose the engagement model that best aligns with your business goals and requirements.",
+      icon: <Zap className="w-5 h-5 text-enablr-navy" />,
     },
     {
       id: 2,
       title: "Scalability",
-      description: "Easily scale up or down based on your changing business needs and market conditions.",
-      icon: <ArrowUpRight className="w-5 h-5 text-enablr-navy" />
+      description:
+        "Easily scale up or down based on your changing business needs and market conditions.",
+      icon: <ArrowUpRight className="w-5 h-5 text-enablr-navy" />,
     },
     {
       id: 3,
       title: "Cost efficiency",
-      description: "Optimize your investment with tailored engagement models that match your budget.",
-      icon: <Package className="w-5 h-5 text-enablr-navy" />
+      description:
+        "Optimize your investment with tailored engagement models that match your budget.",
+      icon: <Package className="w-5 h-5 text-enablr-navy" />,
     },
     {
       id: 4,
       title: "Risk mitigation",
-      description: "Reduce operational risks with proven engagement frameworks and expert guidance.",
-      icon: <Power className="w-5 h-5 text-enablr-navy" />
-    }
+      description:
+        "Reduce operational risks with proven engagement frameworks and expert guidance.",
+      icon: <Power className="w-5 h-5 text-enablr-navy" />,
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>Engagement Models | Build Your GCC, Your Way - Enablr</title>
-        <meta 
-          name="description" 
-          content="Own your GCC journey with Enablr's flexible engagement models designed to fit your specific needs, from comprehensive management to dedicated teams." 
+        <meta
+          name="description"
+          content="Own your GCC journey with Enablr's flexible engagement models designed to fit your specific needs, from comprehensive management to dedicated teams."
         />
       </Helmet>
-      
+
       <Navbar />
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-          <style dangerouslySetInnerHTML={{
-            __html: `
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
               @keyframes kenBurns {
                 0% { transform: scale(1); }
                 50% { transform: scale(1.1); }
@@ -99,8 +121,9 @@ const EngagementModel = () => {
               .ken-burns-bg {
                 animation: kenBurns 10s ease-in-out infinite;
               }
-            `
-          }} />
+            `,
+            }}
+          />
 
           <div className="absolute inset-0 z-0">
             <div className="ken-burns-bg w-full h-full">
@@ -121,15 +144,16 @@ const EngagementModel = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-3xl"
             >
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-white mb-6 tracking-tight leading-tight text-5xl md:text-6xl lg:text-7xl font-bold"
               >
-                Build your GCC,<br /> <span className="text-enablr-lime">your way</span>
+                Build your GCC,
+                <br /> <span className="text-enablr-lime">your way</span>
               </motion.h1>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -145,7 +169,7 @@ const EngagementModel = () => {
             </motion.div>
           </div>
         </section>
-        
+
         {/* Intro Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
@@ -158,24 +182,28 @@ const EngagementModel = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="space-y-6"
                 >
-                  <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
-                  At Enablr, we understand that building and managing a GCC is not just about scale; it's about strategy, speed, and staying ahead in a constantly evolving digital landscape. 
-
-We believe every enterprise is different, and so is its GCC journey. That's why we offer a range of flexible engagement models designed to fit your specific needs. Whether you're establishing a new GCC or enhancing an existing one, our approach is designed to support your transformation journey and align with your business priorities..
-
-We offer a suite of flexible models, ranging from Comprehensive management, Modular services to Build-Operate-Model (B-O-T) and Dedicated teams.   
-                  </p>
+     
+     <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
+    At Enablr, we understand that building and managing a GCC is not just about scale; it's about strategy, speed, and staying ahead in a constantly evolving digital landscape. We believe every enterprise is different, and so is its GCC journey. That's why we offer a range of flexible engagement models designed to fit your specific needs.
+ </p>
+                 
+<p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
+    Whether you're establishing a new GCC or enhancing an existing one, our approach is designed to support your transformation journey and align with your business priorities.
+ </p>
+ <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
+    We offer a suite of flexible models, ranging from Comprehensive management, Modular services to Build-Operate-Transfer (B-O-T) and Dedicated teams.
+ </p>
                 </motion.div>
               </div>
             </div>
           </div>
         </section>
-        
+
         {/* Engagement Models Grid Section */}
         <section className="py-16 bg-gradient-to-b from-blue-50/70 to-gray-50 relative overflow-hidden">
           {/* Background Grid Pattern */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-[0.03] z-0"></div>
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
               <h2 className={`${typography.h2} text-enablr-navy`}>
@@ -183,7 +211,7 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
               </h2>
               <div className="w-20 h-1 bg-enablr-lime mx-auto mt-4"></div>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {engagementCards.map((model, index) => (
                 <motion.div
@@ -196,8 +224,8 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
                 >
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full border border-gray-100 hover:shadow-xl transition-all duration-500 flex flex-col group-hover:border-enablr-navy/30">
                     <div className="relative h-48 overflow-hidden">
-                      <img 
-                        src={model.image} 
+                      <img
+                        src={model.image}
                         alt={model.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
@@ -205,25 +233,32 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
                       <div className="absolute inset-0 bg-gradient-to-t from-enablr-navy/50 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
                       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-purple-800/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    
+
                     <div className="p-6 flex flex-col flex-grow">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="p-2 bg-blue-50 rounded-md">
                           {model.icon}
                         </div>
-                        <h3 className={`${typography.h3} text-enablr-navy group-hover:text-enablr-navy transition-colors duration-300 whitespace-pre-line`}>
+                        <h3
+                          className={`${typography.h3} text-enablr-navy group-hover:text-enablr-navy transition-colors duration-300 whitespace-pre-line`}
+                        >
                           {model.title}
                         </h3>
                       </div>
-                      <p className={`${typography.body.base} text-gray-600 mb-6 flex-grow`}>
+                      <p
+                        className={`${typography.body.base} text-gray-600 mb-6 flex-grow`}
+                      >
                         {model.description}
                       </p>
-                      <Button 
+                      <Button
                         asChild
                         variant="outline"
                         className="w-full justify-center border-enablr-navy text-enablr-navy hover:bg-enablr-navy hover:text-white mt-auto group"
                       >
-                        <Link to={model.link} className="flex items-center gap-2">
+                        <Link
+                          to={model.link}
+                          className="flex items-center gap-2"
+                        >
                           Learn More
                           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </Link>
@@ -235,7 +270,7 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
             </div>
           </div>
         </section>
-        
+
         {/* Benefits Section */}
         <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
@@ -246,7 +281,7 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
                 </h2>
                 <div className="w-20 h-1 bg-enablr-lime mx-auto"></div>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {benefits.map((benefit, index) => (
                   <motion.div
@@ -266,7 +301,9 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
                         </div>
                       </div>
                       <div>
-                        <h3 className={`${typography.h4} text-enablr-navy mb-2 group-hover:text-enablr-navy transition-colors duration-300 whitespace-pre-line`}>
+                        <h3
+                          className={`${typography.h4} text-enablr-navy mb-2 group-hover:text-enablr-navy transition-colors duration-300 whitespace-pre-line`}
+                        >
                           {benefit.title}
                         </h3>
                         <p className={`${typography.body.base} text-gray-600`}>
@@ -280,16 +317,16 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
             </div>
           </div>
         </section>
-        
+
         {/* CTA Section */}
         <section className="py-20 bg-enablr-navy relative overflow-hidden">
           {/* Background Grid Pattern */}
           <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-10"></div>
-          
+
           {/* Gradient blobs for corners */}
           <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-r from-blue-200 to-blue-100 rounded-full -ml-32 -mt-32 opacity-30 blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-l from-blue-100 to-blue-200 rounded-full -mr-32 -mb-32 opacity-30 blur-3xl"></div>
-          
+
           <div className="container mx-auto px-4 max-w-4xl relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -300,7 +337,7 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
               <h2 className={`${typography.h2} text-white mb-6`}>
                 Ready To Take The Next Step Towards your GCC Goals?
               </h2>
-              <Button 
+              <Button
                 asChild
                 size="lg"
                 className="bg-white text-enablr-navy hover:bg-white/90"
@@ -313,10 +350,10 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
             </motion.div>
           </div>
         </section>
-        
+
         {/* Blog Highlights Section */}
         <BlogHighlights />
-        
+
         {/* Newsletter Section */}
         <Newsletter />
       </main>
@@ -325,4 +362,5 @@ We offer a suite of flexible models, ranging from Comprehensive management, Modu
   );
 };
 
-export default EngagementModel; 
+export default EngagementModel;
+

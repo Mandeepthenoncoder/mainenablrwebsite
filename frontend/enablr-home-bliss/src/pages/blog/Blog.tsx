@@ -11,6 +11,7 @@ import BlogPostCard from "@/components/blog/BlogPostCard";
 import type { BlogPost } from "@/types/blog";
 import { typography } from "@/styles/typography";
 import Newsletter from "@/components/Newsletter";
+import { Link } from "react-router-dom";
 
 // Static blog data
 const staticPosts: BlogPost[] = [
@@ -146,7 +147,7 @@ const Blog = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="border-white text-white hover:bg-white hover:text-enablr-navy rounded-md transition-all duration-300"
+                    className="border-white text-white bg-enablr-navy hover:bg-white hover:text-enablr-navy rounded-md transition-all duration-300"
                   >
                     Subscribe for Updates
                   </Button>
@@ -222,7 +223,9 @@ const Blog = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <BlogPostCard post={featuredPosts[0]} featured={true} />
+                  <Link to={`/blog/${featuredPosts[0].slug}`} className="block h-full">
+                    <BlogPostCard post={featuredPosts[0]} featured={true} />
+                  </Link>
                 </motion.div>
               )}
               
@@ -235,7 +238,9 @@ const Blog = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.1 * (index + 1) }}
                   >
-                    <BlogPostCard post={post} />
+                    <Link to={`/blog/${post.slug}`} className="block h-full">
+                      <BlogPostCard post={post} />
+                    </Link>
                   </motion.div>
                 ))}
               </div>
@@ -282,7 +287,9 @@ const Blog = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: 0.05 * index }}
                     >
-                      <BlogPostCard post={post} />
+                      <Link to={`/blog/${post.slug}`} className="block h-full">
+                        <BlogPostCard post={post} />
+                      </Link>
                     </motion.div>
                   );
                 })}

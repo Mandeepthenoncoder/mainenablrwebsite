@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
@@ -28,4 +27,4 @@ const BOT = () => {
   );
 };
 
-export default BOT;
+export default BOT;	

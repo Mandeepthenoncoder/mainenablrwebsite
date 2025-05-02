@@ -6,6 +6,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { typography, colors } from "@/styles/typography";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface EngagementModel {
   id: string;
@@ -16,28 +17,28 @@ interface EngagementModel {
 
 const engagementModels: EngagementModel[] = [{
   id: "bot",
-  title: "Build-Operate-Transfer\n(B-O-T)",
-  description: "We Set Up and Operate Your GCC, From Day One. When You're Ready, We Ensure a Smooth Handover So You Take Full Control With Zero Disruption.",
+  title: "Build-operate-transfer\n(B-O-T)", // Sentence case applied to text, acronym kept
+  description: "We set up and operate your GCC, from day one. When you're ready, we ensure a smooth handover so you take full control with zero disruption.", // Sentence case applied, "GCC" kept capitalized
   image: "/BOTengage with us section.png"
 }, {
   id: "modular",
-  title: "Modular Services",
-  description: "Our Modular Model Lets You Tap Into Specific Services, Such as Hiring, Payroll, or Workspace Management, Exactly When and Where You Need Them.",
-  image: "/modular services.png"
+  title: "Modular services",
+  description: "Our modular model lets you tap into specific services, such as hiring, payroll, or workspace management, exactly when and where you need them.",
+  image: "/modular services.webp"
 }, {
   id: "comprehensive",
-  title: "Comprehensive\nManagement",
-  description: "From Launch to Daily Operations, We Handle Everything; Compliance, Infrastructure, Staffing, and Beyond, So You Can Stay Focused on Growing Your Business Priorities.",
-  image: "/comprehensive managemenrt.png"
+  title: "Comprehensive\nmanagement",
+  description: "From launch to daily operations, we handle everything; compliance, infrastructure, staffing, and beyond, so you can stay focused on growing your business priorities.",
+  image: "/comprehensive managemenrt.webp"
 }, {
   id: "dedicated",
-  title: "Dedicated Team\nModels",
-  description: "Build a Dedicated Team That Operates as an Extension of You, Fully Aligned With Your Culture, Mirroring Your Processes and Priorities.",
-  image: "/Dedicated Team Models, Engage With Us, home.jpg"
+  title: "Dedicated team\nmodels",
+  description: "Build a dedicated team that operates as an extension of you, fully aligned with your culture, mirroring your processes and priorities.",
+  image: "/Dedicated Team Models, Engage With Us, home.webp"
 }];
-
 const EngagementModels = () => {
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("bot");
   const [showLeftGradient, setShowLeftGradient] = useState(false);
   const [showRightGradient, setShowRightGradient] = useState(true);
@@ -45,6 +46,12 @@ const EngagementModels = () => {
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
+  };
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    console.log('Contact button clicked');
+    window.location.href = '/contact';
   };
 
   const checkScrollPosition = () => {
@@ -86,7 +93,7 @@ const EngagementModels = () => {
     }
   }, [activeTab]);
 
-  return <Tabs defaultValue="bot" className="w-full" value={activeTab} onValueChange={handleTabChange}>
+  return <Tabs defaultValue="bot" className="w-full relative" value={activeTab} onValueChange={handleTabChange}>
       <div className="sticky top-0 z-10 bg-white pt-2 pb-0">
         <div className="relative w-full mb-0 overflow-visible">
           {showLeftGradient && <div className="absolute left-0 top-0 bottom-0 h-full flex items-center pointer-events-none bg-gradient-to-r from-white via-white to-transparent w-12 z-10">
@@ -203,9 +210,11 @@ const EngagementModels = () => {
               duration: 0.3,
               delay: 0.3
             }} className="pt-2">
-                    <Button className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 
+                    <Button 
+                      onClick={handleContactClick}
+                      className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 
                                 w-full sm:w-auto h-12 text-base">
-                      Talk to Our Experts
+                        Talk to Our Experts
                     </Button>
                   </motion.div>
                 </div>
