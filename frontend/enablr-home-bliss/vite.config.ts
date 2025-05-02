@@ -2,6 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import compression from "vite-plugin-compression";
+import { visualizer } from "rollup-plugin-visualizer";
+import viteImagemin from "vite-plugin-imagemin";
+import preload from "vite-plugin-preload";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,6 +17,50 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' &&
     componentTagger(),
+    // Add optimization plugins for production builds only
+    mode === 'production' && compression({
+      algorithm: 'gzip',
+      ext: '.gz',
+    }),
+    mode === 'production' && compression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+    }),
+    mode === 'production' && viteImagemin({
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 7,
+      },
+      mozjpeg: {
+        quality: 80,
+      },
+      pngquant: {
+        quality: [0.7, 0.8],
+        speed: 4,
+      },
+      webp: {
+        quality: 75,
+      },
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox',
+            active: false,
+          },
+        ],
+      },
+    }),
+    mode === 'production' && preload(),
+    // Bundle analyzer with proper options for rollup-plugin-visualizer
+    visualizer({
+      open: mode === 'development',
+      filename: 'stats.html',
+      gzipSize: true,
+      brotliSize: true,
+    }),
   ].filter(Boolean),
   resolve: {
     alias: {
