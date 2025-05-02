@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
@@ -37,9 +38,8 @@ const BlogHighlights = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className={`${typography.h2} mt-2 mb-4`}>
-            Insights on <span className="text-enablr-navy">GCC Trends</span>
-          </h2>
+        <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Insights on </span>GCC Trends  </h2>
           <div className="w-24 h-1 bg-enablr-lime mx-auto"></div>
         </div>
 
@@ -114,3 +114,7 @@ const BlogHighlights = () => {
 };
 
 export default BlogHighlights; 
+
+
+
+

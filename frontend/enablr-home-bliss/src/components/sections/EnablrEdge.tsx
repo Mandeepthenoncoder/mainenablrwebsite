@@ -1,124 +1,116 @@
-import React, { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import Image from "@/components/Image";
-import { motion, useInView } from "framer-motion";
 
-const FeatureCard = ({
-  icon,
-  title,
-  index
-}: {
-  icon: string;
-  title: string;
-  index: number;
-}) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { typography } from "@/styles/typography";
+import { motion } from "framer-motion";
+
+// Blog posts data
+const blogPosts = [
+  {
+    id: "1",
+    title: "The 'Scalability' advantage: Why GCCs matter",
+    excerpt: "Building your GCC is like drawing a blueprint for your house, ensuring every element from the ground up embeds strength and scalability to stay future proof.",
+    coverImage: "/Blog Images/From support functions to strategic hubs The evolution of GCCs.jpg",
+    publishedAt: "2024-06-01T00:00:00Z",
+    readTime: 5
+  },
+  {
+    id: "2",
+    title: "How to build a high-performance GCC: Best practices for talent, technology, and strategy",
+    excerpt: "A comprehensive guide to establishing and optimizing Global Capability Centers for maximum business impact.",
+    coverImage: "/Blog Images/How to build a high-performance GCC Best practices for talent, technology, and strategy.jpg",
+    publishedAt: "2024-05-20T00:00:00Z",
+    readTime: 8
+  },
+  {
+    id: "3",
+    title: "AI-powered transformation: How GCCs are driving business innovation",
+    excerpt: "Exploring how Global Capability Centers are leveraging artificial intelligence to reimagine business processes and create competitive advantages.",
+    coverImage: "/Blog Images/AI-powered transformation How GCCs are driving business innovation.jpg",
+    publishedAt: "2024-05-10T00:00:00Z",
+    readTime: 6
+  }
+];
+
+const BlogHighlights = () => {
   return (
-    <motion.div 
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-      className="flex flex-col items-center sm:items-start text-center sm:text-left group"
-    >
-      <motion.div 
-        className="h-[80px] md:h-[100px] flex items-center justify-center sm:justify-start mb-3 transition-all duration-300 group-hover:scale-105"
-        whileHover={{ 
-          rotate: [0, -5, 5, -3, 0],
-          transition: { duration: 0.5 }
-        }}
-      >
-        <Image src={icon} alt={title} width={100} height={100} className="w-[80px] h-[80px] md:w-[100px] md:h-[100px]" />
-      </motion.div>
-      <h3 className="text-base md:text-lg font-medium max-w-[280px] mx-auto sm:mx-0 leading-tight group-hover:text-enablr-navy transition-colors duration-300">
-        {title}
-      </h3>
-    </motion.div>
-  );
-};
-
-const EnablrEdge = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-  
-  return (
-    <section 
-      ref={sectionRef} 
-      className="mt-8 md:mt-16 pb-12 md:pb-16 rounded-[20px] md:rounded-[40px] relative overflow-hidden bg-[#ffdee2]/[0.37] px-0 mx-0 py-0 my-[16px]"
-    >
-      <div className="container mx-auto my-0 py-[30px] md:py-[50px] px-4 md:px-[50px]">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-8 md:mb-12 text-center sm:text-left"
-        >
-          <h2 className="text-2xl md:text-3xl mb-3 flex items-center gap-2 flex-wrap justify-center sm:justify-start">
-            The <span className="font-bold">Enablr</span>{" "}
-            <motion.span 
-              initial={{ backgroundPosition: "0% 100%" }}
-              animate={{ backgroundPosition: "100% 0%" }}
-              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
-              className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent py-[4px] bg-[length:200%_200%]"
-            >
-              Edge
-            </motion.span>
-          </h2>
-          <p className="text-base md:text-lg text-gray-700 space-y-0">
-            At Enablr, we work with you to build your global capability center (GCC) the right way. 
-            Designed for speed, scale, and quality at every step. 
-            Here's how we help you stay ahead:
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
-          <FeatureCard 
-            icon="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//Acc.svg" 
-            title="Accelerate your GCC setup with a trusted partner" 
-            index={0}
-          />
-          <FeatureCard 
-            icon="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//partner%20of%20choice.svg" 
-            title="Build future-ready centers with Enablr, your 'partner of choice'" 
-            index={1}
-          />
-          <FeatureCard 
-            icon="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//momentum.svg" 
-            title="Maintain momentum with transparent, milestone-driven execution" 
-            index={2}
-          />
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+        <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Insights on </span>GCC Trends  </h2>
+          <div className="w-24 h-1 bg-enablr-lime mx-auto"></div>
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex gap-4 flex-wrap justify-center sm:justify-start"
-        >
-          <Button 
-            className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {blogPosts.map((post, index) => (
+            <motion.div 
+              key={post.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-xl shadow-md overflow-hidden h-full flex flex-col"
+            >
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={post.coverImage} 
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                />
+              </div>
+              
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  {post.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-4 text-sm line-clamp-3">
+                  {post.excerpt}
+                </p>
+                
+                <div className="mt-auto">
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="w-4 h-4" />
+                      <span>{new Date(post.publishedAt).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="w-4 h-4" />
+                      <span>{post.readTime} min read</span>
+                    </div>
+                  </div>
+                  
+                  <Link 
+                    to={`/blog/${post.id}`} 
+                    className="inline-flex items-center text-enablr-navy font-medium group"
+                  >
+                    Read More
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <Link 
+            to="/blog" 
+            className="inline-flex items-center gap-2 bg-enablr-navy text-white px-6 py-2.5 rounded-md hover:bg-enablr-navy/90 transition-colors font-medium"
           >
-            Learn more
-          </Button>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, x: 100 }}
-          animate={isInView ? { opacity: 0.3, x: 0 } : { opacity: 0, x: 100 }}
-          transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
-          className="absolute right-0 bottom-0 w-2/3 h-2/3" 
-          style={{
-            backgroundImage: "url('https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//Waves.svg')",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "bottom right",
-            backgroundSize: "contain"
-          }}
-        />
+            View all articles
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
 };
 
-export default EnablrEdge;
+export default BlogHighlights; 
