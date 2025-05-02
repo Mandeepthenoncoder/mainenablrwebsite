@@ -159,7 +159,24 @@ export default function HeroSection() {
                           <motion.div 
                             key={`line-${lineIndex}`}
                             variants={itemVariants}
-                            className="text-white text-5xl md:text-5xl font-bold leading-normal ml-28 mb-2"
+                            className="
+                              text-white
+                              font-bold
+                              leading-tight
+                              text-2xl
+                              sm:text-4xl
+                              md:text-5xl
+                              lg:text-6xl
+                              mb-2
+                              text-center sm:text-left
+                              break-words
+                              max-w-full
+                              px-1 sm:px-0
+                            "
+                            style={{
+                              wordBreak: 'break-word',
+                              hyphens: 'auto',
+                            }}
                           >
                             {line}
                           </motion.div>
@@ -182,7 +199,21 @@ export default function HeroSection() {
                         link={slide.buttonLink}
                         variant="secondary"
                         size="lg"
-                        className="min-h-[52px] rounded-md ml-28 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                       // In the parent container add: text-center (or use flexbox centering)
+
+// On the button itself:
+className="
+  inline-flex items-center justify-center 
+  min-h-[40px] sm:min-h-[44px]
+  rounded-md
+  px-5 sm:px-6
+  text-base sm:text-lg
+  font-medium
+  shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300
+  bg-enablr-navy text-white border border-transparent
+  hover:bg-white hover:text-enablr-navy hover:border-enablr-navy
+   mx-auto, w-[60%], sm:w-1/2, lg:w-10, lg:mx-0 
+"
                       />
                     </motion.div>
                   </div>

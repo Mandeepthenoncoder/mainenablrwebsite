@@ -1,14 +1,15 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Calendar, Clock } from "lucide-react"; // Corrected Icon import (CalendarDays -> Calendar)
 import { typography } from "@/styles/typography";
 import { motion } from "framer-motion";
 
-// Blog posts data
+// Blog posts data - NOW INCLUDES SLUGS
 const blogPosts = [
   {
     id: "1",
+    // Add the correct slug based on your previous list
+    slug: "scalability-advantage-why-gccs-matter", 
     title: "The 'Scalability' advantage: Why GCCs matter",
     excerpt: "Building your GCC is like drawing a blueprint for your house, ensuring every element from the ground up embeds strength and scalability to stay future proof.",
     coverImage: "/Blog Images/From support functions to strategic hubs The evolution of GCCs.jpg",
@@ -17,6 +18,8 @@ const blogPosts = [
   },
   {
     id: "2",
+    // Add the correct slug
+    slug: "high-performance-gcc-best-practices", 
     title: "How to build a high-performance GCC: Best practices for talent, technology, and strategy",
     excerpt: "A comprehensive guide to establishing and optimizing Global Capability Centers for maximum business impact.",
     coverImage: "/Blog Images/How to build a high-performance GCC Best practices for talent, technology, and strategy.jpg",
@@ -25,12 +28,15 @@ const blogPosts = [
   },
   {
     id: "3",
+    // Add the correct slug
+    slug: "ai-powered-transformation-gcc-innovation", 
     title: "AI-powered transformation: How GCCs are driving business innovation",
     excerpt: "Exploring how Global Capability Centers are leveraging artificial intelligence to reimagine business processes and create competitive advantages.",
     coverImage: "/Blog Images/AI-powered transformation How GCCs are driving business innovation.jpg",
     publishedAt: "2024-05-10T00:00:00Z",
     readTime: 6
   }
+  // Add more posts here with their slugs if needed
 ];
 
 const BlogHighlights = () => {
@@ -46,7 +52,7 @@ const BlogHighlights = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
             <motion.div 
-              key={post.id}
+              key={post.id} // Keep using id for React key, it's fine
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -86,8 +92,9 @@ const BlogHighlights = () => {
                     </div>
                   </div>
                   
+                  {/* CHANGE HERE: Use post.slug instead of post.id */}
                   <Link 
-                    to={`/blog/${post.id}`} 
+                    to={`/blog/${post.slug}`} 
                     className="inline-flex items-center text-enablr-navy font-medium group"
                   >
                     Read More
@@ -113,8 +120,4 @@ const BlogHighlights = () => {
   );
 };
 
-export default BlogHighlights; 
-
-
-
-
+export default BlogHighlights;
