@@ -210,7 +210,7 @@ className="
   text-base sm:text-lg
   font-medium
   shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300
-  bg-enablr-navy text-white border border-transparent
+  bg-enablr-navy text-white border border-white
   hover:bg-white hover:text-enablr-navy hover:border-enablr-navy
    mx-auto, w-[60%], sm:w-1/2, lg:w-10, lg:mx-0 
 "
