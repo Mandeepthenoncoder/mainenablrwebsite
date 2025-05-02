@@ -1,0 +1,94 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { typography } from "@/styles/typography";
+
+interface ContactInfoProps {
+  layout?: "horizontal" | "vertical";
+}
+
+const contactInfo = [
+  {
+    icon: <Phone className="h-5 w-5" />,
+    title: "Phone",
+    details: "+91 40 45182310 (IN)\n+1 833 326 8272 (USA)",
+    description: "Monday to Friday, 9am to 6pm"
+  },
+  {
+    icon: <Mail className="h-5 w-5" />,
+    title: "Email",
+    details: "contact@enablr.in",
+    description: "We'll respond within 24 hours"
+  },
+  {
+    icon: <MapPin className="h-5 w-5" />,
+    title: "Office",
+    details: "USA & India",
+    description: "Visit our office locations section for details"
+  }
+];
+
+const ContactInfo: React.FC<ContactInfoProps> = ({ layout = "horizontal" }) => {
+  return (
+    <div className={cn(
+      "space-y-8",
+      layout === "horizontal" && "lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8"
+    )}>
+      {contactInfo.map((info, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          className={cn(
+            "p-8 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 overflow-hidden group relative",
+            layout === "vertical" && "flex flex-row items-start"
+          )}
+        >
+          {/* Top accent line with gradient hover */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-enablr-navy opacity-70 group-hover:bg-gradient-to-r group-hover:from-blue-800 group-hover:to-red-600 transition-colors duration-300"></div>
+          
+          {/* Decorative corner gradient */}
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-50 to-red-50 rounded-tl-[80px] -mr-16 -mb-16 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          <div className={cn(
+            "relative z-10",
+            layout === "horizontal" ? "flex flex-col items-center text-center" : "flex items-start gap-4"
+          )}>
+            <div className={cn(
+              "relative flex-shrink-0",
+              layout === "horizontal" ? "w-16 h-16 mb-4" : "w-12 h-12 mr-4"
+            )}>
+              <div className="absolute inset-0 bg-enablr-navy/10 rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-red-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 flex items-center justify-center bg-enablr-navy text-white rounded-full">
+                {info.icon}
+              </div>
+            </div>
+            
+            <div className={layout === "vertical" ? "" : ""}>
+              <h3 className={cn(
+                layout === "horizontal" ? typography.h3 : typography.h4,
+                "text-enablr-navy group-hover:text-enablr-navy transition-colors duration-300 mb-2"
+              )}>
+                {info.title}
+              </h3>
+              
+              <p className={cn(typography.body.lg, "text-enablr-navy font-medium mb-2 whitespace-pre-line")}>
+                {info.details}
+              </p>
+              
+              <p className={cn(typography.body.base, "text-gray-600 leading-relaxed font-light")}>
+                {info.description}
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+};
+
+export default ContactInfo;
