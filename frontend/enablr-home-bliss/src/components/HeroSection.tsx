@@ -13,7 +13,7 @@ const heroSlides = [
   {
     imageSrc: "/images/supabase-images/optimized/hero-slide-1.webp",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
-    title: "Build On Proven\nExperience and\nEnterprise-Grade Quality",
+    title: "Build On Proven Experience\nAnd Enterprise-Grade Quality",
     buttonText: "Get Started Today",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
@@ -29,7 +29,7 @@ const heroSlides = [
   {
     imageSrc: "/images/lot 2/optimized/CarouselImage3-Home.webp",
     srcset: "/images/lot 2/optimized/CarouselImage3-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage3-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage3-Home-large.webp 1920w",
-    title: "Accelerate Your Setup\nWith Expert Talent and Seamless Execution",
+    title: "Accelerate Your Setup With\nExpert Talent and Seamless Execution",
     buttonText: "Connect Now",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
@@ -108,23 +108,38 @@ export default function HeroSection() {
         <CarouselContent className="h-full">
           {heroSlides.map((slide, index) => (
             <CarouselItem key={index} className="w-full min-h-[80vh] overflow-hidden relative">
-              {/* Background Image with srcset for responsive images */}
+              {/* Background: Use video for the first slide, image for others */}
               <div className="absolute inset-0 bg-gray-900">
-                <picture>
-                  <source
-                    srcSet={slide.srcset}
-                    type="image/webp"
-                    sizes="100vw"
-                  />
-                  <img
-                    src={slide.imageSrc}
-                    alt={`Slide ${index + 1}`}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
-                </picture>
-                {/* Overlay for better text readability */}
-                <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
+                {index === 0 ? (
+                  <>
+                    <video
+                      src="/Carousel_Video.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
+                  </>
+                ) : (
+                  <>
+                    <picture>
+                      <source
+                        srcSet={slide.srcset}
+                        type="image/webp"
+                        sizes="100vw"
+                      />
+                      <img
+                        src={slide.imageSrc}
+                        alt={`Slide ${index + 1}`}
+                        loading={index === 0 ? "eager" : "lazy"}
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                    </picture>
+                    <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
+                  </>
+                )}
               </div>
               
               {/* Slide Content */}
@@ -144,7 +159,7 @@ export default function HeroSection() {
                           <motion.div 
                             key={`line-${lineIndex}`}
                             variants={itemVariants}
-                            className="text-white text-5xl md:text-6xl font-bold leading-tight mb-2"
+                            className="text-white text-5xl md:text-5xl font-bold leading-normal ml-28 mb-2"
                           >
                             {line}
                           </motion.div>
@@ -167,7 +182,7 @@ export default function HeroSection() {
                         link={slide.buttonLink}
                         variant="secondary"
                         size="lg"
-                        className="min-h-[52px] rounded-md shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                        className="min-h-[52px] rounded-md ml-28 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                       />
                     </motion.div>
                   </div>

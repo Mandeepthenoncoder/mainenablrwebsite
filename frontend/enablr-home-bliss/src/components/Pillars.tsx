@@ -52,12 +52,9 @@ const Pillars = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h2 className={cn(
-              typography.h2,
-              "text-enablr-dark-blue mb-4"
-            )}>
-              Our Pillars
-            </h2>
+            <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Our</span> Pillars
+      </h2>
           </motion.div>
         </div>
 

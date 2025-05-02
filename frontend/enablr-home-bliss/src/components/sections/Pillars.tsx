@@ -54,7 +54,7 @@ const Pillars = () => {
           >
             <h2 className={cn(
               typography.h2,
-              "text-enablr-dark-blue mb-4"
+              "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300 mb-4"
             )}>
               Our Pillars
             </h2>
