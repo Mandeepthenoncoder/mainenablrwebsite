@@ -32,19 +32,19 @@ const ContactUs = () => {
       </Helmet>
       
       {/* Hero Section - Simplified without pattern overlay */}
-      <section className="relative min-h-[60vh] flex items-center">
+      <section className="relative min-h-[30vh] flex items-center rounded-b-3xl overflow-hidden z-10">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/lot 2/optimized/HeroImage-ContactUs.webp"
             alt="Contact Enablr"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[85%_center] sm:object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-enablr-navy/90 to-enablr-navy/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-enablr-navy/95 via-enablr-navy/90 to-enablr-navy/75" />
         </div>
         
         {/* Hero content */}
-        <div className="container relative z-10 mx-auto px-4 py-20">
+        <div className="container relative z-10 mx-auto px-4 py-6 sm:py-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ const ContactUs = () => {
             <TextStyled 
               variant="hero" 
               casing="titleCase" 
-              className="mb-4"
+              className="mb-2 text-3xl md:text-4xl lg:text-5xl"
             >
               A One-Stop-Shop For All <ResponsiveBreak breakOn="md" />
               Your GCC Needs
@@ -64,7 +64,7 @@ const ContactUs = () => {
       </section>
 
       {/* Main Contact Section */}
-      <section id="contact-form" className="py-24 relative overflow-hidden bg-gradient-to-b from-blue-50/70 to-gray-50">
+      <section id="contact-form" className="py-12 md:py-16 relative overflow-hidden bg-gradient-to-b from-blue-50/70 to-gray-50 -mt-2 sm:-mt-4">
         {/* Background with subtle grid pattern */}
         <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-[0.03]"></div>
         
@@ -78,7 +78,7 @@ const ContactUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mb-12"
+            className="max-w-3xl mb-8"
           >
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -88,7 +88,7 @@ const ContactUs = () => {
             >
               <TextStyled 
                 variant="h2" 
-                className="mb-6 tracking-tight font-inter"
+                className="mb-4 tracking-tight font-inter"
                 color="text-enablr-navy"
                 casing="sentenceCase"
               >
@@ -98,7 +98,7 @@ const ContactUs = () => {
             </motion.div>
           </motion.div>
           
-          <div className="flex flex-col lg:flex-row gap-16">
+          <div className="flex flex-col lg:flex-row gap-10">
             {/* Left side - Contact Form */}
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
@@ -107,13 +107,13 @@ const ContactUs = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="w-full lg:w-3/5"
             >
-              <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
+              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
                 {/* Top accent line with gradient */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-800 to-red-600"></div>
                 
                 <TextStyled 
                   variant="h3" 
-                  className="mb-6"
+                  className="mb-4"
                   color="text-enablr-navy"
                 >
                   Let's Connect
@@ -139,12 +139,12 @@ const ContactUs = () => {
       </section>
 
       {/* Office Locations Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <TextStyled 
               variant="h3" 
-              className="mb-10 text-center"
+              className="mb-6 text-center"
               color="text-enablr-navy"
             >
               Office Locations

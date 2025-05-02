@@ -7,13 +7,16 @@ import { typography } from "@/styles/typography";
 import { TextStyled } from "@/components/ui/TextStyled";
 import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 // Define the hero slide content with optimized WebP images
 const heroSlides = [
   {
     imageSrc: "/images/supabase-images/optimized/hero-slide-1.webp",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
-    title: "Build On Proven Experience\nAnd Enterprise-Grade Quality",
+    title: "Build On Proven\nExperience And Enterprise-Grade Quality",
     buttonText: "Get Started Today",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
@@ -29,7 +32,7 @@ const heroSlides = [
   {
     imageSrc: "/images/lot 2/optimized/CarouselImage3-Home.webp",
     srcset: "/images/lot 2/optimized/CarouselImage3-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage3-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage3-Home-large.webp 1920w",
-    title: "Accelerate Your Setup With\nExpert Talent and Seamless Execution",
+    title: "Accelerate Your Setup\nWith Expert Talent and Seamless Execution",
     buttonText: "Connect Now",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
@@ -134,7 +137,7 @@ export default function HeroSection() {
                         src={slide.imageSrc}
                         alt={`Slide ${index + 1}`}
                         loading={index === 0 ? "eager" : "lazy"}
-                        className="absolute inset-0 h-full w-full object-cover"
+                        className={`absolute inset-0 h-full w-full object-cover ${index === 1 ? 'object-[70%_center]' : ''}`}
                       />
                     </picture>
                     <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
@@ -145,15 +148,15 @@ export default function HeroSection() {
               {/* Slide Content */}
               <div className="relative z-10 flex items-center h-full">
                 <div className="container mx-auto px-6">
-                  <div className="max-w-4xl pl-0 md:pl-12 lg:pl-24">
-                    <div className="mb-8">
+                  <div className="max-w-4xl px-0 md:pl-12 lg:pl-24 flex flex-col items-start">
+                    <div className="mb-10 sm:mb-8 w-full">
                       {/* Title with lines animated separately */}
                       <motion.div
                         key={`title-${index}`}
                         initial="hidden"
                         animate={current === index ? "visible" : "hidden"}
                         variants={containerVariants}
-                        className="text-left"
+                        className="text-left w-full"
                       >
                         {slide.title.split('\n').map((line, lineIndex) => (
                           <motion.div 
@@ -162,16 +165,17 @@ export default function HeroSection() {
                             className="
                               text-white
                               font-bold
-                              leading-tight
-                              text-2xl
+                              leading-[1.15]
+                              text-3xl
                               sm:text-4xl
                               md:text-5xl
                               lg:text-6xl
                               mb-2
-                              text-center sm:text-left
+                              text-left
                               break-words
                               max-w-full
                               px-1 sm:px-0
+                              whitespace-pre-line
                             "
                             style={{
                               wordBreak: 'break-word',
@@ -192,29 +196,51 @@ export default function HeroSection() {
                         y: current === index ? 0 : 30
                       }}
                       transition={{ duration: 0.5, delay: 0.4 }}
-                      className="text-left"
+                      className="text-left w-full"
                     >
-                      <CTAButton 
-                        text={slide.buttonText}
-                        link={slide.buttonLink}
-                        variant="secondary"
-                        size="lg"
-                       // In the parent container add: text-center (or use flexbox centering)
-
-// On the button itself:
-className="
-  inline-flex items-center justify-center 
-  min-h-[40px] sm:min-h-[44px]
-  rounded-md
-  px-5 sm:px-6
-  text-base sm:text-lg
-  font-medium
-  shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300
-  bg-enablr-navy text-white border border-white
-  hover:bg-white hover:text-enablr-navy hover:border-enablr-navy
-   mx-auto, w-[60%], sm:w-1/2, lg:w-10, lg:mx-0 
-"
-                      />
+                      {index === 1 ? (
+                        // Special styling for second slide
+                        <Button
+                          asChild
+                          className="
+                            inline-flex items-center justify-center 
+                            min-h-[45px] sm:min-h-[55px]
+                            rounded-md
+                            px-12 sm:px-16 py-4
+                            text-base sm:text-lg
+                            font-medium
+                            shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300
+                            bg-gradient-to-r from-white to-gray-50 text-enablr-navy hover:bg-enablr-navy hover:from-enablr-navy hover:to-enablr-navy hover:text-white hover:border-white 
+                            border-2 border-enablr-navy/20
+                            mx-0
+                            w-[75%] sm:w-[280px]
+                          "
+                        >
+                          <Link to={slide.buttonLink} className="flex items-center justify-center w-full">
+                            <span>{slide.buttonText}</span>
+                            <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
+                          </Link>
+                        </Button>
+                      ) : (
+                        <CTAButton 
+                          text={slide.buttonText}
+                          link={slide.buttonLink}
+                          variant="secondary"
+                          size="lg"
+                          className={`
+                            inline-flex items-center justify-center 
+                            min-h-[40px] sm:min-h-[50px]
+                            rounded-md
+                            px-4 sm:px-7
+                            text-base sm:text-lg
+                            font-medium
+                            shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300
+                            bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border-white
+                            mx-0
+                            w-[52%] sm:w-auto
+                          `}
+                        />
+                      )}
                     </motion.div>
                   </div>
                 </div>

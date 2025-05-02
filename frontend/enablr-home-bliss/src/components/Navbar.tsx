@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { 
   NavigationMenu,
   NavigationMenuContent,
@@ -16,11 +16,26 @@ const LOGO_URL = "https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/pub
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [expandedMenus, setExpandedMenus] = useState<{[key: string]: boolean}>({});
   const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  
+  const toggleSubMenu = (menu: string) => {
+    setExpandedMenus(prev => ({
+      ...prev,
+      [menu]: !prev[menu]
+    }));
+  };
 
   const isActive = (path: string) => location.pathname === path;
+
+  // Animation styles
+  const mobileMenuAnimation = isOpen 
+    ? "animate-in slide-in-from-top-5 fade-in duration-300" 
+    : "";
+    
+  const subMenuAnimation = "transition-all duration-300 ease-in-out";
 
   return (
     <header className="w-full fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
@@ -42,7 +57,7 @@ const Navbar = () => {
         <div className="lg:hidden">
           <button 
             onClick={toggleMenu}
-            className="p-2 text-enablr-navy"
+            className="p-2 text-enablr-navy rounded-md hover:bg-gray-100"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -234,8 +249,6 @@ const Navbar = () => {
                 </Link>
               </NavigationMenuItem>
 
-             
-
               <NavigationMenuItem>
                 <Button 
                   className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
@@ -249,135 +262,207 @@ const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-6 z-50">
-            <nav className="flex flex-col space-y-4">
-              <div className="space-y-2">
-                <Link 
-                  to="/solutions"
+          <div className={`lg:hidden fixed top-[72px] left-0 right-0 h-[calc(100vh-72px)] bg-white shadow-md z-50 overflow-y-auto ${mobileMenuAnimation}`}>
+            <nav className="flex flex-col px-6 py-2">
+              {/* Solutions Menu */}
+              <div className="py-3 border-b border-gray-100">
+                <button 
+                  onClick={() => toggleSubMenu('solutions')}
                   className={cn(
-                    "text-sm font-medium text-gray-700 hover:text-[#BF0404]",
-                    isActive('/solutions') && "text-[#BF0404]"
+                    "w-full flex items-center justify-between text-base font-medium py-2 px-3 rounded-md",
+                    (isActive('/solutions') || location.pathname.includes('/services')) 
+                      ? "text-[#BF0404] bg-gradient-to-r from-red-50 to-blue-50/80" 
+                      : "text-gray-800 hover:bg-gray-50"
                   )}
-                  onClick={toggleMenu}
                 >
-                  Solutions
-                </Link>
-                <ul className="pl-4 space-y-2">
-                  <li>
-                    <Link 
-                      to="/services/gcc-as-service" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      GCC as a Service
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/services/technology-enablement" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Technology Enablement
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/services/workspace-solutions" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Workspace Solutions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/services/talent-hr-solutions" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Talent & HR Solutions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/services/business-operations" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Business Operations
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/services/staff-augmentation" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Staff Augmentation
-                    </Link>
-                  </li>
-                </ul>
+                  <span>Solutions</span>
+                  {expandedMenus['solutions'] ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                
+                <div className={cn(
+                  subMenuAnimation,
+                  expandedMenus['solutions'] 
+                    ? "max-h-[500px] opacity-100 mt-2" 
+                    : "max-h-0 opacity-0 overflow-hidden"
+                )}>
+                  <ul className="pl-3 space-y-1 rounded-md bg-gradient-to-br from-red-50/80 to-blue-50/80 py-2">
+                    <li>
+                      <Link 
+                        to="/services/gcc-as-service" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/services/gcc-as-service') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        GCC as a Service
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/services/technology-enablement" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/services/technology-enablement') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Technology Enablement
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/services/workspace-solutions" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/services/workspace-solutions') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Workspace Solutions
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/services/talent-hr-solutions" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/services/talent-hr-solutions') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Talent & HR Solutions
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/services/business-operations" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/services/business-operations') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Business Operations
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/services/staff-augmentation" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/services/staff-augmentation') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Staff Augmentation
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
               
-              <div className="space-y-2">
-                <Link 
-                  to="/engagement"
+              {/* Engagement Models Menu */}
+              <div className="py-3 border-b border-gray-100">
+                <button 
+                  onClick={() => toggleSubMenu('engagement')}
                   className={cn(
-                    "text-sm font-medium text-gray-700 hover:text-[#BF0404]",
-                    location.pathname.includes('/engagement') && "text-[#BF0404]"
+                    "w-full flex items-center justify-between text-base font-medium py-2 px-3 rounded-md",
+                    location.pathname.includes('/engagement') 
+                      ? "text-[#BF0404] bg-gradient-to-r from-red-50 to-blue-50/80" 
+                      : "text-gray-800 hover:bg-gray-50"
                   )}
-                  onClick={toggleMenu}
                 >
-                  Engagement Models
-                </Link>
-                <ul className="pl-4 space-y-2">
-                  <li>
-                    <Link 
-                      to="/engagement/comprehensive-management" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Comprehensive Management
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/engagement/modular-services" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Modular Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/engagement/bot" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Build-Operate-Transfer (B-O-T)
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      to="/engagement/dedicated-team" 
-                      className="text-sm text-gray-600 hover:text-[#BF0404]"
-                      onClick={toggleMenu}
-                    >
-                      Dedicated Teams
-                    </Link>
-                  </li>
-                </ul>
+                  <span>Engagement Models</span>
+                  {expandedMenus['engagement'] ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                
+                <div className={cn(
+                  subMenuAnimation,
+                  expandedMenus['engagement'] 
+                    ? "max-h-[500px] opacity-100 mt-2" 
+                    : "max-h-0 opacity-0 overflow-hidden"
+                )}>
+                  <ul className="pl-3 space-y-1 rounded-md bg-gradient-to-br from-red-50/80 to-blue-50/80 py-2">
+                    <li>
+                      <Link 
+                        to="/engagement/comprehensive-management" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/engagement/comprehensive-management') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Comprehensive Management
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/engagement/modular-services" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/engagement/modular-services') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Modular Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/engagement/bot" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/engagement/bot') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Build-Operate-Transfer (B-O-T)
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/engagement/dedicated-team" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/engagement/dedicated-team') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Dedicated Teams
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
               
+              {/* Regular menu items */}
               <Link 
                 to="/about" 
                 className={cn(
-                  "text-sm font-medium text-gray-700 hover:text-[#BF0404]",
-                  isActive('/about') && "text-[#BF0404]"
+                  "flex items-center text-base font-medium py-3 px-3 border-b border-gray-100",
+                  isActive('/about') 
+                    ? "text-[#BF0404] bg-gradient-to-r from-red-50/60 to-blue-50/60" 
+                    : "text-gray-800 hover:text-[#BF0404] hover:bg-gradient-to-r hover:from-red-50/30 hover:to-blue-50/30"
                 )}
-                onClick={toggleMenu}
               >
                 About Us
               </Link>
@@ -385,10 +470,11 @@ const Navbar = () => {
               <Link 
                 to="/blog" 
                 className={cn(
-                  "text-sm font-medium text-gray-700 hover:text-[#BF0404]",
-                  isActive('/blog') && "text-[#BF0404]"
+                  "flex items-center text-base font-medium py-3 px-3 border-b border-gray-100",
+                  isActive('/blog') 
+                    ? "text-[#BF0404] bg-gradient-to-r from-red-50/60 to-blue-50/60" 
+                    : "text-gray-800 hover:text-[#BF0404] hover:bg-gradient-to-r hover:from-red-50/30 hover:to-blue-50/30"
                 )}
-                onClick={toggleMenu}
               >
                 Insights
               </Link>
@@ -396,10 +482,11 @@ const Navbar = () => {
               <Link 
                 to="/careers" 
                 className={cn(
-                  "text-sm font-medium text-gray-700 hover:text-[#BF0404]",
-                  isActive('/careers') && "text-[#BF0404]"
+                  "flex items-center text-base font-medium py-3 px-3 border-b border-gray-100",
+                  isActive('/careers') 
+                    ? "text-[#BF0404] bg-gradient-to-r from-red-50/60 to-blue-50/60" 
+                    : "text-gray-800 hover:text-[#BF0404] hover:bg-gradient-to-r hover:from-red-50/30 hover:to-blue-50/30"
                 )}
-                onClick={toggleMenu}
               >
                 Careers
               </Link>
@@ -407,20 +494,24 @@ const Navbar = () => {
               <Link 
                 to="/contact" 
                 className={cn(
-                  "text-sm font-medium text-gray-700 hover:text-[#BF0404]",
-                  isActive('/contact') && "text-[#BF0404]"
+                  "flex items-center text-base font-medium py-3 px-3 border-b border-gray-100",
+                  isActive('/contact') 
+                    ? "text-[#BF0404] bg-gradient-to-r from-red-50/60 to-blue-50/60" 
+                    : "text-gray-800 hover:text-[#BF0404] hover:bg-gradient-to-r hover:from-red-50/30 hover:to-blue-50/30"
                 )}
-                onClick={toggleMenu}
               >
                 Contact Us
               </Link>
               
-              <Button 
-                className="w-full mt-2 bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
-                asChild
-              >
-                <Link to="/contact" onClick={toggleMenu}>Get Started</Link>
-              </Button>
+              {/* CTA Button */}
+              <div className="mt-6 px-3">
+                <Button 
+                  className="w-full py-6 bg-gradient-to-r from-enablr-navy to-[#19214F] text-white hover:from-white hover:to-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
+                  asChild
+                >
+                  <Link to="/contact">Get Started</Link>
+                </Button>
+              </div>
             </nav>
           </div>
         )}

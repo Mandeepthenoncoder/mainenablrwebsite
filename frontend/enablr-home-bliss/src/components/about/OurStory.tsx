@@ -56,7 +56,7 @@ const OurStory = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mb-6"
             >
-              <h3 className={`${typography.h4} text-white tracking-tight font-light text-lg md:text-xl`}>
+              <h3 className={`${typography.body.base} text-white/80 leading-relaxed font-light`}>
                 Building on decades of expertise in technology and global capability centers
               </h3>
             </motion.div>
@@ -117,10 +117,6 @@ const OurStory = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-24 h-24 border-4 border-blue-400/30 rounded-full -mt-8 -mr-6 z-[-1]"></div>
-            <div className="absolute bottom-0 left-0 w-32 h-32 border-4 border-blue-400/20 rounded-full -mb-12 -ml-12 z-[-1]"></div>
           </motion.div>
         </div>
       </div>

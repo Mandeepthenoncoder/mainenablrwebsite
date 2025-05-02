@@ -58,11 +58,11 @@ const SolutionsTab = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-start">
-      <div className="space-y-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-start">
+      <div className="space-y-3 sm:space-y-4 mx-0">
         <Accordion type="single" defaultValue="talent" collapsible={false} onValueChange={value => setActiveTab(value)} className="w-full">
           {solutions.map(solution => <AccordionItem key={solution.id} value={solution.id} className="border-b border-gray-200 overflow-hidden">
-              <AccordionTrigger className={`${typography.body.base} font-semibold py-4 text-${colors.text.primary} hover:text-${colors.primary.purple} focus:outline-none group transition-all duration-300`}>
+              <AccordionTrigger className={`${typography.body.base} font-semibold py-3 sm:py-4 text-${colors.text.primary} hover:text-${colors.primary.purple} focus:outline-none group transition-all duration-300 pl-0`}>
                 <span>{solution.title}</span>
               </AccordionTrigger>
               <AccordionContent className={`${colors.transitions.default}`}>
@@ -74,7 +74,7 @@ const SolutionsTab = () => {
               y: 0
             }} transition={{
               duration: 0.3
-            }} className={`${typography.body.sm} text-${colors.text.secondary} pb-6 pt-2 px-1 md:px-2`}>
+            }} className={`${typography.body.sm} text-${colors.text.secondary} pb-4 sm:pb-6 pt-1 sm:pt-2 px-0`}>
                   {solution.description}
                 </motion.div>
               </AccordionContent>
@@ -83,12 +83,12 @@ const SolutionsTab = () => {
         <Button 
                       onClick={handleContactClick}
                       className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 
-                                w-full sm:w-auto h-12 text-base">
+                                w-full sm:w-auto h-10 sm:h-12 text-base">
                         Talk to Our Experts
                     </Button>
       </div>
     
-      <div className="relative h-[400px] md:h-[450px] lg:h-[480px] rounded-lg overflow-hidden shadow-lg lg:-mt-16">
+      <div className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[480px] rounded-lg overflow-hidden shadow-lg mt-3 lg:-mt-16 -mx-1 sm:mx-0">
         <AnimatePresence mode="wait">
         {isClient && solutions.map(solution => solution.id === activeTab && 
           <motion.div 
