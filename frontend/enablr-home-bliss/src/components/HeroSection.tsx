@@ -9,7 +9,6 @@ import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 // Define the hero slide content with optimized WebP images
 const heroSlides = [
@@ -218,7 +217,6 @@ export default function HeroSection() {
                         >
                           <Link to={slide.buttonLink} className="flex items-center justify-center w-full">
                             <span>{slide.buttonText}</span>
-                            <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
                           </Link>
                         </Button>
                       ) : (

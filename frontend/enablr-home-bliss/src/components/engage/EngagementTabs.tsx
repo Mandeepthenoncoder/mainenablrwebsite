@@ -20,7 +20,7 @@ const engagementModels: EngagementModel[] = [
     id: "comprehensive",
     title: "Comprehensive\nManagement",
     description:
-      "From launch to daily operations, we handle everything; compliance, infrastructure, staffing, and beyond, so you can stay focused on growing your business priorities.",
+      "From launch to daily operations, we handle everything, compliance, infrastructure, staffing, and beyond, so you can stay focused on growing your business priorities.",
     image: "/comprehensive managemenrt.webp",
   },
   {

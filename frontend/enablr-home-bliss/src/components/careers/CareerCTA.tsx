@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { typography } from "@/styles/typography";
-import { ArrowRight } from "lucide-react";
 
 const CareerCTA = () => {
   return (
@@ -46,7 +45,6 @@ const CareerCTA = () => {
           >
             <Link to="/careers#job-openings" className="flex items-center gap-2">
               Check Our Current Openings
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
         </motion.div>

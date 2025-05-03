@@ -4,7 +4,6 @@ import { typography } from "@/styles/typography";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Image from "@/components/Image";
-import { ArrowRight } from "lucide-react";
 
 const OurStory = () => {
   return (
@@ -92,7 +91,6 @@ const OurStory = () => {
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Talk to our experts today
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
             </motion.div>

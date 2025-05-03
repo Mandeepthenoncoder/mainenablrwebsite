@@ -46,16 +46,12 @@ const LifeAtEnablr = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.h2 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className={cn(typography.h2, "mb-6 bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent tracking-tight")}
-          >
-            What Sets Your Journey at Enablr Apart
-          </motion.h2>
           
+<h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">What Sets </span> Your Journey at Enablr Apart
+      </h2>
+        
+        
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,6 +59,7 @@ const LifeAtEnablr = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className={cn(typography.body.lg, "text-gray-600 max-w-2xl mx-auto")}
           >
+            <br />
             Four pillars that define our culture and your experience with us
           </motion.p>
         </motion.div>
@@ -79,8 +76,18 @@ const LifeAtEnablr = () => {
             >
               <EnablrLifeCard 
                 image={item.image} 
-                title={item.title}
-                description={item.description}
+                title={item.title
+                  .replace(/gcc/gi, 'GCC')
+                  .replace(/enablr/gi, 'Enablr')
+                  .replace(/(^|\.|\!|\?)\s*([a-z])/g, (m, p1, p2) => p1 + ' ' + p2.toUpperCase())
+                }
+                description={item.description
+                  .replace(/gcc/gi, 'GCC')
+                  .replace(/enablr/gi, 'Enablr')
+                  .replace(/(^|\.|\!|\?)\s*([a-z])/g, (m, p1, p2) => p1 + ' ' + p2.toUpperCase())
+                }
+                titleClassName="text-[20px] font-semibold leading-tight text-enablr-navy mb-2"
+                descriptionClassName="text-[14px] md:text-[16px] font-normal leading-relaxed text-gray-600"
               />
             </motion.div>
           ))}

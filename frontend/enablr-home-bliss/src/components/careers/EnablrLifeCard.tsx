@@ -8,12 +8,16 @@ interface EnablrLifeCardProps {
   image: string;
   title: string;
   description: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
 }
 
 const EnablrLifeCard: React.FC<EnablrLifeCardProps> = ({ 
   image,
   title,
-  description
+  description,
+  titleClassName = cn(typography.h4, "text-enablr-navy group-hover:text-enablr-navy transition-colors duration-300 mb-3"),
+  descriptionClassName = cn(typography.body.base, "text-gray-600 leading-relaxed font-light")
 }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 overflow-hidden group relative h-full flex flex-col">
@@ -37,10 +41,10 @@ const EnablrLifeCard: React.FC<EnablrLifeCardProps> = ({
       
       {/* Content section */}
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className={cn(typography.h4, "text-enablr-navy group-hover:text-enablr-navy transition-colors duration-300 mb-3")}>
+        <h3 className={titleClassName}>
           {title}
         </h3>
-        <p className={cn(typography.body.base, "text-gray-600 leading-relaxed font-light")}>
+        <p className={descriptionClassName}>
           {description}
         </p>
       </div>

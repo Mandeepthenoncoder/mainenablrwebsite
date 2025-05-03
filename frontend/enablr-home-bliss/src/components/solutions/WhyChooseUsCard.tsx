@@ -43,7 +43,7 @@ const WhyChooseUsCard = ({ image, title, description, icon, index }: WhyChooseUs
         <div className="relative">
           <TextStyled 
             variant="h4" 
-            className="mb-3 group-hover:text-gradient-start transition-colors duration-300"
+            className="mb-3 group-hover:text-gradient-start transition-colors duration-300 break-words hyphens-auto"
             color="text-enablr-navy"
             casing="titleCase"
           >

@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Calendar, Clock, ArrowUp, ArrowLeft, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowUp, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { BlogPost } from "@/types/blog";
 import { typography } from "@/styles/typography";
@@ -416,7 +416,6 @@ const BlogPost = () => {
                     >
                       <Link to="/contact" className="flex items-center gap-2">
                         Get in Touch
-                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </Link>
                     </Button>
                   </div>

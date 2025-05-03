@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -61,7 +60,6 @@ const WhyChooseEnablr = () => {
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Get started
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
             </motion.div>

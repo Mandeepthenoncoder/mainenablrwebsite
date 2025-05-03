@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import type { BlogPost } from "@/types/blog";
@@ -84,7 +84,6 @@ const BlogPostCard = ({ post, featured = false }: BlogPostCardProps) => {
           
           <Link to={`/blog/${post.slug}`} className="flex items-center gap-1 text-enablr-navy font-medium text-sm group mt-3">
             <span>Read Article</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
           </CardFooter>
         </Card>

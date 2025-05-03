@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, Clock } from "lucide-react"; // Corrected Icon import (CalendarDays -> Calendar)
+import { Calendar, Clock } from "lucide-react"; // Corrected Icon import (CalendarDays -> Calendar)
 import { typography } from "@/styles/typography";
 import { motion } from "framer-motion";
 
@@ -98,7 +98,6 @@ const BlogHighlights = () => {
                     className="inline-flex items-center text-enablr-navy font-medium group"
                   >
                     Read More
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -112,7 +111,6 @@ const BlogHighlights = () => {
             className="inline-flex items-center gap-2 bg-enablr-navy text-white px-6 py-2.5 rounded-md hover:bg-white hover:text-enablr-navy hover:border-enablr-navy hover:border transition-colors font-medium"
           >
             View all articles
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
       </div>

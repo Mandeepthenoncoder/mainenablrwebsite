@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowRight,
   Zap,
   HandshakeIcon,
   Package,
@@ -261,7 +260,6 @@ const EngagementModel = () => {
                           className="flex items-center gap-2"
                         >
                           Learn More
-                          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </Link>
                       </Button>
                     </div>
@@ -349,7 +347,6 @@ const EngagementModel = () => {
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Let's Connect
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
             </motion.div>

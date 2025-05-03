@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { typography } from "@/styles/typography";
-import { Server, Network, Briefcase, Cpu, ArrowRight } from "lucide-react";
+import { Server, Network, Briefcase, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -140,7 +140,6 @@ const StreamlineOperations = () => {
           >
             <Link to="/contact" className="flex items-center justify-center gap-2">
               Talk to our experts today!
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
         </motion.div>

@@ -78,8 +78,13 @@ export const TextStyled = ({
   className = '',
   color = getDefaultColor(variant),
 }: TextStyledProps) => {
+  // Add break-words and hyphens-auto for card titles and headings
+  const extraWrapClasses =
+    variant === 'h3' || variant === 'h4' || variant === 'cardTitle'
+      ? 'break-words hyphens-auto'
+      : '';
   return (
-    <Component className={cn(getTypographyClass(variant), color, className)}>
+    <Component className={cn(getTypographyClass(variant), color, extraWrapClasses, className)}>
       {applyTextCase(children, casing)}
     </Component>
   );

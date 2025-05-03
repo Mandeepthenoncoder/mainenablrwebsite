@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 interface JobListingProps {
   title: string;
@@ -36,7 +35,6 @@ const JobListing = ({ title, experience, location, type, index }: JobListingProp
         className="bg-white text-enablr-navy border border-enablr-navy hover:bg-enablr-navy hover:text-white transition-colors duration-300"
       >
         Apply
-        <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
       </Button>
     </motion.div>
   );
@@ -146,7 +144,6 @@ const CurrentOpeningsCompact = () => {
             className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
           >
             See All Jobs
-            <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </motion.div>
       </div>

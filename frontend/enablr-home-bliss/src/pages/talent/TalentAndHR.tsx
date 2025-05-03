@@ -44,9 +44,14 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/lot%202/Tier2and3-TalentHR.jpg",
-    title: "Tier-2 & Tier-3 talent awareness",
-    description: "Deep understanding and access to talent in emerging tech hubs."
+    image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
+    title: "Local-Global Market Intelligence",
+    description: "Leverage our deep understanding of both local markets and global business landscapes to make informed decisions."
+  },
+  {
+    image: "/images/New%20images/Infra%20Support-GCC.jpeg",
+    title: "End-to-End Infrastructure Support",
+    description: "Get comprehensive infrastructure solutions from initial setup to ongoing maintenance and optimization."
   },
   {
     image: "/images/lot%202/Untapped-TalentHR.jpg",

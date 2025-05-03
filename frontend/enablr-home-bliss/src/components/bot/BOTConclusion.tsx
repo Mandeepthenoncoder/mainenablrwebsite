@@ -1,10 +1,8 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 const BOTConclusion = () => {
   return (
@@ -49,7 +47,6 @@ const BOTConclusion = () => {
           >
             <Link to="/contact" className="flex items-center gap-2">
               Let's Connect
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
         </motion.div>

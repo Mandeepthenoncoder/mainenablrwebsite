@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { CalendarDays, Clock, ArrowRight } from "lucide-react";
+import { CalendarDays, Clock } from "lucide-react";
 import type { BlogPost } from "@/types/blog";
 import { Link } from "react-router-dom";
 import { typography } from "@/styles/typography";
@@ -64,7 +64,6 @@ const InsightCard = ({ post, index }: InsightCardProps) => {
           
           <div className="mt-4 pt-2 flex items-center text-enablr-navy text-sm font-medium">
             <span>Read More</span>
-            <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </CardContent>
       </Card>

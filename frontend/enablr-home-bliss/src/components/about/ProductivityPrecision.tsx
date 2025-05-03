@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { typography } from "@/styles/typography";
-import { Target, BarChart3, Clock, ArrowRight } from "lucide-react";
+import { Target, BarChart3, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -145,7 +145,6 @@ const ProductivityPrecision = () => {
           >
             <Link to="/contact" className="flex items-center gap-2">
               Talk to our experts today!
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
         </motion.div>

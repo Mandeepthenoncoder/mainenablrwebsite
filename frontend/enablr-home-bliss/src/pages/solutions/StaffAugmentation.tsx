@@ -45,14 +45,14 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/New%20images/Scaling-Staff%20Augmentation.jpeg",
-    title: "On-demand scaling of teams",
-    description: "Scale your teams up or down based on project demands and business needs."
+    image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
+    title: "Local-Global Market Intelligence",
+    description: "Leverage our deep understanding of both local markets and global business landscapes to make informed decisions."
   },
   {
-    image: "/images/New%20images/Availability%20of%20niche%20technical%20expertise-Staff%20Augmentation.jpeg",
-    title: "Availability of niche technical expertise",
-    description: "Access specialized talent with domain expertise when you need it."
+    image: "/images/New%20images/Infra%20Support-GCC.jpeg",
+    title: "End-to-End Infrastructure Support",
+    description: "Get comprehensive infrastructure solutions from initial setup to ongoing maintenance and optimization."
   },
   {
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf",

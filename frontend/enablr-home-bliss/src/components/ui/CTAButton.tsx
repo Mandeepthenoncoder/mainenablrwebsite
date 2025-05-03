@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface CTAButtonProps {
@@ -29,7 +28,7 @@ export const CTAButton = ({
   link,
   variant = 'primary',
   size = 'default',
-  icon = <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />,
+
   className = '',
   onClick,
 }: CTAButtonProps) => {
@@ -54,7 +53,7 @@ export const CTAButton = ({
       >
         <span className="flex items-center gap-2">
           {formattedText}
-          {icon}
+        
         </span>
       </Button>
     );
@@ -69,7 +68,7 @@ export const CTAButton = ({
     >
       <Link to={link} className="flex items-center gap-2">
         {formattedText}
-        {icon}
+       
       </Link>
     </Button>
   );

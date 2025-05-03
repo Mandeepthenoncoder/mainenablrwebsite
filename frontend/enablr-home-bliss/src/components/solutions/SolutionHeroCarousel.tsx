@@ -104,14 +104,7 @@ const SolutionHeroCarousel = ({ slides }: SolutionHeroCarouselProps) => {
           ))}
         </CarouselContent>
         
-        <div className="absolute bottom-8 w-full z-20">
-          <div className="container mx-auto px-6 flex justify-end items-center">
-            <div className="flex gap-4">
-              <CarouselPrevious className="static translate-y-0 bg-white text-purple-900 hover:bg-white" />
-              <CarouselNext className="static translate-y-0 bg-white text-purple-900 hover:bg-white" />
-            </div>
-          </div>
-        </div>
+        
       </Carousel>
     </section>
   );

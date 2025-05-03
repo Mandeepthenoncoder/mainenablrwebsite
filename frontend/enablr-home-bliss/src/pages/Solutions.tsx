@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Globe, Package, Power, Clock, CheckCircle2 } from "lucide-react";
+import { Zap, Globe, Package, Power, Clock, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
@@ -229,7 +229,6 @@ const Solutions = () => {
                       >
                         <Link to={solution.link} className="flex items-center gap-2">
                           Know More
-                          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </Link>
                       </Button>
                     </div>
@@ -312,7 +311,6 @@ const Solutions = () => {
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Contact Us
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
             </motion.div>

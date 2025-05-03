@@ -39,14 +39,14 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/New%20images/Governance-Business%20Operations.jpeg",
-    title: "Simplified governance and reporting",
-    description: "Streamline your operations with our efficient governance and reporting solutions."
+    image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
+    title: "Local-Global Market Intelligence",
+    description: "Leverage our deep understanding of both local markets and global business landscapes to make informed decisions."
   },
   {
-    image: "/images/lot%202/OperationalSupport-BusinessOperations.jpg",
-    title: "Infrastructure set-up with operational excellence",
-    description: "Build robust infrastructure with our expertise in operational excellence."
+    image: "/images/New%20images/Infra%20Support-GCC.jpeg",
+    title: "End-to-End Infrastructure Support",
+    description: "Get comprehensive infrastructure solutions from initial setup to ongoing maintenance and optimization."
   },
   {
     image: "/images/New%20images/Innovation-Business%20Operations.jpeg",

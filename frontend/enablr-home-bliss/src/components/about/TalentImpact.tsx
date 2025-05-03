@@ -144,7 +144,6 @@ const TalentImpact = () => {
           >
             <Link to="/contact" className="flex items-center gap-2">
               Talk to our experts today!
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
         </motion.div>

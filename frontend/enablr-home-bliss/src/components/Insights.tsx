@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import InsightCard from "./blog/InsightCard";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { typography } from "@/styles/typography";
 import type { BlogPost } from "@/types/blog";
@@ -99,7 +98,6 @@ const Insights = () => {
           <Link to="/blog">
             <Button className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300">
               Explore More Insights
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
         </motion.div>
