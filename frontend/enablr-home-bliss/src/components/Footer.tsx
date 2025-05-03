@@ -173,10 +173,10 @@ const Footer = () => {
               Privacy Policy
             </Link>
             <Link
-              to="/cookie-policy"
+              to="/cookies-policy"
               className="text-sm text-gray-600 hover:text-enablr-navy"
             >
-              Cookie Policy
+              Cookies Policy
             </Link>
           </div>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">

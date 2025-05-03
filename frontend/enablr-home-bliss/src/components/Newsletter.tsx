@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -95,11 +96,11 @@ const Newsletter = ({ variant = 'expanded' }: NewsletterProps) => {
             >
               Got it, thanks!
             </button>
-            <div className="mt-4 flex flex-col items-center w-full">
+            <div className="mt-4 flex flex-col items-center w-full ">
               <a href="#" className="text-[#EE6C4D] text-sm font-medium underline mb-2 hover:opacity-80 focus:underline focus:outline-none">Manage Preferences</a>
-              <div className="flex gap-3 mt-2">
-                <a href={`https://twitter.com/intent/tweet?text=I%20just%20subscribed%20to%20the%20Enablr%20newsletter!`} target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
-                  <svg width="24" height="24" fill="currentColor" className="text-[#1DA1F2]" viewBox="0 0 24 24"><path d="M22.46 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082A4.48 4.48 0 0 0 16.11 4c-2.48 0-4.49 2.01-4.49 4.49 0 .352.04.695.116 1.022C7.728 9.37 4.1 7.6 1.67 4.905c-.386.663-.607 1.434-.607 2.26 0 1.56.795 2.936 2.005 3.744a4.48 4.48 0 0 1-2.034-.563v.057c0 2.18 1.55 4.002 3.604 4.418-.377.103-.775.158-1.186.158-.29 0-.57-.028-.845-.08.57 1.78 2.23 3.08 4.2 3.12A8.98 8.98 0 0 1 2 19.54a12.67 12.67 0 0 0 6.86 2.01c8.23 0 12.74-6.82 12.74-12.74 0-.19-.004-.38-.013-.57A9.1 9.1 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.698z"/></svg>
+              <div className="flex gap-3 mt-2 justify-center">
+                <a href={`https://x.com/intent/tweet?text=I%20just%20subscribed%20to%20the%20Enablr%20newsletter!`} target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+                  <svg width="24" height="24" fill="currentColor" className="text-[#000000]" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
                 <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://enablr.in`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
                   <svg width="24" height="24" fill="currentColor" className="text-[#0A66C2]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.29h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>

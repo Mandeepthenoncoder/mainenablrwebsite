@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { useState, useEffect, lazy, Suspense } from "react";
 import PreloadResources from "./components/PreloadResources";
+import CookiesPolicy from './pages/CookiesPolicy';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Eagerly load the Index page for faster initial render
 import Index from "./pages/Index";
@@ -25,13 +27,13 @@ const Engagement = lazy(() => import("./pages/engagement/Engagement"));
 const EngagementModel = lazy(() => import("./pages/EngagementModel"));
 const ComprehensiveManagement = lazy(() => import("./pages/engagement/ComprehensiveManagement"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
+const Leadership = lazy(() => import("./pages/Leadership"));
 const Blog = lazy(() => import("./pages/blog/Blog"));
 const BlogPost = lazy(() => import("./pages/blog/BlogPost"));
 const BlogAdmin = lazy(() => import("./pages/blog/BlogAdmin"));
 const Careers = lazy(() => import("./pages/careers/Careers"));
 const ContactUs = lazy(() => import("./pages/contact/ContactUs"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
-const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy"));
 const CookiePolicy = lazy(() => import("./pages/legal/CookiePolicy"));
 const StaffAugmentation = lazy(() => import("./pages/solutions/StaffAugmentation"));
 
@@ -95,6 +97,7 @@ const App = () => {
                 
                 {/* Main Routes */}
                 <Route path="/about" element={<AboutUs />} />
+                <Route path="/about/leadership" element={<Leadership />} />
                 
                 {/* Blog Routes */}
                 <Route path="/blog" element={<Blog />} />
@@ -106,6 +109,7 @@ const App = () => {
                 <Route path="/thank-you" element={<ThankYou />} />
                 
                 {/* Legal Routes */}
+                <Route path="/cookies-policy" element={<CookiesPolicy />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/cookie-policy" element={<CookiePolicy />} />
                 

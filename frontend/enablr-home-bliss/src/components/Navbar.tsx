@@ -213,16 +213,47 @@ const Navbar = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
+              <NavigationMenuItem className="relative">
                 <Link 
                   to="/about" 
                   className={cn(
                     "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300",
-                    isActive('/about') && "text-[#BF0404]"
+                    location.pathname.includes('/about') && "text-[#BF0404]"
                   )}
                 >
-                  About Us
+                  <NavigationMenuTrigger 
+                    className={cn(
+                      "bg-transparent px-0 font-medium hover:bg-transparent hover:text-[#BF0404] focus:text-[#BF0404]",
+                      location.pathname.includes('/about') && "text-[#BF0404]"
+                    )}
+                  >
+                    About Us
+                  </NavigationMenuTrigger>
                 </Link>
+                <NavigationMenuContent className="absolute left-0 bg-white p-2 rounded-lg shadow-lg min-w-[256px]">
+                  <ul className="w-full p-2">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          to="/about" 
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
+                        >
+                          Overview
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link 
+                          to="/about/leadership" 
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
+                        >
+                          Leadership
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -454,19 +485,62 @@ const Navbar = () => {
                 </div>
               </div>
               
-              {/* Regular menu items */}
-              <Link 
-                to="/about" 
-                className={cn(
-                  "flex items-center text-base font-medium py-3 px-3 border-b border-gray-100",
-                  isActive('/about') 
-                    ? "text-[#BF0404] bg-gradient-to-r from-red-50/60 to-blue-50/60" 
-                    : "text-gray-800 hover:text-[#BF0404] hover:bg-gradient-to-r hover:from-red-50/30 hover:to-blue-50/30"
-                )}
-              >
-                About Us
-              </Link>
+              {/* About Us Menu */}
+              <div className="py-3 border-b border-gray-100">
+                <button 
+                  onClick={() => toggleSubMenu('about')}
+                  className={cn(
+                    "w-full flex items-center justify-between text-base font-medium py-2 px-3 rounded-md",
+                    (isActive('/about') || location.pathname.includes('/about')) 
+                      ? "text-[#BF0404] bg-gradient-to-r from-red-50 to-blue-50/80" 
+                      : "text-gray-800 hover:bg-gray-50"
+                  )}
+                >
+                  <span>About Us</span>
+                  {expandedMenus['about'] ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                <div className={cn(
+                  subMenuAnimation,
+                  expandedMenus['about'] 
+                    ? "max-h-[500px] opacity-100 mt-2" 
+                    : "max-h-0 opacity-0 overflow-hidden"
+                )}>
+                  <ul className="pl-3 space-y-1 rounded-md bg-gradient-to-br from-red-50/80 to-blue-50/80 py-2">
+                    <li>
+                      <Link 
+                        to="/about" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/about') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Overview
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/about/leadership" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/about/leadership') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Leadership
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               
+              {/* Regular menu items */}
               <Link 
                 to="/blog" 
                 className={cn(
