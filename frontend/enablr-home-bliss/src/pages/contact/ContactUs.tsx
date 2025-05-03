@@ -88,16 +88,16 @@ const ContactUs = () => {
             >
               <TextStyled 
                 variant="h2" 
-                className="mb-4 tracking-tight font-inter"
+                className="mb-5 text-relative-center tracking-normal font-sans"
                 color="text-enablr-navy"
                 casing="sentenceCase"
               >
-                Got a question, an idea, <ResponsiveBreak breakOn="lg" />
-                or just curious about how we can partner together?
+                Got questions, ideas  or just  <ResponsiveBreak breakOn="lg" />
+              curious about partnering together?
               </TextStyled>
             </motion.div>
           </motion.div>
-          
+          <br />
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Left side - Contact Form */}
             <motion.div 

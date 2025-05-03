@@ -32,7 +32,7 @@ const MSHero = () => {
           <Button 
             asChild
             size="lg" 
-            className="bg-white text-enablr-navy hover:bg-white/90"
+            className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
           >
             <Link to="/contact">Let's Connect</Link>
           </Button>

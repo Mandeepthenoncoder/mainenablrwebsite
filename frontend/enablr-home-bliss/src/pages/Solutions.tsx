@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
 import BlogHighlights from "@/components/BlogHighlights";
 import Newsletter from "@/components/Newsletter";
+import { cn } from "@/lib/utils";
 
 const Solutions = () => {
   // Solution cards data
@@ -184,8 +185,8 @@ const Solutions = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
-              <h2 className={`${typography.h2} text-enablr-navy`}>
-                Solutions for your GCC journey
+            <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Solutions</span> for your GCC journey
               </h2>
               <div className="w-20 h-1 bg-enablr-lime mx-auto mt-4"></div>
             </div>
@@ -244,9 +245,10 @@ const Solutions = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className={`${typography.h2} text-enablr-navy mb-4`}>
-                  Why businesses choose Enablr?
-                </h2>
+              <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Why</span> businesses choose Enablr?
+              </h2>
+                
                 <div className="w-20 h-1 bg-enablr-lime mx-auto"></div>
               </div>
               

@@ -39,15 +39,10 @@ const SolutionWhyChooseUs = ({ reasons }: SolutionWhyChooseUsProps) => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <TextStyled 
-            variant="h2" 
-            className="mb-6"
-            color="text-enablr-navy"
-            casing="titleCase"
-          >
-            Why Choose Us?
-          </TextStyled>
-          
+          <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Why</span> Choose Us?
+              </h2>
+          <br />
           <TextStyled 
             variant="bodyLg" 
             color="text-gray-600"

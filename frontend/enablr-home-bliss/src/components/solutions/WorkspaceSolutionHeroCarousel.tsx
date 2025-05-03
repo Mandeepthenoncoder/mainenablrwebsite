@@ -76,7 +76,7 @@ const WorkspaceSolutionHeroCarousel = ({ slides }: WorkspaceSolutionHeroCarousel
                     </p>
                     <Button 
                       size="lg"
-                      className="bg-white text-purple-900 hover:bg-white/90 shadow-md"
+                      className= "bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
                       asChild
                     >
                       <a href={slide.ctaLink}>{slide.ctaText}</a>

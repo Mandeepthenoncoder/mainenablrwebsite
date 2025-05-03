@@ -18,28 +18,28 @@ interface EngagementModel {
 const engagementModels: EngagementModel[] = [
   {
     id: "comprehensive",
-    title: "Comprehensive\nmanagement",
+    title: "Comprehensive\nManagement",
     description:
       "From launch to daily operations, we handle everything; compliance, infrastructure, staffing, and beyond, so you can stay focused on growing your business priorities.",
     image: "/comprehensive managemenrt.webp",
   },
   {
     id: "modular",
-    title: "Modular services",
+    title: "Modular Services",
     description:
       "Our modular model lets you tap into specific services, such as hiring, payroll, or workspace management, exactly when and where you need them.",
     image: "/modular services.webp",
   },
   {
     id: "bot",
-    title: "Build-operate-transfer\n(B-O-T)", // Sentence case applied to text, acronym kept
+    title: "Build-Operate-Transfer\n(B-O-T)", // Sentence case applied to text, acronym kept
     description:
       "We set up and operate your GCC, from day one. When you're ready, we ensure a smooth handover so you take full control with zero disruption.", // Sentence case applied, "GCC" kept capitalized
     image: "/BOTengage with us section.png",
   },
   {
     id: "dedicated",
-    title: "Dedicated team\nmodels",
+    title: "Dedicated Team\nModels",
     description:
       "Build a dedicated team that operates as an extension of you, fully aligned with your culture, mirroring your processes and priorities.",
     image: "/Dedicated Team Models, Engage With Us, home.webp",
@@ -48,7 +48,7 @@ const engagementModels: EngagementModel[] = [
 const EngagementModels = () => {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("bot");
+  const [activeTab, setActiveTab] = useState("comprehensive");
   const [showLeftGradient, setShowLeftGradient] = useState(false);
   const [showRightGradient, setShowRightGradient] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -107,14 +107,42 @@ const EngagementModels = () => {
 
   return (
     <Tabs
-      defaultValue="bot"
+      defaultValue="comprehensive"
       className="w-full relative"
       value={activeTab}
       onValueChange={handleTabChange}
     >
       <div className="sticky top-0 z-10 bg-white pt-2 pb-0">
         <div className="relative w-full mb-0 overflow-visible">
-          {showLeftGradient && (
+          {/* Mobile navigation arrows */}
+          {isMobile && (
+            <>
+              <button
+                aria-label="Previous Tab"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full shadow p-1 flex items-center justify-center border border-gray-200"
+                style={{ display: showLeftGradient ? 'flex' : 'none' }}
+                onClick={() => {
+                  const idx = engagementModels.findIndex(m => m.id === activeTab);
+                  if (idx > 0) setActiveTab(engagementModels[idx - 1].id);
+                }}
+              >
+                <ChevronLeft className="h-6 w-6 text-enablr-navy" />
+              </button>
+              <button
+                aria-label="Next Tab"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full shadow p-1 flex items-center justify-center border border-gray-200"
+                style={{ display: showRightGradient ? 'flex' : 'none' }}
+                onClick={() => {
+                  const idx = engagementModels.findIndex(m => m.id === activeTab);
+                  if (idx < engagementModels.length - 1) setActiveTab(engagementModels[idx + 1].id);
+                }}
+              >
+                <ChevronRight className="h-6 w-6 text-enablr-navy" />
+              </button>
+            </>
+          )}
+          {/* Existing gradients/arrows for desktop/tablet */}
+          {!isMobile && showLeftGradient && (
             <div className="absolute left-0 top-0 bottom-0 h-full flex items-center pointer-events-none bg-gradient-to-r from-white via-white to-transparent w-12 z-10">
               <ChevronLeft className="ml-1 h-5 w-5 text-gray-400 animate-pulse" />
             </div>
@@ -128,7 +156,7 @@ const EngagementModels = () => {
               touchAction: "pan-x",
             }}
           >
-            <TabsList className="flex flex-nowrap justify-start bg-transparent mb-0 border-b w-full min-w-max">
+            <TabsList className="flex flex-nowrap justify-start lg:justify-center bg-transparent mb-0 border-b w-full min-w-max">
               {engagementModels.map((model) => (
                 <TabsTrigger
                   key={model.id}
@@ -155,7 +183,7 @@ const EngagementModels = () => {
             </TabsList>
           </div>
 
-          {showRightGradient && (
+          {!isMobile && showRightGradient && (
             <div className="absolute right-0 top-0 bottom-0 h-full flex items-center pointer-events-none bg-gradient-to-l from-white via-white to-transparent w-12 z-10">
               <ChevronRight className="ml-auto mr-1 h-5 w-5 text-gray-400 animate-pulse" />
             </div>
@@ -179,8 +207,14 @@ const EngagementModels = () => {
                   ?.getBoundingClientRect() || {
                   left: 0,
                 };
+                // Mobile-specific adjustment for 2nd and 3rd tab
+                const isMobile = window.innerWidth <= 768;
+                let offset = 0;
+                if (isMobile && (activeTab === "modular" || activeTab === "bot")) {
+                  offset = -10; // Move 10px to the left for 2nd and 3rd tab on mobile
+                }
                 return (
-                  tabRect.left - containerRect.left + tabRect.width / 2 - 12
+                  tabRect.left - containerRect.left + tabRect.width / 2 - 12 + offset
                 );
               })(),
             }}

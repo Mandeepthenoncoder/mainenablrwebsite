@@ -206,9 +206,10 @@ const EngagementModel = () => {
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
-              <h2 className={`${typography.h2} text-enablr-navy`}>
-                Our engagement models
-              </h2>
+              
+<h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Our</span> Engagement Models
+      </h2>
               <div className="w-20 h-1 bg-enablr-lime mx-auto mt-4"></div>
             </div>
 
@@ -276,8 +277,12 @@ const EngagementModel = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
+                
+<h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Benefits </span> of our engagement models
+              </h2>
                 <h2 className={`${typography.h2} text-enablr-navy mb-4`}>
-                  Benefits of our engagement models
+                  
                 </h2>
                 <div className="w-20 h-1 bg-enablr-lime mx-auto"></div>
               </div>
