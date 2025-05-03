@@ -76,9 +76,12 @@ const TalentImpact = () => {
               className="mb-6"
             >
               <h2 className={`${typography.h2} text-enablr-navy tracking-tight mb-5`}>
-                Maximize your talent impact
+                 
               </h2>
-              
+              <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Maximize</span> your talent impact
+      </h2>
+
               <div className="h-px w-16 bg-gradient-to-r from-red-500 to-blue-600 my-6"></div>
             </motion.div>
           </div>

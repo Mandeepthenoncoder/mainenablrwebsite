@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { typography } from "@/styles/typography";
-import { 
+import SectionTitle from "@/components/ui/SectionTitle";
+import {
   ShieldCheck,
   UserCog,
   FileCheck,
   GraduationCap,
   Building,
   FileSpreadsheet,
-  Settings,
-  ChevronRight
+  Settings
+  // ChevronRight // Removed import as it's no longer used
 } from "lucide-react";
 
 const benefits = [
@@ -59,28 +60,26 @@ const targets = [
 
 const BOTBenefits = () => {
   const [activeTab, setActiveTab] = useState<'benefits' | 'ideal'>('benefits');
-  
+
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12 text-center">
-          <h2 className={`${typography.h2} text-enablr-navy mb-6`}>
-            Why Our Build-Operate-Transfer Model Excels
-          </h2>
+        <SectionTitle gradientWord="Why">Why Our Build-Operate-Transfer Model Excels</SectionTitle>
           <p className="max-w-2xl text-gray-600">
             Our systematic approach ensures a controlled transition<br/>
             from partner-managed to self-managed GCC operations
           </p>
         </div>
-        
+
         {/* Tab Navigation - More Rectangular */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex bg-gray-200 p-1 rounded-sm">
             <button
               onClick={() => setActiveTab('benefits')}
               className={`px-8 py-2.5 rounded-sm text-sm font-medium transition-all duration-300 ${
-                activeTab === 'benefits' 
-                  ? 'bg-enablr-navy text-white shadow-sm' 
+                activeTab === 'benefits'
+                  ? 'bg-enablr-navy text-white shadow-sm'
                   : 'text-gray-700 hover:text-enablr-navy'
               }`}
             >
@@ -89,8 +88,8 @@ const BOTBenefits = () => {
             <button
               onClick={() => setActiveTab('ideal')}
               className={`px-8 py-2.5 rounded-sm text-sm font-medium transition-all duration-300 ${
-                activeTab === 'ideal' 
-                  ? 'bg-enablr-navy text-white shadow-sm' 
+                activeTab === 'ideal'
+                  ? 'bg-enablr-navy text-white shadow-sm'
                   : 'text-gray-700 hover:text-enablr-navy'
               }`}
             >
@@ -98,7 +97,7 @@ const BOTBenefits = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Content Area */}
         <AnimatePresence mode="wait">
           {activeTab === 'benefits' && (
@@ -135,7 +134,7 @@ const BOTBenefits = () => {
               </div>
             </motion.div>
           )}
-          
+
           {activeTab === 'ideal' && (
             <motion.div
               key="ideal"
@@ -155,14 +154,14 @@ const BOTBenefits = () => {
                     className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all duration-300"
                   >
                     <div className="absolute right-0 top-0 h-full w-1 bg-enablr-navy/20 group-hover:bg-enablr-navy transition-all duration-300"></div>
-                    
+
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="flex-shrink-0">
                         <div className="w-16 h-16 bg-enablr-navy/10 rounded-xl flex items-center justify-center">
                           <target.icon className="w-8 h-8 text-enablr-navy" />
                         </div>
                       </div>
-                      
+
                       <div className="flex-1">
                         <h3 className="text-lg font-semibold text-enablr-navy mb-2 group-hover:text-enablr-navy/80 transition-all duration-300">
                           {target.title}
@@ -171,12 +170,15 @@ const BOTBenefits = () => {
                           {target.description}
                         </p>
                       </div>
-                      
+
+                      {/* This entire div block rendering the ChevronRight icon has been removed */}
+                      {/*
                       <div className="flex-shrink-0 self-center hidden md:block opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <div className="w-10 h-10 rounded-full border border-enablr-navy/20 flex items-center justify-center">
                           <ChevronRight className="w-5 h-5 text-enablr-navy" />
                         </div>
                       </div>
+                      */}
                     </div>
                   </motion.div>
                 ))}

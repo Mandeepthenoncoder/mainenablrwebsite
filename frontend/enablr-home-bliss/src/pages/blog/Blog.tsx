@@ -210,7 +210,10 @@ const Blog = () => {
         {(featuredPosts.length > 0 && showFeaturedSection) && (
           <section className="py-10 container mx-auto px-4">
             <div className="mb-8">
-              <h2 className={`${typography.h2} text-enablr-navy`}>Featured Insights</h2>
+             
+              <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Featured</span> Insights      </h2>
+
               <div className="w-20 h-1 bg-enablr-lime mt-2"></div>
             </div>
             
@@ -249,12 +252,30 @@ const Blog = () => {
         )}
         
         {/* Latest Articles */}
-        <section className={`py-10 ${!showFeaturedSection ? 'pt-10' : 'pt-4'} bg-gray-50`}>
+        <section className={`py-12 ${!showFeaturedSection ? 'pt-10' : 'pt-4'} bg-gray-50`}>
           <div className="container mx-auto px-4">
             <div className="mb-8">
-              <h2 className={`${typography.h2} text-enablr-navy`}>
-                {activeCategory === "all" ? "Latest Articles" : `${activeCategory} Articles`}
-              </h2>
+            <h2 className={typography.h2}> {/* Note: text-enablr-navy is removed from here */}
+        {activeCategory === "all" ? (
+          // If category is 'all', show "Latest" in gradient
+          <>
+            <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
+              Latest
+            </span>
+            {' '} {/* Space */}
+            Articles {/* Default text color */}
+          </>
+        ) : (
+          // Otherwise, show the category name in gradient
+          <>
+            <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
+              {activeCategory}
+            </span>
+            {' '} {/* Space */}
+            Articles {/* Default text color */}
+          </>
+        )}
+      </h2>
               <div className="w-20 h-1 bg-enablr-lime mt-2"></div>
             </div>
             

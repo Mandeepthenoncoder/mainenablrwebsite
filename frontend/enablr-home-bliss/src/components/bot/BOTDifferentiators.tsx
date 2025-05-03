@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Rocket, CheckSquare, ArrowLeftRight, Building2 } from "lucide-react";
 import { typography } from "@/styles/typography";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 const differentiators = [
   {
@@ -30,9 +31,7 @@ const BOTDifferentiators = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className={`${typography.h2} text-enablr-navy text-center mb-12`}>
-          What Enablr Brings
-        </h2>
+        <SectionTitle gradientWord="What">What Enablr Brings</SectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {differentiators.map((diff, index) => (
             <motion.div

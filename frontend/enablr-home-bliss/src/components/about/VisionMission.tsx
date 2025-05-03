@@ -24,9 +24,10 @@ const VisionMission = () => {
               transition={{ duration: 0.5 }}
               className="mb-3"
       >
-              <h2 className={`${typography.h2} text-enablr-navy tracking-tight`}>
-          Our Vision and Mission
-        </h2>
+        <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Our</span>  Vision and Mission
+      </h2>
+
             </motion.div>
             
             <motion.div

@@ -76,8 +76,12 @@ const ProductivityPrecision = () => {
               className="mb-6"
             >
               <h2 className={`${typography.h2} text-enablr-navy tracking-tight mb-5`}>
-                Enhance productivity with precision
+                
               </h2>
+              <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Enhance </span> productivity with precision journey
+      </h2>
+
               
               <div className="h-px w-16 bg-gradient-to-r from-blue-600 to-red-500 my-6"></div>
             </motion.div>

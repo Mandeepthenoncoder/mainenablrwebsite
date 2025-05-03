@@ -41,7 +41,8 @@ const GlobalTeam = () => {
           <Link to="/contact">
             <Button 
               size="lg"
-              className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-enablr-navy hover:border-white border-white font-medium transform hover:scale-105 transition-all duration-300"
+              className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
+
             >
               Get Started
             </Button>

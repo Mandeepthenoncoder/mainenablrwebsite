@@ -51,7 +51,7 @@ const LifeAtEnablr = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className={cn(typography.h2, "mb-6 text-enablr-navy tracking-tight")}
+            className={cn(typography.h2, "mb-6 bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent tracking-tight")}
           >
             What Sets Your Journey at Enablr Apart
           </motion.h2>

@@ -11,6 +11,7 @@ import {
   Scale,
   ChevronRight
 } from "lucide-react";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 const benefits = [
   {
@@ -64,9 +65,7 @@ const DTBenefits = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12 text-center">
-          <h2 className={`${typography.h2} text-enablr-navy mb-6`}>
-            Why Our Dedicated Team Model Excels
-          </h2>
+          <SectionTitle gradientWord="Why">Why Our Dedicated Team Model Excels</SectionTitle>
           <p className="max-w-2xl text-gray-600">
             Our managed team approach provides you with tailored talent<br/>
             and expertise without the operational complexity

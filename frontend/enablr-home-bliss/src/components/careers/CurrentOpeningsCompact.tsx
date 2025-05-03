@@ -93,7 +93,7 @@ const CurrentOpeningsCompact = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className={cn(typography.h2, "text-enablr-navy mb-4")}>
+          <h2 className={cn(typography.h2, "mb-4 bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent")}>
             Contribute to a Global Impact
           </h2>
           <p className={cn(typography.body.lg, "text-gray-600 mb-8")}>

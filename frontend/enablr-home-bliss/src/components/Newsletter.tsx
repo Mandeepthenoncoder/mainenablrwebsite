@@ -81,7 +81,7 @@ const Newsletter = ({ variant = 'expanded' }: NewsletterProps) => {
                 />
                 <Button 
                   type="submit"
-                  className="bg-white text-enablr-navy hover:bg-enablr-lime hover:text-enablr-navy shadow-sm hover:shadow-md transition-all duration-300 group"
+                  className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
                 >
                   Subscribe
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

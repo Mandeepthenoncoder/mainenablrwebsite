@@ -86,15 +86,15 @@ const ContactUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <TextStyled 
-                variant="h2" 
-                className="mb-5 text-relative-center tracking-normal font-sans"
-                color="text-enablr-navy"
-                casing="sentenceCase"
-              >
-                Got questions, ideas  or just  <ResponsiveBreak breakOn="lg" />
-              curious about partnering together?
-              </TextStyled>
+              <TextStyled
+  variant="h2"
+  className="mb-5 text-relative-center tracking-normal font-sans bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent"
+  // color="text-enablr-navy" // Removed this prop
+  casing="sentenceCase"
+>
+  Got questions, ideas   or just   <ResponsiveBreak breakOn="lg" />
+  curious about partnering together?
+</TextStyled>
             </motion.div>
           </motion.div>
           <br />
