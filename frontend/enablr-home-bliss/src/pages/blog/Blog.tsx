@@ -15,49 +15,101 @@ import { Link } from "react-router-dom";
 
 // Static blog data
 const staticPosts: BlogPost[] = [
+  // GCC As a Service
   {
     id: "1",
+    title: "From support functions to strategic hubs: The evolution of GCCs",
+    slug: "support-functions-to-strategic-hubs",
+    excerpt: "Witness the transformation journey of GCCs from basic support centers to crucial strategic business hubs.",
+    content: "<p>Global Capability Centers have undergone a significant transformation over the past decade...</p>",
+    cover_image: "/Blog Images/Blog-0.jpg?v=1",
+    author: "Enablr Team",
+    category: "GCCs as-a-service",
+    published_at: "2024-06-15T00:00:00Z",
+    read_time: 7
+  },
+  {
+    id: "2",
     title: "The 'Scalability' advantage: Why GCCs matter",
     slug: "scalability-advantage-why-gccs-matter",
     excerpt: "Building your GCC is like drawing a blueprint for your house, ensuring every element from the ground up embeds strength and scalability to stay future proof.",
-    content: "",
-    cover_image: "/Blog Images/From support functions to strategic hubs The evolution of GCCs.jpg?v=1",
+    content: "<p>In today's rapidly evolving business landscape, Global Capability Centers (GCCs) have emerged as strategic hubs that drive innovation, efficiency, and scalability...</p>",
+    cover_image: "/Blog Images/Blog-1.jpg?v=1",
     author: "Mandeep Singh",
     category: "GCCs as-a-service",
     published_at: "2024-06-01T00:00:00Z",
     read_time: 5
   },
+  // Talent and HR
   {
-    id: "2",
+    id: "3",
+    title: "Building the workforce of tomorrow: The role of GCCs in tech talent development",
+    slug: "workforce-tomorrow-gccs-tech-talent-development",
+    excerpt: "How Global Capability Centers are becoming crucial talent incubators for developing future-ready technical skills.",
+    content: "<p>Global Capability Centers are playing an increasingly important role in developing technical talent...</p>",
+    cover_image: "/Blog Images/Blog-3.jpg?v=1",
+    author: "Enablr Team",
+    category: "Talent & HR Solutions",
+    published_at: "2024-05-25T00:00:00Z",
+    read_time: 6
+  },
+  {
+    id: "4",
     title: "How to build a high-performance GCC: Best practices for talent, technology, and strategy",
     slug: "high-performance-gcc-best-practices",
     excerpt: "A comprehensive guide to establishing and optimizing Global Capability Centers for maximum business impact.",
-    content: "",
-    cover_image: "/Blog Images/How to build a high-performance GCC Best practices for talent, technology, and strategy.jpg?v=1",
+    content: "<p>Building a high-performance Global Capability Center requires careful attention to three key elements...</p>",
+    cover_image: "/Blog Images/Blog-2.jpg?v=1",
     author: "Rahul Sharma",
-    category: "Technology Enablement Solutions",
+    category: "Talent & HR Solutions",
     published_at: "2024-05-20T00:00:00Z",
     read_time: 8
   },
+  // Technology Enablement
   {
-    id: "3",
+    id: "5",
     title: "AI-powered transformation: How GCCs are driving business innovation",
     slug: "ai-powered-transformation-gcc-innovation",
     excerpt: "Exploring how Global Capability Centers are leveraging artificial intelligence to reimagine business processes and create competitive advantages.",
-    content: "",
-    cover_image: "/Blog Images/AI-powered transformation How GCCs are driving business innovation.jpg?v=1",
+    content: "<p>Artificial Intelligence is revolutionizing how Global Capability Centers operate and deliver value...</p>",
+    cover_image: "/Blog Images/Blog-5.jpg?v=1",
     author: "Priya Patel",
     category: "Technology Enablement Solutions",
     published_at: "2024-05-10T00:00:00Z",
     read_time: 6
   },
   {
-    id: "4",
+    id: "6",
+    title: "GCCs are redefining digital transformation. Know more.",
+    slug: "gccs-redefining-digital-transformation",
+    excerpt: "Explore how GCCs are at the forefront of digital transformation initiatives for global enterprises.",
+    content: "<p>Global Capability Centers are increasingly becoming the nerve centers for digital transformation initiatives...</p>",
+    cover_image: "/Blog Images/Blog-6.jpg?v=1",
+    author: "Enablr Team",
+    category: "Technology Enablement Solutions",
+    published_at: "2024-05-05T00:00:00Z",
+    read_time: 5
+  },
+  // Workspace Solutions
+  {
+    id: "7",
+    title: "How GCCs can become a 'powerhouse' of innovation with smarter workspace solutions",
+    slug: "gcc-powerhouse-innovation",
+    excerpt: "Unleashing the innovation potential of Global Capability Centers through the right strategies and enablers.",
+    content: "<p>Global Capability Centers have the potential to be powerful engines of innovation...</p>",
+    cover_image: "/Blog Images/Blog-7.jpg?v=1",
+    author: "Sneha Rao",
+    category: "Workspace Solutions",
+    published_at: "2024-04-01T00:00:00Z",
+    read_time: 5
+  },
+  {
+    id: "8",
     title: "Optimizing workspace design in GCCs: Balancing innovation, collaboration, and well-being",
     slug: "optimizing-workspace-design-gccs",
     excerpt: "How thoughtful workspace design can enhance productivity, foster creativity, and improve employee satisfaction in Global Capability Centers.",
-    content: "",
-    cover_image: "/images/blog/workspace.jpg?v=1",
+    content: "<p>Workspace design plays a critical role in the success of Global Capability Centers...</p>",
+    cover_image: "/Blog Images/Blog-4.jpg?v=1",
     author: "Anil Kumar",
     category: "Workspace Solutions",
     published_at: "2024-04-30T00:00:00Z",
@@ -65,7 +117,7 @@ const staticPosts: BlogPost[] = [
   }
 ];
 
-const staticCategories = ["all", "GCCs as-a-service", "Technology Enablement Solutions", "Workspace Solutions"];
+const staticCategories = ["all", "GCCs as-a-service", "Technology Enablement Solutions", "Workspace Solutions","Talent & HR Solutions"];
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -210,30 +262,55 @@ const Blog = () => {
         {(featuredPosts.length > 0 && showFeaturedSection) && (
           <section className="py-10 container mx-auto px-4">
             <div className="mb-8">
-             
               <h2 className={typography.h2}>
-        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Featured</span> Insights      </h2>
-
+                <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Featured</span> Insights
+              </h2>
               <div className="w-20 h-1 bg-enablr-lime mt-2"></div>
             </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Main featured post */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* HERO FEATURED: Full-width image with text overlay */}
               {featuredPosts[0] && (
                 <motion.div 
-                  className="lg:col-span-8"
+                  className="col-span-1 lg:col-span-2 relative min-h-[400px] h-full"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <Link to={`/blog/${featuredPosts[0].slug}`} className="block h-full">
-                    <BlogPostCard post={featuredPosts[0]} featured={true} />
+                  <Link to={`/blog/${featuredPosts[0].slug}`} className="block h-full group">
+                    <div className="relative w-full h-full min-h-[400px] rounded-xl overflow-hidden shadow-lg">
+                      <img 
+                        src={featuredPosts[0].cover_image} 
+                        alt={featuredPosts[0].title} 
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {/* Category at top-left */}
+                      <span className="inline-block px-3 py-1 text-xs font-medium bg-enablr-navy bg-opacity-90 text-white rounded-full absolute top-4 left-4 z-20">
+                        {featuredPosts[0].category}
+                      </span>
+                      {/* Solid black overlay for text readability */}
+                      <div className="absolute bottom-0 left-0 w-full h-[30%] bg-black/60 z-10"></div>
+                      {/* Text overlay in bottom 40% */}
+                      <div className="absolute bottom-0 left-0 w-full p-8 z-20 text-white flex flex-col justify-end" style={{height: '40%', textShadow: '0 2px 8px rgba(0,0,0,0.8)'}}>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-3 line-clamp-2">{featuredPosts[0].title}</h3>
+                        
+                        <div className="flex items-center gap-4 text-sm text-gray-200">
+                          <span className="flex items-center gap-1.5">
+                            <Calendar className="w-4 h-4" />
+                            {new Date(featuredPosts[0].published_at).toLocaleDateString('en-US', { day: '2-digit', month: 'long', year: 'numeric' })}
+                          </span>
+                          <span className="flex items-center gap-1.5">
+                            <Clock className="w-4 h-4" />
+                            {featuredPosts[0].read_time} min read
+                          </span>
+                        </div>
+                        <span className="inline-block mt-4 text-enablr-lime font-semibold">Read Article</span>
+                      </div>
+                    </div>
                   </Link>
                 </motion.div>
               )}
-              
-              {/* Secondary featured posts */}
-              <div className="lg:col-span-4 grid grid-cols-1 gap-6">
+              {/* Two 50% width posts stacked vertically on the right */}
+              <div className="col-span-1 flex flex-col gap-8">
                 {featuredPosts.slice(1, 3).map((post, index) => (
                   <motion.div
                     key={post.id}
@@ -241,8 +318,36 @@ const Blog = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.1 * (index + 1) }}
                   >
-                    <Link to={`/blog/${post.slug}`} className="block h-full">
-                      <BlogPostCard post={post} />
+                    <Link to={`/blog/${post.slug}`} className="block h-full group">
+                      <div className="relative w-full h-[336px] rounded-xl overflow-hidden shadow-md">
+                        <img 
+                          src={post.cover_image} 
+                          alt={post.title} 
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        />
+                        {/* Category at top-left */}
+                        <span className="inline-block px-3 py-1 text-xs font-medium bg-enablr-navy bg-opacity-90 text-white rounded-full absolute top-4 left-4 z-20">
+                          {post.category}
+                        </span>
+                        {/* Solid black overlay for text readability */}
+                        <div className="absolute bottom-0 left-0 w-full h-[40%] bg-black/60 z-10"></div>
+                        {/* Text overlay in bottom 40% */}
+                        <div className="absolute bottom-0 left-0 w-full p-6 z-20 text-white flex flex-col justify-end" style={{height: '40%', textShadow: '0 2px 8px rgba(0,0,0,0.8)'}}>
+                          <h4 className="text-lg font-bold mb-2 line-clamp-2">{post.title}</h4>
+                          
+                          <div className="flex items-center gap-3 text-xs text-gray-200">
+                            <span className="flex items-center gap-1.5">
+                              <Calendar className="w-3.5 h-3.5" />
+                              {new Date(post.published_at).toLocaleDateString('en-US', { day: '2-digit', month: 'long', year: 'numeric' })}
+                            </span>
+                            <span className="flex items-center gap-1.5">
+                              <Clock className="w-3.5 h-3.5" />
+                              {post.read_time} min read
+                            </span>
+                          </div>
+                          <span className="inline-block mt-2 text-enablr-lime font-semibold">Read Article</span>
+                        </div>
+                      </div>
                     </Link>
                   </motion.div>
                 ))}

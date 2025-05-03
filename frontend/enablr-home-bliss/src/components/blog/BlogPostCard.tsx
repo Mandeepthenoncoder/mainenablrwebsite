@@ -57,19 +57,16 @@ const BlogPostCard = ({ post, featured = false }: BlogPostCardProps) => {
           </div>
           
         <CardContent className={`p-6 ${featured ? 'pb-3' : 'pb-4'}`}>
-          <Link to={`/blog/${post.slug}`} className="group">
-            <h3 className={`${featured ? 'text-xl md:text-2xl' : 'text-lg'} font-semibold mb-3 group-hover:text-enablr-navy transition-colors line-clamp-2`}>
-              {post.title}
-            </h3>
-          </Link>
-          
+          <h3 className={`${featured ? 'text-xl md:text-2xl' : 'text-lg'} font-semibold mb-3 group-hover:text-enablr-navy transition-colors line-clamp-2`}>
+            {post.title}
+          </h3>
           {(featured || post.excerpt) && (
             <p className={`text-gray-600 mb-4 line-clamp-2 ${featured ? 'text-base' : 'text-sm'}`}>
               {post.excerpt}
             </p>
-            )}
-          </CardContent>
-          
+          )}
+        </CardContent>
+        
         <CardFooter className={`px-6 pb-6 pt-0 flex ${featured ? 'justify-between' : 'flex-col gap-3'}`}>
           <div className={`flex items-center gap-2 text-sm text-gray-500 ${!featured && 'justify-between w-full'}`}>
             <div className="flex items-center gap-1.5">
@@ -81,11 +78,10 @@ const BlogPostCard = ({ post, featured = false }: BlogPostCardProps) => {
               <span>{post.read_time} min read</span>
             </div>
           </div>
-          
-          <Link to={`/blog/${post.slug}`} className="flex items-center gap-1 text-enablr-navy font-medium text-sm group mt-3">
-            <span>Read Article</span>
-          </Link>
-          </CardFooter>
+          <span className="flex items-center gap-1 text-enablr-navy font-medium text-sm group mt-3">
+            Read Article
+          </span>
+        </CardFooter>
         </Card>
     </motion.div>
   );
