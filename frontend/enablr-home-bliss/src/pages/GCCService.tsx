@@ -1,23 +1,21 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import SolutionHeroCarousel from "@/components/solutions/SolutionHeroCarousel";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
+import GCCHeroSection from "@/components/solutions/GCCHeroSection";
 import PageCTA from "@/components/PageCTA";
 import { Building2, Users, Cpu, Shield, Briefcase, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
-const heroSlides = [
-  {
-    title: "GCC as a Service",
-    description: "End-to-end solution to establish your fully equipped global capability center.",
-    image: "/images/lot%202/MainPicture-GCC.jpg",
-    ctaText: "Get Started",
-    ctaLink: "/contact"
-  }
-];
+const heroSlide = {
+  title: "GCC as a Service",
+  description: "End-to-end solution to establish your fully equipped global capability center.",
+  image: "/images/lot%202/MainPicture-GCC.jpg",
+  ctaText: "Get Started",
+  ctaLink: "/contact"
+};
 
 const keyOfferings = [
   {
@@ -109,7 +107,7 @@ const GCCService = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <SolutionHeroCarousel slides={heroSlides} />
+          <GCCHeroSection slide={heroSlide} />
         </motion.div>
         
         <motion.div 
