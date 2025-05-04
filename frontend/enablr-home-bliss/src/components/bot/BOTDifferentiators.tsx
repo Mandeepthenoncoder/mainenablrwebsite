@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Rocket, CheckSquare, ArrowLeftRight, Building2 } from "lucide-react";
+import { Zap, CheckSquare, ArrowLeftRight, Building2 } from "lucide-react";
 import { typography } from "@/styles/typography";
 import SectionTitle from "@/components/ui/SectionTitle";
 
 const differentiators = [
   {
-    icon: Rocket,
+    icon: Zap,
     title: "Faster with no compromise",
     description: "We get your GCC up and running quickly, without compromising on quality. You start strong with a setup that's built for momentum, not just motion."
   },
@@ -43,10 +43,6 @@ const BOTDifferentiators = () => {
               className="group border-[1.5px] border-enablr-navy rounded-xl p-6 transition-all duration-400 ease-in-out hover:bg-enablr-navy h-full flex flex-col"
             >
               <div className="flex flex-col h-full">
-                <diff.icon 
-                  className="w-8 h-8 text-enablr-navy group-hover:text-white transition-all duration-400 ease-in-out mb-4" 
-                  strokeWidth={2}
-                />
                 <h3 className={`${typography.h3} text-enablr-navy group-hover:text-white mb-3 transition-all duration-400 ease-in-out`}>
                   {diff.title}
                 </h3>

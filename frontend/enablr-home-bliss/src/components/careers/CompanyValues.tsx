@@ -4,7 +4,7 @@ import { typography } from "@/styles/typography";
 import { cn } from "@/lib/utils";
 import { 
   ShieldCheck, 
-  Rocket, 
+  Star, 
   Users, 
   LightbulbIcon, 
   Gem,
@@ -30,7 +30,6 @@ const ValueCard = ({ icon, title, description, index }: ValueCardProps) => {
       <div className="absolute top-0 left-0 w-1 h-full bg-enablr-navy transform origin-left transition-all duration-300 group-hover:bg-gradient-to-b group-hover:from-blue-600 group-hover:to-red-500"></div>
       
       <div className="pl-8 pr-4 py-2">
-        <div className="mb-4 text-enablr-navy">{icon}</div>
         <h3 className={cn(typography.h3, "text-enablr-navy mb-3")}>
           {title}
         </h3>
@@ -49,7 +48,7 @@ const values = [
     description: "We operate with transparency, honesty, and ethical standards that build lasting trust with our clients and among our team."
   },
   {
-    icon: <Rocket className="w-10 h-10" />,
+    icon: <Star className="w-10 h-10" />,
     title: "Excellence",
     description: "We pursue exceptional quality in everything we do, from technical execution to client interactions, embracing continuous improvement."
   },

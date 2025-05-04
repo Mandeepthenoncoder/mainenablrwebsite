@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { typography } from "@/styles/typography";
 import { 
-  Rocket,
+  Zap,
   GitMerge,
   Users,
   UserPlus,
@@ -17,42 +17,35 @@ const benefits = [
   {
     id: 1,
     title: "Quick setup with end-to-end\nteam management",
-    description: "Get your team operational fast with our comprehensive management support.",
-    icon: Rocket
+    description: "Get your team operational fast with our comprehensive management support."
   },
   {
     id: 2,
     title: "Seamless alignment with\nyour internal processes",
-    description: "Teams that integrate smoothly with your existing workflows and systems.",
-    icon: GitMerge
+    description: "Teams that integrate smoothly with your existing workflows and systems."
   },
   {
     id: 3,
     title: "Flexible team sizes based\non your project needs",
-    description: "Scale up or down easily as your requirements evolve over time.",
-    icon: Users
+    description: "Scale up or down easily as your requirements evolve over time."
   },
   {
     id: 4,
     title: "Access to top talent\nwithout additional overhead",
-    description: "Tap into specialized skills without the complexity of direct recruitment.",
-    icon: UserPlus
+    description: "Tap into specialized skills without the complexity of direct recruitment."
   }
 ];
 
 const targets = [
   {
-    icon: Building,
     title: "Businesses building offshore teams for long-term work",
     description: "Perfect for organizations establishing or expanding offshore capabilities for ongoing operations or specific projects."
   },
   {
-    icon: Briefcase,
     title: "Organizations expanding global capacity while keeping operations streamlined",
     description: "Ideal for businesses seeking to grow their global footprint without adding management complexity."
   },
   {
-    icon: Scale,
     title: "Enterprises that are looking to scale smart, but with ease",
     description: "Designed for companies that need to scale rapidly while maintaining quality and efficiency in their operations."
   }
@@ -118,11 +111,6 @@ const DTBenefits = () => {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full"
                   >
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-enablr-navy/10 flex items-center justify-center flex-shrink-0 mr-3">
-                        <benefit.icon className="w-5 h-5 text-enablr-navy" />
-                      </div>
-                    </div>
                     <h3 className="text-lg font-semibold text-enablr-navy mb-2 whitespace-pre-line">
                       {benefit.title}
                     </h3>
@@ -156,25 +144,13 @@ const DTBenefits = () => {
                     <div className="absolute right-0 top-0 h-full w-1 bg-enablr-navy/20 group-hover:bg-enablr-navy transition-all duration-300"></div>
                     
                     <div className="flex flex-col md:flex-row gap-6">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-enablr-navy/10 rounded-xl flex items-center justify-center">
-                          <target.icon className="w-8 h-8 text-enablr-navy" />
-                        </div>
-                      </div>
-                      
-                      <div className="flex-1">
+                      <div>
                         <h3 className="text-lg font-semibold text-enablr-navy mb-2 group-hover:text-enablr-navy/80 transition-all duration-300">
                           {target.title}
                         </h3>
                         <p className="text-gray-600">
                           {target.description}
                         </p>
-                      </div>
-                      
-                      <div className="flex-shrink-0 self-center hidden md:block opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <div className="w-10 h-10 rounded-full border border-enablr-navy/20 flex items-center justify-center">
-                          <ChevronRight className="w-5 h-5 text-enablr-navy" />
-                        </div>
                       </div>
                     </div>
                   </motion.div>

@@ -1,35 +1,30 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
-import { Globe, Server, Rocket } from "lucide-react";
 import WhyChooseUsCard from "./WhyChooseUsCard";
 
 const reasons = [
   {
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    title: "Local-global market intelligence",
-    description: "Leverage our deep understanding of both local markets and global business landscapes to make informed decisions.",
-    icon: <Globe className="w-6 h-6" />
+    image: "/workspace-solutions/purpose-led-centers.jpg",
+    title: "Purpose-Led Centers of Excellence (CoEs)",
+    description: "Custom-designed spaces that align with your Centers of Excellence goals. Our facilities optimize collaboration, innovation, and operational efficiency while maintaining your unique organizational culture."
   },
   {
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    title: "End-to-end infrastructure support",
-    description: "Get comprehensive infrastructure solutions from initial setup to ongoing maintenance and optimization.",
-    icon: <Server className="w-6 h-6" />
+    image: "/workspace-solutions/flexible-scalable.jpg",
+    title: "Flexible & Scalable Workspaces",
+    description: "Adaptable workspace solutions that grow with your business. From hot-desking to dedicated team spaces, our flexible arrangements ensure your workspace evolves as your needs change."
   },
   {
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-    title: "Speed to launch and scale",
-    description: "Accelerate your market entry and scale operations efficiently with our proven methodologies.",
-    icon: <Rocket className="w-6 h-6" />
+    image: "/workspace-solutions/modern-workspace.jpg",
+    title: "Modern Work Environment",
+    description: "State-of-the-art facilities equipped with the latest technology and amenities. Create an inspiring workplace that attracts top talent and promotes productivity, creativity, and well-being."
   }
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,17 +32,21 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className={`${typography.h2} text-enablr-navy mb-4`}>Why choose Enablr?</h2>
+          <h2 className={`${typography.h2} text-enablr-navy mb-6`}>
+            Workspace Solutions
+          </h2>
+          <p className={`${typography.body.lg} text-gray-600 max-w-2xl mx-auto`}>
+            Create the perfect environment where your teams can collaborate, innovate, and achieve exceptional results
+          </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10 max-w-7xl mx-auto">
           {reasons.map((reason, index) => (
             <WhyChooseUsCard
               key={index}
               image={reason.image}
               title={reason.title}
               description={reason.description}
-              icon={reason.icon}
               index={index}
             />
           ))}

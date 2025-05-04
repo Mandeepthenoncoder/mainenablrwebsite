@@ -1,27 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, Rocket, Check, Star } from "lucide-react";
+import { Users, Zap, Check, Star } from "lucide-react";
 import { typography } from "@/styles/typography";
 import SectionTitle from "@/components/ui/SectionTitle";
 
 const differentiators = [
   {
-    icon: Users,
     title: "Teams that are truly yours",
     description: "We don't just fill in the positions. We build high-performing teams that work as an extension of your core business. They're aligned to your culture, processes, and goals from day one."
   },
   {
-    icon: Star,
     title: "Built for long-term value",
     description: "Our focus is on stability and retention so your team grows with you over time. You get continuity, consistency, quality, and true sense of ownership."
   },
   {
-    icon: Rocket,
     title: "Speed with scale",
     description: "We help you scale quickly with vetted talent across any technology and expertise, and structured onboarding. You ramp up fast without sacrificing quality or alignment."
   },
   {
-    icon: Check,
     title: "Keeping the control with you",
     description: "You set the direction, pace, and priorities. We provide the structure and support to help your teams thrive under your leadership."
   }
@@ -43,10 +39,6 @@ const DTDifferentiators = () => {
               className="group border-[1.5px] border-enablr-navy rounded-xl p-6 transition-all duration-400 ease-in-out hover:bg-enablr-navy h-full flex flex-col"
             >
               <div className="flex flex-col h-full">
-                <diff.icon 
-                  className="w-8 h-8 text-enablr-navy group-hover:text-white transition-all duration-400 ease-in-out mb-4" 
-                  strokeWidth={2}
-                />
                 <h3 className={`${typography.h3} text-enablr-navy group-hover:text-white mb-3 transition-all duration-400 ease-in-out`}>
                   {diff.title}
                 </h3>
