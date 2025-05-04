@@ -1,23 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import BusinessOperationsSolutionHeroCarousel from "@/components/solutions/BusinessOperationsSolutionHeroCarousel";
+import HeroSection from "@/components/ui/HeroSection";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import SolutionCTA from "@/components/solutions/SolutionCTA";
 import { Box, FileSpreadsheet, Landmark, Shield } from "lucide-react";
 import { motion } from "framer-motion";
-
-const heroSlides = [
-  {
-    title: "Business Operations Solutions",
-    description: "",
-    image: "/images/lot%202/HeroImage-Business%20Operations.jpg",
-    ctaText: "Get Started",
-    ctaLink: "/contact"
-  }
-];
 
 const keyOfferings = [
   {
@@ -94,7 +84,14 @@ const BusinessOperations = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <BusinessOperationsSolutionHeroCarousel slides={heroSlides} />
+          <HeroSection
+            title="Business Operations Solutions"
+            description="Power your business growth with Enablr's comprehensive business operations solutions for your capability center."
+            image="/Business_Operations.jpg"
+            ctaText="Get Started"
+            ctaLink="/contact"
+            enableKenBurns={true}
+          />
         </motion.div>
         
         <motion.div 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import DTHero from "@/components/dedicated-team/DTHero";
+import HeroSection from "@/components/ui/HeroSection";
 import DTIntro from "@/components/dedicated-team/DTIntro";
 import DTDifferentiators from "@/components/dedicated-team/DTDifferentiators";
 import DTBenefits from "@/components/dedicated-team/DTBenefits";
@@ -18,7 +18,14 @@ const DedicatedTeam = () => {
         />
       </Helmet>
 
-      <DTHero />
+      <HeroSection
+        title="Dedicated Team Model"
+        description="Explore Enablr's Dedicated Team model - build global teams without the extra load through our flexible engagement approach."
+        image="/images/lot%202/HeroImage-DedicatedTeam.jpg"
+        ctaText="Learn More"
+        ctaLink="/contact"
+        enableKenBurns={true}
+      />
       <DTIntro />
       <DTDifferentiators />
       <DTBenefits />

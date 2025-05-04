@@ -9,7 +9,7 @@ const BOTHero = () => {
     <section className="relative min-h-[60vh] flex items-center">
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/New%20images/Hero-BOT.jpeg"
+          src="/images/New images/Hero-BOT.jpg"
           alt="Modern office building"
           className="w-full h-full object-cover"
         />

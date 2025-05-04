@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import MSHero from "@/components/modular-services/MSHero";
+import HeroSection from "@/components/ui/HeroSection";
 import MSIntro from "@/components/modular-services/MSIntro";
 import MSDifferentiators from "@/components/modular-services/MSDifferentiators";
 import MSBenefits from "@/components/modular-services/MSBenefits";
@@ -18,7 +18,14 @@ const ModularServices = () => {
         />
       </Helmet>
 
-      <MSHero />
+      <HeroSection
+        title="Modular Services"
+        description="Explore Enablr's flexible modular services tailored to your GCC priorities."
+        image="/images/New images/Hero-Modular.jpeg"
+        ctaText="Discover More"
+        ctaLink="/contact"
+        enableKenBurns={true}
+      />
       <MSIntro />
       <MSDifferentiators />
       <MSBenefits />

@@ -7,7 +7,7 @@ import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import SolutionCTA from "@/components/solutions/SolutionCTA";
 import { Building, Layout, Laptop, Users } from "lucide-react";
 import { motion } from "framer-motion";
-import WorkspaceHeroSection from "@/components/workspace/WorkspaceHeroSection";
+import HeroSection from "@/components/ui/HeroSection";
 
 const heroSlides = [
   {
@@ -99,8 +99,13 @@ const WorkspaceSolutions = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <WorkspaceHeroSection 
-            image={heroSlides[0].image}
+          <HeroSection
+            title="Workspace Solutions"
+            description="Create future-ready workspaces for your capability center with Enablr's comprehensive workplace solutions."
+            image="/images/lot%202/HeroImage-WorkspaceSolutions.jpg"
+            ctaText="Get Started"
+            ctaLink="/contact"
+            enableKenBurns={true}
           />
         </motion.div>
         
