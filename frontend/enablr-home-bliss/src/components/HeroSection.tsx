@@ -126,19 +126,14 @@ export default function HeroSection() {
                   </>
                 ) : (
                   <>
-                    <picture>
-                      <source
-                        srcSet={slide.srcset}
-                        type="image/webp"
-                        sizes="100vw"
-                      />
-                      <img
-                        src={slide.imageSrc}
-                        alt={`Slide ${index + 1}`}
-                        loading={index === 0 ? "eager" : "lazy"}
-                        className={`absolute inset-0 h-full w-full object-cover ${index === 1 ? 'object-[70%_center]' : ''}`}
-                      />
-                    </picture>
+                    <video
+                      src="/Carousel_Video2.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
                     <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
                   </>
                 )}
@@ -202,15 +197,12 @@ export default function HeroSection() {
                         <Button
                           asChild
                           className="
+                            bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md
                             inline-flex items-center justify-center 
                             min-h-[45px] sm:min-h-[55px]
-                            rounded-md
                             px-12 sm:px-16 py-4
                             text-base sm:text-lg
                             font-medium
-                            shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300
-                            bg-gradient-to-r from-white to-gray-50 text-enablr-navy hover:bg-enablr-navy hover:from-enablr-navy hover:to-enablr-navy hover:text-white hover:border-white 
-                            border-2 border-enablr-navy/20
                             mx-0
                             w-[75%] sm:w-[280px]
                           "
@@ -226,14 +218,12 @@ export default function HeroSection() {
                           variant="secondary"
                           size="lg"
                           className={`
+                            bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md
                             inline-flex items-center justify-center 
                             min-h-[40px] sm:min-h-[50px]
-                            rounded-md
                             px-4 sm:px-7
                             text-base sm:text-lg
                             font-medium
-                            shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300
-                            bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border-white
                             mx-0
                             w-[52%] sm:w-auto
                           `}
@@ -250,10 +240,10 @@ export default function HeroSection() {
         {/* Navigation Buttons */}
         <div className="absolute bottom-6 right-6 z-20 flex gap-3">
           <CarouselPrevious 
-            className="static translate-y-0 bg-white text-enablr-dark-blue border-white hover:bg-white hover:text-enablr-dark-blue hover:scale-110 transition-transform duration-200 shadow-md h-10 w-10"
+            className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md static translate-y-0 h-10 w-10"
           />
           <CarouselNext 
-            className="static translate-y-0 bg-white text-enablr-dark-blue border-white hover:bg-white hover:text-enablr-dark-blue hover:scale-110 transition-transform duration-200 shadow-md h-10 w-10"
+            className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md static translate-y-0 h-10 w-10"
           />
         </div>
       </Carousel>
