@@ -14,7 +14,7 @@ import CarouselThumbnailStrip from "@/components/ui/CarouselThumbnailStrip";
 // Define the hero slide content with optimized WebP images
 const heroSlides = [
   {
-    imageSrc: "/images/supabase-images/optimized/hero-slide-1.webp",
+    imageSrc: "/Carousel_img.jpg",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
     title: "Build on Proven Experience\nand Enterprise-Grade Quality",
     buttonText: "Get Started Today",
@@ -22,7 +22,7 @@ const heroSlides = [
     overlayClass: "bg-black bg-opacity-40"
   },
   {
-    imageSrc: "/images/supabase-images/optimized/hero-slide-2.webp",
+    imageSrc: "/Carousel_img2.jpg",
     srcset: "/images/supabase-images/optimized/hero-slide-2-small.webp 640w, /images/supabase-images/optimized/hero-slide-2-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-2-large.webp 1920w",
     title: "Realize your GCC Success\nwith Speed and Scale",
     buttonText: "Speak To Our Experts",
@@ -30,7 +30,7 @@ const heroSlides = [
     overlayClass: "bg-black bg-opacity-40"
   },
   {
-    imageSrc: "/images/lot 2/optimized/CarouselImage3-Home.webp",
+    imageSrc: "/Carousel_img3.jpg",
     srcset: "/images/lot 2/optimized/CarouselImage3-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage3-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage3-Home-large.webp 1920w",
     title: "Accelerate your Setup\nwith Expert Talent and Seamless Execution",
     buttonText: "Connect Now",

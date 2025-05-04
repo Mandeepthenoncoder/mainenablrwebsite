@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "@/components/Image";
 import { motion, useInView } from "framer-motion";
+import { typography } from "@/styles/typography";
 
 const FeatureCard = ({
   icon,
@@ -61,21 +62,15 @@ const EnablrEdge = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-6 sm:mb-8 md:mb-12 text-center sm:text-left"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 flex items-center gap-2 flex-wrap justify-center sm:justify-start">
-            The <span className="font-bold">Enablr</span>{" "}
-            <motion.span 
-              initial={{ backgroundPosition: "0% 100%" }}
-              animate={{ backgroundPosition: "100% 0%" }}
-              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
-              className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent py-[2px] sm:py-[4px] bg-[length:200%_200%]"
-            >
-              Edge
-            </motion.span>
-          </h2>
+         <h2 className={typography.h2}>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">The Enablr</span> Edge
+      </h2>
+      <br />
+
           <p className="text-sm sm:text-base md:text-lg text-gray-700 space-y-0 leading-relaxed">
             At Enablr, we work with you to build your global capability center (GCC) the right way. 
             Designed for speed, scale, and quality at every step. 
-            Here's how we help you stay ahead:
+            Here's how we help you stay ahead
           </p>
         </motion.div>
 
