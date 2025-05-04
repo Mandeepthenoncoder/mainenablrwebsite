@@ -79,7 +79,7 @@ const Footer = () => {
 
           <div>
             <h4 className="font-semibold mb-4">
-              <Link to="/engagement-model" className="hover:text-enablr-navy">
+              <Link to="/engagement" className="hover:text-enablr-navy">
                 Engagement Models
               </Link>
             </h4>

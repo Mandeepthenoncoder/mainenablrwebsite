@@ -1,25 +1,133 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
-import { 
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
 const LOGO_URL = "https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//Updated%20Logo.svg";
 
-const Navbar = () => {
+// Custom dropdown component that doesn't rely on Radix UI
+const NavDropdown = ({ 
+  trigger, 
+  children, 
+  isActive 
+}: { 
+  trigger: React.ReactNode, 
+  children: React.ReactNode,
+  isActive: boolean
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<number | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      window.clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = window.setTimeout(() => {
+      setIsOpen(false);
+    }, 300); // Increased delay for better usability
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsOpen(!isOpen);
+    // Clear any pending close operation
+    if (timeoutRef.current) {
+      window.clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node) && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [isOpen]);
+  
+  return (
+    <div 
+      className="relative" 
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      ref={dropdownRef}
+    >
+      <div 
+        className="cursor-pointer"
+        onClick={handleClick}
+      >
+        <div className="flex items-center">
+          {trigger}
+          <ChevronDown 
+            className={cn(
+              "ml-1 h-3 w-3 transition-transform duration-300",
+              isOpen && "rotate-180"
+            )} 
+          />
+        </div>
+      </div>
+      
+      <div 
+        className={cn(
+          "absolute left-0 top-full pt-1 w-64 z-50 transition-all duration-300 ease-in-out transform origin-top",
+          isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"
+        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className={cn(
+          "bg-white rounded-lg shadow-lg p-2 transition-all duration-300",
+          isOpen ? "translate-y-0" : "-translate-y-2"
+        )}>
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Wrapper for dropdown menu items with staggered animation
+const DropdownMenuItem = ({ 
+  to, 
+  children, 
+  index = 0 
+}: { 
+  to: string, 
+  children: React.ReactNode, 
+  index?: number 
+}) => {
+  return (
+    <li className={`transition-all duration-200 animate-fadeIn`} style={{ animationDelay: `${index * 50}ms` }}>
+      <Link 
+        to={to}
+        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md transition-all duration-200 transform hover:translate-x-1"
+      >
+        {children}
+      </Link>
+    </li>
+  );
+};
+
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState<{[key: string]: boolean}>({});
   const location = useLocation();
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   
   const toggleSubMenu = (menu: string) => {
     setExpandedMenus(prev => ({
@@ -29,9 +137,10 @@ const Navbar = () => {
   };
 
   const isActive = (path: string) => location.pathname === path;
+  const isActiveOrContains = (path: string) => location.pathname.includes(path);
 
-  // Animation styles
-  const mobileMenuAnimation = isOpen 
+  // Animation styles for mobile menu
+  const mobileMenuAnimation = isMobileMenuOpen 
     ? "animate-in slide-in-from-top-5 fade-in duration-300" 
     : "";
     
@@ -60,239 +169,133 @@ const Navbar = () => {
             className="p-2 text-enablr-navy rounded-md hover:bg-gray-100"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        <div className="hidden lg:block relative z-50">
-          <NavigationMenu>
-            <NavigationMenuList className="gap-10">
-              <NavigationMenuItem className="relative">
-                <Link 
-                  to="/solutions" 
-                  className={cn(
-                    "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300",
-                    isActive('/solutions') && "text-[#BF0404]"
-                  )}
-                >
-                  <NavigationMenuTrigger 
-                    className={cn(
-                      "bg-transparent px-0 font-medium hover:bg-transparent hover:text-[#BF0404] focus:text-[#BF0404]",
-                      isActive('/solutions') && "text-[#BF0404]"
-                    )}
-                  >
-                    Solutions
-                  </NavigationMenuTrigger>
-                </Link>
-                <NavigationMenuContent className="absolute left-0 bg-white p-2 rounded-lg shadow-lg min-w-[256px]">
-                  <ul className="w-full p-2">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/services/gcc-as-service" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md whitespace-nowrap"
-                        >
-                          GCC as a Service
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/services/technology-enablement" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Technology Enablement
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/services/workspace-solutions" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Workspace Solutions
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/services/talent-hr-solutions" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Talent & HR Solutions
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/services/business-operations" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Business Operations
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/services/staff-augmentation" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Staff Augmentation
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center space-x-10">
+          {/* Solutions Dropdown */}
+          <NavDropdown 
+            trigger={
+              <span className={cn(
+                "text-sm font-medium transition-colors duration-300",
+                isActive('/solutions') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
+              )}>
+                <Link to="/solutions">Solutions</Link>
+              </span>
+            }
+            isActive={isActive('/solutions')}
+          >
+            <div className="py-1">
+              <ul className="w-full space-y-1">
+                <DropdownMenuItem to="/services/gcc-as-service" index={0}>
+                  GCC as a Service
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/services/technology-enablement" index={1}>
+                  Technology Enablement
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/services/workspace-solutions" index={2}>
+                  Workspace Solutions
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/services/talent-hr-solutions" index={3}>
+                  Talent & HR Solutions
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/services/business-operations" index={4}>
+                  Business Operations
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/services/staff-augmentation" index={5}>
+                  Staff Augmentation
+                </DropdownMenuItem>
+              </ul>
+            </div>
+          </NavDropdown>
 
-              <NavigationMenuItem className="relative">
-                <Link 
-                  to="/engagement" 
-                  className={cn(
-                    "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300",
-                    location.pathname.includes('/engagement') && "text-[#BF0404]"
-                  )}
-                >
-                  <NavigationMenuTrigger 
-                    className={cn(
-                      "bg-transparent px-0 font-medium hover:bg-transparent hover:text-[#BF0404] focus:text-[#BF0404]",
-                      location.pathname.includes('/engagement') && "text-[#BF0404]"
-                    )}
-                  >
-                    Engagement Models
-                  </NavigationMenuTrigger>
-                </Link>
-                <NavigationMenuContent className="absolute left-0 bg-white p-2 rounded-lg shadow-lg min-w-[256px]">
-                  <ul className="w-full p-2">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/engagement/comprehensive-management" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Comprehensive Management
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/engagement/modular-services" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Modular Services
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/engagement/bot" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md whitespace-nowrap"
-                        >
-                          Build-Operate-Transfer (B-O-T)
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/engagement/dedicated-team" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Dedicated Teams
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+          {/* Engagement Models Dropdown */}
+          <NavDropdown 
+            trigger={
+              <span className={cn(
+                "text-sm font-medium transition-colors duration-300",
+                isActiveOrContains('/engagement') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
+              )}>
+                <Link to="/engagement">Engagement Models</Link>
+              </span>
+            }
+            isActive={isActiveOrContains('/engagement')}
+          >
+            <div className="py-1">
+              <ul className="w-full space-y-1">
+                <DropdownMenuItem to="/engagement/comprehensive-management" index={0}>
+                  Comprehensive Management
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/engagement/modular-services" index={1}>
+                  Modular Services
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/engagement/bot" index={2}>
+                  Build-Operate-Transfer (B-O-T)
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/engagement/dedicated-team" index={3}>
+                  Dedicated Teams
+                </DropdownMenuItem>
+              </ul>
+            </div>
+          </NavDropdown>
 
-              <NavigationMenuItem className="relative">
-                <Link 
-                  to="/about" 
-                  className={cn(
-                    "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300",
-                    location.pathname.includes('/about') && "text-[#BF0404]"
-                  )}
-                >
-                  <NavigationMenuTrigger 
-                    className={cn(
-                      "bg-transparent px-0 font-medium hover:bg-transparent hover:text-[#BF0404] focus:text-[#BF0404]",
-                      location.pathname.includes('/about') && "text-[#BF0404]"
-                    )}
-                  >
-                    About Us
-                  </NavigationMenuTrigger>
-                </Link>
-                <NavigationMenuContent className="absolute left-0 bg-white p-2 rounded-lg shadow-lg min-w-[256px]">
-                  <ul className="w-full p-2">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/about" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Overview
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link 
-                          to="/about/leadership" 
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-[#BF0404]/10 hover:to-[#0D214F]/10 hover:text-[#BF0404] rounded-md"
-                        >
-                          Leadership
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+          {/* About Us Dropdown */}
+          <NavDropdown 
+            trigger={
+              <span className={cn(
+                "text-sm font-medium transition-colors duration-300",
+                isActiveOrContains('/about') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
+              )}>
+                About Us
+              </span>
+            }
+            isActive={isActiveOrContains('/about')}
+          >
+            <div className="py-1">
+              <ul className="w-full space-y-1">
+                <DropdownMenuItem to="/about" index={0}>
+                  Overview
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/about/leadership" index={1}>
+                  Leadership
+                </DropdownMenuItem>
+              </ul>
+            </div>
+          </NavDropdown>
 
-              <NavigationMenuItem>
-                <Link 
-                  to="/blog" 
-                  className={cn(
-                    "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300",
-                    isActive('/blog') && "text-[#BF0404]"
-                  )}
-                >
-                  Insights
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link 
-                  to="/careers" 
-                  className={cn(
-                    "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300",
-                    isActive('/careers') && "text-[#BF0404]"
-                  )}
-                >
-                  Careers
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Button 
-                  className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
-                  asChild
-                >
-                  <Link to="/contact">Get Started</Link>
-                </Button>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          {/* Regular links */}
+          <Link 
+            to="/blog" 
+            className={cn(
+              "text-sm font-medium transition-colors duration-300",
+              isActive('/blog') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
+            )}
+          >
+            Insights
+          </Link>
+          
+          <Link 
+            to="/careers" 
+            className={cn(
+              "text-sm font-medium transition-colors duration-300",
+              isActive('/careers') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
+            )}
+          >
+            Careers
+          </Link>
+          
+          <Button 
+            className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
+            asChild
+          >
+            <Link to="/contact">Get Started</Link>
+          </Button>
         </div>
 
-        {isOpen && (
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
           <div className={`lg:hidden fixed top-[72px] left-0 right-0 h-[calc(100vh-72px)] bg-white shadow-md z-50 overflow-y-auto ${mobileMenuAnimation}`}>
             <nav className="flex flex-col px-6 py-2">
               {/* Solutions Menu */}
@@ -306,7 +309,9 @@ const Navbar = () => {
                       : "text-gray-800 hover:bg-gray-50"
                   )}
                 >
-                  <span>Solutions</span>
+                  <Link to="/solutions" className="flex-grow text-left">
+                    <span>Solutions</span>
+                  </Link>
                   {expandedMenus['solutions'] ? (
                     <ChevronDown size={20} />
                   ) : (
@@ -414,7 +419,9 @@ const Navbar = () => {
                       : "text-gray-800 hover:bg-gray-50"
                   )}
                 >
-                  <span>Engagement Models</span>
+                  <Link to="/engagement" className="flex-grow text-left">
+                    <span>Engagement Models</span>
+                  </Link>
                   {expandedMenus['engagement'] ? (
                     <ChevronDown size={20} />
                   ) : (

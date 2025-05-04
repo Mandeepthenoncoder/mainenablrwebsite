@@ -21,6 +21,7 @@ import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
 import BlogHighlights from "@/components/BlogHighlights";
 import Newsletter from "@/components/Newsletter";
+import HeroSection from "@/components/ui/HeroSection";
 
 const EngagementModel = () => {
   // Engagement model cards data
@@ -107,67 +108,19 @@ const EngagementModel = () => {
 
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-              @keyframes kenBurns {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.1); }
-                100% { transform: scale(1); }
-              }
-              .ken-burns-bg {
-                animation: kenBurns 10s ease-in-out infinite;
-              }
-            `,
-            }}
-          />
-
-          <div className="absolute inset-0 z-0">
-            <div className="ken-burns-bg w-full h-full">
-              <img
-                src="/Engagement model landing page.jpg"
-                alt="Engagement Models Hero"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-enablr-navy to-enablr-navy/80 opacity-85"></div>
-          </div>
-
-          <div className="container relative z-10 mx-auto px-4 py-12 md:py-20">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="max-w-3xl"
-            >
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-white mb-6 tracking-tight leading-tight text-5xl md:text-6xl lg:text-7xl font-bold"
-              >
-                Build your GCC,
-                <br /> <span className="text-enablr-lime">your way</span>
-              </motion.h1>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="relative mb-8"
-              >
-                <p className="text-white/90 font-medium tracking-tight text-2xl md:text-3xl">
-                  Own your GCC journey. We'll power the way.
-                </p>
-                {/* Accent underline */}
-                <div className="h-px w-16 bg-white mt-6"></div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Hero Section - Updated to use the standardized component */}
+        <HeroSection 
+          title="Build your GCC,<br /><span class='text-enablr-lime'>your way</span>"
+          description="Own your GCC journey. We'll power the way."
+          image="/Engagement model landing page.jpg"
+          ctaText="Get Started"
+          ctaLink="/contact"
+          primaryColor="#0D214F" 
+          customMobilePosition="center 60%"
+          customDesktopPosition="center 40%"
+          enableKenBurns={true}
+          mobileZoom="180% auto"
+        />
 
         {/* Intro Section */}
         <section className="py-16 bg-white">
