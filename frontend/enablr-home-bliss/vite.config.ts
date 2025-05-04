@@ -60,8 +60,8 @@ export default defineConfig(({ mode }) => ({
     }),
     // Keep preload plugin as it's important for performance
     mode === 'production' && preload(),
-    // Only use visualizer in development mode
-    mode === 'development' && visualizer({
+    // Only use visualizer when ANALYZE_BUNDLE env var is set
+    process.env.ANALYZE_BUNDLE === 'true' && visualizer({
       open: true,
       filename: 'stats.html',
       gzipSize: true,

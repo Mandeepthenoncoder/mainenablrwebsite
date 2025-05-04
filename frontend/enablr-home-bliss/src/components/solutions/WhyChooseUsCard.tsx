@@ -2,68 +2,62 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "@/components/Image";
 import { typography } from "@/styles/typography";
-import { TextStyled } from "@/components/ui/TextStyled";
-import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
 
 interface WhyChooseUsCardProps {
   image: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
   index: number;
 }
 
-const WhyChooseUsCard = ({ image, title, description, icon, index }: WhyChooseUsCardProps) => {
-  // Split title if it contains spaces for potential line breaks
-  const needsLineBreak = title.length > 25;
+const WhyChooseUsCard = ({
+  image,
+  title,
+  description,
+  index
+}: WhyChooseUsCardProps) => {
+  // Split title into two parts if it's too long (adjusted breakpoint)
   const words = title.split(' ');
+  const titleLength = title.length;
+  const shouldSplit = titleLength > 30;
   const midpoint = Math.ceil(words.length / 2);
+  const firstHalf = shouldSplit ? words.slice(0, midpoint).join(' ') : title;
+  const secondHalf = shouldSplit ? words.slice(midpoint).join(' ') : '';
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+      className="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col"
     >
-      <div className="aspect-w-16 aspect-h-9 relative overflow-hidden">
-        <Image
-          src={image}
-          alt={title}
-          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+      {/* Image container with 3:2 aspect ratio */}
+      <div className="relative w-full pt-[66.67%]">
+        <div className="absolute inset-0">
+          <Image
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+        </div>
       </div>
       
-      <div className="p-6 relative">
-        <div className="text-enablr-purple mb-4">
-          {icon}
-        </div>
-        <div className="relative">
-          <TextStyled 
-            variant="h4" 
-            className="mb-3 group-hover:text-gradient-start transition-colors duration-300 break-words hyphens-auto"
-            color="text-enablr-navy"
-            casing="titleCase"
-          >
-            {needsLineBreak ? (
-              <>
-                {words.slice(0, midpoint).join(' ')}
-                <ResponsiveBreak breakOn="lg" />
-                {words.slice(midpoint).join(' ')}
-              </>
-            ) : title}
-          </TextStyled>
-          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-enablr-purple to-gradient-start origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-        </div>
-        <TextStyled 
-          variant="body" 
-          color="text-gray-600"
-          casing="sentenceCase"
-        >
+      {/* Content container */}
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className={`${typography.h3} text-enablr-navy group-hover:text-enablr-navy/80 mb-4 transition-colors duration-300 min-h-[3.5rem] line-clamp-2`}>
+          {shouldSplit ? (
+            <>
+              {firstHalf}<br />{secondHalf}
+            </>
+          ) : (
+            title
+          )}
+        </h3>
+        <p className={`${typography.body.base} text-gray-600 flex-grow line-clamp-3`}>
           {description}
-        </TextStyled>
+        </p>
       </div>
     </motion.div>
   );
