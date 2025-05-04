@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
 
 interface HeroSectionProps {
-  title: string;
+  title: string | ReactNode;
   description: string;
   image: string;
   ctaText: string;
@@ -104,9 +104,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 md:mb-4"
-                dangerouslySetInnerHTML={{ __html: title }}
-              />
+              {typeof title === 'string' ? (
+                <h1 
+                  className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 md:mb-4"
+                  dangerouslySetInnerHTML={{ __html: title }}
+                />
+              ) : (
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 md:mb-4">
+                  {title}
+                </h1>
+              )}
               
               <p 
                 className="text-base md:text-lg text-white/90 mb-4 md:mb-8 max-w-lg"
