@@ -7,7 +7,7 @@ import Image from "@/components/Image";
 
 const OurStory = () => {
   return (
-    <section className="py-24 overflow-hidden relative">
+    <section className="py-16 md:py-24 overflow-hidden relative">
       {/* Dark blue background */}
       <div className="absolute inset-0 z-0 bg-enablr-navy">
         {/* Subtle dot pattern for texture */}

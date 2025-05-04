@@ -53,7 +53,7 @@ const ProductivityPrecision = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-24 relative overflow-hidden transition-all duration-1000 hover:bg-gradient-to-br hover:from-red-50 hover:via-white hover:to-blue-50"
+      className="py-16 md:py-24 relative overflow-hidden transition-all duration-1000 hover:bg-gradient-to-br hover:from-red-50 hover:via-white hover:to-blue-50"
       style={{
         background: "linear-gradient(135deg, rgba(239,246,255,0.7) 0%, rgba(255,255,255,1) 50%, rgba(254,242,242,0.7) 100%)"
       }}
@@ -76,12 +76,8 @@ const ProductivityPrecision = () => {
               className="mb-6"
             >
               <h2 className={`${typography.h2} text-enablr-navy tracking-tight mb-5`}>
-                
+                <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Enhance </span> Productivity with Precision
               </h2>
-              <h2 className={typography.h2}>
-        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Enhance </span> productivity with precision journey
-      </h2>
-
               
               <div className="h-px w-16 bg-gradient-to-r from-blue-600 to-red-500 my-6"></div>
             </motion.div>

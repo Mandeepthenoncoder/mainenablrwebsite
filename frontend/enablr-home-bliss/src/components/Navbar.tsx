@@ -572,17 +572,6 @@ const Navbar = () => {
                 Careers
               </Link>
               
-              <Link 
-                to="/contact" 
-                className={cn(
-                  "flex items-center text-base font-medium py-3 px-3 border-b border-gray-100",
-                  isActive('/contact') 
-                    ? "text-[#BF0404] bg-gradient-to-r from-red-50/60 to-blue-50/60" 
-                    : "text-gray-800 hover:text-[#BF0404] hover:bg-gradient-to-r hover:from-red-50/30 hover:to-blue-50/30"
-                )}
-              >
-                Contact Us
-              </Link>
               
               {/* CTA Button */}
               <div className="mt-6 px-3">

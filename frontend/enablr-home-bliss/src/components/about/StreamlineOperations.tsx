@@ -32,7 +32,7 @@ const StreamlineOperations = () => {
     {
       icon: Cpu,
       title: "Automation built-in",
-      description: " We integrate relevant and cutting-edge tools to automate reporting, workflows, and data capture; reducing manual effort and boosting operational speed."
+      description: "We integrate relevant and cutting-edge tools to automate reporting, workflows, and data capture; reducing manual effort and boosting operational speed."
     }
   ];
 

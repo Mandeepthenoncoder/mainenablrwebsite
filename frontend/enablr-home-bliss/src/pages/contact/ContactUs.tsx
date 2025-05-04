@@ -86,7 +86,7 @@ const ContactUs = () => {
           >
             <h2 className={typography.h2}>
               <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
-                Got questions, ideas or just
+                Got questions, ideas, or just
               </span>{" "}
               curious about partnering together?
             </h2>
@@ -133,7 +133,7 @@ const ContactUs = () => {
       </section>
 
       {/* Office Locations Section */}
-      <section className="py-10 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <TextStyled

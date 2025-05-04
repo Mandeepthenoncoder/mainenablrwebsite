@@ -28,7 +28,7 @@ const EngagementModel = () => {
   const engagementCards = [
     {
       id: 1,
-      title: "Comprehensive management",
+      title: "Comprehensive Management",
       description:
         "We handle your GCC end-to-end—from infrastructure and compliance to talent, operations, and innovation.",
       image: "/comprehensive managemenrt.png",
@@ -37,7 +37,7 @@ const EngagementModel = () => {
     },
     {
       id: 2,
-      title: "Modular services",
+      title: "Modular Services",
       description:
         "Pick only what you need from our catalog of services that align perfectly with your GCC's evolving needs.",
       image: "/modular services.png",
@@ -46,7 +46,7 @@ const EngagementModel = () => {
     },
     {
       id: 3,
-      title: "Build-operate-transfer (B-O-T)",
+      title: "Build-Operate-Transfer (B-O-T)",
       description:
         "We set up, scale, and manage your GCC, and then transition ownership when you're ready.",
       image: "/BOT model image 1.png",
@@ -55,7 +55,7 @@ const EngagementModel = () => {
     },
     {
       id: 4,
-      title: "Dedicated teams",
+      title: "Dedicated Teams",
       description:
         "We take full ownership of recruitment, onboarding, and daily operations to build high-performing teams.",
       image: "/dedicated team.png",
@@ -123,7 +123,7 @@ const EngagementModel = () => {
         />
 
         {/* Intro Section */}
-        <section className="py-16 bg-white">
+        <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-12">
               <div className="md:col-span-12">
@@ -143,7 +143,7 @@ const EngagementModel = () => {
     Whether you're establishing a new GCC or enhancing an existing one, our approach is designed to support your transformation journey and align with your business priorities.
  </p>
  <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
-    We offer a suite of flexible models, ranging from Comprehensive management, Modular services to Build-Operate-Transfer (B-O-T) and Dedicated teams.
+    We offer a suite of flexible models, ranging from Comprehensive Management, Modular Services to Build-Operate-Transfer (B-O-T) and Dedicated Teams.
  </p>
                 </motion.div>
               </div>
@@ -152,7 +152,7 @@ const EngagementModel = () => {
         </section>
 
         {/* Engagement Models Grid Section */}
-        <section className="py-16 bg-gradient-to-b from-blue-50/70 to-gray-50 relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-blue-50/70 to-gray-50 relative overflow-hidden">
           {/* Background Grid Pattern */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-[0.03] z-0"></div>
 
@@ -224,7 +224,7 @@ const EngagementModel = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">

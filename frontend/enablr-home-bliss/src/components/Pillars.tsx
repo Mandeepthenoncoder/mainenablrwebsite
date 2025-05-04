@@ -38,7 +38,7 @@ const Pillars = () => {
   return (
     <motion.section 
       ref={sectionRef}
-      className="py-20 overflow-hidden relative bg-gray-50"
+      className="py-12 md:py-20 overflow-hidden relative bg-gray-50"
     >
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ const Pillars = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-base font-medium text-gray-800">
+                  <h3 className="text-sm md:text-base font-medium text-gray-800">
                     {pillar.title}
                   </h3>
                 </div>

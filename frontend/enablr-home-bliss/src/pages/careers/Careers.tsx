@@ -30,7 +30,6 @@ const Careers = () => {
         <CurrentOpeningsCompact />
       </div>
       <CareerCTA />
-      <Spacer height="80px" />
     </MainLayout>
   );
 };
