@@ -182,7 +182,7 @@ const Navbar = () => {
                 "text-sm font-medium transition-colors duration-300",
                 isActive('/solutions') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
               )}>
-                Solutions
+                <Link to="/solutions">Solutions</Link>
               </span>
             }
             isActive={isActive('/solutions')}
@@ -218,7 +218,7 @@ const Navbar = () => {
                 "text-sm font-medium transition-colors duration-300",
                 isActiveOrContains('/engagement') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
               )}>
-                Engagement Models
+                <Link to="/engagement">Engagement Models</Link>
               </span>
             }
             isActive={isActiveOrContains('/engagement')}
@@ -309,7 +309,9 @@ const Navbar = () => {
                       : "text-gray-800 hover:bg-gray-50"
                   )}
                 >
-                  <span>Solutions</span>
+                  <Link to="/solutions" className="flex-grow text-left">
+                    <span>Solutions</span>
+                  </Link>
                   {expandedMenus['solutions'] ? (
                     <ChevronDown size={20} />
                   ) : (
@@ -417,7 +419,9 @@ const Navbar = () => {
                       : "text-gray-800 hover:bg-gray-50"
                   )}
                 >
-                  <span>Engagement Models</span>
+                  <Link to="/engagement" className="flex-grow text-left">
+                    <span>Engagement Models</span>
+                  </Link>
                   {expandedMenus['engagement'] ? (
                     <ChevronDown size={20} />
                   ) : (

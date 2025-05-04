@@ -10,6 +10,7 @@ import { typography } from "@/styles/typography";
 import BlogHighlights from "@/components/BlogHighlights";
 import Newsletter from "@/components/Newsletter";
 import { cn } from "@/lib/utils";
+import HeroSection from "@/components/ui/HeroSection";
 
 const Solutions = () => {
   // Solution cards data
@@ -98,64 +99,19 @@ const Solutions = () => {
       
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-          <style dangerouslySetInnerHTML={{
-            __html: `
-              @keyframes kenBurns {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.1); }
-                100% { transform: scale(1); }
-              }
-              .ken-burns-bg {
-                animation: kenBurns 10s ease-in-out infinite;
-              }
-            `
-          }} />
-
-          <div className="absolute inset-0 z-0">
-            <div className="ken-burns-bg w-full h-full">
-              <img
-                src="/solutions landing page hero image.png"
-                alt="Enablr solutions hero"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/30"></div>
-          </div>
-
-          <div className="container relative z-10 mx-auto px-4 py-12 md:py-20">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="max-w-3xl"
-            >
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-white mb-6 tracking-tight leading-tight text-5xl md:text-6xl lg:text-7xl font-bold"
-              >
-                Explore our end-to-end GCC solutions
-              </motion.h1>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="relative mb-8"
-              >
-                <p className="text-white/90 font-medium tracking-tight text-2xl md:text-3xl">
-                  Accelerate your journey to a fully-functional GCC
-                </p>
-                {/* Accent underline */}
-                <div className="h-px w-16 bg-white mt-6"></div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Hero Section using the standardized HeroSection component */}
+        <HeroSection 
+          title="Explore our end-to-end GCC solutions"
+          description="Accelerate your journey to a<br />fully-functional GCC"
+          image="/solutions landing page hero image.png"
+          ctaText="Get Started"
+          ctaLink="/contact"
+          primaryColor="#0D214F"
+          customMobilePosition="center 70%"
+          customDesktopPosition="center 40%"
+          enableKenBurns={true}
+          mobileZoom="180% auto"
+        />
         
         {/* Intro Section */}
         <section className="py-16 bg-white">
