@@ -26,10 +26,46 @@ export const leadershipData: Leader[] = [
   },
   {
     id: "3",
-    name: "Vincent Walden",
-    title: "CEO, konaAI Data Science",
+    name: "Subhendu Pattnaik",
+    title: "Chief Marketing Officer",
+    photoUrl: "/lovable-uploads/Subhendu_Patnaik.webp",
+    linkedInUrl: "https://linkedin.com/in/vincentwalden",
+    bio: "Subhendu Pattnaik is the Chief Marketing Officer of Covasant, where he leads the company's marketing strategy and brand development. With his expertise in digital marketing and brand positioning, he drives Covasant's market presence and helps communicate our innovative solutions to enterprises worldwide."
+  },
+  {
+    id: "4",
+    name: "Rahul Veernala",
+    title: "Chief Business Officer /n Healthcare & Life Sciences",
+    photoUrl: "/lovable-uploads/Rahul_Veernala.png",
+    linkedInUrl: "https://linkedin.com/in/vincentwalden",
+    bio: "Subhendu Pattnaik is the Chief Marketing Officer of Covasant, where he leads the company's marketing strategy and brand development. With his expertise in digital marketing and brand positioning, he drives Covasant's market presence and helps communicate our innovative solutions to enterprises worldwide."
+  },{
+    id: "5",
+    name: "Baiju Nellamakada",
+    title: "Chief Business Officer /n Manufacturing",
+    photoUrl: "/lovable-uploads/Baiju_Nellamakada.png",
+    linkedInUrl: "https://linkedin.com/in/vincentwalden",
+    bio: "Subhendu Pattnaik is the Chief Marketing Officer of Covasant, where he leads the company's marketing strategy and brand development. With his expertise in digital marketing and brand positioning, he drives Covasant's market presence and helps communicate our innovative solutions to enterprises worldwide."
+  },{
+    id: "6",
+    name: "Arghya Battacharya",
+    title: "Chief Partnership Officer",
+    photoUrl: "/lovable-uploads/Arghya_Battacharya.png",
+    linkedInUrl: "https://linkedin.com/in/vincentwalden",
+    bio: "Subhendu Pattnaik is the Chief Marketing Officer of Covasant, where he leads the company's marketing strategy and brand development. With his expertise in digital marketing and brand positioning, he drives Covasant's market presence and helps communicate our innovative solutions to enterprises worldwide."
+  },{
+    id: "7",
+    name: "Patrick Grobbel",
+    title: "Chief Marketing Officer",
     photoUrl: "/lovable-uploads/Patrick Grobbel.png",
     linkedInUrl: "https://linkedin.com/in/vincentwalden",
-    bio: "Vincent Walden is the CEO of konaAI, a Covasant company, where he leads the company's vision to help organizations detect and prevent fraud, corruption, and compliance issues using data analytics and technology."
+    bio: "Subhendu Pattnaik is the Chief Marketing Officer of Covasant, where he leads the company's marketing strategy and brand development. With his expertise in digital marketing and brand positioning, he drives Covasant's market presence and helps communicate our innovative solutions to enterprises worldwide."
+  },{
+    id: "8",
+    name: "Bryan_Judice",
+    title: "Chief Marketing Officer",
+    photoUrl: "/lovable-uploads/Bryan_Judice.png",
+    linkedInUrl: "https://linkedin.com/in/vincentwalden",
+    bio: "Subhendu Pattnaik is the Chief Marketing Officer of Covasant, where he leads the company's marketing strategy and brand development. With his expertise in digital marketing and brand positioning, he drives Covasant's market presence and helps communicate our innovative solutions to enterprises worldwide."
   }
 ]; 
