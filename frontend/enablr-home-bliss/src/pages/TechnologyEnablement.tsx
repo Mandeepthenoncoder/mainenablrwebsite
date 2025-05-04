@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import SolutionHeroCarousel from "@/components/solutions/SolutionHeroCarousel";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
@@ -10,6 +9,7 @@ import { Code2, Cloud, Cpu, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { TextStyled } from "@/components/ui/TextStyled";
 import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
+import TechHeroSection from "@/components/tech/TechHeroSection";
 
 const heroSlides = [
   {
@@ -102,11 +102,8 @@ const TechnologyEnablement = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <SolutionHeroCarousel 
-            slides={[{
-              ...heroSlides[0],
-              title: "Technology Enablement Solutions",
-            }]} 
+          <TechHeroSection 
+            image={heroSlides[0].image}
           />
         </motion.div>
         
