@@ -1,13 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import WorkspaceSolutionHeroCarousel from "@/components/solutions/WorkspaceSolutionHeroCarousel";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import SolutionCTA from "@/components/solutions/SolutionCTA";
 import { Building, Layout, Laptop, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import WorkspaceHeroSection from "@/components/workspace/WorkspaceHeroSection";
 
 const heroSlides = [
   {
@@ -99,7 +99,9 @@ const WorkspaceSolutions = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <WorkspaceSolutionHeroCarousel slides={heroSlides} />
+          <WorkspaceHeroSection 
+            image={heroSlides[0].image}
+          />
         </motion.div>
         
         <motion.div 
