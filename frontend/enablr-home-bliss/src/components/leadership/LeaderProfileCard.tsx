@@ -1,6 +1,6 @@
 import React from "react";
 import type { Leader } from "@/data/leadershipData";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from 'lucide-react';
 
 interface LeaderProfileCardProps {
   leader: Leader;
@@ -9,26 +9,27 @@ interface LeaderProfileCardProps {
 
 const LeaderProfileCard: React.FC<LeaderProfileCardProps> = ({ leader, onKnowMore }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-      <div className="relative h-96 overflow-hidden">
+    <div className="leadership-card group h-full flex flex-col shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <div className="overflow-hidden rounded-t-[16px] aspect-square">
         <img
           src={leader.photoUrl}
           alt={leader.name}
-          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
       
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-900 mb-1">{leader.name}</h3>
-        <p className="text-gray-600 mb-4">{leader.title}</p>
-        <Button
-          variant="outline"
-          className="w-full group-hover:bg-enablr-navy group-hover:text-white transition-colors duration-300"
+      <div className="p-6 flex-grow">
+        <h3 className="text-xl font-semibold text-card-foreground mb-1">{leader.name}</h3>
+        <p className="text-gray-500">{leader.title}</p>
+      </div>
+      <div className="card-icons">
+        <button
           onClick={() => onKnowMore(leader)}
+          className="arrow-icon"
+          aria-label={`Know more about ${leader.name}`}
         >
-          Know More
-        </Button>
+          <ArrowRight size={24} />
+        </button>
       </div>
     </div>
   );

@@ -154,3 +154,41 @@
     display: none;
   }
 }
+
+@layer components {
+  /* Leadership card styling */
+  .leadership-card {
+    background: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    padding-bottom: 60px; /* Space for icons */
+  }
+  .leadership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Arrow container at bottom-right of card */
+  .card-icons {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  /* Arrow icon default and hover */
+  .arrow-icon {
+    font-size: 24px;
+    opacity: 0.7;
+    color: hsl(var(--muted-foreground));
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .arrow-icon:hover {
+    opacity: 1;
+    transform: translateX(4px);
+    color: #FF4444;
+  }
+}
