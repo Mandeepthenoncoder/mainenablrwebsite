@@ -7,17 +7,9 @@ import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import SolutionCTA from "@/components/solutions/SolutionCTA";
 import { Building, Layout, Laptop, Users } from "lucide-react";
 import { motion } from "framer-motion";
-import HeroSection from "@/components/ui/HeroSection";
+import { CTAButton } from "@/components/ui/CTAButton";
 
-const heroSlides = [
-  {
-    title: "Workspace Solutions",
-    description: "",
-    image: "/images/lot%202/HeroImage-WorkspaceSolutions.jpg",
-    ctaText: "Get Started",
-    ctaLink: "/contact"
-  }
-];
+const heroImage = "/images/lot%202/HeroImage-WorkspaceSolutions.jpg";
 
 const keyOfferings = [
   {
@@ -82,6 +74,117 @@ const itemVariants = {
   }
 };
 
+// Custom styles to reduce gaps between sections
+const customStyles = `
+  /* Remove extra spacing on mobile */
+  @media (max-width: 767px) {
+    .workspace-solutions-page .solution-section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    .workspace-solutions-page .hero-section {
+      margin-bottom: -16px !important;
+    }
+    
+    .workspace-solutions-page .explanation-section {
+      padding-top: 1rem !important;
+    }
+  }
+`;
+
+// Custom Workspace Hero Section Component
+const WorkspaceHeroSection = () => {
+  return (
+    <section className="relative h-[40vh] md:h-[80vh] rounded-b-[32px] md:rounded-b-[48px] overflow-hidden bg-enablr-navy mb-0 hero-section">
+      {/* Mobile specific styling with fixed positioning */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          /* Mobile hero background positioning */
+          .mobile-workspace-hero {
+            background-image: url('${heroImage}');
+            background-position: center bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+          
+          @keyframes kenBurns {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+          }
+          .ken-burns-bg {
+            animation: kenBurns 10s ease-in-out infinite;
+          }
+          
+          ${customStyles}
+        `
+      }} />
+      
+      {/* Mobile view container - using CSS background-image for better control */}
+      <div className="block md:hidden absolute inset-0 z-0 mobile-workspace-hero">
+        {/* Dark overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-enablr-navy opacity-80"></div>
+      </div>
+      
+      {/* Desktop view container */}
+      <div className="hidden md:block absolute inset-0 z-0 overflow-hidden">
+        <div className="w-full h-full ken-burns-bg">
+          <img
+            src={heroImage}
+            alt="Workspace Solutions background"
+            className="w-full h-full object-cover"
+            style={{
+              objectPosition: "center 95%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+        
+        {/* Desktop overlay */}
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
+      
+      {/* Gradient overlay for all screen sizes */}
+      <div 
+        className="absolute inset-0 bg-gradient-to-r to-transparent sm:w-[70%] md:w-[60%] lg:w-[50%] z-[1]"
+        style={{
+          backgroundImage: "linear-gradient(to right, #0D214FF2, #0D214FCC, #0D214F33, transparent)"
+        }}
+      ></div>
+      
+      {/* Content container */}
+      <div className="absolute inset-0 flex items-center z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="max-w-xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 md:mb-4">
+                Workspace Solutions
+              </h1>
+              
+              <p className="text-base md:text-lg text-white/90 mb-4 md:mb-8 max-w-lg">
+                Create future-ready workspaces for your capability center with Enablr's comprehensive workplace solutions.
+              </p>
+              
+              <CTAButton 
+                text="Get Started" 
+                link="/contact" 
+                variant="secondary"
+                size="lg"
+                className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md transition-all duration-300 rounded-md"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const WorkspaceSolutions = () => {
   return (
     <MainLayout>
@@ -89,6 +192,7 @@ const WorkspaceSolutions = () => {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
+        className="workspace-solutions-page space-y-0"
       >
         <Helmet>
           <title>Workspace Solutions - Enablr</title>
@@ -99,19 +203,13 @@ const WorkspaceSolutions = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <HeroSection
-            title="Workspace Solutions"
-            description="Create future-ready workspaces for your capability center with Enablr's comprehensive workplace solutions."
-            image="/images/lot%202/HeroImage-WorkspaceSolutions.jpg"
-            ctaText="Get Started"
-            ctaLink="/contact"
-            enableKenBurns={true}
-          />
+          <WorkspaceHeroSection />
         </motion.div>
         
         <motion.div 
           variants={itemVariants}
           viewport={{ once: true }}
+          className="mt-0 explanation-section solution-section"
         >
           <SolutionExplanation
             title="Build Smarter, Sustainable Workspaces"
@@ -127,6 +225,7 @@ Our approach emphasizes flexibility, sustainability, and future readiness, ensur
         <motion.div 
           variants={itemVariants}
           viewport={{ once: true }}
+          className="solution-section"
         >
           <SolutionKeyOfferings
             title="Workspace Offerings"
@@ -137,6 +236,7 @@ Our approach emphasizes flexibility, sustainability, and future readiness, ensur
         <motion.div 
           variants={itemVariants}
           viewport={{ once: true }}
+          className="solution-section"
         >
           <SolutionWhyChooseUs reasons={workspaceReasons} />
         </motion.div>
@@ -144,6 +244,7 @@ Our approach emphasizes flexibility, sustainability, and future readiness, ensur
         <motion.div 
           variants={itemVariants}
           viewport={{ once: true }}
+          className="solution-section"
         >
           <SolutionCTA
             title="Partner to Create Spaces That Fit Your Needs"

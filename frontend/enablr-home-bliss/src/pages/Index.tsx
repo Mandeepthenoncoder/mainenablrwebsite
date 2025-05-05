@@ -22,7 +22,7 @@ const Index = () => {
   }, []);
   
   return (
-    <HomeLayout showInsights={false}>
+    <HomeLayout showInsights={true}>
       <Helmet>
         <title>Enablr - Build Your Global Team with Confidence</title>
         <meta name="description" content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience." />
@@ -32,7 +32,7 @@ const Index = () => {
       
       <HeroSection />
       
-      <div className="bg-white py-1">
+      <div className="bg-white">
         <div className="container mx-auto px-6">
           <Separator className="bg-gray-200 h-px" />
         </div>
@@ -40,7 +40,7 @@ const Index = () => {
       
       <EnablrEdge />
       
-      <div className="bg-white py-1">
+      <div className="bg-white">
         <div className="container mx-auto px-6">
           <Separator className="bg-gray-200 h-px" />
         </div>
@@ -48,7 +48,7 @@ const Index = () => {
       
       <Solutions />
       
-      <div className="bg-white py-1">
+      <div className="bg-white">
         <div className="container mx-auto px-6">
           <Separator className="bg-gray-200 h-px" />
         </div>
@@ -56,7 +56,7 @@ const Index = () => {
       
       <EngageWithUs />
       
-      <div className="bg-white py-1">
+      <div className="bg-white">
         <div className="container mx-auto px-6">
           <Separator className="bg-gray-200 h-px" />
         </div>
@@ -64,13 +64,16 @@ const Index = () => {
       
       <Pillars />
       
-      <div className="bg-white py-1">
+      <div className="bg-white">
         <div className="container mx-auto px-6">
           <Separator className="bg-gray-200 h-px" />
         </div>
       </div>
       
       <GlobalTeam />
+      
+      {/* The BlogHighlights and Newsletter components will be automatically 
+          added by HomeLayout since showInsights is now set to true */}
     </HomeLayout>
   );
 };

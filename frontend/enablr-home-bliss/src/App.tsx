@@ -21,7 +21,7 @@ const GCCService = lazy(() => import("./pages/GCCService"));
 const TechnologyEnablement = lazy(() => import("./pages/TechnologyEnablement"));
 const WorkspaceSolutions = lazy(() => import("./pages/WorkspaceSolutions"));
 const TalentAndHR = lazy(() => import("./pages/talent/TalentAndHR"));
-const BusinessOperations = lazy(() => import("./pages/operations/BusinessOperations"));
+const BusinessOperations = lazy(() => import("./pages/solutions/BusinessOperations"));
 const BOT = lazy(() => import("./pages/engagement/BOT"));
 const ModularServices = lazy(() => import("./pages/engagement/ModularServices"));
 const DedicatedTeam = lazy(() => import("./pages/engagement/DedicatedTeam"));

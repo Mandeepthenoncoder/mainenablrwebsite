@@ -11,12 +11,24 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import CarouselThumbnailStrip from "@/components/ui/CarouselThumbnailStrip";
 
+// Define interface for hero slides
+interface HeroSlide {
+  imageSrc: string;
+  srcset: string;
+  title: string; // Keep as string for thumbnail compatibility
+  titleLines: string[]; // Separate property for line-by-line display
+  buttonText: string;
+  buttonLink: string;
+  overlayClass: string;
+}
+
 // Define the hero slide content with optimized WebP images
-const heroSlides = [
+const heroSlides: HeroSlide[] = [
   {
     imageSrc: "/Carousel_img.jpg",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
-    title: "Build on Proven Experience\nand Enterprise-Grade Quality",
+    title: "Build on Proven Experience and Enterprise-Grade Quality", // For thumbnail
+    titleLines: ["Build on Proven Experience", "and Enterprise-Grade Quality"], // For display
     buttonText: "Get Started Today",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
@@ -24,7 +36,8 @@ const heroSlides = [
   {
     imageSrc: "/Carousel_img2.jpg",
     srcset: "/images/supabase-images/optimized/hero-slide-2-small.webp 640w, /images/supabase-images/optimized/hero-slide-2-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-2-large.webp 1920w",
-    title: "Realize your GCC Success\nwith Speed and Scale",
+    title: "Realize your GCC Success with Speed and Scale", // For thumbnail
+    titleLines: ["Realize your GCC Success", "with Speed and Scale"], // For display
     buttonText: "Speak To Our Experts",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
@@ -32,7 +45,8 @@ const heroSlides = [
   {
     imageSrc: "/Carousel_img3.jpg",
     srcset: "/images/lot 2/optimized/CarouselImage3-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage3-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage3-Home-large.webp 1920w",
-    title: "Accelerate your Setup\nwith Expert Talent and Seamless Execution",
+    title: "Accelerate your Setup with Expert Talent and Seamless Execution", // For thumbnail
+    titleLines: ["Accelerate your Setup", "with Expert Talent", "and Seamless Execution"], // Break into 3 lines
     buttonText: "Connect Now",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
@@ -42,6 +56,62 @@ const heroSlides = [
 export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  
+  // Mobile-specific styles for carousel text
+  const mobileCarouselStyles = `
+    /* Small mobile devices */
+    @media (max-width: 374px) {
+      .carousel-title-line {
+        line-height: 1.1 !important;
+        margin-bottom: 8px !important;
+        font-size: 22px !important;
+        letter-spacing: -0.01em !important;
+      }
+      
+      .carousel-container {
+        padding-top: 20% !important;
+      }
+    }
+    
+    /* Regular mobile devices */
+    @media (min-width: 375px) and (max-width: 639px) {
+      .carousel-title-line {
+        line-height: 1.1 !important;
+        margin-bottom: 8px !important;
+        font-size: 26px !important;
+        letter-spacing: -0.01em !important;
+      }
+      
+      .carousel-container {
+        padding-top: 15% !important;
+      }
+    }
+    
+    /* Small tablets */
+    @media (min-width: 640px) and (max-width: 767px) {
+      .carousel-title-line {
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
+        font-size: 30px !important;
+      }
+      
+      .carousel-container {
+        padding-top: 15% !important;
+      }
+    }
+    
+    /* Fix line breaks */
+    .carousel-title-line {
+      display: block !important;
+      white-space: normal !important;
+    }
+    
+    /* Additional spacing fix for third slide */
+    .last-slide-fix .carousel-title-line {
+      margin-bottom: 6px !important;
+      line-height: 1 !important;
+    }
+  `;
   
   // Select handler to track the current slide
   const onSelect = useCallback(() => {
@@ -99,6 +169,9 @@ export default function HeroSection() {
   
   return (
     <section className="relative w-full min-h-[80vh] overflow-hidden rounded-b-[40px]">
+      {/* Add custom styles for mobile */}
+      <style dangerouslySetInnerHTML={{ __html: mobileCarouselStyles }} />
+      
       <Carousel
         opts={{
           loop: true,
@@ -135,7 +208,7 @@ export default function HeroSection() {
               {/* Slide Content */}
               <div className="relative z-10 flex items-center h-full">
                 <div className="container mx-auto px-6">
-                  <div className="max-w-4xl px-0 md:pl-12 lg:pl-24 flex flex-col items-start">
+                  <div className="max-w-4xl px-0 md:pl-12 lg:pl-24 flex flex-col items-start carousel-container">
                     <div className="mb-10 sm:mb-8 w-full">
                       {/* Title with lines animated separately */}
                       <motion.div
@@ -143,21 +216,25 @@ export default function HeroSection() {
                         initial="hidden"
                         animate={current === index ? "visible" : "hidden"}
                         variants={containerVariants}
-                        className="text-left w-full"
+                        className={`text-left w-full ${index === 2 ? 'last-slide-fix' : ''}`}
                       >
-                        {slide.title.split('\n').map((line, lineIndex) => (
+                        {/* Use titleLines array for display */}
+                        {slide.titleLines.map((line, lineIndex) => (
                           <motion.div 
                             key={`line-${lineIndex}`}
                             variants={itemVariants}
                             className="
                               text-white font-semibold 
-                              leading-normal tracking-normal 
-                              text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
-                              mb-2 text-left break-words max-w-full px-1 sm:px-0 whitespace-pre-line
+                              leading-tight sm:leading-normal tracking-normal 
+                              text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 
+                              mb-3 sm:mb-2 text-left break-words max-w-full px-1 sm:px-0
+                              carousel-title-line
                             "
                             style={{
                               wordBreak: 'break-word',
                               hyphens: 'auto',
+                              display: 'block',
+                              whiteSpace: 'normal',
                             }}
                           >
                             {line}

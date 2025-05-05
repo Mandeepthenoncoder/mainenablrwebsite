@@ -53,9 +53,9 @@ const EnablrEdge = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="mt-4 sm:mt-8 md:mt-16 pb-8 sm:pb-12 md:pb-16 rounded-[16px] sm:rounded-[20px] md:rounded-[40px] relative overflow-hidden bg-[#ffdee2]/[0.37] px-0 mx-0 py-0 my-[8px] sm:my-[12px] md:my-[16px]"
+      className="rounded-[16px] sm:rounded-[20px] md:rounded-[40px] relative overflow-hidden bg-[#ffdee2]/[0.37] px-0 mx-0 py-0"
     >
-      <div className="container mx-auto my-0 py-[20px] sm:py-[30px] md:py-[50px] px-4 sm:px-6 md:px-[50px]">
+      <div className="container mx-auto py-[20px] sm:py-[30px] md:py-[50px] px-4 sm:px-6 md:px-[50px]">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

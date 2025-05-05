@@ -41,7 +41,7 @@ const blogPosts = [
 
 const BlogHighlights = () => {
   return (
-    <section className="my-10 md:my-16 py-14 md:py-16 bg-white">
+    <section className="py-[20px] md:py-[40px] bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
         <h2 className={typography.h2}>

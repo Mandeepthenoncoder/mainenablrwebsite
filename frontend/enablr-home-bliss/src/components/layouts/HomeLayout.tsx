@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Newsletter from "@/components/Newsletter";
 import BlogHighlights from "@/components/BlogHighlights";
 import Footer from "@/components/Footer";
+import { Separator } from "@/components/ui/separator";
 
 interface HomeLayoutProps {
   children: React.ReactNode;
@@ -24,8 +25,28 @@ const HomeLayout: React.FC<HomeLayoutProps> = ({
       <Navbar />
       <main className="pt-16">
         {children}
-        {showBlogHighlights && <BlogHighlights />}
-        {showNewsletter && <Newsletter variant={newsletterVariant} />}
+        
+        {showBlogHighlights && showInsights && (
+          <>
+            <div className="bg-white">
+              <div className="container mx-auto px-6">
+                <Separator className="bg-gray-200 h-px" />
+              </div>
+            </div>
+            <BlogHighlights />
+          </>
+        )}
+        
+        {showNewsletter && showInsights && (
+          <>
+            <div className="bg-white">
+              <div className="container mx-auto px-6">
+                <Separator className="bg-gray-200 h-px" />
+              </div>
+            </div>
+            <Newsletter variant={newsletterVariant} />
+          </>
+        )}
       </main>
       <Footer />
     </div>

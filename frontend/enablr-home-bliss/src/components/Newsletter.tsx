@@ -32,7 +32,7 @@ const Newsletter = ({ variant = 'expanded' }: NewsletterProps) => {
   
   if (variant === 'compact') {
     return (
-      <section className="my-10 md:my-16 py-14 md:py-16 bg-enablr-navy">
+      <section className="py-[20px] md:py-[40px] bg-enablr-navy">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className={`${typography.h3} text-white mb-4`}>Stay Ahead With Our Weekly Insights</h2>
@@ -109,7 +109,7 @@ const Newsletter = ({ variant = 'expanded' }: NewsletterProps) => {
           </div>
         </DialogContent>
       </Dialog>
-      <section className="my-10 md:my-16 py-14 md:py-16 bg-white">
+      <section className="py-[20px] md:py-[40px] bg-white">
         <div className="container mx-auto px-4">
           <div className="bg-enablr-navy rounded-xl overflow-hidden shadow-xl relative">
             {/* Background pattern */}

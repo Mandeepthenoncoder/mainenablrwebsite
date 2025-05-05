@@ -1,4 +1,3 @@
-
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import EngageHeading from "./engage/EngageHeading";
@@ -39,7 +38,7 @@ const EngageWithUs = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="py-12 md:py-16 bg-white"
+      className="py-[20px] md:py-[40px] bg-white"
     >
       <div className="container mx-auto px-6 overflow-hidden">
         <motion.div variants={itemVariants}>

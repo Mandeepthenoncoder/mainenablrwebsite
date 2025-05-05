@@ -13,7 +13,7 @@ const Solutions = () => {
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="py-8 md:py-12 px-0 md:px-6 bg-gradient-to-b from-white to-gray-50"
+      className="py-[20px] md:py-[40px] px-0 md:px-6 bg-gradient-to-b from-white to-gray-50"
     >
       <motion.div 
         initial={{ y: 50, opacity: 0 }}
