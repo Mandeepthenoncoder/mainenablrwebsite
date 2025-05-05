@@ -1,23 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import SolutionHeroCarousel from "@/components/solutions/SolutionHeroCarousel";
+import HeroSection from "@/components/ui/HeroSection";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import SolutionCTA from "@/components/solutions/SolutionCTA";
 import { ClipboardList, GraduationCap, Search, Users } from "lucide-react";
 import { motion } from "framer-motion";
-
-const heroSlides = [
-  {
-    title: "Talent and HR Solutions",
-    description: "",
-    image: "/images/New%20images/Right%20Team%20-%20TalentHR.jpeg",
-    ctaText: "Get Started",
-    ctaLink: "/contact"
-  }
-];
 
 const keyOfferings = [
   {
@@ -104,7 +94,14 @@ const TalentAndHR = () => {
         </Helmet>
 
         <motion.div variants={itemVariants}>
-          <SolutionHeroCarousel slides={heroSlides} />
+          <HeroSection
+            title="Talent and HR Solutions"
+            description="Build high-performing teams with Enablr's comprehensive talent and HR solutions for your capability center."
+            image="/images/New%20images/Right%20Team%20-%20TalentHR.jpeg"
+            ctaText="Get Started"
+            ctaLink="/contact"
+            enableKenBurns={true}
+          />
         </motion.div>
 
         <motion.div
@@ -113,7 +110,6 @@ const TalentAndHR = () => {
         >
           <SolutionExplanation
             title="Build the Right Teams with Strategic Talent & HR Solutions"
-            // Updated content prop with the three-paragraph version
             content={`Enablr offers comprehensive, end-to-end talent and HR solutions specifically designed to meet the unique needs of your business. Our goal is to help you build the right teams by providing strategic support across the entire HR spectrum.
 
 We streamline people operations to allow you to concentrate on core business growth. This includes managing crucial tasks such as sourcing high-quality talent, handling complex visa processes, efficiently onboarding new employees, and overseeing compliance workflows. By simplifying these essential functions, we free up your valuable time and resources.

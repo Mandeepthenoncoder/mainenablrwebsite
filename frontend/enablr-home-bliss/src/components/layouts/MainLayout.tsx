@@ -20,7 +20,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-16 md:pt-20">
         {children}
         {showBlogHighlights && <BlogHighlights />}
         {showNewsletter && <Newsletter variant={newsletterVariant} />}

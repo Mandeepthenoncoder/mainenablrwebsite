@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const WhyChooseEnablr = () => {
   return (
-    <section className="py-28 relative overflow-hidden bg-white">
+    <section className="py-16 md:py-28 relative overflow-hidden bg-white">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div className="h-full w-full bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] bg-[length:64px_64px]"></div>

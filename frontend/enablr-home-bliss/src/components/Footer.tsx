@@ -6,7 +6,7 @@ import Image from "@/components/Image";
 
 const Footer = () => {
   return (
-    <footer className="py-16 px-4 bg-gray-50">
+    <footer className="py-10 md:py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           <div className="md:col-span-2">

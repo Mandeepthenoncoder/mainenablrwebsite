@@ -14,7 +14,7 @@ const GlobalTeam = () => {
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="py-16 px-4 bg-enablr-navy text-white relative overflow-hidden"
+      className="py-12 md:py-16 px-4 bg-enablr-navy text-white relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">

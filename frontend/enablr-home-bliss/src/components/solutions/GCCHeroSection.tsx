@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "@/components/ui/HeroSection";
+import HeroSection from "../ui/HeroSection";
 
 interface Slide {
   title: string;
@@ -22,7 +22,7 @@ const GCCHeroSection = ({ slide }: GCCHeroSectionProps) => {
       ctaText="Get Started"
       ctaLink="/contact"
       flipImage={true}
-      primaryColor="#0D214F"
+      primaryColor="from-[#0D214F]"
     />
   );
 };

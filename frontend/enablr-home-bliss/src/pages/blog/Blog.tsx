@@ -12,6 +12,7 @@ import type { BlogPost } from "@/types/blog";
 import { typography } from "@/styles/typography";
 import Newsletter from "@/components/Newsletter";
 import { Link } from "react-router-dom";
+import HeroSection from "@/components/ui/HeroSection";
 
 // Static blog data
 const staticPosts: BlogPost[] = [
@@ -167,47 +168,14 @@ const Blog = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="text-white py-24 md:py-32 relative overflow-hidden">
-          {/* Background Image and Gradient Overlay */}
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="/images/blog/blog-hero.jpg" 
-              alt="Blog Hero" 
-              className="absolute inset-0 w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0  opacity-85"></div>
-            <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-10"></div>
-            <div className="absolute -left-16 -bottom-16 w-80 h-80 rounded-full border-t-indigo-500 blur-3xl"></div>
-            <div className="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-white/10 blur-3xl"></div>
-          </div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-2xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-left"
-              >
-                <h1 className={`${typography.h1} text-white mb-6 leading-tight`}>
-                  GCC Insights & <span className="text-enablr-lime">Perspectives</span>
-                </h1>
-                <p className={`${typography.body.lg} text-gray-200 mb-8 max-w-xl`}>
-                  Unpacking the trends, technology, and talent strategies redefining how Global Capability Centers drive innovation and impact.
-                </p>
-                <div className="flex">
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="border-white text-white bg-enablr-navy hover:bg-white hover:text-enablr-navy rounded-md transition-all duration-300"
-                  >
-                    Subscribe for Updates
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <HeroSection
+          title="Insights & Perspectives"
+          description="Discover expert insights on GCC trends, innovation, technology enablement, and talent strategies from Enablr's knowledge center."
+          image="/images/blog/blog-hero.jpg"
+          ctaText="Explore Insights"
+          ctaLink="/blog"
+          enableKenBurns={true}
+        />
         
         {/* Search & Categories */}
         <section className="bg-gray-50 py-8 border-b">

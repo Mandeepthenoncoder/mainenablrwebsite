@@ -13,7 +13,7 @@ export const leadershipData: Leader[] = [
     name: "C V Subramanyam",
     title: "Chairman & Managing Director",
     photoUrl: "/lovable-uploads/CV_Subramanyam.png",
-    linkedInUrl: "https://linkedin.com/in/cvsubramanyam",
+    linkedInUrl: "https://www.linkedin.com/in/subramanyam-venkata-chakkilam-30922313/?originalSubdomain=in",
     bio: "C.V. Subramanyam is a serial entrepreneur and the dynamic founder, Chairman and Managing Director of Covasant. Known for his fearless leadership style and relentless drive to make things happen, Subramanyam's journey is nothing short of inspirational, marked by his unwavering commitment to innovation, bold decision-making, and an unshakable belief in creating lasting value, across the companies he has built."
   },
   {
@@ -21,7 +21,7 @@ export const leadershipData: Leader[] = [
     name: "Ram Ramaseshan",
     title: "Chief Executive Officer",
     photoUrl: "/lovable-uploads/Ram_Ramasheshan.webp",
-    linkedInUrl: "https://linkedin.com/in/ramramaseshan",
+    linkedInUrl: "https://www.linkedin.com/in/ram-ramaseshan-1522245/",
     bio: "Ram is the CEO of Covasant and leads the charge in building AI-powered, Services-as-Software platforms that help enterprises unlock scalable value. He is driving the adoption of Agentic AI to help organizations adapt faster, innovate boldly, and achieve measurable outcomes."
   },
   {
@@ -29,7 +29,7 @@ export const leadershipData: Leader[] = [
     name: "Subhendu Pattnaik",
     title: "Chief Marketing Officer",
     photoUrl: "/lovable-uploads/Subhendu_Patnaik.webp",
-    linkedInUrl: "https://linkedin.com/in/vincentwalden",
+    linkedInUrl: "https://www.linkedin.com/in/subhendupattnaik/",
     bio: "Subhendu Pattnaik is the Chief Marketing Officer of Covasant, where he leads the company's marketing strategy and brand development. With his expertise in digital marketing and brand positioning, he drives Covasant's market presence and helps communicate our innovative solutions to enterprises worldwide."
   },
   {

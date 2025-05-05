@@ -9,7 +9,7 @@ import { Code2, Cloud, Cpu, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { TextStyled } from "@/components/ui/TextStyled";
 import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
-import TechHeroSection from "@/components/tech/TechHeroSection";
+import HeroSection from "@/components/ui/HeroSection";
 
 const heroSlides = [
   {
@@ -102,8 +102,13 @@ const TechnologyEnablement = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <TechHeroSection 
-            image={heroSlides[0].image}
+          <HeroSection
+            title="Technology Enablement Solutions"
+            description="Leverage technology to power your capability center with Enablr's comprehensive technology solutions and services."
+            image="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//TE%20hero%20img.jpg"
+            ctaText="Get Started"
+            ctaLink="/contact"
+            enableKenBurns={true}
           />
         </motion.div>
         

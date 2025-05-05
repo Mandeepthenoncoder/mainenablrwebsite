@@ -1,8 +1,7 @@
-
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import CMHero from "@/components/comprehensive-management/CMHero";
+import HeroSection from "@/components/ui/HeroSection";
 import CMIntro from "@/components/comprehensive-management/CMIntro";
 import CMDifferentiators from "@/components/comprehensive-management/CMDifferentiators";
 import CMBenefits from "@/components/comprehensive-management/CMBenefits";
@@ -19,7 +18,14 @@ const ComprehensiveManagement = () => {
         />
       </Helmet>
 
-      <CMHero />
+      <HeroSection
+        title="Comprehensive Management Model"
+        description="Discover Enablr's Comprehensive Management model - a fully orchestrated GCC experience from set-up to scale for maximum strategic value."
+        image="/Comprehensive_Solutions.jpg"
+        ctaText="Explore Now"
+        ctaLink="/contact"
+        enableKenBurns={true}
+      />
       <CMIntro />
       <CMDifferentiators />
       <CMBenefits />

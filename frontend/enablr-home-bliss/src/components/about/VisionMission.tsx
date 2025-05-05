@@ -5,7 +5,7 @@ import { Eye, Target } from "lucide-react";
 
 const VisionMission = () => {
   return (
-    <section className="py-24 bg-slate-50 overflow-hidden relative">
+    <section className="py-16 md:py-24 bg-slate-50 overflow-hidden relative">
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="h-full w-full bg-[linear-gradient(45deg,rgba(0,0,0,0.05)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.05)_75%,transparent_75%,transparent)] bg-[length:64px_64px]"></div>
       </div>

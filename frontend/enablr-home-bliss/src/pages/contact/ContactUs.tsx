@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { typography } from "@/styles/typography";
 import { TextStyled } from "@/components/ui/TextStyled";
 import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
+import HeroSection from "@/components/ui/HeroSection";
 
 const ContactUs = () => {
   const officeLocations = [
@@ -32,37 +33,15 @@ const ContactUs = () => {
         />
       </Helmet>
 
-      {/* Hero Section - Simplified without pattern overlay */}
-      <section className="relative min-h-[30vh] flex items-center rounded-b-3xl overflow-hidden z-10">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/lot 2/optimized/HeroImage-ContactUs.webp"
-            alt="Contact Enablr"
-            className="w-full h-full object-cover object-[85%_center] sm:object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-enablr-navy/95 via-enablr-navy/90 to-enablr-navy/75" />
-        </div>
-
-        {/* Hero content */}
-        <div className="container relative z-10 mx-auto px-4 py-6 sm:py-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <TextStyled
-              variant="hero"
-              casing="titleCase"
-              className="mb-2 text-3xl md:text-4xl lg:text-5xl"
-            >
-              A One-Stop-Shop For All <ResponsiveBreak breakOn="md" />
-              Your GCC Needs
-            </TextStyled>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <HeroSection
+        title="Contact Us"
+        description="Get in touch with Enablr for all your GCC needs and queries. We're here to answer your questions about Global Capability Centers and how we can help your business grow."
+        image="/images/lot 2/optimized/HeroImage-ContactUs.webp"
+        ctaText="Reach Out"
+        ctaLink="/contact"
+        enableKenBurns={true}
+      />
 
       {/* Main Contact Section */}
       <section
@@ -86,7 +65,7 @@ const ContactUs = () => {
           >
             <h2 className={typography.h2}>
               <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
-                Got questions, ideas or just
+                Got questions, ideas, or just
               </span>{" "}
               curious about partnering together?
             </h2>
@@ -133,7 +112,7 @@ const ContactUs = () => {
       </section>
 
       {/* Office Locations Section */}
-      <section className="py-10 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <TextStyled

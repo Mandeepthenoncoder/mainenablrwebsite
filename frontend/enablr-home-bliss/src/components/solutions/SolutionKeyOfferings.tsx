@@ -19,18 +19,18 @@ interface SolutionKeyOfferingsProps {
 
 const SolutionKeyOfferings = ({ title, offerings }: SolutionKeyOfferingsProps) => {
   return (
-    <section className="py-20 bg-enablr-navy rounded-[48px] px-6 mx-6 md:mx-[72px]">
+    <section className="py-10 md:py-20 bg-enablr-navy rounded-[32px] md:rounded-[48px] px-2 md:px-6 mx-2 md:mx-6 lg:mx-[72px]">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
           <TextStyled 
             variant="h3" 
-            className="mb-6"
+            className="mb-4 md:mb-6 text-lg md:text-2xl"
             color="text-white"
             casing="titleCase"
           >
@@ -38,7 +38,7 @@ const SolutionKeyOfferings = ({ title, offerings }: SolutionKeyOfferingsProps) =
           </TextStyled>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {offerings.map((offering, index) => {
             const Icon = offering.icon;
             const needsLineBreak = offering.title.length > 30;
@@ -55,15 +55,15 @@ const SolutionKeyOfferings = ({ title, offerings }: SolutionKeyOfferingsProps) =
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full relative overflow-hidden bg-transparent border border-white/10 group">
+                <Card className="h-full relative overflow-hidden bg-transparent border border-white/10 group p-4 md:p-6">
                   <div className="absolute inset-0 bg-white transform translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0"></div>
                   <CardHeader className="relative z-10">
-                    <div className="w-8 h-8 mb-3 text-white group-hover:text-black transition-colors duration-300">
+                    <div className="w-8 h-8 mb-2 md:mb-3 text-white group-hover:text-black transition-colors duration-300">
                       <Icon className="w-full h-full" />
                     </div>
                     <TextStyled 
                       variant="h4" 
-                      className="group-hover:text-black transition-colors duration-300"
+                      className="group-hover:text-black transition-colors duration-300 text-base md:text-lg"
                       color="text-white"
                       casing="titleCase"
                     >
@@ -79,7 +79,7 @@ const SolutionKeyOfferings = ({ title, offerings }: SolutionKeyOfferingsProps) =
                   <CardContent className="relative z-10">
                     <TextStyled 
                       variant="body" 
-                      className="group-hover:text-gray-600 transition-colors duration-300"
+                      className="group-hover:text-gray-600 transition-colors duration-300 text-sm md:text-base"
                       color="text-gray-300"
                       casing="sentenceCase"
                     >

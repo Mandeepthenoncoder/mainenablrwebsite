@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import BOTHero from "@/components/bot/BOTHero";
+import HeroSection from "@/components/ui/HeroSection";
 import BOTIntro from "@/components/bot/BOTIntro";
 import BOTDifferentiators from "@/components/bot/BOTDifferentiators";
 import BOTBenefits from "@/components/bot/BOTBenefits";
@@ -18,7 +18,14 @@ const BOT = () => {
         />
       </Helmet>
 
-      <BOTHero />
+      <HeroSection
+        title="Build-Operate-Transfer Model"
+        description="Learn about Enablr's Build-Operate-Transfer (BOT) model - a low-risk approach to setting up and managing your GCC with expert guidance."
+        image="/images/New images/Hero-BOT.jpeg"
+        ctaText="Get Started"
+        ctaLink="/contact"
+        enableKenBurns={true}
+      />
       <BOTIntro />
       <BOTDifferentiators />
       <BOTBenefits />
@@ -27,4 +34,4 @@ const BOT = () => {
   );
 };
 
-export default BOT;	
+export default BOT;

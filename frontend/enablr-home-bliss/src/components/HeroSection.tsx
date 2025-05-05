@@ -9,29 +9,30 @@ import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import CarouselThumbnailStrip from "@/components/ui/CarouselThumbnailStrip";
 
 // Define the hero slide content with optimized WebP images
 const heroSlides = [
   {
-    imageSrc: "/images/supabase-images/optimized/hero-slide-1.webp",
+    imageSrc: "/Carousel_img.jpg",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
-    title: "Build On Proven\nExperience And Enterprise-Grade Quality",
+    title: "Build on Proven Experience\nand Enterprise-Grade Quality",
     buttonText: "Get Started Today",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
   },
   {
-    imageSrc: "/images/supabase-images/optimized/hero-slide-2.webp",
+    imageSrc: "/Carousel_img2.jpg",
     srcset: "/images/supabase-images/optimized/hero-slide-2-small.webp 640w, /images/supabase-images/optimized/hero-slide-2-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-2-large.webp 1920w",
-    title: "Realize Your GCC Success\nWith Speed and Scale",
+    title: "Realize your GCC Success\nwith Speed and Scale",
     buttonText: "Speak To Our Experts",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
   },
   {
-    imageSrc: "/images/lot 2/optimized/CarouselImage3-Home.webp",
+    imageSrc: "/Carousel_img3.jpg",
     srcset: "/images/lot 2/optimized/CarouselImage3-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage3-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage3-Home-large.webp 1920w",
-    title: "Accelerate Your Setup\nWith Expert Talent and Seamless Execution",
+    title: "Accelerate your Setup\nwith Expert Talent and Seamless Execution",
     buttonText: "Connect Now",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
@@ -110,38 +111,25 @@ export default function HeroSection() {
         <CarouselContent className="h-full">
           {heroSlides.map((slide, index) => (
             <CarouselItem key={index} className="w-full min-h-[80vh] overflow-hidden relative">
-              {/* Background: Use video for the first slide, image for others */}
+              {/* Background: Use video for each slide */}
               <div className="absolute inset-0 bg-gray-900">
-                {index === 0 ? (
-                  <>
-                    <video
-                      src="/Carousel_Video.mp4"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                    <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
-                  </>
-                ) : (
-                  <>
-                    <picture>
-                      <source
-                        srcSet={slide.srcset}
-                        type="image/webp"
-                        sizes="100vw"
-                      />
-                      <img
-                        src={slide.imageSrc}
-                        alt={`Slide ${index + 1}`}
-                        loading={index === 0 ? "eager" : "lazy"}
-                        className={`absolute inset-0 h-full w-full object-cover ${index === 1 ? 'object-[70%_center]' : ''}`}
-                      />
-                    </picture>
-                    <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
-                  </>
-                )}
+                <>
+                  <video
+                    // Use specific video based on index
+                    src={
+                      index === 0 ? "/Carousel_Video.mp4" :
+                      index === 1 ? "/Carousel_Video2.mp4" :
+                      index === 2 ? "/Carousel_Video3.mp4" : // Assuming path for slide 3
+                      "" // Fallback if no video is found
+                    }
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
+                </>
               </div>
               
               {/* Slide Content */}
@@ -162,19 +150,10 @@ export default function HeroSection() {
                             key={`line-${lineIndex}`}
                             variants={itemVariants}
                             className="
-                              text-white
-                              font-bold
-                              leading-[1.15]
-                              text-3xl
-                              sm:text-4xl
-                              md:text-5xl
-                              lg:text-6xl
-                              mb-2
-                              text-left
-                              break-words
-                              max-w-full
-                              px-1 sm:px-0
-                              whitespace-pre-line
+                              text-white font-semibold 
+                              leading-normal tracking-normal 
+                              text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+                              mb-2 text-left break-words max-w-full px-1 sm:px-0 whitespace-pre-line
                             "
                             style={{
                               wordBreak: 'break-word',
@@ -190,55 +169,29 @@ export default function HeroSection() {
                     {/* CTA Button using the standardized component */}
                     <motion.div
                       initial={{ opacity: 0, y: 30 }}
-                      animate={{ 
+                      animate={{
                         opacity: current === index ? 1 : 0,
                         y: current === index ? 0 : 30
                       }}
                       transition={{ duration: 0.5, delay: 0.4 }}
                       className="text-left w-full"
                     >
-                      {index === 1 ? (
-                        // Special styling for second slide
-                        <Button
-                          asChild
-                          className="
-                            inline-flex items-center justify-center 
-                            min-h-[45px] sm:min-h-[55px]
-                            rounded-md
-                            px-12 sm:px-16 py-4
-                            text-base sm:text-lg
-                            font-medium
-                            shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300
-                            bg-gradient-to-r from-white to-gray-50 text-enablr-navy hover:bg-enablr-navy hover:from-enablr-navy hover:to-enablr-navy hover:text-white hover:border-white 
-                            border-2 border-enablr-navy/20
-                            mx-0
-                            w-[75%] sm:w-[280px]
-                          "
-                        >
-                          <Link to={slide.buttonLink} className="flex items-center justify-center w-full">
-                            <span>{slide.buttonText}</span>
-                          </Link>
-                        </Button>
-                      ) : (
-                        <CTAButton 
-                          text={slide.buttonText}
-                          link={slide.buttonLink}
-                          variant="secondary"
-                          size="lg"
-                          className={`
-                            inline-flex items-center justify-center 
-                            min-h-[40px] sm:min-h-[50px]
-                            rounded-md
-                            px-4 sm:px-7
-                            text-base sm:text-lg
-                            font-medium
-                            shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300
-                            bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border-white
-                            mx-0
-                            w-[52%] sm:w-auto
-                          `}
-                        />
-                      )}
+                      <CTAButton
+                        text={slide.buttonText}
+                        link={slide.buttonLink}
+                        variant="secondary"
+                        size="lg"
+                        className={`
+                          bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md
+                          inline-flex items-center justify-center
+                          min-h-[44px]
+                          px-6 sm:px-8
+                          py-2 sm:py-2.5
+                          text-base
+                          font-medium
+                          mx-0
+                        `}
+                      />
                     </motion.div>
                   </div>
                 </div>
@@ -246,16 +199,13 @@ export default function HeroSection() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        
-        {/* Navigation Buttons */}
-        <div className="absolute bottom-6 right-6 z-20 flex gap-3">
-          <CarouselPrevious 
-            className="static translate-y-0 bg-white text-enablr-dark-blue border-white hover:bg-white hover:text-enablr-dark-blue hover:scale-110 transition-transform duration-200 shadow-md h-10 w-10"
-          />
-          <CarouselNext 
-            className="static translate-y-0 bg-white text-enablr-dark-blue border-white hover:bg-white hover:text-enablr-dark-blue hover:scale-110 transition-transform duration-200 shadow-md h-10 w-10"
-          />
-        </div>
+
+        <CarouselThumbnailStrip
+          api={api}
+          slides={heroSlides}
+          currentSlide={current}
+        />
+
       </Carousel>
     </section>
   );

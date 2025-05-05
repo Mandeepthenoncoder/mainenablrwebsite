@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 const CMHero = () => {
   return (
-    <section className="relative min-h-[60vh] flex items-center">
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-[60vh] flex items-center ">
+      <div className="absolute inset-0 z-0 ">
         <img
           src="/images/lot%202/HeroImage-Comprehensive%20Management.jpg"
           alt="Tech operations control center"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-b-3xl"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-enablr-navy/90 to-enablr-navy/80" />
       </div>

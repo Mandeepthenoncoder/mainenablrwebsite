@@ -8,6 +8,8 @@ import { useState, useEffect, lazy, Suspense } from "react";
 import PreloadResources from "./components/PreloadResources";
 import CookiesPolicy from './pages/CookiesPolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookieConsent from './components/cookies/CookieConsent';
+import { initializeCookies } from './utils/cookieUtils';
 
 // Eagerly load the Index page for faster initial render
 import Index from "./pages/Index";
@@ -66,6 +68,11 @@ const App = () => {
     }
   }));
 
+  // Initialize cookies when the app loads
+  useEffect(() => {
+    initializeCookies();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
@@ -117,6 +124,8 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
+            {/* Cookie Consent Banner */}
+            <CookieConsent />
           </BrowserRouter>
         </TooltipProvider>
       </HelmetProvider>
