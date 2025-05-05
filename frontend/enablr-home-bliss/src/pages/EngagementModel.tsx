@@ -30,7 +30,7 @@ const EngagementModel = () => {
       id: 1,
       title: "Comprehensive Management",
       description:
-        "We handle your GCC end-to-end—from infrastructure and compliance to talent, operations, and innovation.",
+        "We handle your GCC end-to-end; from infrastructure and compliance to talent, operations, and innovation, so you can stay focused on growth.",
       image: "/comprehensive managemenrt.png",
       icon: <Building className="w-6 h-6 text-enablr-navy" />,
       link: "/engagement/comprehensive-management",
@@ -39,7 +39,7 @@ const EngagementModel = () => {
       id: 2,
       title: "Modular Services",
       description:
-        "Pick only what you need from our catalog of services that align perfectly with your GCC's evolving needs.",
+        "Pick only what you need. From talent acquisition and infrastructure to operations and workspace optimization, our pay-as-you-grow model lets you plug in services that align perfectly with your GCC’s evolving needs.",
       image: "/modular services.png",
       icon: <Blocks className="w-6 h-6 text-enablr-navy" />,
       link: "/engagement/modular-services",
@@ -48,7 +48,7 @@ const EngagementModel = () => {
       id: 3,
       title: "Build-Operate-Transfer (B-O-T)",
       description:
-        "We set up, scale, and manage your GCC, and then transition ownership when you're ready.",
+        "We set up, scale, and manage your GCC, and then transition ownership when you are ready. You get a fully operational, high-performing center without the complexity.",
       image: "/BOT model image 1.png",
       icon: <BarChart3 className="w-6 h-6 text-enablr-navy" />,
       link: "/engagement/bot",
@@ -57,7 +57,7 @@ const EngagementModel = () => {
       id: 4,
       title: "Dedicated Teams",
       description:
-        "We take full ownership of recruitment, onboarding, and daily operations to build high-performing teams.",
+        "Bringing best-in-the-industry talent for you is our lookout. We take full ownership of recruitment, onboarding, and daily operations to build high-performing teams that operate as a seamless extension of your business and scale as per your goals.",
       image: "/dedicated team.png",
       icon: <Users className="w-6 h-6 text-enablr-navy" />,
       link: "/engagement/dedicated-team",

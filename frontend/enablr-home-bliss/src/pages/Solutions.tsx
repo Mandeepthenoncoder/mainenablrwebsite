@@ -17,7 +17,7 @@ const Solutions = () => {
   const solutionCards = [
     {
       id: 1,
-      title: "GCC as a service",
+      title: "GCC-as-a-Service",
       description: "End-to-end solution to establish your fully equipped global capability center.",
       image: "/images/blog/gcc1.jpg?v=1",
       link: "/services/gcc-as-service"
@@ -93,7 +93,7 @@ const Solutions = () => {
         <title>End-to-End GCC Solutions | Enablr</title>
         <meta 
           name="description" 
-          content="Explore Enablr's comprehensive GCC solutions including GCC as a Service, Technology Enablement, Workspace Solutions, and more." 
+          content="Explore Enablr's comprehensive GCC solutions including GCC-as-a-Service, Technology Enablement, Workspace Solutions, and more." 
         />
       </Helmet>
       

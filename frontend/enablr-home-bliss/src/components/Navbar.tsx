@@ -190,7 +190,7 @@ const Navbar = () => {
             <div className="py-1">
               <ul className="w-full space-y-1">
                 <DropdownMenuItem to="/services/gcc-as-service" index={0}>
-                  GCC as a Service
+                  GCC-as-a-Service
                 </DropdownMenuItem>
                 <DropdownMenuItem to="/services/technology-enablement" index={1}>
                   Technology Enablement
@@ -336,7 +336,7 @@ const Navbar = () => {
                             : "text-gray-700 hover:bg-white/60"
                         )}
                       >
-                        GCC as a Service
+                        GCC-as-a-Service
                       </Link>
                     </li>
                     <li>

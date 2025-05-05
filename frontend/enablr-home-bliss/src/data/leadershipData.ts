@@ -32,6 +32,7 @@ export const leadershipData: Leader[] = [
     linkedInUrl: "https://www.linkedin.com/in/subhendupattnaik/",
     bio: "Subhendu Pattnaik is the Chief Marketing Officer of Covasant, where he leads the company's marketing strategy and brand development. With his expertise in digital marketing and brand positioning, he drives Covasant's market presence and helps communicate our innovative solutions to enterprises worldwide."
   },
+  /*
   {
     id: "4",
     name: "Rahul Veernala",
@@ -67,5 +68,5 @@ export const leadershipData: Leader[] = [
     photoUrl: "/lovable-uploads/Bryan_Judice.png",
     linkedInUrl: "https://linkedin.com/in/vincentwalden",
     bio: "Bryan Judice serves as Covasant's Chief Marketing Officer, focusing on digital transformation and market expansion strategies. His expertise in technology marketing and brand development helps position Covasant as a leader in enterprise solutions."
-  }
+  }*/
 ]; 

@@ -10,7 +10,7 @@ import { Building2, Users, Cpu, Shield, Briefcase, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
 const heroSlide = {
-  title: "GCC as a Service",
+  title: "GCC-as-a-Service",
   description: "End-to-end solution to establish your fully equipped global capability center.",
   image: "/images/lot%202/MainPicture-GCC.jpg",
   ctaText: "Get Started",
@@ -99,16 +99,16 @@ const GCCService = () => {
         variants={containerVariants}
       >
         <Helmet>
-          <title>GCC as a Service - Enablr</title>
+          <title>GCC-as-a-Service - Enablr</title>
           <meta 
             name="description" 
-            content="Set up your Global Capability Center with Enablr's comprehensive GCC as a Service solution." 
+            content="Set up your Global Capability Center with Enablr's comprehensive GCC-as-a-Service solution." 
           />
         </Helmet>
         
         <motion.div variants={itemVariants}>
           <HeroSection
-            title="GCC as a Service"
+            title="GCC-as-a-Service"
             description="End-to-end solution to establish your fully equipped global capability center."
             image="/images/lot%202/MainPicture-GCC.jpg"
             ctaText="Get Started"

@@ -173,12 +173,6 @@ const CMBenefits = () => {
                           {target.description}
                         </p>
                       </div>
-                      
-                      <div className="flex-shrink-0 self-center hidden md:block opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <div className="w-10 h-10 rounded-full border border-enablr-navy/20 flex items-center justify-center">
-                          <ChevronRight className="w-5 h-5 text-enablr-navy" />
-                        </div>
-                      </div>
                     </div>
                   </motion.div>
                 ))}

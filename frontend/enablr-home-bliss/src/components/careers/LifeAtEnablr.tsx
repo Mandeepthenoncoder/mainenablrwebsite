@@ -13,12 +13,12 @@ const lifeAtEnablrData = [
   {
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     title: "Innovation-driven mindset",
-    description: "We embed innovation in every layer of our work—from AI-led technology to process transformation. Here, you'll be empowered to think boldly, challenge convention, and build solutions that drive real value for global enterprises."
+    description: "We embed innovation in every layer of our work, right from tech-driven mindset to process transformation. Here, you will be empowered to think boldly, and build solutions that drive real value."
   },
   {
     image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     title: "People-centric culture",
-    description: "We believe exceptional outcomes start with empowered people. Our culture prioritizes transparency, collaboration, flexibility, and growth—enabling you to do your best work in a supportive and inclusive environment."
+    description: "We believe exceptional outcomes start with empowered people. Our culture prioritizes transparency, collaboration, flexibility, and growth; encouraging you to do deliver at your best in a supportive and inclusive environment."
   },
   {
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
