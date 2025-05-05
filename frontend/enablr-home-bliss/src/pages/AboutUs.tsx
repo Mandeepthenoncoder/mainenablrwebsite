@@ -32,7 +32,7 @@ const AboutUs = () => {
       </div>
       <PageCTA 
         title="Ready to transform your GCC strategy?"
-        buttonText="Schedule a consultation call today!"
+        buttonText="Schedule a consultation call today"
         buttonLink="/contact"
       />
     </MainLayout>
