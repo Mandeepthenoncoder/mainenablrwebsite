@@ -28,7 +28,7 @@ const DTConclusion = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className={`${typography.h2} text-white mb-12 leading-tight`}
         >
-          With Enablr As Your Partner, We Ensure Speed To Launch With Local-Global Expertise, Ensuring That Your Core Business Values Are Driven Down To Your Global Teams.
+          With Enablr as your Partner, we Ensure Speed To Launch with Local-Global Expertise, Ensuring that your Core Business Values are Driven Down to your Global Teams.
         </motion.h2>
         
         <motion.div

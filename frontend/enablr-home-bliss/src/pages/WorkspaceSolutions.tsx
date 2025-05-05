@@ -4,7 +4,7 @@ import MainLayout from "@/components/layouts/MainLayout";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
-import SolutionCTA from "@/components/solutions/SolutionCTA";
+import PageCTA from "@/components/PageCTA";
 import { Building, Layout, Laptop, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
@@ -244,10 +244,10 @@ Our approach emphasizes flexibility, sustainability, and future readiness, ensur
         <motion.div 
           variants={itemVariants}
           viewport={{ once: true }}
-          className="solution-section"
         >
-          <SolutionCTA
-            title="Partner to Create Spaces That Fit Your Needs"
+          <PageCTA
+            title="Partner to Create Spaces
+That Fit Your Needs"
             buttonText="Let's Connect"
             buttonLink="/contact"
           />

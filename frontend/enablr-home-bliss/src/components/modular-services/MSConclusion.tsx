@@ -28,7 +28,7 @@ const MSConclusion = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className={`${typography.h2} text-white mb-12 leading-tight`}
         >
-          With Enablr As Your Partner,<br />You Name It And We Will Ensure Support<br />At Any Stage Of Your GCC Journey.
+          With Enablr as your Partner, You Name It and We Will Ensure Support at Any Stage Of Your GCC Journey.
         </motion.h2>
         
         <motion.div

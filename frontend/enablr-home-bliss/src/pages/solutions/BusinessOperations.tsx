@@ -4,7 +4,7 @@ import MainLayout from "@/components/layouts/MainLayout";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
-import SolutionCTA from "@/components/solutions/SolutionCTA";
+import PageCTA from "@/components/PageCTA";
 import { Box, FileSpreadsheet, Landmark, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
@@ -31,19 +31,19 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
-    title: "Local-Global Market Intelligence",
-    description: "Leverage our deep understanding of both local markets and global business landscapes to make informed decisions."
+    image: "/images/Governance.jpg",
+    title: "Simplified governance and reporting",
+    description: "We simplify governance and reporting for your business operations, providing you useful, real-time insights and vision to make informed decisions with confidence.."
   },
   {
-    image: "/images/New%20images/Infra%20Support-GCC.jpeg",
-    title: "End-to-End Infrastructure Support",
-    description: "Get comprehensive infrastructure solutions from initial setup to ongoing maintenance and optimization."
+    image: "/images/Bot.jpg",
+    title: "Infrastructure set-up with operational excellence",
+    description: "Right from the start, we set up scalable infrastructure that is supported by proven and tested processes to ensure smooth operations, ensuring sustainability in your operations."
   },
   {
     image: "/images/New%20images/Innovation-Business%20Operations.jpeg",
     title: "Continuous innovation for accelerated growth",
-    description: "Drive growth through continuous innovation and process improvement."
+    description: "We understand your need for continuous improvement and innovation through your GCC, hence, we build scalable tech frameworks and processes that power you in this dynamic marketplace.."
   }
 ];
 
@@ -176,7 +176,6 @@ const BusinessHeroSection = () => {
                 link="/contact" 
                 variant="secondary"
                 size="lg"
-                className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md transition-all duration-300 rounded-md"
               />
             </motion.div>
           </div>
@@ -242,9 +241,9 @@ If you are setting up a global capability center, then you can trust Enablr for 
           variants={itemVariants}
           viewport={{ once: true }}
         >
-          <SolutionCTA
+          <PageCTA
             title="Gain operational excellence and experienced guidance from the start"
-            buttonText="Let's connect"
+            buttonText="Let's Talk"
             buttonLink="/contact"
           />
         </motion.div>

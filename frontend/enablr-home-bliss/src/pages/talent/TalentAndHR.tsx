@@ -5,7 +5,7 @@ import HeroSection from "@/components/ui/HeroSection";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
-import SolutionCTA from "@/components/solutions/SolutionCTA";
+import PageCTA from "@/components/PageCTA";
 import { ClipboardList, GraduationCap, Search, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -34,24 +34,21 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
-    title: "Local-Global Market Intelligence",
-    description: "Leverage our deep understanding of both local markets and global business landscapes to make informed decisions."
+    image: "/images/T_Hr.jpg",
+    title: "Tier-2 & Tier-3 talent awareness ",
+    description: "We power your GCC with deep understanding of the talent pool not just from Tier 1, but even Tier 2 cities, enabling access to talent in emerging tech hubs."
   },
-  {
-    image: "/images/New%20images/Infra%20Support-GCC.jpeg",
-    title: "End-to-End Infrastructure Support",
-    description: "Get comprehensive infrastructure solutions from initial setup to ongoing maintenance and optimization."
-  },
+  
   {
     image: "/images/lot%202/Untapped-TalentHR.jpg",
     title: "Access to untapped, high-quality talent pool",
-    description: "Connect with pre-screened, qualified candidates ready for your GCC."
+    description:"We help you connect with pre-screened, qualified candidates from diverse backgrounds that fit your long-term or immediate requirements."
+
   },
   {
     image: "/images/New%20images/Optimized-TalentHR.jpeg",
     title: "Optimized recruitment cost",
-    description: "Efficient processes and strategic sourcing to reduce hiring costs."
+    description: "We have streamlined efficient processes and created a strategic approach for optimizing your hiring process, keeping it cost-effective. " 
   }
 ];
 
@@ -140,9 +137,10 @@ As you establish your global capability center (GCC), Enablr is your expert part
           variants={itemVariants}
           viewport={{ once: true }}
         >
-          <SolutionCTA
-            title="Look beyond just recruitment, enable strategic workforce management"
-            buttonText="Let's Connect"
+          <PageCTA
+            title="Look beyond just recruitment,
+enable strategic workforce management"
+            buttonText="Let's Talk"
             buttonLink="/contact"
           />
         </motion.div>

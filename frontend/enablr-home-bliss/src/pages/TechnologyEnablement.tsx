@@ -4,7 +4,7 @@ import MainLayout from "@/components/layouts/MainLayout";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
-import SolutionCTA from "@/components/solutions/SolutionCTA";
+import PageCTA from "@/components/PageCTA";
 import { Code2, Cloud, Cpu, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { TextStyled } from "@/components/ui/TextStyled";
@@ -156,7 +156,7 @@ We handle the complexity of technology deployment so you can focus on leveraging
           variants={itemVariants}
           viewport={{ once: true }}
         >
-          <SolutionCTA
+          <PageCTA
             title="Future-Proof Your GCC Journey With Us"
             buttonText="Let's Connect"
             buttonLink="/contact"

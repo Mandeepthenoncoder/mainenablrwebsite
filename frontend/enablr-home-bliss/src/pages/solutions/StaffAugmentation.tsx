@@ -5,14 +5,14 @@ import SolutionHeroCarousel from "@/components/solutions/SolutionHeroCarousel";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
-import SolutionCTA from "@/components/solutions/SolutionCTA";
+import PageCTA from "@/components/PageCTA";
 import { Users2, Code2, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 const heroSlides = [
   {
     title: "Staff Augmentation Services",
-    description: "",
+    description: "Enhance your team's capabilities with our flexible and scalable staff augmentation solutions, tailored to meet your specific project needs and business goals.",
     image: "/images/New%20images/Main%20Pic-Staff%20Augmentation.jpeg",
     
     ctaText: "Get Started",
@@ -46,18 +46,18 @@ const keyOfferings = [
 const whyChooseUsReasons = [
   {
     image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
-    title: "Local-Global Market Intelligence",
-    description: "Leverage our deep understanding of both local markets and global business landscapes to make informed decisions."
+    title: "On-demand scaling of team",
+    description: "We help you to swiftly grow or scale down your team as per your project requirements, helping you to meet your talent and workforce requirements at ease."
   },
   {
     image: "/images/New%20images/Infra%20Support-GCC.jpeg",
-    title: "End-to-End Infrastructure Support",
-    description: "Get comprehensive infrastructure solutions from initial setup to ongoing maintenance and optimization."
+    title: "Availability of niche technical expertise",
+    description: "We come in to meet your specific or highly specialized skill requirements, enabling you to connect with the right experts at speed without compromising on quality."
   },
   {
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf",
     title: "Enabling speed with agility",
-    description: "Quick turnaround times for team formation and deployment."
+    description: "We help you to maintain speed with adaptability and flexibility, ensuring that quality is intact and you are able to adjust quickly and keep up with the market dynamics"
   }
 ];
 
@@ -139,9 +139,9 @@ If you are setting up a global capability center, then you can trust Enablr for 
           variants={itemVariants}
           viewport={{ once: true }}
         >
-          <SolutionCTA
+          <PageCTA
             title="Transform your GCC into a high impact entity with the right skills"
-            buttonText="Let's Connect"
+            buttonText="Find Talent Now"
             buttonLink="/contact"
           />
         </motion.div>
