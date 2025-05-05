@@ -45,19 +45,19 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/staff_aug.1jpg",
+    image: "/images/staff_aug1-min.jpg",
     title: "On-demand scaling of team",
     description: "We help you to swiftly grow or scale down your team as per your project requirements, helping you to meet your talent and workforce requirements at ease."
   },
   {
-    image: "/images/staff_aug.2jpg",
+    image: "/images/staff_aug2-min.jpg",
     title: "Availability of niche technical expertise",
     description: "We come in to meet your specific or highly specialized skill requirements, enabling you to connect with the right experts at speed without compromising on quality."
   },
   {
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf",
     title: "Enabling speed with agility",
-    description: "We help you to maintain speed with adaptability and flexibility, ensuring that quality is intact and you are able to adjust quickly and keep up with the market dynamics"
+    description: "We help you to maintain speed with adaptability and flexibility, ensuring that quality is intact and you are able to adjust quickly and keep up with the market dynamics"
   }
 ];
 

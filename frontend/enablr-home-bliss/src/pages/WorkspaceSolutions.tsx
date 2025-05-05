@@ -38,17 +38,17 @@ const workspaceReasons = [
   {
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
     title: "Purpose-Led Centers\nof Excellence (CoEs)",
-    description: "We create spaces designed specifically for your Centers of Excellence, ensuring optimal functionality and collaboration."
+    description: "We work with you to design workspaces that induce creativity, innovation, and help you stay upbeat for your next move."
   },
   {
     image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
     title: "Flexible and\nScalable",
-    description: "Our workspace solutions adapt to your changing needs, allowing you to scale your operations seamlessly."
+    description: "We partner with you build what works for you, keeping your future growth plans into perspective, enabling you to set the right tone for your business. "
   },
   {
     image: "/images/lot%202/SmartSustainable-Workspace%20Solutions.jpg",
     title: "Designed for Improved Focus\nand Productivity",
-    description: "Every space is thoughtfully crafted to enhance focus, boost productivity, and promote well-being."
+    description: "We propose and create workspace solutions that boost your teams to think beyond the mundane tasks and deliver cutting-edge solutions for consistent growth."
   }
 ];
 
