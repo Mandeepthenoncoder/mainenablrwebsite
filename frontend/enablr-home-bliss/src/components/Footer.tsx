@@ -31,7 +31,7 @@ const Footer = () => {
                   to="/services/gcc-as-service"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
-                  GCC as a Service
+                  GCC-as-a-Service
                 </Link>
               </li>
               <li>

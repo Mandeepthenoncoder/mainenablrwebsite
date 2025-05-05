@@ -48,7 +48,7 @@ const workspaceReasons = [
   {
     image: "/images/lot%202/SmartSustainable-Workspace%20Solutions.jpg",
     title: "Designed for Improved Focus\nand Productivity",
-    description: "We propose and create workspace solutions that boost your teams to think beyond the mundane tasks and deliver cutting-edge solutions for consistent growth."
+    description: "We propose and create workspace solutions that boost your teams to think beyond the mundane tasks and deliver cutting-edge solutions for consistent growth.g"
   }
 ];
 

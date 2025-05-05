@@ -35,7 +35,7 @@ const keyOfferings = [
   },
   {
     icon: Shield,
-    title: "Business Operations and Regulatory Compliance",
+    title: "Business Operations and  Regulatory Compliance",
     description: "We take care of day-to-day operations and ensure you stay compliant with local regulations. Whether it's tax and labor laws, or reporting and risk management, we go by the book."
   },
   {
