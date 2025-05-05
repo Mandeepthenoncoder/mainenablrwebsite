@@ -35,10 +35,11 @@ const WhyChooseUsCard = ({
       {/* Image container with 3:2 aspect ratio */}
       <div className="relative w-full pt-[66.67%]">
         <div className="absolute inset-0">
-          <Image
+          <img
             src={image}
             alt={title}
             className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
         </div>

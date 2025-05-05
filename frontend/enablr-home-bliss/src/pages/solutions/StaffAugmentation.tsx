@@ -45,12 +45,12 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
+    image: "/images/staff_aug.1jpg",
     title: "On-demand scaling of team",
     description: "We help you to swiftly grow or scale down your team as per your project requirements, helping you to meet your talent and workforce requirements at ease."
   },
   {
-    image: "/images/New%20images/Infra%20Support-GCC.jpeg",
+    image: "/images/staff_aug.2jpg",
     title: "Availability of niche technical expertise",
     description: "We come in to meet your specific or highly specialized skill requirements, enabling you to connect with the right experts at speed without compromising on quality."
   },

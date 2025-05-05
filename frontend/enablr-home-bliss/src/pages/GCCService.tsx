@@ -54,17 +54,17 @@ const whyChooseUsReasons = [
   {
     image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
     title: "Local-Global Market Intelligence",
-    description: "Leverage our deep understanding of both local markets and global business landscapes to make informed decisions."
+    description: "We tap into our deep local expertise and global business insights, enabling you to make decisions with clarity and confidence.      "
   },
   {
     image: "/images/New%20images/Infra%20Support-GCC.jpeg",
     title: "End-to-End Infrastructure Support",
-    description: "Get comprehensive infrastructure solutions from initial setup to ongoing maintenance and optimization."
+    description: "We build end-to-end infrastructure solutions from setup to scale, and even extend support for any ongoing maintenance and optimization."
   },
   {
     image: "/images/New%20images/SpeedtoLaunch-GCC.jpeg",
     title: "Speed to Launch and Scale",
-    description: "Accelerate your market entry and scale operations efficiently with our proven methodologies."
+    description: "We speed up your go-to-market strategy and scale at ease without any compromise, powered by our industry experience and proven solutions"
   }
 ];
 

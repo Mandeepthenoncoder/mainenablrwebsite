@@ -49,17 +49,17 @@ const technologyReasons = [
   {
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     title: "Seamless Technology Integration",
-    description: "We ensure your technology systems work together flawlessly, creating a cohesive ecosystem that powers your GCC operations efficiently."
+    description: "We build flawless and future-proof technology frameworks that power up your GCC transformation journey."
   },
   {
     image: "/images/New%20images/Experienced%20Leader-Technology%20Enable.jpeg",
     title: "Experienced Leadership With Long-Term Vision",
-    description: "Our seasoned leaders bring decades of experience to help guide your technology decisions with a focus on sustainable long-term growth."
+    description: "We bring deep expertise powered by our tech teams and guided by leaders for efficient decision making, enabling long-term, sustainable growth in perspective."
   },
   {
     image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c",
     title: "Not Just a Technology Check List, Strategic Partnership",
-    description: "We go beyond implementing technology solutions to become your strategic partner, helping you achieve your business objectives through technology enablement."
+    description: " We work with you beyond just implementing technology solutions, but become your strategic partner, enabling you to achieve your technology enablement objectives."
   }
 ];
 
