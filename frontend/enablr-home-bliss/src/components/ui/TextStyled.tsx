@@ -42,7 +42,13 @@ const applyTextCase = (text: React.ReactNode, casing: TextCasing): React.ReactNo
         word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
       ).join(' ');
     case 'sentenceCase':
-      return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+      // First, make the entire string lowercase 
+      let processedText = text.toLowerCase();
+      // Capitalize the very first character
+      processedText = processedText.charAt(0).toUpperCase() + processedText.slice(1);
+      // Capitalize letters after sentence terminators (. ! ?) and space
+      processedText = processedText.replace(/([\.\?\!])\s+([a-z])/g, (match, p1, p2) => `${p1} ${p2.toUpperCase()}`);
+      return processedText;
     case 'uppercase':
       return text.toUpperCase();
     case 'lowercase':

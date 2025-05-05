@@ -13,7 +13,7 @@ const keyOfferings = [
   {
     icon: ClipboardList,
     title: "HR operations and workforce management",
-    description: "Your business needs smooth, structured support right from onboarding to day-to-day HR needs. We don't want you get flustered with these tasks and shift your focus; hence we collectively handle the admin and systems."
+    description: "Your business needs smooth, structured support right from onboarding to day-to-day HR needs. We don't want you get flustered with these tasks and shift your focus, hence we collectively handle the admin and systems."
   },
   {
     icon: GraduationCap,
