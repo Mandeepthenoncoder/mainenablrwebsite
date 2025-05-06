@@ -1,15 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
-
-const kenBurnsStyle = {
-  animation: "kenBurns 10s ease-in-out infinite"
-};
+import { CTAButton } from "@/components/ui/CTAButton";
 
 const AboutHero = () => {
   return (
     <>
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      {/* Hero Section - Following Enablr's Hero Styling Guide */}
+      <section className="relative h-[32vh] md:h-[64vh] overflow-hidden">
         <style dangerouslySetInnerHTML={{
           __html: `
             @keyframes kenBurns {
@@ -23,49 +21,82 @@ const AboutHero = () => {
           `
         }} />
       
-      <div className="absolute inset-0 z-0">
-          <div className="ken-burns-bg w-full h-full">
-        <img
-              src="/images/About us hero bg.jpg"
-              alt="Enablr about us hero"
-          className="w-full h-full object-cover"
-        />
-          </div>
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/30"></div>
-      </div>
-      
-      <div className="container relative z-10 mx-auto px-4 py-12 md:py-20">
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-white mb-6 tracking-tight leading-tight text-5xl md:text-6xl lg:text-7xl font-bold"
-        >
-            Your trusted partner for building and scaling GCCs
-            </motion.h1>
+        {/* Background container with rounded corners */}
+        <div className="absolute inset-0 rounded-b-[48px] overflow-hidden">
+          {/* Background image container with proper overflow handling */}
+          <div className="absolute inset-0 z-0 ken-burns-bg">
+            {/* Mobile image */}
+            <div className="block md:hidden w-full h-full">
+              <img
+                src="/images/About us hero bg.jpg"
+                alt="Enablr about us hero"
+                className="w-full h-full object-cover"
+                style={{
+                  objectPosition: "center 60%",
+                  width: '180%',
+                  height: 'auto',
+                  maxWidth: 'none',
+                }}
+              />
+            </div>
             
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative mb-8"
-          >
-              <p className="text-white/90 font-medium tracking-tight text-2xl md:text-3xl">
-                Solutions aligned to your processes, platforms, and pace
-            </p>
-              {/* Accent underline */}
-             
-            </motion.div>
-          </motion.div>
+            {/* Desktop image */}
+            <div className="hidden md:block w-full h-full">
+              <img
+                src="/images/About us hero bg.jpg"
+                alt="Enablr about us hero"
+                className="w-full h-full object-cover"
+                style={{
+                  objectPosition: "center 40%",
+                }}
+              />
+            </div>
+            
+            {/* Base overlay */}
+            <div className="absolute inset-0 bg-black/20"></div>
+            
+            {/* Gradient overlay - only on the left side */}
+            <div 
+              className="absolute inset-0 bg-gradient-to-r to-transparent sm:w-[60%] md:w-[50%] lg:w-[40%]"
+              style={{
+                backgroundImage: `linear-gradient(to right, #0D214FE6, #0D214F99, transparent)`
+              }}
+            ></div>
+          </div>
+        </div>
+        
+        {/* Content container */}
+        <div className="absolute inset-0 flex items-center z-10 rounded-b-[48px]">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            <div className="max-w-xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 md:mb-4">
+                  Your trusted partner for building and scaling GCCs
+                </h1>
+                
+                <p className="text-base md:text-lg text-white/90 mb-4 md:mb-8 max-w-lg">
+                  Solutions aligned to your processes, platforms, and pace
+                </p>
+                
+                <CTAButton 
+                  text="Get Started" 
+                  link="/contact"
+                  variant="secondary"
+                  size="lg"
+                  className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md transition-all duration-300 rounded-md"
+                />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
+      
+      {/* Add some spacing after the hero */}
+      <div className="mb-12"></div>
       
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -81,11 +112,11 @@ const AboutHero = () => {
                 <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
                   At Enablr, we bring together talent, technology expertise, and strategic insight to help you build, scale, and optimize your GCC journey. As a Covasant company, we operate with a foundation of competency, collaboration, and integrity, earning trust through every stage of the journey.
                 </p>
-        </motion.div>
+              </motion.div>
             </div>
           </div>
-      </div>
-    </section>
+        </div>
+      </section>
     </>
   );
 };
