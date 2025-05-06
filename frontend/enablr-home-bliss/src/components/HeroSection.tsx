@@ -28,7 +28,7 @@ const heroSlides: HeroSlide[] = [
     imageSrc: "/Carousel_img.jpg",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
     title: "Build on Proven Experience and Enterprise-Grade Quality", // For thumbnail
-    titleLines: ["Build on Proven Experience, and Enterprise-Grade Quality"], // For display
+    titleLines: ["Build on Proven Experience and Enterprise-Grade Quality"], // For display
     buttonText: "Get Started Today",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
@@ -54,8 +54,8 @@ const heroSlides: HeroSlide[] = [
   {
     imageSrc: "/Carousel_img4.jpg",
     srcset: "/images/lot 2/optimized/CarouselImage4-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage4-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage4-Home-large.webp 1920w",
-    title: "Your GCC Catalyst", // For thumbnail
-    titleLines: ["Your GCC Catalyst"], // Break into 3 lines
+    title: "Your Trusted GCC Catalyst for End-to-End Setup", // For thumbnail
+    titleLines: ["Your Trusted GCC Catalyst", "for End-to-End Setup"], // Break into 3 lines
     buttonText: "Talk to Our Experts",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"

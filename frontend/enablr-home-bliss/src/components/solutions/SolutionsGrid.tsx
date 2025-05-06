@@ -7,7 +7,7 @@ import { Building2, Cpu, Building, Users, Briefcase, Users2 } from "lucide-react
 
 const solutions = [
   {
-    title: "GCC as a Service",
+    title: "GCC-as-a-Service",
     description: "End-to-end solution to establish your fully equipped global capability center.",
     icon: <Building2 className="w-6 h-6" />
   },

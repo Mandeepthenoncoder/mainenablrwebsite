@@ -181,11 +181,14 @@ const Footer = () => {
           </div>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/gccenablr"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-enablr-navy transition-colors duration-300"
             >
+              
+
+ 
               <img
                 src="/Platform=LinkedIn, Color=Negative.svg"
                 alt="LinkedIn"
@@ -194,7 +197,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/GCCenablr"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-enablr-navy transition-colors duration-300"
@@ -206,7 +209,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/GCCEnablr"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-enablr-navy transition-colors duration-300"
@@ -219,7 +222,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/gccenablr/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-enablr-navy transition-colors duration-300"

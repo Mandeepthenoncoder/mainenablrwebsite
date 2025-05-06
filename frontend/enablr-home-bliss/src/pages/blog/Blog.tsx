@@ -25,7 +25,7 @@ const staticPosts: BlogPost[] = [
     content: "<p>Global Capability Centers have undergone a significant transformation over the past decade...</p>",
     cover_image: "/Blog Images/Blog-0.jpg?v=1",
     author: "Enablr Team",
-    category: "GCCs as-a-service",
+    category: "GCC-as-a-Service",
     published_at: "2024-06-15T00:00:00Z",
     read_time: 7
   },
@@ -37,7 +37,7 @@ const staticPosts: BlogPost[] = [
     content: "<p>In today's rapidly evolving business landscape, Global Capability Centers (GCCs) have emerged as strategic hubs that drive innovation, efficiency, and scalability...</p>",
     cover_image: "/Blog Images/Blog-1.jpg?v=1",
     author: "Mandeep Singh",
-    category: "GCCs as-a-service",
+    category: "GCC-as-a-Service",
     published_at: "2024-06-01T00:00:00Z",
     read_time: 5
   },
@@ -118,7 +118,7 @@ const staticPosts: BlogPost[] = [
   }
 ];
 
-const staticCategories = ["all", "GCCs as-a-service", "Technology Enablement Solutions", "Workspace Solutions","Talent & HR Solutions"];
+const staticCategories = ["all", "GCC-as-a-Service", "Technology Enablement Solutions", "Workspace Solutions","Talent & HR Solutions"];
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -188,7 +188,7 @@ const Blog = () => {
             
               {/* Search Bar */}
               <div className="relative w-full md:w-64">
-                <Search className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+                <Search className="absolute left-3 top-3 h-6 w-4 text-gray-500" />
                 <Input
                   placeholder="Search articles..."
                   className="pl-9 py-6 border-gray-300"
@@ -212,7 +212,7 @@ const Blog = () => {
                   key={category}
                   variant={activeCategory === category ? "secondary" : "outline"}
                   size="sm"
-                  className={`rounded-md capitalize ${
+                  className={`rounded-md ${
                     activeCategory === category 
                       ? "bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy" 
                       : "text-gray-700 hover:bg-white hover:text-enablr-navy"
@@ -271,7 +271,7 @@ const Blog = () => {
                             {featuredPosts[0].read_time} min read
                           </span>
                         </div>
-                        <span className="inline-block mt-4 text-enablr-lime font-semibold">Read Article</span>
+                        <span className="inline-block mt-4 text-enablr-lime font-semibold">Read more</span>
                       </div>
                     </div>
                   </Link>
@@ -313,7 +313,7 @@ const Blog = () => {
                               {post.read_time} min read
                             </span>
                           </div>
-                          <span className="inline-block mt-2 text-enablr-lime font-semibold">Read Article</span>
+                          <span className="inline-block mt-2 text-enablr-lime font-semibold">Read more</span>
                         </div>
                       </div>
                     </Link>
@@ -328,27 +328,11 @@ const Blog = () => {
         <section className={`py-12 ${!showFeaturedSection ? 'pt-10' : 'pt-4'} bg-gray-50`}>
           <div className="container mx-auto px-4">
             <div className="mb-8">
-            <h2 className={typography.h2}> {/* Note: text-enablr-navy is removed from here */}
-        {activeCategory === "all" ? (
-          // If category is 'all', show "Latest" in gradient
-          <>
-            <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
-              Latest
-            </span>
-            {' '} {/* Space */}
-            Articles {/* Default text color */}
-          </>
-        ) : (
-          // Otherwise, show the category name in gradient
-          <>
-            <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
-              {activeCategory}
-            </span>
-            {' '} {/* Space */}
-            Articles {/* Default text color */}
-          </>
-        )}
-      </h2>
+              <h2 className={typography.h2}>
+                {activeCategory === "all" 
+                  ? <><span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">All</span> Insights</>
+                  : <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">{activeCategory}</span>}
+              </h2>
               <div className="w-20 h-1 bg-enablr-lime mt-2"></div>
             </div>
             

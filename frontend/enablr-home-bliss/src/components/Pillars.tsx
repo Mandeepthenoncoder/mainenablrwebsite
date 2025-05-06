@@ -17,21 +17,21 @@ const Pillars = () => {
     {
       image: "/images/lot 2/optimized/Guided by Leaders Our Pillar-Home.webp",
       srcSet: "/images/lot 2/optimized/Guided by Leaders Our Pillar-Home-small.webp 640w, /images/lot 2/optimized/Guided by Leaders Our Pillar-Home-medium.webp 1280w, /images/lot 2/optimized/Guided by Leaders Our Pillar-Home-large.webp 1920w",
-      title: "Guided By Leaders With Extensive Industry Experience"
+      title: "Guided by leaders with extensive industry experience"
     },
     {
       image: "/two.jpg",
-      title: "Fueling Your Vision With the Right Talent and Tools"
+      title: "Fueling your vision with the right talent and tools"
     },
     {
       image: "/three.jpg",
       srcSet: "/images/lot 2/optimized/FlexibleEngagemmentModel Our Pillars-Home-small.webp 640w, /images/lot 2/optimized/FlexibleEngagemmentModel Our Pillars-Home-medium.webp 1280w, /images/lot 2/optimized/FlexibleEngagemmentModel Our Pillars-Home-large.webp 1920w",
-      title: "Flexible Engagement Models for Seamless Growth"
+      title: "Flexible engagement models for seamless growth"
     },
     {
       image: "/four.jpg",
       srcSet: "/images/lot 2/optimized/Transparent ProcessOurPillars-Home-small.webp 640w, /images/lot 2/optimized/Transparent ProcessOurPillars-Home-medium.webp 1280w, /images/lot 2/optimized/Transparent ProcessOurPillars-Home-large.webp 1920w",
-      title: "Transparent Processes, Powered by On-Ground Expertise"
+      title: "Transparent processes, powered by on ground expertise"
     }
   ];
 

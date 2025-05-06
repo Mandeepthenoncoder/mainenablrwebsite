@@ -78,8 +78,8 @@ const BlogPostCard = ({ post, featured = false }: BlogPostCardProps) => {
               <span>{post.read_time} min read</span>
             </div>
           </div>
-          <span className="flex items-center gap-1 text-enablr-navy font-medium text-sm group mt-3">
-            Read Article
+          <span className="flex items-center gap-1 text-enablr-navy font-medium text-sm group mt-3 hover:underline">
+            Read more
           </span>
         </CardFooter>
         </Card>

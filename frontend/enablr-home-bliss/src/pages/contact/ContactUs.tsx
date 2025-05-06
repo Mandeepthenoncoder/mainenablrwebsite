@@ -67,9 +67,9 @@ const ContactUs = () => {
             <div className="space-y-4">
               <h2 className={`${typography.h2} leading-10`}>
                 <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
-                  Got questions, ideas, or just
+                Interested in having a conversation 
                 </span>{" "}
-                curious about partnering together?
+                about your GCC? We'd love to connect.
               </h2>
           
             </div>

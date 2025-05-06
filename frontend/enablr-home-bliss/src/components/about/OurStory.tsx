@@ -90,7 +90,7 @@ const OurStory = () => {
                 className="bg-transparent text-white border border-white hover:bg-white hover:text-enablr-navy shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
               >
                 <Link to="/contact" className="flex items-center gap-2">
-                  Talk to our experts today
+                  Talk to our experts 
                 </Link>
               </Button>
             </motion.div>
