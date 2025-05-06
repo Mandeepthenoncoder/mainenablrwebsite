@@ -13,6 +13,14 @@ interface JobListingProps {
 }
 
 const JobListing = ({ title, experience, location, type, index }: JobListingProps) => {
+  // Function to handle email click
+  const handleApplyClick = () => {
+    const emailSubject = `Application for ${title} position`;
+    const emailAddress = "careers@gccenablr.com";
+    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}`;
+    window.open(mailtoLink, "_blank");
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 15 }}
@@ -31,11 +39,12 @@ const JobListing = ({ title, experience, location, type, index }: JobListingProp
           <span>{type}</span>
         </div>
       </div>
-      <Button 
-        className="bg-white text-enablr-navy border border-enablr-navy hover:bg-enablr-navy hover:text-white transition-colors duration-300"
+      <button 
+        onClick={handleApplyClick}
+        className="bg-white text-enablr-navy border border-enablr-navy hover:bg-enablr-navy hover:text-white transition-colors duration-300 px-4 py-2 rounded-md text-sm font-medium"
       >
         Apply
-      </Button>
+      </button>
     </motion.div>
   );
 };
@@ -80,6 +89,14 @@ const CurrentOpeningsCompact = () => {
     job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     job.location.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  
+  // Function to handle "See All Jobs" email click
+  const handleSeeAllJobsClick = () => {
+    const emailAddress = "careers@gccenablr.com";
+    const emailSubject = "General Job Inquiry";
+    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}`;
+    window.open(mailtoLink, "_blank");
+  };
   
   return (
     <section id="job-opportunities" className="py-24 bg-white">
@@ -140,11 +157,12 @@ const CurrentOpeningsCompact = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-4xl mx-auto mt-8 text-center"
         >
-          <Button 
-            className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
+          <button 
+            onClick={handleSeeAllJobsClick}
+            className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 px-6 py-2 rounded-md text-sm font-medium"
           >
             See All Jobs
-          </Button>
+          </button>
         </motion.div>
       </div>
     </section>
