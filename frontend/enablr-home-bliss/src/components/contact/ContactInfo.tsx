@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: <Mail className="h-5 w-5" />,
     title: "Email",
-    details: "contact@enablr.in",
+    details: "info@gccenablr.com",
     description: "We'll respond within 24 hours"
   },
 ];
