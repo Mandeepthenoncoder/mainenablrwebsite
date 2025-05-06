@@ -177,12 +177,6 @@ const BusinessHeroSection = () => {
                 Power your business growth with seamless operational support
               </p>
               
-              <CTAButton 
-                text="Get Started" 
-                link="/contact" 
-                variant="secondary"
-                size="lg"
-              />
             </motion.div>
           </div>
         </div>

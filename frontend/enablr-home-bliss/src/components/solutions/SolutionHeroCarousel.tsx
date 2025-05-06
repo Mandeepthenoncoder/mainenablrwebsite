@@ -90,13 +90,7 @@ const SolutionHeroCarousel = ({ slides }: SolutionHeroCarouselProps) => {
                       </TextStyled>
                     )}
                     
-                    <CTAButton 
-                      text={slide.ctaText} 
-                      link={slide.ctaLink} 
-                      variant="secondary"
-                      size="lg"
-                      className={slide.ctaLink === "/contact" ? "bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md" : "shadow-md"}
-                    />
+                    
                   </motion.div>
                 </div>
               </div>

@@ -170,13 +170,6 @@ const WorkspaceHeroSection = () => {
                 Create future-ready workspaces for your capability center with Enablr's comprehensive workplace solutions.
               </p>
               
-              <CTAButton 
-                text="Get Started" 
-                link="/contact" 
-                variant="secondary"
-                size="lg"
-                className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md transition-all duration-300 rounded-md"
-              />
             </motion.div>
           </div>
         </div>

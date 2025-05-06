@@ -20,7 +20,7 @@ const ComprehensiveManagement = () => {
 
       <HeroSection
         title="Comprehensive Management Model"
-        description="Discover Enablr's Comprehensive Management model - a fully orchestrated GCC experience from set up to scale for maximum strategic value."
+        description="A fully orchestrated GCC experience from set up to scale for maximum strategic value."
         image="/Comprehensive_Solutions.jpg"
         ctaText="Explore Now"
         ctaLink="/contact"
