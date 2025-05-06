@@ -6,7 +6,15 @@ import Footer from '../components/Footer';
 
 const PrivacyPolicy = () => (
   <MainLayout showNewsletter={false} showBlogHighlights={false}>
-    <HeroSection title="Privacy Policy" className="hero-privacy-policy" />
+    <div className="relative h-96 rounded-b-lg">
+      <div className="absolute inset-0">
+        <img src="/privacy.webp" alt="Privacy Policy" className="w-full h-full object-cover" />
+      </div>
+      <div className="relative z-50">
+        <h1 className="text-4xl font-bold text-white text-center pt-10"></h1>
+      </div>
+    </div>
+
     <main className="policy-content py-20 bg-white">
       <div className="container">
         <section className="policy-section max-w-2xl mx-auto">

@@ -6,8 +6,15 @@ import Footer from '../components/Footer';
 
 const CookiesPolicy = () => (
   <MainLayout showNewsletter={false} showBlogHighlights={false}>
-    <HeroSection title="Cookies Policy" className="hero-cookies-policy" />
-    <main className="policy-content py-20 bg-white">
+      <div className="relative h-96 rounded-b-lg">
+      <div className="absolute inset-0">
+        <img src="/cookies.webp" alt="Privacy Policy" className="w-full h-full object-cover" />
+      </div>
+      <div className="relative z-50">
+        <h1 className="text-4xl font-bold text-white text-center pt-10"></h1>
+      </div>
+    </div>
+
       <div className="container">
         <section className="policy-section max-w-2xl mx-auto">
           <p className="effective-date text-gray-500 text-base mb-8">Effective Date: 6th April 2025</p>
@@ -34,9 +41,7 @@ const CookiesPolicy = () => (
           <p className="leading-7 mb-4 text-gray-700">If you have any questions about our Cookie Policy, please contact us at: <a href="mailto:info@enablr.com" className="text-blue-600 hover:underline">info@enablr.com</a></p>
         </section>
       </div>
-    </main>
-   
-  </MainLayout>
-);
+    </MainLayout>
+  );
 
 export default CookiesPolicy; 
