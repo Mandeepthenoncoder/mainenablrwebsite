@@ -28,7 +28,7 @@ const heroSlides: HeroSlide[] = [
     imageSrc: "/Carousel_img.jpg",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
     title: "Build on Proven Experience and Enterprise-Grade Quality", // For thumbnail
-    titleLines: ["Build on Proven Experience", "and Enterprise-Grade Quality"], // For display
+    titleLines: ["Build on Proven Experience, and Enterprise-Grade Quality"], // For display
     buttonText: "Get Started Today",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
@@ -48,6 +48,15 @@ const heroSlides: HeroSlide[] = [
     title: "Accelerate your Setup with Expert Talent and Seamless Execution", // For thumbnail
     titleLines: ["Accelerate your Setup", "with Expert Talent", "and Seamless Execution"], // Break into 3 lines
     buttonText: "Connect Now",
+    buttonLink: "/contact",
+    overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
+  },
+  {
+    imageSrc: "/Carousel_img.jpg",
+    srcset: "/images/lot 2/optimized/CarouselImage4-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage4-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage4-Home-large.webp 1920w",
+    title: "Your GCC Catalyst", // For thumbnail
+    titleLines: ["Your GCC Catalyst"], // Break into 3 lines
+    buttonText: "Talk to Our Experts",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
   }
@@ -192,7 +201,8 @@ export default function HeroSection() {
                     src={
                       index === 0 ? "/Carousel_Video.mp4" :
                       index === 1 ? "/Carousel_Video2.mp4" :
-                      index === 2 ? "/Carousel_Video3.mp4" : // Assuming path for slide 3
+                      index === 2 ? "/Carousel_Video3.mp4" :
+                      index === 3 ? "/Carousel_Video.mp4" : // Assuming path for slide 3
                       "" // Fallback if no video is found
                     }
                     autoPlay

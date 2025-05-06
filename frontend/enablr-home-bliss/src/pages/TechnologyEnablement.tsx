@@ -15,7 +15,7 @@ const heroSlides = [
   {
     title: "Technology Enablement Solutions",
     description: "",
-    image: "https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//TE%20hero%20img.jpg",
+    image: "/tech-hero.webp",
     ctaText: "Get Started",
     ctaLink: "/contact"
   }
@@ -35,12 +35,12 @@ const keyOfferings = [
   {
     icon: Cpu,
     title: "Access to Emerging Technologies",
-    description: "Our objective is to get your GCC future-ready. With any trending or emerging technology that you need, we help you test, adopt, and integrate without a doubt."
+    description: "Our objective is to help you set up a future-ready global capability center(GCC). With any trending or emerging technology that you need, we help you test, adopt, and integrate without a doubt."
   },
   {
     icon: Users,
     title: "Technology Consulting and CTO Services",
-    description: "We are your trusted tech partner, enabling you to plan, scale, and grow with confidence. From building technology architecture to mapping a long-term strategy, we help you take smart decisions."
+    description: "We are your trusted tech partner, enabling you to plan, scale, and grow with confidence. From building technology architecture to mapping a long-term strategy, we help you make smart decisions."
   }
 ];
 
@@ -54,12 +54,12 @@ const technologyReasons = [
   {
     image: "/images/New%20images/Experienced%20Leader-Technology%20Enable.jpeg",
     title: "Experienced Leadership With Long-Term Vision",
-    description: "We bring deep expertise powered by our tech teams and guided by leaders for efficient decision making, enabling long-term, sustainable growth in perspective."
+    description: "We bring deep expertise from our tech teams and guided by leaders for efficient decisions, enabling sustainable growth in perspective."
   },
   {
     image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c",
     title: "Not Just a Technology Check List, Strategic Partnership",
-    description: " We work with you beyond just implementing technology solutions, but become your strategic partner, enabling you to achieve your technology enablement objectives."
+    description: " We work beyond just implementing technology, becoming your strategic partner to achieve technology enablement objectives."
   }
 ];
 
@@ -105,7 +105,7 @@ const TechnologyEnablement = () => {
           <HeroSection
             title="Technology Enablement Solutions"
             description="Leverage technology to power your capability center with Enablr's comprehensive technology solutions and services."
-            image="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//TE%20hero%20img.jpg"
+            image="/tech-hero.webp"
             ctaText="Get Started"
             ctaLink="/contact"
             enableKenBurns={true}
@@ -157,7 +157,7 @@ We handle the complexity of technology deployment so you can focus on leveraging
           viewport={{ once: true }}
         >
           <PageCTA
-            title="Future-Proof Your GCC Journey With Us"
+            title="Future-proof your GCC journey with us"
             buttonText="Let's Connect"
             buttonLink="/contact"
           />

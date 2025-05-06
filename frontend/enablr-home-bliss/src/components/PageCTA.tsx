@@ -36,7 +36,7 @@ const PageCTA = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className={`${typography.h2} text-white mb-12`}
+          className={`${typography.h2} text-white mb-12 leading-normal`}
         >
           {title}
         </motion.h2>

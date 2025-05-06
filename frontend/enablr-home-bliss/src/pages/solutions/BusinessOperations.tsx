@@ -5,9 +5,10 @@ import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import PageCTA from "@/components/PageCTA";
-import { Box, FileSpreadsheet, Landmark, Shield } from "lucide-react";
+import { Box, FileSpreadsheet, Globe, Globe2, Landmark, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
+import GlobalTeam from "@/components/sections/GlobalTeam";
 
 const heroImage = "/business ops hero images new.jpg";
 
@@ -26,6 +27,11 @@ const keyOfferings = [
     icon: Shield,
     title: "Regulatory and compliance management",
     description: "Your plan must not get blocked by red tape or any local regulations. Our expert teams foresee and plan for the future, aligning with local laws and requirements to keep your business compliant."
+  },
+  {
+    icon: Globe,
+    title: "Processes for global consistency",
+    description: "We establish standardized yet agile business processes that ensure consistent service delivery across your global business footprint. From finance and HR to procurement and compliance, these scalable operations enable your GCC to adapt seamlessly to the on-ground requirements and yet stay aligned with global standards."
   }
 ];
 
@@ -37,7 +43,7 @@ const whyChooseUsReasons = [
   },
   {
     image: "/images/Bot.jpg",
-    title: "Infrastructure set-up with operational excellence",
+    title: "Infrastructure set up with operational excellence",
     description: "Right from the start, we set up scalable infrastructure that is supported by proven and tested processes to ensure smooth operations, ensuring sustainability in your operations."
   },
   {
@@ -241,7 +247,7 @@ If you are setting up a global capability center, then you can trust Enablr for 
           variants={itemVariants}
           viewport={{ once: true }}
         >
-          <PageCTA
+          <PageCTA 
             title="Gain operational excellence and experienced guidance from the start"
             buttonText="Let's Talk"
             buttonLink="/contact"

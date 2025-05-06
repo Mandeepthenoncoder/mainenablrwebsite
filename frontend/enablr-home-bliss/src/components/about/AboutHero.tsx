@@ -61,7 +61,7 @@ const AboutHero = () => {
                 Solutions aligned to your processes, platforms, and pace
             </p>
               {/* Accent underline */}
-              <div className="h-px w-16 bg-white mt-6"></div>
+             
             </motion.div>
           </motion.div>
         </div>

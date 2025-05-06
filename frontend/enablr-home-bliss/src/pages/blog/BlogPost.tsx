@@ -225,13 +225,13 @@ const staticPosts: BlogPost[] = [
 <p>Smarter workspaces can completely change the way teams think and operate. When the environment supports collaboration, sparks creativity, and helps people move fast, innovation starts to feel organic, with more collaborative efforts.</p>
 <p>But what does a smarter workspace actually look like? And how does it induce collaboration and innovation each day?</p>
 <p><strong>Implementing agile collaboration tools for seamless integration</strong></p>
-<p>Let's consider this scenario. In a GCC set-up there will be teams operating from different locations; hence, in-person collaboration is not possible. But with implementation of agile collaboration tools or virtual dashboards the scene can change. It can help trigger ideas and seamless implementation at speed.</p>
+<p>Let's consider this scenario. In a GCC set up there will be teams operating from different locations; hence, in-person collaboration is not possible. But with implementation of agile collaboration tools or virtual dashboards the scene can change. It can help trigger ideas and seamless implementation at speed.</p>
 <p>Every day, product teams in India, marketers in the US, and customer support in Europe join the same virtual space. They share ideas, brainstorm, build on each other's thoughts, and make decisions together in real time. Eventually, geography will no longer matter and slow down the process. The flow of ideas and quick collaboration keeps everyone moving in the same direction.</p>
 <p>This kind of digital workspace enables teams to work closely and get things done.</p>
 <p><strong>Speeding data into action by reshaping insights into innovation</strong></p>
 <p>Now imagine a GCC for a global manufacturing company, where teams work with live dashboards. These dashboards/virtual whiteboards display what really matters; from product performance to customer feedback to changing market trends.</p>
 <p>Now, if the data shows a sudden rise in demand for a specific product feature; instead of waiting around for reports or approvals, the product team will act right away. The data will enable them to adjust the design, bring the right people together, and move quickly to launch. Hence, the decision-making is faster and is done with more clarity.</p>
-<p>In a collaborative set-up like this, data is not just something that teams would just track. It becomes part of how they think, solve problems, and come up with new ideas. It helps them stay sharp, adapt quickly, and keep improving.</p>
+<p>In a collaborative set up like this, data is not just something that teams would just track. It becomes part of how they think, solve problems, and come up with new ideas. It helps them stay sharp, adapt quickly, and keep improving.</p>
 <p><strong>Literally, making 'room' for innovation</strong></p>
 <p>Remember the office space that was recreated in the movie 'Intern'? It was redesigned in a specific way to ease more flexible and horizonal communication process?</p>
 <p>That's how GCCs are recreating spaces and evolving with time to suit the needs of the brand and align with the core values. For instance, instead of working in the same rigid desk setup each day, the space is reimagined and revamped to flex as per the team's requirements.</p>
@@ -239,11 +239,11 @@ const staticPosts: BlogPost[] = [
 <p>This is where smarter workspace choices start to shine, like, height-adjustable desks for comfort, lighting that shifts through the day to keep energy levels up, and meeting rooms that show real-time availability on your phone.</p>
 <p>Optimizing digital whiteboards to quickly capture ideas and switch spots around the office, depending on the nature of work, are some and many ways to break-through and transform.</p>
 <p>In a setup like this, collaboration becomes the focus, irrespective of geographies. It helps people think better, move faster, and come up with new ideas more naturally.</p>
-<p><strong>Set-up to scale with reimagined spaces</strong></p>
+<p><strong>Set up to scale with reimagined spaces</strong></p>
 <p>As per IBEF's estimate, "US-based corporations account for the majority of the operational GCC footprint in India's top six cities, followed by European enterprises (35%). The overall number of new GCC establishments each year could reach 115 by 2030. Collaboration with start-ups can operate as a springboard for new GCC establishments and expansion. This collaboration can assist GCCs expedite their innovation journey in India."</p>
 <p>The 'next' move for the GCC space is cracking up in a big way. So are opportunities springing up for both Tier 1 and tier 2 cities in India to build spaces that are more inclusive and welcoming.</p>
 <p>At Enablr, we work with you to design and manage smarter workspaces that bring your capability centre to life. Whether it is creating collaborative environments, integrating the right tech, or building for long-term sustainability, we make sure your teams have what they need to thrive.</p>
-<p>Are you ready to make your next move towards GCC set-up and transformation with us? Let's connect and make it happen.</p>`,
+<p>Are you ready to make your next move towards GCC set up and transformation with us? Let's connect and make it happen.</p>`,
     cover_image: "/Blog Images/Blog-7.jpg?v=1",
     author: "Sneha Rao",
     category: "Workspace Solutions",

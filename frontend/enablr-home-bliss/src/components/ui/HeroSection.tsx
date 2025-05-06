@@ -33,6 +33,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   mobileZoom = "180% auto",
   enableKenBurns = false,
 }) => {
+  const handleInternalScroll = () => {
+    const targetId = ctaLink.substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      console.warn(`Target element with ID "${targetId}" not found.`);
+    }
+  };
+
+  const isInternalLink = ctaLink.startsWith("#");
+
   return (
     <section className="relative h-[40vh] md:h-[80vh] rounded-b-[48px] overflow-hidden">
       {enableKenBurns && (
@@ -50,10 +62,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         }} />
       )}
       
-      {/* Background image container */}
-      <div className="absolute inset-0 z-0">
-        {/* Mobile image with Ken Burns effect if enabled */}
-        <div className={`block md:hidden w-full h-full ${enableKenBurns ? 'ken-burns-bg' : ''}`}>
+      {/* Background image container - Apply Ken Burns, rounding, and overflow */}
+      <div className={`absolute inset-0 z-0 ${enableKenBurns ? 'ken-burns-bg' : ''} rounded-b-[48px] overflow-hidden`}>
+        {/* Mobile image */}
+        <div className={`block md:hidden w-full h-full`}>
           <img
             src={image}
             alt="Hero background"
@@ -69,8 +81,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           />
         </div>
         
-        {/* Desktop image with Ken Burns effect if enabled */}
-        <div className={`hidden md:block w-full h-full ${enableKenBurns ? 'ken-burns-bg' : ''}`}>
+        {/* Desktop image */}
+        <div className={`hidden md:block w-full h-full`}>
           <img
             src={image}
             alt="Hero background"
@@ -122,7 +134,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               
               <CTAButton 
                 text={ctaText} 
-                link={ctaLink} 
+                link={isInternalLink ? "#" : ctaLink}
+                onClick={isInternalLink ? handleInternalScroll : undefined}
                 variant="secondary"
                 size="lg"
                 className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md transition-all duration-300 rounded-md"

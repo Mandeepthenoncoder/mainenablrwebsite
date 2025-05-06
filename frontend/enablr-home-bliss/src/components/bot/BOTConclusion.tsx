@@ -29,8 +29,8 @@ const BOTConclusion = () => {
           className={`${typography.h2} text-white mb-16 leading-[1.4] space-y-2`}
         >
           With Enablr as your partner,<br />
-          We bring experience, flexibility, speed to launch<br />
-          With no compromise on quality and scale.
+          we bring experience, flexibility, speed to launch<br />
+          with no compromise on quality and scale.
         </motion.h2>
         
         <motion.div

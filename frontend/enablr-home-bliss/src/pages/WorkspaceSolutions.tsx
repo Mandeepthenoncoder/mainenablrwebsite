@@ -20,7 +20,7 @@ const keyOfferings = [
   {
     icon: Layout,
     title: "Flexible Workspaces",
-    description: "Your needs could be temporary, short-term, or long-term, we get it. We can set-up a space for a project, a growing team, for any time period that you need. In this way, we enable you to stay flexible and adaptable, aligning with your overarching business goals."
+    description: "Your needs could be temporary, short-term, or long-term, we get it. We can set up a space for a project, a growing team, for any time period that you need. In this way, we enable you to stay flexible and adaptable, aligning with your overarching business goals."
   },
   {
     icon: Laptop,
@@ -43,12 +43,12 @@ const workspaceReasons = [
   {
     image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
     title: "Flexible and\nScalable",
-    description: "We partner with you build what works for you, keeping your future growth plans into perspective, enabling you to set the right tone for your business. "
+    description: "We partner to build what works for you, keeping future growth plans in perspective, enabling the right tone for your business."
   },
   {
-    image: "/images/lot%202/SmartSustainable-Workspace%20Solutions.jpg",
+    image: "/workspace(3).jpg",
     title: "Designed for Improved Focus\nand Productivity",
-    description: "We propose and create workspace solutions that boost your teams to think beyond the mundane tasks and deliver cutting-edge solutions for consistent growth.g"
+    description: "We propose workspace solutions that boost teams to think beyond mundane tasks and deliver cutting-edge solutions for consistent growth."
   }
 ];
 
@@ -246,8 +246,8 @@ Our approach emphasizes flexibility, sustainability, and future readiness, ensur
           viewport={{ once: true }}
         >
           <PageCTA
-            title="Partner to Create Spaces
-That Fit Your Needs"
+            title="Partner to create spaces
+that fit your needs"
             buttonText="Let's Connect"
             buttonLink="/contact"
           />

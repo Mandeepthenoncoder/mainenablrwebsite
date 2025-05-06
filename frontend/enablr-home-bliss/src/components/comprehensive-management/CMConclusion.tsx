@@ -28,7 +28,7 @@ const CMConclusion = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className={`${typography.h2} text-white mb-12 leading-tight`}
         >
-          With Enablr as your Partner, Turn Your GCC into a Scalable, High-Impact Engine For Growth.
+          With Enablr as your partner, turn your GCC into a scalable, high-impact engine for growth.
         </motion.h2>
         
         <motion.div

@@ -52,6 +52,8 @@ const applyTextCase = (text: React.ReactNode, casing: TextCasing): React.ReactNo
       // Preserve specific acronyms
       processedText = processedText.replace(/\bgcc\b/gi, 'GCC');
       processedText = processedText.replace(/\bhr\b/gi, 'HR');
+      processedText = processedText.replace(/\bit\b/gi, 'IT');
+      processedText = processedText.replace(/\b(AS|A)\b/g, match => match.toLowerCase());
 
       return processedText;
     case 'uppercase':

@@ -64,7 +64,7 @@ const whyChooseUsReasons = [
   {
     image: "/images/New%20images/SpeedtoLaunch-GCC.jpeg",
     title: "Speed to Launch and Scale",
-    description: "We speed up your go-to-market strategy and scale at ease without any compromise, powered by our industry experience and proven solutions"
+    description: "We speed up your go-to-market strategy and scale at ease without any compromise, powered by our industry experience and prove solutions."
   }
 ];
 
@@ -154,7 +154,7 @@ Whether you're entering India for the first time or expanding your global footpr
           viewport={{ once: true }}
         >
           <PageCTA
-            title="Want to Speed Up Your GCC Launch Plan?"
+            title="Want to speed up your GCC launch plan?"
             buttonText="Let's Talk"
             buttonLink="/contact"
           />

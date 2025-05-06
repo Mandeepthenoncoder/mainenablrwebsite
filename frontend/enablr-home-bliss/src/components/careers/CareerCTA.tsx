@@ -28,7 +28,7 @@ const CareerCTA = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className={`${typography.h2} text-white mb-12`}
         >
-          Join to Build Excellence With Enablr
+          Join to build excellence with Enablr
         </motion.h2>
         
         <motion.div

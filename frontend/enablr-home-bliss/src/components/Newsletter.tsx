@@ -118,7 +118,7 @@ const Newsletter = ({ variant = 'expanded' }: NewsletterProps) => {
             <div className="grid grid-cols-1 md:grid-cols-12">
               <div className="md:col-span-8 p-8 md:p-12 relative z-10">
                 <h2 className={`${typography.h2} text-white mb-4`}>
-                  Stay Informed With GCC Insights
+                  Stay informed with GCC insights
                 </h2>
                 <p className={`${typography.body.base} text-gray-100 mb-6 max-w-xl`}>
                   Subscribe to our newsletter to receive the latest updates, expert analyses, and thought leadership content straight to your inbox.

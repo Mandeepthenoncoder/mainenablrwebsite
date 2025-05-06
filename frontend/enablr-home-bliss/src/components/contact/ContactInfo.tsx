@@ -21,12 +21,6 @@ const contactInfo = [
     details: "contact@enablr.in",
     description: "We'll respond within 24 hours"
   },
-  {
-    icon: <MapPin className="h-5 w-5" />,
-    title: "Office",
-    details: "USA & India",
-    description: "Visit our office locations section for details"
-  }
 ];
 
 const ContactInfo: React.FC<ContactInfoProps> = ({ layout = "horizontal" }) => {

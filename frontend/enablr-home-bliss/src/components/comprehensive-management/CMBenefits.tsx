@@ -46,7 +46,7 @@ const benefits = [
 const targets = [
   {
     icon: Globe,
-    title: "Enterprise launching your first GCC",
+    title: "Enterprises launching your first GCC",
     description: "Perfect for organizations taking their first steps into global capability centers, providing the guidance and structure needed for success."
   },
   {

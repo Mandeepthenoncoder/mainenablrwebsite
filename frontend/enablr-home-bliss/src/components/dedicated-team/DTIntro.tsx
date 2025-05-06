@@ -27,7 +27,7 @@ const DTIntro = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className={`${typography.h2} text-enablr-navy mb-8 text-center md:text-left`}
+            className={`${typography.h2} text-enablr-navy mb-8 text-center md:text-left leading-10`}
           >
             Build High-Impact Teams,<br />
             Without the Overhead

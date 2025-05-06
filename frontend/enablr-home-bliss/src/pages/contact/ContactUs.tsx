@@ -36,10 +36,11 @@ const ContactUs = () => {
       {/* Hero Section */}
       <HeroSection
         title="Contact Us"
-        description="Get in touch with Enablr for all your GCC needs and queries. We're here to answer your questions about Global Capability Centers and how we can help your business grow."
+        description="We'd love to help you in setting up your GCC."
+        //description="Get in touch with Enablr for all your GCC needs and queries. We're here to answer your questions about Global Capability Centers and how we can help your business grow."
         image="/images/lot 2/optimized/HeroImage-ContactUs.webp"
-        ctaText="Reach Out"
-        ctaLink="/contact"
+        ctaText="Connect with us"
+        ctaLink="#contact-form"
         enableKenBurns={true}
       />
 
@@ -63,12 +64,15 @@ const ContactUs = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mb-8"
           >
-            <h2 className={typography.h2}>
-              <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
-                Got questions, ideas, or just
-              </span>{" "}
-              curious about partnering together?
-            </h2>
+            <div className="space-y-4">
+              <h2 className={`${typography.h2} leading-10`}>
+                <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
+                  Got questions, ideas, or just
+                </span>{" "}
+                curious about partnering together?
+              </h2>
+          
+            </div>
           </motion.div>
           <br />
           <div className="flex flex-col lg:flex-row gap-10">

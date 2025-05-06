@@ -14,13 +14,13 @@ const ComprehensiveManagement = () => {
         <title>Comprehensive Management Model - Enablr</title>
         <meta 
           name="description" 
-          content="Discover Enablr's Comprehensive Management model - a fully orchestrated GCC experience from set-up to scale for maximum strategic value." 
+          content="Discover Enablr's Comprehensive Management model - a fully orchestrated GCC experience from set up to scale for maximum strategic value." 
         />
       </Helmet>
 
       <HeroSection
         title="Comprehensive Management Model"
-        description="Discover Enablr's Comprehensive Management model - a fully orchestrated GCC experience from set-up to scale for maximum strategic value."
+        description="Discover Enablr's Comprehensive Management model - a fully orchestrated GCC experience from set up to scale for maximum strategic value."
         image="/Comprehensive_Solutions.jpg"
         ctaText="Explore Now"
         ctaLink="/contact"
