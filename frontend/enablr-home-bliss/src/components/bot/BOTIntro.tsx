@@ -22,7 +22,7 @@ const BOTIntro = () => {
         className="container mx-auto px-4"
       >
         <div className="max-w-[700px] mx-auto md:mx-0 md:ml-[10%]">
-          <h2 className={`${typography.h2} text-enablr-navy mb-8 text-center md:text-left`}>
+          <h2 className={`${typography.h2} text-enablr-navy mb-8 text-center md:text-left leading-10`}>
             How Build-Operate-Transfer Empowers Your GCC
           </h2>
           

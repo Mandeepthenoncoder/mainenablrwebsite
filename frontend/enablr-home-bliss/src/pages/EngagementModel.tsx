@@ -125,7 +125,7 @@ const EngagementModel = () => {
         {/* Intro Section */}
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-12 ">
               <div className="md:col-span-12">
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}

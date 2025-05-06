@@ -75,7 +75,7 @@ const TalentImpact = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="mb-6"
             >
-              <h2 className={`${typography.h2} text-enablr-navy tracking-tight mb-5`}>
+              <h2 className={`${typography.h2} text-enablr-navy tracking-tight mb-5 leading-10`}>
                 <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Maximize</span> your talent impact
               </h2>
 
