@@ -39,7 +39,7 @@ const Footer = () => {
                   to="/services/technology-enablement"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
-                  Technology
+                  Technology Enablement
                 </Link>
               </li>
               <li>
@@ -47,7 +47,7 @@ const Footer = () => {
                   to="/services/workspace-solutions"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
-                  Workspace
+                  Workspace Solutions
                 </Link>
               </li>
               <li>
@@ -55,7 +55,7 @@ const Footer = () => {
                   to="/services/talent-hr-solutions"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
-                  Talent & HR
+                  Talent & HR Solutions
                 </Link>
               </li>
               <li>
@@ -63,7 +63,7 @@ const Footer = () => {
                   to="/services/business-operations"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
-                  Operations
+                  Business Operations
                 </Link>
               </li>
               <li>
@@ -106,7 +106,7 @@ const Footer = () => {
                   to="/engagement/bot"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
-                  B-O-T
+                  Build-Operate-Transfer (B-O-T)
                 </Link>
               </li>
               <li>
@@ -152,7 +152,7 @@ const Footer = () => {
                   to="/blog"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
-                  Blogs
+                  Insights
                 </Link>
               </li>
             </ul>
