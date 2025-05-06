@@ -20,7 +20,7 @@ const DedicatedTeam = () => {
 
       <HeroSection
         title="Dedicated Team Model"
-        description="Explore Enablr's Dedicated Team model - build global teams without the extra load through our flexible engagement approach."
+        description="Build global teams without the extra load through our flexible engagement approach."
         image="/images/lot%202/HeroImage-DedicatedTeam.jpg"
         ctaText="Learn More"
         ctaLink="/contact"

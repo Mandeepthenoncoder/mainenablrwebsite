@@ -52,7 +52,7 @@ const heroSlides: HeroSlide[] = [
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
   },
   {
-    imageSrc: "/Carousel_img.jpg",
+    imageSrc: "/Carousel_img4.jpg",
     srcset: "/images/lot 2/optimized/CarouselImage4-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage4-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage4-Home-large.webp 1920w",
     title: "Your GCC Catalyst", // For thumbnail
     titleLines: ["Your GCC Catalyst"], // Break into 3 lines
@@ -202,7 +202,7 @@ export default function HeroSection() {
                       index === 0 ? "/Carousel_Video.mp4" :
                       index === 1 ? "/Carousel_Video2.mp4" :
                       index === 2 ? "/Carousel_Video3.mp4" :
-                      index === 3 ? "/Carousel_Video.mp4" : // Assuming path for slide 3
+                      index === 3 ? "/4th_slide.mov" : // Assuming path for slide 3
                       "" // Fallback if no video is found
                     }
                     autoPlay

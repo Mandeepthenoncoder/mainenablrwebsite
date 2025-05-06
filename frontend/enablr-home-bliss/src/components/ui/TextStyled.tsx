@@ -35,34 +35,54 @@ interface TextStyledProps {
 // Helper function to apply text casing
 const applyTextCase = (text: React.ReactNode, casing: TextCasing): React.ReactNode => {
   if (typeof text !== 'string' || casing === 'preserve') return text;
-  
+
+  // List of words to keep lowercase in title case (unless they are the first word)
+  const lowercaseConnectors = ['a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'to', 'up', 'and', 'but', 'or', 'nor'];
+
+  let processedText: string;
+
   switch (casing) {
     case 'titleCase':
-      return text.split(' ').map(word => 
-        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-      ).join(' ');
+      processedText = text.split(' ').map((word, index) => {
+        const lowerWord = word.toLowerCase();
+        // Always capitalize the first word.
+        // Keep connectors lowercase if they are not the first word.
+        if (index > 0 && lowercaseConnectors.includes(lowerWord)) {
+          return lowerWord;
+        }
+        // Capitalize the first letter, lowercase the rest for other words.
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      }).join(' ');
+      break;
     case 'sentenceCase':
       // First, make the entire string lowercase
-      let processedText = text.toLowerCase();
+      processedText = text.toLowerCase();
       // Capitalize the very first character
       processedText = processedText.charAt(0).toUpperCase() + processedText.slice(1);
       // Capitalize letters after sentence terminators (. ! ?) and space
       processedText = processedText.replace(/([\.\?\!])\s+([a-z])/g, (match, p1, p2) => `${p1} ${p2.toUpperCase()}`);
-
-      // Preserve specific acronyms
-      processedText = processedText.replace(/\bgcc\b/gi, 'GCC');
-      processedText = processedText.replace(/\bhr\b/gi, 'HR');
-      processedText = processedText.replace(/\bit\b/gi, 'IT');
-      processedText = processedText.replace(/\b(AS|A)\b/g, match => match.toLowerCase());
-
-      return processedText;
+      // processedText = processedText.replace(/(AS|A)/g, match => match.toLowerCase()); // Removed this line
+      break;
     case 'uppercase':
-      return text.toUpperCase();
+      processedText = text.toUpperCase();
+      break;
     case 'lowercase':
-      return text.toLowerCase();
+      processedText = text.toLowerCase();
+      break;
     default:
-      return text;
+      processedText = text; // Handle default case
+      break;
   }
+
+  // Preserve specific acronyms - apply this after main casing logic
+  // Ensure this runs for both titleCase and sentenceCase if needed
+  if (casing === 'titleCase' || casing === 'sentenceCase') {
+    processedText = processedText.replace(/\bgcc\b/gi, 'GCC');
+    processedText = processedText.replace(/\bhr\b/gi, 'HR');
+    processedText = processedText.replace(/\bit\b/gi, 'IT');
+  }
+
+  return processedText;
 };
 
 const getTypographyClass = (variant: TextVariant): string => {
