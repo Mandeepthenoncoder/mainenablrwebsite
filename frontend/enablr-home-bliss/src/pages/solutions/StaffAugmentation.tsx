@@ -8,6 +8,7 @@ import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import PageCTA from "@/components/PageCTA";
 import { Users2, Code2, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import { Image } from "lucide-react";
 
 const heroSlides = [
   {
@@ -19,6 +20,7 @@ const heroSlides = [
     ctaLink: "/contact"
   }
 ];
+
 
 const keyOfferings = [
   {
@@ -100,7 +102,7 @@ const StaffAugmentation = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <SolutionHeroCarousel slides={heroSlides} />
+        <SolutionHeroCarousel slides={heroSlides} />
         </motion.div>
         
         <motion.div 
