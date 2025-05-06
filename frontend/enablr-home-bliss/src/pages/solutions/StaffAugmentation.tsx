@@ -1,26 +1,15 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import SolutionHeroCarousel from "@/components/solutions/SolutionHeroCarousel";
 import SolutionExplanation from "@/components/solutions/SolutionExplanation";
 import SolutionKeyOfferings from "@/components/solutions/SolutionKeyOfferings";
 import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import PageCTA from "@/components/PageCTA";
 import { Users2, Code2, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
-import { Image } from "lucide-react";
+import HeroSection from "@/components/ui/HeroSection";
 
-const heroSlides = [
-  {
-    title: "Staff Augmentation Services",
-    description: "Enhance your team's capabilities with our flexible and scalable staff augmentation solutions, tailored to meet your specific project needs and business goals.",
-    image: "/images/New%20images/Main%20Pic-Staff%20Augmentation.jpeg",
-    
-    ctaText: "Get Started",
-    ctaLink: "/contact"
-  }
-];
-
+const heroImage = "/images/New%20images/Main%20Pic-Staff%20Augmentation.jpeg";
 
 const keyOfferings = [
   {
@@ -102,7 +91,14 @@ const StaffAugmentation = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-        <SolutionHeroCarousel slides={heroSlides} />
+          <HeroSection
+            title="Staff Augmentation Services"
+            description="Enhance your team's capabilities with our flexible and scalable staff augmentation solutions, tailored to meet your specific project needs and business goals."
+            image={heroImage}
+            ctaText="Get Started"
+            ctaLink="/contact"
+            enableKenBurns={true}
+          />
         </motion.div>
         
         <motion.div 

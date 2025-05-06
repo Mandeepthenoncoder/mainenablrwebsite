@@ -8,6 +8,7 @@ import PageCTA from "@/components/PageCTA";
 import { Building, Layout, Laptop, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
+import HeroSection from "@/components/ui/HeroSection";
 
 const heroImage = "/images/lot%202/HeroImage-WorkspaceSolutions.jpg";
 
@@ -93,91 +94,6 @@ const customStyles = `
   }
 `;
 
-// Custom Workspace Hero Section Component
-const WorkspaceHeroSection = () => {
-  return (
-    <section className="relative h-[40vh] md:h-[80vh] rounded-b-[32px] md:rounded-b-[48px] overflow-hidden bg-enablr-navy mb-0 hero-section">
-      {/* Mobile specific styling with fixed positioning */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          /* Mobile hero background positioning */
-          .mobile-workspace-hero {
-            background-image: url('${heroImage}');
-            background-position: center bottom;
-            background-size: cover;
-            background-repeat: no-repeat;
-          }
-          
-          @keyframes kenBurns {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-          }
-          .ken-burns-bg {
-            animation: kenBurns 10s ease-in-out infinite;
-          }
-          
-          ${customStyles}
-        `
-      }} />
-      
-      {/* Mobile view container - using CSS background-image for better control */}
-      <div className="block md:hidden absolute inset-0 z-0 mobile-workspace-hero">
-        {/* Dark overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-enablr-navy opacity-80"></div>
-      </div>
-      
-      {/* Desktop view container */}
-      <div className="hidden md:block absolute inset-0 z-0 overflow-hidden">
-        <div className="w-full h-full ken-burns-bg">
-          <img
-            src={heroImage}
-            alt="Workspace Solutions background"
-            className="w-full h-full object-cover"
-            style={{
-              objectPosition: "center 95%",
-              objectFit: "cover",
-            }}
-          />
-        </div>
-        
-        {/* Desktop overlay */}
-        <div className="absolute inset-0 bg-black/30"></div>
-      </div>
-      
-      {/* Gradient overlay for all screen sizes */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-r to-transparent sm:w-[70%] md:w-[60%] lg:w-[50%] z-[1]"
-        style={{
-          backgroundImage: "linear-gradient(to right, #0D214FF2, #0D214FCC, #0D214F33, transparent)"
-        }}
-      ></div>
-      
-      {/* Content container */}
-      <div className="absolute inset-0 flex items-center z-10">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          <div className="max-w-xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 md:mb-4">
-                Workspace Solutions
-              </h1>
-              
-              <p className="text-base md:text-lg text-white/90 mb-4 md:mb-8 max-w-lg">
-                Create future-ready workspaces for your capability center with Enablr's comprehensive workplace solutions.
-              </p>
-              
-            </motion.div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const WorkspaceSolutions = () => {
   return (
     <MainLayout>
@@ -196,7 +112,16 @@ const WorkspaceSolutions = () => {
         </Helmet>
         
         <motion.div variants={itemVariants}>
-          <WorkspaceHeroSection />
+          <HeroSection
+            title="Workspace Solutions"
+            description="Create future-ready workspaces for your capability center with Enablr's comprehensive workplace solutions."
+            image={heroImage}
+            ctaText=""
+            ctaLink=""
+            enableKenBurns={true}
+            customMobilePosition="center bottom"
+            customDesktopPosition="center 95%"
+          />
         </motion.div>
         
         <motion.div 
@@ -211,7 +136,7 @@ const WorkspaceSolutions = () => {
 From initial concept to final implementation, we handle everything – office selection, design, furnishing, technology integration, and ongoing management.
 
 Our approach emphasizes flexibility, sustainability, and future readiness, ensuring your workspace evolves with your business needs.`}
-            imagePath="/solutions/Build Smarter, Sustainable Workspaces - Workspace Solutions.jpg"
+            imagePath="/workspacesolutionexaplanation new image.jpg"
           />
         </motion.div>
         
