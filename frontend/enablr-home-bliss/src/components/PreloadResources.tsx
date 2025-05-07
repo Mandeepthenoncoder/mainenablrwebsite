@@ -1,18 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-// Critical resources that should be preloaded
-const criticalImages = [
-  // Hero images
-  { path: '/images/supabase-images/optimized/hero-slide-1.webp', type: 'image/webp' },
-  
-  // Logo
-  { path: '/images/supabase-images/Updated-Logo.svg', type: 'image/svg+xml' },
-  
-  // Fonts
-  { path: '/assets/fonts/inter-var.woff2', type: 'font/woff2' }
-];
-
 // List of large images that should be preconnected or prefetched
 const largeImages = [
   // Use optimized WebP versions
@@ -31,18 +19,6 @@ const PreloadResources: React.FC = () => {
     <Helmet>
       {/* Preconnect to domains for network optimization */}
       <link rel="preconnect" href="https://kivxafsjmoplihqpotqj.supabase.co" />
-      
-      {/* Preload critical resources */}
-      {criticalImages.map((resource, index) => (
-        <link 
-          key={index}
-          rel="preload" 
-          href={resource.path} 
-          as={resource.type.split('/')[0]} 
-          type={resource.type} 
-          crossOrigin="anonymous"
-        />
-      ))}
       
       {/* Prefetch larger images that will be needed soon */}
       {largeImages.map((resource, index) => (

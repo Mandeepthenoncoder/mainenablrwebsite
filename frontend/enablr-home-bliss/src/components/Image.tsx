@@ -139,6 +139,9 @@ const Image = ({
           }}
         />
       </picture>
+      {priority && (!width || !height) && (
+        <script>{`console.warn('Above-the-fold image (${src}) should have explicit width and height for best LCP performance.')`}</script>
+      )}
     </>
   );
 };

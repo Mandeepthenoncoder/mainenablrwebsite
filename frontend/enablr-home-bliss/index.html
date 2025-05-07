@@ -33,6 +33,31 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Inline critical CSS for above-the-fold content (example: hero, header) -->
+    <style>
+      body { font-family: 'Inter', sans-serif; background: #fff; color: #1A1F2C; margin: 0; }
+      .hero-banner { position: relative; overflow: hidden; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 4rem 1rem; text-align: center; }
+      .hero-banner h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+      .hero-banner p { font-size: 1.25rem; margin-bottom: 2rem; }
+      @media (min-width: 768px) { .hero-banner h1 { font-size: 3.5rem; } }
+    </style>
+    <!-- Preload main font and set font-display: swap -->
+    <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        src: url('/assets/fonts/inter-var.woff2') format('woff2');
+        font-weight: 300 700;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" href="/images/supabase-images/optimized/hero-slide-1.webp" as="image" type="image/webp">
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
   </head>
 
   <body>
