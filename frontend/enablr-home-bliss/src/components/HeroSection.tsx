@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
@@ -54,13 +54,40 @@ const heroSlides: HeroSlide[] = [
   {
     imageSrc: "/Landing page/Carousel_img4.jpg",
     srcset: "/images/lot 2/optimized/CarouselImage4-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage4-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage4-Home-large.webp 1920w",
-    title: "Your Trusted GCC Catalyst for End-to-End Setup", // For thumbnail
-    titleLines: ["Your Trusted GCC Catalyst", "for End-to-End Setup"], // Break into 3 lines
+    title: "Your Trusted GCC Catalyst for End-to-End Setup", // For thumbnail
+    titleLines: ["Your Trusted GCC Catalyst", "for End-to-End Setup"], // Break into 3 lines
     buttonText: "Talk to Our Experts",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
   }
 ];
+
+function LazyVideo({ src, poster, ...props }) {
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: '200px' }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      preload="none"
+      poster={poster}
+      muted
+      playsInline
+      loop
+      {...props}
+      src={isVisible ? src : undefined}
+    />
+  );
+}
 
 export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
@@ -196,21 +223,29 @@ export default function HeroSection() {
               {/* Background: Use video for each slide */}
               <div className="absolute inset-0 bg-gray-900">
                 <>
-                  <video
-                    // Use specific video based on index
-                    src={
-                      index === 0 ? "/Landing page/Carousel_Video.mp4" :
-                      index === 1 ? "/Landing page/Carousel_Video2.mp4" :
-                      index === 2 ? "/Landing page/Carousel_Video3.mp4" :
-                      index === 3 ? "/Landing page/Carousel_Video4.mov" : // Assuming path for slide 3
-                      "" // Fallback if no video is found
-                    }
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
+                  {index === 0 ? (
+                    <video
+                      src="/Landing page/Carousel_Video.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      poster="/Landing page/Carousel_Video_Poster.jpg"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : (
+                    <LazyVideo
+                      src={
+                        index === 1 ? "/Landing page/Carousel_Video2.mp4" :
+                        index === 2 ? "/Landing page/Carousel_Video3.mp4" :
+                        index === 3 ? "/Landing page/Carousel_Video4.mov" :
+                        ""
+                      }
+                      poster={`/Landing page/Carousel_Video${index + 1}_Poster.jpg`}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  )}
                   <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
                 </>
               </div>
