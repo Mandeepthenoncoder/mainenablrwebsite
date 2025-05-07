@@ -106,7 +106,7 @@ const TalentAndHR = () => {
           viewport={{ once: true }}
         >
           <SolutionExplanation
-            title="Build the Right Teams with Strategic Talent & HR Solutions"
+            title="Build the right teams with strategic Talent & HR Solutions"
             content={`Enablr offers comprehensive, end-to-end talent and HR solutions specifically designed to meet the unique needs of your business. Our goal is to help you build the right teams by providing strategic support across the entire HR spectrum.
 
 We streamline people operations to allow you to concentrate on core business growth. This includes managing crucial tasks such as sourcing high-quality talent, handling complex visa processes, efficiently onboarding new employees, and overseeing compliance workflows. By simplifying these essential functions, we free up your valuable time and resources.

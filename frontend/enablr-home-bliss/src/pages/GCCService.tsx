@@ -122,7 +122,7 @@ const GCCService = () => {
           viewport={{ once: true }}
         >
           <SolutionExplanation
-            title="Build Your GCC From Scratch With Ease and Clarity"
+            title="Build your GCC from scratch with ease and clarity"
             content={`Enablr provides everything you need to establish and scale your Global Capability Center in India. Our GCC-as-a-Service model covers market entry, compliance, operations, talent, and technology under one integrated offering.
 
 Designed for speed, certainty, and local depth, we help you launch, operate, and grow your GCC without the complexity.

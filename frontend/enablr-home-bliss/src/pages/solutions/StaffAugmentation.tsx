@@ -106,7 +106,7 @@ const StaffAugmentation = () => {
           viewport={{ once: true }}
         >
           <SolutionExplanation
-            title="Build Agile, High-Performance Teams with Enablr"
+            title="Build agile, high-performance teams with Enablr"
             content={`Enablr helps simplify and optimize business operations in your capability center, enabling you to move faster and scale smarter.
 
 From administration and procurement to HR, payroll, and regulatory support, we work as your behind-the-scenes engine, so that you can focus on business growth, strategy, and execution.

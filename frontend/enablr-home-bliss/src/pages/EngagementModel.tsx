@@ -135,8 +135,8 @@ const EngagementModel = () => {
                   className="space-y-6"
                 >
      
-     <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
-    At Enablr, we understand that building and managing a GCC is not just about scale; it's about strategy, speed, and staying ahead in a constantly evolving digital landscape. We believe every enterprise is different, and so is its GCC journey. That's why we offer a range of flexible engagement models designed to fit your specific needs.
+     <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium -tracking-normal text-xl md:text-2xl max-w-4xl mx-auto`}>
+    At Enablr, we understand that building and managing a GCC is not just about scale. It's about strategy, speed, and staying ahead in a constantly evolving digital landscape. We believe every enterprise is different, and so is its GCC journey. That's why we offer a range of flexible engagement models designed to fit your specific needs.
  </p>
                  
 <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>

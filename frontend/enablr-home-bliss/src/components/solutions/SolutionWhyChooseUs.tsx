@@ -29,15 +29,7 @@ const SolutionWhyChooseUs = ({ reasons }: SolutionWhyChooseUsProps) => {
             <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Why</span> Choose Us?
           </h2>
           <br />
-          <TextStyled 
-            variant="bodyLg" 
-            color="text-gray-600"
-            casing="sentenceCase"
-          >
-            Partner with us for end-to-end assistance in setting up and scaling 
-            <ResponsiveBreak breakOn="md" /> 
-            your capability center
-          </TextStyled>
+        
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

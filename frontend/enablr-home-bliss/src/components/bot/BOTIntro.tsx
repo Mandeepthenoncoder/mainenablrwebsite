@@ -23,7 +23,7 @@ const BOTIntro = () => {
       >
         <div className="max-w-[700px] mx-auto md:mx-0 md:ml-[10%]">
           <h2 className={`${typography.h2} text-enablr-navy mb-8 text-center md:text-left leading-10`}>
-            How Build-Operate-Transfer Empowers Your GCC
+            How build-operate-tansfer empowers your GCC
           </h2>
           
           <div className={`${typography.body.base} text-gray-600 space-y-6 text-center md:text-left`}>

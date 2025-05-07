@@ -130,7 +130,7 @@ const WorkspaceSolutions = () => {
           className="mt-0 explanation-section solution-section"
         >
           <SolutionExplanation
-            title="Build Smarter, Sustainable Workspaces"
+            title="Build smarter, sustainable workspaces"
             content={`We create workspace environments that balance productivity, collaboration, and employee well-being. Our comprehensive Workspace Solutions deliver thoughtfully designed spaces that reflect your company culture and operational needs.
 
 From initial concept to final implementation, we handle everything – office selection, design, furnishing, technology integration, and ongoing management.

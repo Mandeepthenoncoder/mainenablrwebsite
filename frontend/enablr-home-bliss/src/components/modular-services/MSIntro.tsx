@@ -29,8 +29,8 @@ const MSIntro = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className={`${typography.h2} text-enablr-navy mb-8 text-center md:text-left leading-10`}
           >
-            Enable Flexible Growth<br />
-            with Modular GCC Solutions
+            Enable flexible growth<br />
+            with modular GCC solutions
           </motion.h2>
           
           <div className={`${typography.body.base} text-gray-600 space-y-6 text-center md:text-left`}>

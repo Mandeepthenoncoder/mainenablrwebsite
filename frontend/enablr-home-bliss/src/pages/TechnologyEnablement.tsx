@@ -117,7 +117,7 @@ const TechnologyEnablement = () => {
           viewport={{ once: true }}
         >
           <SolutionExplanation
-            title="Power Your GCC With Future-Ready Technology"
+            title="Power your GCC with future-ready technology"
             content={`We offer the technical expertise and innovative solutions your GCC needs to excel. Our Technology Enablement Solutions provide comprehensive support for all your technology requirements – from infrastructure and specialized tools to talent with cutting-edge skills.
 
 Whether you're setting up new technology capabilities, integrating systems, or implementing advanced solutions, our team delivers the technical foundation for your success.

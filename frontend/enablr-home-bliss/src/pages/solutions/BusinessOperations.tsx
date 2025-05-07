@@ -114,7 +114,7 @@ const BusinessOperations = () => {
           viewport={{ once: true }}
         >
           <SolutionExplanation
-            title="Power Business Growth with Seamless Operational Support"
+            title="Power business growth with seamless operational support"
             content={`Enablr helps simplify and optimize business operations in your capability center, enabling you to move faster and scale smarter.
 
 From administration and procurement to HR, payroll, and regulatory support, we work as your behind-the-scenes engine, so that you can focus on business growth, strategy, and execution.

@@ -36,7 +36,7 @@ const SolutionExplanation = ({ title, content, imagePath }: SolutionExplanationP
                   With {titleParts[1]}
                 </h2>
               ) : (
-                <h2 className="max-w-xl mb-8 text-enablr-navy leading-tight text-2xl md:text-3xl lg:text-4xl font-semibold">
+                <h2 className="max-w-xl mb-8 text-enablr-navy leading-normal text-xl md:text-2xl lg:text-5xl font-semibold">
                   {title}
                 </h2>
               )}

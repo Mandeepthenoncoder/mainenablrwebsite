@@ -29,7 +29,7 @@ const GlobalTeam = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className={`${typography.h2} text-white mb-8`}
         >
-          Build Your Global Team with Confidence
+          Build your global team with confidence
         </motion.h2>
         
         <motion.div
