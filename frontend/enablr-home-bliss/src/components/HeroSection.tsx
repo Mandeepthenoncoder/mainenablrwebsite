@@ -198,13 +198,13 @@ export default function HeroSection() {
                 <>
                   {index === 0 ? (
                     <video
-                      src="/Landing page/Carousel_Video.mp4"
+                      src="/videos/Carousel_Video.mp4"
                       autoPlay
                       loop
                       muted
                       playsInline
                       preload="auto"
-                      poster="/Landing page/Carousel_Video_Poster.jpg"
+                      poster="/videos/Carousel_Video_Poster.jpg"
                       className="absolute inset-0 h-full w-full object-cover"
                     />
                   ) : (
@@ -213,15 +213,15 @@ export default function HeroSection() {
                       src={
                         current === index
                           ? (index === 1
-                              ? "/Landing page/Carousel_Video2.mp4"
+                              ? "/videos/Carousel_Video2.mp4"
                               : index === 2
-                              ? "/Landing page/Carousel_Video3.mp4"
+                              ? "/videos/Carousel_Video3.mp4"
                               : index === 3
-                              ? "/Landing page/Carousel_Video4.mov"
+                              ? "/videos/Carousel_Video4.mov"
                               : "")
                           : undefined
                       }
-                      poster={`/Landing page/Carousel_Video${index + 1}_Poster.jpg`}
+                      poster={`/videos/Carousel_Video${index + 1}_Poster.jpg`}
                       className="absolute inset-0 h-full w-full object-cover"
                       muted
                       playsInline
