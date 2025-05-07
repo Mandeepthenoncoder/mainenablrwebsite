@@ -11,7 +11,7 @@ export const typography = {
   
   // Body text
   body: {
-    lg: "text-lg md:text-xl leading-relaxed",
+    lg: "text-lg md:text-3xl leading-relaxed",
     base: "text-[16px] leading-relaxed font-normal",
     sm: "text-sm md:text-base leading-relaxed",
     xs: "text-xs md:text-sm leading-relaxed",

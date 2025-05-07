@@ -103,14 +103,14 @@ const PrivacyPolicy = () => {
           
           <h3 className="text-xl font-medium text-gray-800 mt-8 mb-3">User Rights</h3>
           <p className="mb-3">You have the right to access, correct, or delete your data.</p>
-          <p className="mb-6">To exercise these rights, please contact us at <a href="mailto:infogcc@enablr.com" className="text-blue-600 hover:underline">infogcc@enablr.com</a>.</p>
+          <p className="mb-6">To exercise these rights, please contact us at <a href="mailto:info@gccenablr.com" className="text-blue-600 hover:underline">info@gccenablr.com</a>.</p>
           
           <h2 className="text-2xl font-semibold text-gray-900 mt-12 mb-4">Policy Updates</h2>
           <p className="mb-3">We may update our Privacy Policy from time to time. Changes will be reflected with a revised "Effective Date."</p>
           <p className="mb-6">You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
           
           <h2 className="text-2xl font-semibold text-gray-900 mt-12 mb-4">Contact Us</h2>
-          <p className="mb-6">If you have any questions about this Privacy Policy, please contact us: <a href="mailto:infogcc@enablr.com" className="text-blue-600 hover:underline">infogcc@enablr.com</a></p>
+          <p className="mb-6">If you have any questions about this Privacy Policy, please contact us: <a href="mailto:info@gccenablr.com" className="text-blue-600 hover:underline">info@gccenablr.com</a></p>
         </div>
       </div>
 

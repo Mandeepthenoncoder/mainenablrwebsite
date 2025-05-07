@@ -48,7 +48,7 @@ const applyTextCase = (text: React.ReactNode, casing: TextCasing): React.ReactNo
         // Always capitalize the first word.
         // Keep connectors lowercase if they are not the first word.
         if (index > 0 && lowercaseConnectors.includes(lowerWord)) {
-          return lowerWord;
+          return lowerWord + ' ';
         }
         // Capitalize the first letter, lowercase the rest for other words.
         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();

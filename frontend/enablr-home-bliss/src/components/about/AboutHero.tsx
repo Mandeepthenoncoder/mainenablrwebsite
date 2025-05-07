@@ -103,8 +103,11 @@ const AboutHero = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="space-y-6"
               >
-                <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
-                  At Enablr, we bring together talent, technology expertise, and strategic insight to help you build, scale, and optimize your GCC journey. As a Covasant company, we operate with a foundation of competency, collaboration, and integrity, earning trust through every stage of the journey.
+                <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-normal text-3xl md:text-3xl max-w-6xl mx-auto`}>
+                  At Enablr, we bring together talent, technology expertise, and strategic insight to help you build, scale, and optimize your GCC journey.
+                  <br />
+                  <br />
+                  As a Covasant company, we operate with a foundation of competency, collaboration, and integrity, earning trust through every stage of the journey.
                 </p>
               </motion.div>
             </div>

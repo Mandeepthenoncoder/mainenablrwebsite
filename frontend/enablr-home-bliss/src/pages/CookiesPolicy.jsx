@@ -102,7 +102,7 @@ const CookiesPolicy = () => {
           <p className="mb-6">We may update this policy from time to time. Changes will be posted here with an updated effective date.</p>
           
           <h2 className="text-2xl font-semibold text-gray-900 mt-12 mb-4">Contact Us</h2>
-          <p className="mb-6">If you have any questions about our Cookie Policy, please contact us at: <a href="mailto:info@gccenablr.com" className="text-blue-600 hover:underline">info@enablr.com</a></p>
+          <p className="mb-6">If you have any questions about our Cookie Policy, please contact us at: <a href="mailto:info@gccenablr.com" className="text-blue-600 hover:underline">info@gccenablr.com</a></p>
         </div>
       </div>
 
