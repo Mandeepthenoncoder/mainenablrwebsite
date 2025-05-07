@@ -25,7 +25,7 @@ interface HeroSlide {
 // Define the hero slide content with optimized WebP images
 const heroSlides: HeroSlide[] = [
   {
-    imageSrc: "/Carousel_img.jpg",
+    imageSrc: "/Landing page/Carousel_img.webp",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
     title: "Build on Proven Experience and Enterprise-Grade Quality", // For thumbnail
     titleLines: ["Build on Proven Experience and Enterprise-Grade Quality"], // For display
@@ -34,7 +34,7 @@ const heroSlides: HeroSlide[] = [
     overlayClass: "bg-black bg-opacity-40"
   },
   {
-    imageSrc: "/Carousel_img2.jpg",
+    imageSrc: "/Landing page/Carousel_img2.webp",
     srcset: "/images/supabase-images/optimized/hero-slide-2-small.webp 640w, /images/supabase-images/optimized/hero-slide-2-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-2-large.webp 1920w",
     title: "Realize your GCC Success with Speed and Scale", // For thumbnail
     titleLines: ["Realize your GCC Success", "with Speed and Scale"], // For display
@@ -43,7 +43,7 @@ const heroSlides: HeroSlide[] = [
     overlayClass: "bg-black bg-opacity-40"
   },
   {
-    imageSrc: "/Carousel_img3.jpg",
+    imageSrc: "/Landing page/Carousel_img3.webp",
     srcset: "/images/lot 2/optimized/CarouselImage3-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage3-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage3-Home-large.webp 1920w",
     title: "Accelerate your Setup with Expert Talent and Seamless Execution", // For thumbnail
     titleLines: ["Accelerate your Setup", "with Expert Talent", "and Seamless Execution"], // Break into 3 lines
@@ -52,7 +52,7 @@ const heroSlides: HeroSlide[] = [
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
   },
   {
-    imageSrc: "/Carousel_img4.jpg",
+    imageSrc: "/Landing page/Carousel_img4.jpg",
     srcset: "/images/lot 2/optimized/CarouselImage4-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage4-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage4-Home-large.webp 1920w",
     title: "Your Trusted GCC Catalyst for End-to-End Setup", // For thumbnail
     titleLines: ["Your Trusted GCC Catalyst", "for End-to-End Setup"], // Break into 3 lines
@@ -199,10 +199,10 @@ export default function HeroSection() {
                   <video
                     // Use specific video based on index
                     src={
-                      index === 0 ? "/Carousel_Video.mp4" :
-                      index === 1 ? "/Carousel_Video2.mp4" :
-                      index === 2 ? "/Carousel_Video3.mp4" :
-                      index === 3 ? "/4th_slide.mov" : // Assuming path for slide 3
+                      index === 0 ? "/Landing page/Carousel_Video.mp4" :
+                      index === 1 ? "/Landing page/Carousel_Video2.mp4" :
+                      index === 2 ? "/Landing page/Carousel_Video3.mp4" :
+                      index === 3 ? "/Landing page/Carousel_Video4.mov" : // Assuming path for slide 3
                       "" // Fallback if no video is found
                     }
                     autoPlay

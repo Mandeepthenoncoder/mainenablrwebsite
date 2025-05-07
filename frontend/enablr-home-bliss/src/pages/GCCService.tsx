@@ -35,7 +35,7 @@ const keyOfferings = [
   },
   {
     icon: Shield,
-    title: "Business Operations and  Regulatory Compliance",
+    title: "Business Operations and Regulatory Compliance",
     description: "We take care of day-to-day operations and ensure you stay compliant with local regulations. Whether it's tax and labor laws, or reporting and risk management, we go by the book."
   },
   {
@@ -46,23 +46,23 @@ const keyOfferings = [
   {
     icon: Globe,
     title: "Enterprise Integration",
-    description: "We ensure that your GCC is not tagged as a separate unit, but evovles into one of the integral elements in your overall business ecosystem."
+    description: "We ensure that your GCC is not tagged as a separate unit, but evolves into one of the integral elements in your overall business ecosystem."
   }
 ];
 
 const whyChooseUsReasons = [
   {
-    image: "/images/New%20images/Martket%20Intelligenc-GCC.jpeg",
+    image: "/Solutions/GCC-as-a-Service/GCC_2.webp",
     title: "Local-Global Market Intelligence",
     description: "We tap into our deep local expertise and global business insights, enabling you to make decisions with clarity and confidence.      "
   },
   {
-    image: "/images/New%20images/Infra%20Support-GCC.jpeg",
+    image: "/Solutions/GCC-as-a-Service/GCC_3.webp",
     title: "End-to-End Infrastructure Support",
     description: "We build end-to-end infrastructure solutions from setup to scale, and even extend support for any ongoing maintenance and optimization."
   },
   {
-    image: "/images/New%20images/SpeedtoLaunch-GCC.jpeg",
+    image: "/Solutions/GCC-as-a-Service/GCC_4.webp",
     title: "Speed to Launch and Scale",
     description: "We speed up your go-to-market strategy and scale at ease without any compromise, powered by our industry experience and prove solutions."
   }
@@ -110,7 +110,7 @@ const GCCService = () => {
           <HeroSection
             title="GCC-as-a-Service"
             description="End-to-end solution to establish your fully equipped global capability center."
-            image="/pictures/Solutions/GCC-as-a-Service/GCC_hero.webp"
+            image="/Solutions/GCC-as-a-Service/GCC-hero.webp"
             ctaText="Get Started"
             ctaLink="/contact"
             enableKenBurns={true}
@@ -128,7 +128,7 @@ const GCCService = () => {
 Designed for speed, certainty, and local depth, we help you launch, operate, and grow your GCC without the complexity.
 
 Whether you're entering India for the first time or expanding your global footprint, we take care of the execution so you can stay focused on outcomes.`}
-            imagePath="/pictures/Solutions/"
+            imagePath="/Solutions/GCC-as-a-Service/GCC_1.jpg"
           />
         </motion.div>
         

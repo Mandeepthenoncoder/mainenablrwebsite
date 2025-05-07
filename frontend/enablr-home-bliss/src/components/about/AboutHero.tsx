@@ -28,7 +28,7 @@ const AboutHero = () => {
             {/* Mobile image */}
             <div className="block md:hidden w-full h-full">
               <img
-                src="/images/About us hero bg.jpg"
+                src="/About_us/Overview/Overview_hero.jpg"
                 alt="Enablr about us hero"
                 className="w-full h-full object-cover"
                 style={{
@@ -43,7 +43,7 @@ const AboutHero = () => {
             {/* Desktop image */}
             <div className="hidden md:block w-full h-full">
               <img
-                src="/images/About us hero bg.jpg"
+                src="/About_us/Overview/Overview_hero.jpg"
                 alt="Enablr about us hero"
                 className="w-full h-full object-cover"
                 style={{

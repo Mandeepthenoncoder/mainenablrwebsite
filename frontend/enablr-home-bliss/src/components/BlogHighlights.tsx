@@ -12,7 +12,7 @@ const blogPosts = [
     slug: "scalability-advantage-why-gccs-matter", 
     title: "The 'Scalability' advantage: Why GCCs matter",
     excerpt: "Building your GCC is like drawing a blueprint for your house, ensuring every element from the ground up embeds strength and scalability to stay future proof.",
-    coverImage: "/Blog Images/From support functions to strategic hubs The evolution of GCCs.jpg",
+    coverImage: "/Insights/Blog-2.webp?v=1",
     publishedAt: "2024-06-01T00:00:00Z",
     readTime: 5
   },
@@ -22,7 +22,7 @@ const blogPosts = [
     slug: "high-performance-gcc-best-practices", 
     title: "How to build a high-performance GCC: Best practices for talent, technology, and strategy",
     excerpt: "A comprehensive guide to establishing and optimizing Global Capability Centers for maximum business impact.",
-    coverImage: "/Blog Images/How to build a high-performance GCC Best practices for talent, technology, and strategy.jpg",
+    coverImage: "/Insights/Blog-4.webp?v=1",
     publishedAt: "2024-05-20T00:00:00Z",
     readTime: 8
   },
@@ -32,7 +32,7 @@ const blogPosts = [
     slug: "ai-powered-transformation-gcc-innovation", 
     title: "AI-powered transformation: How GCCs are driving business innovation",
     excerpt: "Exploring how Global Capability Centers are leveraging artificial intelligence to reimagine business processes and create competitive advantages.",
-    coverImage: "/Blog Images/AI-powered transformation How GCCs are driving business innovation.jpg",
+    coverImage: "/Insights/Blog-5.webp?v=1",
     publishedAt: "2024-05-10T00:00:00Z",
     readTime: 6
   }

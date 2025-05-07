@@ -109,8 +109,8 @@ const OurStory = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-enablr-navy/60 mix-blend-overlay pointer-events-none z-10"></div>
               
-              <Image 
-                src="/images/New%20images/OurStory-AboutUS.jpeg" 
+              <img
+                src="/About_us/Overview/Our_story.webp" 
                 alt="Our Story at Enablr" 
                 className="w-full h-full object-cover"
               />

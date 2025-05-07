@@ -47,7 +47,7 @@ const CareerHero = () => {
       {/* Background image with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/New%20images/Hero-Careers.jpeg"
+          src="/public/Careers/Careers_hero.jpg"
           alt="Careers at Enablr"
           className="w-full h-full object-cover object-top"
         />

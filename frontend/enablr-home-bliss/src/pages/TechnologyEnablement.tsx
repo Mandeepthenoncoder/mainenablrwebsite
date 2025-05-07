@@ -52,7 +52,7 @@ const technologyReasons = [
     description: "We build flawless and future-proof technology frameworks that power up your GCC transformation journey."
   },
   {
-    image: "/images/New%20images/Experienced%20Leader-Technology%20Enable.jpeg",
+    image: "/Solutions/Technology-Enablement/experienced_leadership.webp",
     title: "Experienced Leadership With Long-Term Vision",
     description: "We bring deep expertise from our tech teams and guided by leaders for efficient decisions, enabling sustainable growth in perspective."
   },
@@ -105,7 +105,7 @@ const TechnologyEnablement = () => {
           <HeroSection
             title="Technology Enablement Solutions"
             description="Leverage technology to power your capability center with Enablr's comprehensive technology solutions and services."
-            image="/tech-hero.webp"
+            image="/Solutions/Technology-Enablement/Technology_hero.webp"
             ctaText="Get Started"
             ctaLink="/contact"
             enableKenBurns={true}
@@ -123,7 +123,7 @@ const TechnologyEnablement = () => {
 Whether you're setting up new technology capabilities, integrating systems, or implementing advanced solutions, our team delivers the technical foundation for your success.
 
 We handle the complexity of technology deployment so you can focus on leveraging it for strategic advantage.`}
-            imagePath="/solutions/Power Your GCC with future ready-Technology Enablement.jpg"
+            imagePath="/Solutions/Technology-Enablement/Power_your_GCC.jpg"
           />
         </motion.div>
         

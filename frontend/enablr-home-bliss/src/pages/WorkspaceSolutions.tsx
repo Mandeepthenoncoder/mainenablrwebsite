@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
 import HeroSection from "@/components/ui/HeroSection";
 
-const heroImage = "/images/lot%202/HeroImage-WorkspaceSolutions.jpg";
+const heroImage = "/Solutions/Workspace-Solutions/Workspace_hero.jpg";
 
 const keyOfferings = [
   {
@@ -47,7 +47,7 @@ const workspaceReasons = [
     description: "We partner to build what works for you, keeping future growth plans in perspective, enabling the right tone for your business."
   },
   {
-    image: "/workspace(3).jpg",
+    image: "/Solutions/Workspace-Solutions/workspace.jpg",
     title: "Designed for Improved Focus\nand Productivity",
     description: "We propose workspace solutions that boost teams to think beyond mundane tasks and deliver cutting-edge solutions for consistent growth."
   }
@@ -136,7 +136,7 @@ const WorkspaceSolutions = () => {
 From initial concept to final implementation, we handle everything – office selection, design, furnishing, technology integration, and ongoing management.
 
 Our approach emphasizes flexibility, sustainability, and future readiness, ensuring your workspace evolves with your business needs.`}
-            imagePath="/workspacesolutionexaplanation new image.jpg"
+            imagePath="/Solutions/Workspace-Solutions/Build_smarter.jpg"
           />
         </motion.div>
         

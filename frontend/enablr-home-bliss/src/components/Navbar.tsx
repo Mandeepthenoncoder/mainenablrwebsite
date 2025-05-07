@@ -244,10 +244,13 @@ const Navbar = () => {
           {/* About Us Dropdown */}
           <NavDropdown 
             trigger={
-              <span className={cn(
-                "text-sm font-medium transition-colors duration-300",
-                isActiveOrContains('/about') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
-              )}>
+              <span 
+                className={cn(
+                  "text-sm font-medium transition-colors duration-300",
+                  isActiveOrContains('/about') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
+                )}
+                onClick={() => window.location.href = '/about'}
+              >
                 About Us
               </span>
             }

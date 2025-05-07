@@ -76,17 +76,17 @@ const EnablrEdge = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
           <FeatureCard 
-            icon="/Enablr Edge Accelrate.svg" 
+            icon="/rocket.svg" 
             title="Accelerate your GCC setup with a trusted partner" 
             index={0}
           />
           <FeatureCard 
-            icon="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//partner%20of%20choice.svg" 
+            icon="partner-of-choice.svg" 
             title="Build future-ready centers with Enablr, your 'partner of choice'" 
             index={1}
           />
           <FeatureCard 
-            icon="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//momentum.svg" 
+            icon="momentum.svg" 
             title="Maintain momentum with transparent, milestone-driven execution" 
             index={2}
           />

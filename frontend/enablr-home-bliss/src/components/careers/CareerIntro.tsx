@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { typography } from "@/styles/typography";
-import Image from "@/components/Image";
+
 
 const CareerIntro = () => {
   return (
@@ -72,8 +72,8 @@ const CareerIntro = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-enablr-navy/30 to-transparent z-10"></div>
               
               {/* Updated career image */}
-              <Image 
-                src="/At Enablr, We Build More Than GCCs, We Build High-Performing Teams That Power Them.- Careers.jpg" 
+              <img
+                src="/public/Careers/Careers_1.webp"
                 alt="Enablr careers team" 
                 className="w-full h-full object-cover"
                 width={780}

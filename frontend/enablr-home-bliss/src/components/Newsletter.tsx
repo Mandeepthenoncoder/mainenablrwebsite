@@ -145,7 +145,7 @@ const Newsletter = ({ variant = 'expanded' }: NewsletterProps) => {
               </div>
               <div className="hidden md:block md:col-span-4 relative">
                 <img 
-                  src="/images/blog/newsletter.jpg" 
+                  src="/Global/newsletter.jpg" 
                   alt="Newsletter" 
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />

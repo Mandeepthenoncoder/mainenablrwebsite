@@ -9,7 +9,7 @@ import { Users2, Code2, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroSection from "@/components/ui/HeroSection";
 
-const heroImage = "/images/New%20images/Main%20Pic-Staff%20Augmentation.jpeg";
+const heroImage = "/Solutions/Staff_Augmentation/Staff_aug_hero.jpg";
 
 const keyOfferings = [
   {
@@ -36,17 +36,17 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/staff_aug1-min.jpg",
+    image: "/Solutions/Staff_Augmentation/Staff_aug_2.jpg",
     title: "On-demand scaling of team",
     description: "We help you to swiftly grow or scale down your team as per your project requirements, helping you to meet your talent and workforce requirements at ease."
   },
   {
-    image: "/images/staff_aug2-min.jpg",
+    image: "/Solutions/Staff_Augmentation/Staff_aug_3.jpg",
     title: "Availability of niche technical expertise",
     description: "We come in to meet your specific or highly specialized skill requirements, enabling you to connect with the right experts at speed without compromising on quality."
   },
   {
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf",
+    image: "/Solutions/Staff_Augmentation/Staff_aug_4.jpg",
     title: "Enabling speed with agility",
     description: "We help you to maintain speed with adaptability and flexibility, ensuring that quality is intact and you are able to adjust quickly and keep up with the market dynamics"
   }
@@ -112,7 +112,7 @@ const StaffAugmentation = () => {
 From administration and procurement to HR, payroll, and regulatory support, we work as your behind-the-scenes engine, so that you can focus on business growth, strategy, and execution.
 
 If you are setting up a global capability center, then you can trust Enablr for the local expertise and operational muscle to make it seamless. Partner with Enablr to accelerate your GCC plans.`}
-            imagePath="/solutions/Build Agile, High-performance Teams With Enablr - Staff Augmentation.jpg"
+            imagePath="/Solutions/Staff_Augmentation/Staff_aug_1.jpg"
           />
         </motion.div>
         

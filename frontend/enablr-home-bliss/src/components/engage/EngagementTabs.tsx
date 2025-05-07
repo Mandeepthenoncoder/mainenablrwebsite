@@ -21,28 +21,28 @@ const engagementModels: EngagementModel[] = [
     title: "Comprehensive\nManagement",
     description:
       "From launch to daily operations, we handle everything, compliance, infrastructure, staffing, and beyond, so you can stay focused on growing your business priorities.",
-    image: "/comprehensive managemenrt.webp",
+    image: "/Landing page/engage_one.webp",
   },
   {
     id: "modular",
     title: "Modular Services",
     description:
       "Our modular model lets you tap into specific services, such as hiring, payroll, or workspace management, exactly when and where you need them.",
-    image: "/modular services.webp",
+    image: "/Landing page/engage_two.webp",
   },
   {
     id: "bot",
     title: "Build-Operate-Transfer\n(B-O-T)", // Sentence case applied to text, acronym kept
     description:
       "We set up and operate your GCC, from day one. When you're ready, we ensure a smooth handover so you take full control with zero disruption.", // Sentence case applied, "GCC" kept capitalized
-    image: "/BOTengage with us section.png",
+    image: "/Landing page/engage_three.webp",
   },
   {
     id: "dedicated",
     title: "Dedicated Team\nModels",
     description:
       "Build a dedicated team that operates as an extension of you, fully aligned with your culture, mirroring your processes and priorities.",
-    image: "/Dedicated Team Models, Engage With Us, home.webp",
+    image: "/Landing page/engage_four.webp",
   },
 ];
 const EngagementModels = () => {

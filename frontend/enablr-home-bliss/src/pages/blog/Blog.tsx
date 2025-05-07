@@ -23,7 +23,7 @@ const staticPosts: BlogPost[] = [
     slug: "support-functions-to-strategic-hubs",
     excerpt: "Witness the transformation journey of GCCs from basic support centers to crucial strategic business hubs.",
     content: "<p>Global Capability Centers have undergone a significant transformation over the past decade...</p>",
-    cover_image: "/Blog Images/Blog-0.jpg?v=1",
+    cover_image: "/Insights/Blog-1.webp",
     author: "Enablr Team",
     category: "GCC-as-a-Service",
     published_at: "2024-06-15T00:00:00Z",
@@ -35,7 +35,7 @@ const staticPosts: BlogPost[] = [
     slug: "scalability-advantage-why-gccs-matter",
     excerpt: "Building your GCC is like drawing a blueprint for your house, ensuring every element from the ground up embeds strength and scalability to stay future proof.",
     content: "<p>In today's rapidly evolving business landscape, Global Capability Centers (GCCs) have emerged as strategic hubs that drive innovation, efficiency, and scalability...</p>",
-    cover_image: "/Blog Images/Blog-1.jpg?v=1",
+    cover_image: "/Insights/Blog-2.webp",
     author: "Mandeep Singh",
     category: "GCC-as-a-Service",
     published_at: "2024-06-01T00:00:00Z",
@@ -48,7 +48,7 @@ const staticPosts: BlogPost[] = [
     slug: "workforce-tomorrow-gccs-tech-talent-development",
     excerpt: "How Global Capability Centers are becoming crucial talent incubators for developing future-ready technical skills.",
     content: "<p>Global Capability Centers are playing an increasingly important role in developing technical talent...</p>",
-    cover_image: "/Blog Images/Blog-3.jpg?v=1",
+    cover_image:"/Insights/Blog-3.webp",
     author: "Enablr Team",
     category: "Talent & HR Solutions",
     published_at: "2024-05-25T00:00:00Z",
@@ -60,7 +60,7 @@ const staticPosts: BlogPost[] = [
     slug: "high-performance-gcc-best-practices",
     excerpt: "A comprehensive guide to establishing and optimizing Global Capability Centers for maximum business impact.",
     content: "<p>Building a high-performance Global Capability Center requires careful attention to three key elements...</p>",
-    cover_image: "/Blog Images/Blog-2.jpg?v=1",
+    cover_image: "/Insights/Blog-4.webp",
     author: "Rahul Sharma",
     category: "Talent & HR Solutions",
     published_at: "2024-05-20T00:00:00Z",
@@ -73,7 +73,7 @@ const staticPosts: BlogPost[] = [
     slug: "ai-powered-transformation-gcc-innovation",
     excerpt: "Exploring how Global Capability Centers are leveraging artificial intelligence to reimagine business processes and create competitive advantages.",
     content: "<p>Artificial Intelligence is revolutionizing how Global Capability Centers operate and deliver value...</p>",
-    cover_image: "/Blog Images/Blog-5.jpg?v=1",
+    cover_image: "/Insights/Blog-5.webp",
     author: "Priya Patel",
     category: "Technology Enablement Solutions",
     published_at: "2024-05-10T00:00:00Z",
@@ -85,7 +85,7 @@ const staticPosts: BlogPost[] = [
     slug: "gccs-redefining-digital-transformation",
     excerpt: "Explore how GCCs are at the forefront of digital transformation initiatives for global enterprises.",
     content: "<p>Global Capability Centers are increasingly becoming the nerve centers for digital transformation initiatives...</p>",
-    cover_image: "/Blog Images/Blog-6.jpg?v=1",
+    cover_image: "/Insights/Blog-6.webp",
     author: "Enablr Team",
     category: "Technology Enablement Solutions",
     published_at: "2024-05-05T00:00:00Z",
@@ -98,7 +98,7 @@ const staticPosts: BlogPost[] = [
     slug: "gcc-powerhouse-innovation",
     excerpt: "Unleashing the innovation potential of Global Capability Centers through the right strategies and enablers.",
     content: "<p>Global Capability Centers have the potential to be powerful engines of innovation...</p>",
-    cover_image: "/Blog Images/Blog-7.jpg?v=1",
+    cover_image: "/Insights/Blog-7.webp",
     author: "Sneha Rao",
     category: "Workspace Solutions",
     published_at: "2024-04-01T00:00:00Z",
@@ -110,7 +110,7 @@ const staticPosts: BlogPost[] = [
     slug: "optimizing-workspace-design-gccs",
     excerpt: "How thoughtful workspace design can enhance productivity, foster creativity, and improve employee satisfaction in Global Capability Centers.",
     content: "<p>Workspace design plays a critical role in the success of Global Capability Centers...</p>",
-    cover_image: "/Blog Images/Blog-4.jpg?v=1",
+    cover_image: "/Insights/Blog-8.webp",
     author: "Anil Kumar",
     category: "Workspace Solutions",
     published_at: "2024-04-30T00:00:00Z",
@@ -171,7 +171,7 @@ const Blog = () => {
         <HeroSection
           title="Insights & Perspectives"
           description="Discover expert insights on GCC trends, innovation, technology enablement, and talent strategies from Enablr's knowledge center."
-          image="/images/blog/blog-hero.jpg"
+          image="/public/Insights/Blog_hero.webp"
           ctaText="Explore Insights"
           ctaLink="/blog"
           enableKenBurns={true}

@@ -19,42 +19,42 @@ const Solutions = () => {
       id: 1,
       title: "GCC-as-a-Service",
       description: "End-to-end solution to establish your fully equipped global capability center.",
-      image: "/images/blog/gcc1.jpg?v=1",
+      image: "/Solutions/Landing/GCC_1.jpg",
       link: "/services/gcc-as-service"
     },
     {
       id: 2,
       title: "Technology enablement",
       description: "Leveraging technology to power your capability center.",
-      image: "/images/blog/technology.jpg?v=1",
+      image: "/Solutions/Landing/Tech_2.jpg",
       link: "/services/technology-enablement"
     },
     {
       id: 3,
       title: "Workspace solutions",
       description: "Future-ready workspaces for your capability center.",
-      image: "/images/blog/workspace.jpg?v=1",
+      image: "/Solutions/Landing/Workspace_3.jpg",
       link: "/services/workspace-solutions"
     },
     {
       id: 4,
       title: "Talent and HR solutions",
       description: "Comprehensive talent management for your capability center.",
-      image: "/images/blog/talent.jpg?v=1",
+      image: "/Solutions/Landing/Talent_4.jpg",
       link: "/services/talent-hr-solutions"
     },
     {
       id: 5,
       title: "Business operations",
       description: "Seamless and streamlined operations for smooth functioning.",
-      image: "/images/blog/insights.jpg?v=1",
+      image: "/Solutions/Landing/Business_op_5.jpg",
       link: "/services/business-operations"
     },
     {
       id: 6,
       title: "Staff augmentation",
       description: "Easily available skilled talent pool for your capability center.",
-      image: "/images/blog/trends.jpg?v=1",
+      image: "/Solutions/Landing/Staff_aug_6.jpg",
       link: "/services/staff-augmentation"
     }
   ];
@@ -103,7 +103,7 @@ const Solutions = () => {
         <HeroSection 
           title="Explore our end-to-end GCC solutions"
           description="Accelerate your journey to a<br />fully-functional GCC"
-          image="/solutions landing page hero image.png"
+          image="/Solutions/Landing/Solutions_hero.webp"
           ctaText="Get Started"
           ctaLink="/contact"
           primaryColor="#0D214F"

@@ -11,7 +11,7 @@ import { CTAButton } from "@/components/ui/CTAButton";
 import GlobalTeam from "@/components/sections/GlobalTeam";
 import HeroSection from "@/components/ui/HeroSection";
 
-const heroImage = "/business ops hero images new.jpg";
+const heroImage = "/Solutions/Business-Operations/Business_op_hero.jpg";
 
 const keyOfferings = [
   {
@@ -38,17 +38,17 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/images/Governance.jpg",
+    image: "/Solutions/Business-Operations/policies.webp",
     title: "Simplified governance and reporting",
     description: "We simplify governance and reporting for your business operations, providing you useful, real-time insights and vision to make informed decisions with confidence.."
   },
   {
-    image: "/images/Bot.jpg",
+    image: "/Solutions/Business-Operations/Bot.jpg",
     title: "Infrastructure set up with operational excellence",
     description: "Right from the start, we set up scalable infrastructure that is supported by proven and tested processes to ensure smooth operations, ensuring sustainability in your operations."
   },
   {
-    image: "/images/New%20images/Innovation-Business%20Operations.jpeg",
+    image: "/Solutions/Business-Operations/Innovation.webp",
     title: "Continuous innovation for accelerated growth",
     description: "We understand your need for continuous improvement and innovation through your GCC, hence, we build scalable tech frameworks and processes that power you in this dynamic marketplace.."
   }
@@ -120,7 +120,7 @@ const BusinessOperations = () => {
 From administration and procurement to HR, payroll, and regulatory support, we work as your behind-the-scenes engine, so that you can focus on business growth, strategy, and execution.
 
 If you are setting up a global capability center, then you can trust Enablr for the local expertise and operational muscle to make it seamless. Partner with Enablr to accelerate your GCC plans.`}
-            imagePath="/business-operations.jpeg"
+            imagePath="/Solutions/Business-Operations/business-operations.jpg"
           />
         </motion.div>
         

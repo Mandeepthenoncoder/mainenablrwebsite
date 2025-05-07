@@ -37,7 +37,7 @@ const LeadershipPage = () => {
         <HeroSection
           title="Our Leadership"
           description="Meet the visionary leaders driving innovation and transformation at Enablr."
-          image="/Updated leadership hero.jpg"
+          image="/public/About_us/Leadership/Leadership_hero.jpg"
           ctaText="Know More"
           ctaLink="/contact"
           enableKenBurns={true}

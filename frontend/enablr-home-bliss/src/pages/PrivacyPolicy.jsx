@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
           {/* Mobile Background Image */}
           <div className="block md:hidden absolute inset-0 w-full h-full">
             <img
-              src="/privacy policy and cookie policy hero image.jpg"
+              src="/policy.jpg"
               alt="Hero background"
               className="w-full h-full object-cover"
               style={{
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
           {/* Desktop Background Image */}
           <div className="hidden md:block absolute inset-0 w-full h-full">
             <img
-              src="/privacy policy and cookie policy hero image.jpg"
+              src="/policy.jpg"
               alt="Hero background"
               className="w-full h-full object-cover"
               style={{

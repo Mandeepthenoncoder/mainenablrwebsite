@@ -11,8 +11,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <Image
-                src="https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//Updated%20Logo.svg"
+              <img
+                src="public/Global/Updated-Logo.svg"
                 alt="Enablr Logo"
                 className="h-[4.2rem]"
               />
@@ -190,7 +190,7 @@ const Footer = () => {
 
  
               <img
-                src="/Platform=LinkedIn, Color=Negative.svg"
+                src="/Global/Platform=LinkedIn, Color=Negative.svg"
                 alt="LinkedIn"
                 className="h-5 w-5"
                 style={{ filter: "invert(0.5) brightness(0.3)" }}
@@ -203,7 +203,7 @@ const Footer = () => {
               className="text-gray-500 hover:text-enablr-navy transition-colors duration-300"
             >
               <img
-                src="/Platform=X (Twitter), Color=Original.svg"
+                src="/Global/Platform=X (Twitter), Color=Original.svg"
                 alt="X (Twitter)"
                 className="h-5 w-5"
               />
@@ -215,7 +215,7 @@ const Footer = () => {
               className="text-gray-500 hover:text-enablr-navy transition-colors duration-300"
             >
               <img
-                src="/Platform=Facebook, Color=Negative.svg"
+                src="/Global/Platform=Facebook, Color=Negative.svg"
                 alt="Facebook"
                 className="h-5 w-5"
                 style={{ filter: "invert(0.5) brightness(0.3)" }}
@@ -228,7 +228,7 @@ const Footer = () => {
               className="text-gray-500 hover:text-enablr-navy transition-colors duration-300"
             >
               <img
-                src="/Platform=Instagram, Color=Original.svg"
+                src="/Global/Platform=Instagram, Color=Original.svg"
                 alt="Instagram"
                 className="h-5 w-5"
               />

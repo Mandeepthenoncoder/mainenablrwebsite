@@ -18,22 +18,22 @@ const solutions: Solution[] = [{
   id: "talent",
   title: "Talent and HR", // "HR" kept capitalized as an acronym
   description: "Streamline hiring, onboarding, and workforce management with scalable HR frameworks tailored to your growth needs.", // "HR" kept capitalized
-  image: "/talent edited image (1).png"
+  image: "/Landing page/solution_one.webp"
 }, {
   id: "workspace",
   title: "Workspace",
   description: "Access flexible, fully serviced workspaces in prime locations, including Tier 2 and Tier 3 cities in India.", // "Tier 2", "Tier 3", "India" kept capitalized
-  image: "/worksapce (1).png"
+  image: "/Landing page/solution_two.webp"
 }, {
   id: "operations",
   title: "Business operations",
   description: "Ensure seamless operations with end-to-end support for compliance, payroll, finance, and administrative management.",
-  image: "/Bsuiness ops edited (1).png"
+  image: "/Landing page/solution_three.webp"
 }, {
   id: "technology",
   title: "Technology enablement",
   description: "Empower your GCC with cutting-edge technology, across technology and domains to drive innovation and efficiency.", // "GCC" kept capitalized assuming it's an acronym
-  image: "/technology enablement (1).png"
+  image: "/Landing page/solution_four.webp"
 }];
 const handleContactClick = () => {
   window.location.href = "/contact";
