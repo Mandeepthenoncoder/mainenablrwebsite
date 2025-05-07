@@ -10,9 +10,12 @@ interface ContactInfoProps {
 
 const contactInfo = [
   {
-    icon: <Phone className="h-5 w-5" />,
+    icon: <Phone className="h-4 w-4" />,
     title: "Phone",
-    details: "+91 40 45182310 (IN)\n+1 833 326 8272 (USA)",
+    details: [
+      { number: "+91 40 45182310", country: "(IN)" },
+      { number: "+1 833 326 8272", country: "(USA)" }
+    ],
     description: "Monday to Friday, 9am to 6pm"
   },
   {
@@ -37,7 +40,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ layout = "horizontal" }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
           className={cn(
-            "p-8 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 overflow-hidden group relative",
+            "p-6 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 overflow-hidden group relative",
             layout === "vertical" && "flex flex-row items-start"
           )}
         >
@@ -64,17 +67,28 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ layout = "horizontal" }) => {
             
             <div className={layout === "vertical" ? "" : ""}>
               <h3 className={cn(
-                layout === "horizontal" ? typography.h3 : typography.h4,
+                layout === "horizontal" ? "text-lg" : "text-base",
                 "text-enablr-navy group-hover:text-enablr-navy transition-colors duration-300 mb-2"
               )}>
                 {info.title}
               </h3>
               
-              <p className={cn(typography.body.lg, "text-enablr-navy font-medium mb-2 whitespace-pre-line")}>
-                {info.details}
-              </p>
+              {Array.isArray(info.details) ? (
+                <div className="space-y-0.5 text-sm">
+                  {info.details.map((detail, idx) => (
+                    <p key={idx} className="text-enablr-navy font-medium whitespace-nowrap">
+                      <span className="inline-block">{detail.number}</span>
+                      <span className="text-gray-500 text-xs ml-1 inline-block">{detail.country}</span>
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-enablr-navy font-medium text-sm mb-2">
+                  {info.details}
+                </p>
+              )}
               
-              <p className={cn(typography.body.base, "text-gray-600 leading-relaxed font-light")}>
+              <p className="text-gray-600 text-xs leading-relaxed font-light mt-2">
                 {info.description}
               </p>
             </div>

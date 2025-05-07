@@ -45,7 +45,7 @@ const BlogHighlights = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
         <h2 className={typography.h2}>
-        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Insights on </span>GCC Trends  </h2>
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Insights on </span>GCC trends  </h2>
           <div className="w-24 h-1 bg-enablr-lime mx-auto"></div>
         </div>
 

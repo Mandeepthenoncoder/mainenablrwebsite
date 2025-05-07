@@ -7,30 +7,7 @@ import type { CarouselApi } from "@/components/ui/carousel";
 import { typography, colors } from "@/styles/typography";
 import ThirdSlideBackground from "./ThirdSlideBackground";
 
-// Third slide gets special treatment
-const thirdSlideImage = "/images/lot%202/CarouselImage3-Home.jpg";
-const currentTime = new Date().getTime();
-
-const heroSlides = [
-  {
-    image: "https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//hero-slide-1.png",
-    title: "Build on proven experience\nand enterprise-grade quality",
-    buttonText: "Get Started Today",
-    align: "left"
-  },
-  {
-    image: "https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/public/site-images//hero-slide-2.png",
-    title: "Realize your GCC success\nwith speed and scale",
-    buttonText: "Get Started",
-    align: "left"
-  },
-  {
-    image: "/images/lot%202/CarouselImage3-Home.jpg",
-    title: "Accelerate your setup\nwith expert talent and seamless execution",
-    buttonText: "Get Started",
-    align: "left"
-  }
-];
+const heroSlides = [];
 
 const HeroSection = () => {
   const [api, setApi] = useState<CarouselApi>();

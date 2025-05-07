@@ -24,11 +24,12 @@ const EngagementHero = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <h1 className={`${typography.hero} text-white mb-4`}>
+         
+          <h1 className={`${typography.hero} text-white mb-8`}>
             Build your GCC, your way
           </h1>
           <p className={`${typography.heroSubtitle} text-white/90 mb-8`}>
-            Own your GCC journey. We'll power the way.
+            own your GCC journey. We'll power the way.
           </p>
           <Button 
             asChild

@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 const heroSlide = {
   title: "GCC-as-a-Service",
   description: "End-to-end solution to establish your fully equipped global capability center.",
-  image: "/images/lot%202/MainPicture-GCC.jpg",
+  image: "",
   ctaText: "Get Started",
   ctaLink: "/contact"
 };
@@ -110,7 +110,7 @@ const GCCService = () => {
           <HeroSection
             title="GCC-as-a-Service"
             description="End-to-end solution to establish your fully equipped global capability center."
-            image="/images/lot%202/MainPicture-GCC.jpg"
+            image="/pictures/Solutions/GCC-as-a-Service/GCC_hero.webp"
             ctaText="Get Started"
             ctaLink="/contact"
             enableKenBurns={true}
@@ -128,7 +128,7 @@ const GCCService = () => {
 Designed for speed, certainty, and local depth, we help you launch, operate, and grow your GCC without the complexity.
 
 Whether you're entering India for the first time or expanding your global footprint, we take care of the execution so you can stay focused on outcomes.`}
-            imagePath="/solutions/Build your GCC with ease and clarity -GCC as a Service.jpg"
+            imagePath="/pictures/Solutions/"
           />
         </motion.div>
         

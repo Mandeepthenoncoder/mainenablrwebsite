@@ -28,7 +28,7 @@ const WhyChooseEnablr = () => {
               className="mb-3"
             >
               <h2 className={typography.h2}>
-        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Why</span> Choose Enablr
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Why</span> choose Enablr
       </h2>
 
             </motion.div>

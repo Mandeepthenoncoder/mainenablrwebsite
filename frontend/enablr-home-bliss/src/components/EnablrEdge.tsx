@@ -63,7 +63,7 @@ const EnablrEdge = () => {
           className="max-w-3xl mb-6 sm:mb-8 md:mb-12 text-center sm:text-left"
         >
          <h2 className={typography.h2}>
-        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">The Enablr</span> Edge
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">The Enablr</span> edge
       </h2>
       <br />
 

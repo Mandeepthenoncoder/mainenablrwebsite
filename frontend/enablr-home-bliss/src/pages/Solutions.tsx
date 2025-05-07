@@ -258,7 +258,7 @@ const Solutions = () => {
               transition={{ duration: 0.5 }}
             >
               <h2 className={`${typography.h2} text-white mb-6`}>
-                Ready to Transform Your GCC Strategy?
+                Ready to transform your GCC strategy?
               </h2>
               <Button 
                 asChild

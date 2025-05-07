@@ -24,9 +24,9 @@ const Index = () => {
   return (
     <HomeLayout showInsights={true}>
       <Helmet>
-        <title>Enablr - Build Your Global Team with Confidence</title>
+        <title>Enablr - Build your global team with confidence</title>
         <meta name="description" content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience." />
-        <meta property="og:title" content="Enablr - Build Your Global Team with Confidence" />
+        <meta property="og:title" content="Enablr - build your global team with confidence" />
         <meta property="og:description" content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience." />
       </Helmet>
       

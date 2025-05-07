@@ -48,7 +48,7 @@ const LifeAtEnablr = () => {
         >
           
 <h2 className={typography.h2}>
-        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">What Sets </span> Your Journey at Enablr Apart
+        <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">What sets </span> your journey at Enablr apart
       </h2>
         
         
@@ -60,7 +60,7 @@ const LifeAtEnablr = () => {
             className={cn(typography.body.lg, "text-gray-600 max-w-2xl mx-auto")}
           >
             <br />
-            Four pillars that define our culture and your experience with us
+           
           </motion.p>
         </motion.div>
 
@@ -79,12 +79,12 @@ const LifeAtEnablr = () => {
                 title={item.title
                   .replace(/gcc/gi, 'GCC')
                   .replace(/enablr/gi, 'Enablr')
-                  .replace(/(^|\.|\!|\?)\s*([a-z])/g, (m, p1, p2) => p1 + ' ' + p2.toUpperCase())
+                  .replace(/(^|\.|!|\?)\s*([a-z])/g, (m, p1, p2) => p1 + ' ' + p2.toUpperCase())
                 }
                 description={item.description
                   .replace(/gcc/gi, 'GCC')
                   .replace(/enablr/gi, 'Enablr')
-                  .replace(/(^|\.|\!|\?)\s*([a-z])/g, (m, p1, p2) => p1 + ' ' + p2.toUpperCase())
+                  .replace(/(^|\.|!|\?)\s*([a-z])/g, (m, p1, p2) => p1 + ' ' + p2.toUpperCase())
                 }
                 titleClassName="text-[20px] font-semibold leading-tight text-enablr-navy mb-2"
                 descriptionClassName="text-[14px] md:text-[16px] font-normal leading-relaxed text-gray-600"

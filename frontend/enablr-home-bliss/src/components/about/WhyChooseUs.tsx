@@ -103,7 +103,7 @@ const WhyChooseUs = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="inline-block mb-3 px-4 py-1.5 bg-enablr-navy/10 rounded-full text-sm font-medium tracking-wider text-enablr-navy"
           >
-            WHY CHOOSE US
+            Why choose us
           </motion.span>
           
           <motion.h2 

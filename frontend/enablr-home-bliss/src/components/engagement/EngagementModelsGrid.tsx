@@ -45,7 +45,7 @@ const EngagementModelsGrid = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className={`${typography.h2} text-enablr-navy text-center mb-4`}>
-            Our Engagement Models
+            Our engagement models
           </h2>
           <p className={`${typography.body.lg} text-gray-600 text-center max-w-3xl mx-auto mb-16`}>
             Choose the partnership approach that best fits your strategic objectives and operational requirements.

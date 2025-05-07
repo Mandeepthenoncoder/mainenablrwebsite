@@ -30,7 +30,7 @@ const OurStory = () => {
               className="mb-3"
           >
               <h2 className={`${typography.h2} text-white tracking-tight`}>
-              Our Story
+              Our story
             </h2>
             </motion.div>
             

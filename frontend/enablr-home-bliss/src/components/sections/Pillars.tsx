@@ -56,7 +56,7 @@ const Pillars = () => {
               typography.h2,
               "text-sm font-medium text-gray-700 hover:text-[#BF0404] transition-colors duration-300 mb-4"
             )}>
-              Our Pillars
+              Our pillars
             </h2>
           </motion.div>
         </div>

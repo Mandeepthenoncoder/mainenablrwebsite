@@ -65,7 +65,7 @@ const MSBenefits = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12 text-center">
-          <SectionTitle gradientWord="Why">Why Our Modular Services Model Excels</SectionTitle>
+          <SectionTitle gradientWord="Why">Why our modular services model excels</SectionTitle>
           <p className="max-w-2xl text-gray-600">
             Our flexible approach allows you to select specific services<br/>
             tailored to your unique GCC priorities and objectives

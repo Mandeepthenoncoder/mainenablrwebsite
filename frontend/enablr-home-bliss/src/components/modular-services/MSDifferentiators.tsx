@@ -31,7 +31,7 @@ const MSDifferentiators = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <SectionTitle gradientWord="What">What Enablr Brings</SectionTitle>
+        <SectionTitle gradientWord="What">What Enablr brings</SectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {differentiators.map((diff, index) => (
             <motion.div
