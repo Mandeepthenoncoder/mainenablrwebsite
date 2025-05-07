@@ -62,33 +62,6 @@ const heroSlides: HeroSlide[] = [
   }
 ];
 
-function LazyVideo({ src, poster, ...props }) {
-  const ref = useRef();
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { rootMargin: '200px' }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <video
-      ref={ref}
-      preload="none"
-      poster={poster}
-      muted
-      playsInline
-      loop
-      {...props}
-      src={isVisible ? src : undefined}
-    />
-  );
-}
-
 export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -235,15 +208,26 @@ export default function HeroSection() {
                       className="absolute inset-0 h-full w-full object-cover"
                     />
                   ) : (
-                    <LazyVideo
+                    <video
+                      key={current === index ? `active-${index}` : `inactive-${index}`}
                       src={
-                        index === 1 ? "/Landing page/Carousel_Video2.mp4" :
-                        index === 2 ? "/Landing page/Carousel_Video3.mp4" :
-                        index === 3 ? "/Landing page/Carousel_Video4.mov" :
-                        ""
+                        current === index
+                          ? (index === 1
+                              ? "/Landing page/Carousel_Video2.mp4"
+                              : index === 2
+                              ? "/Landing page/Carousel_Video3.mp4"
+                              : index === 3
+                              ? "/Landing page/Carousel_Video4.mov"
+                              : "")
+                          : undefined
                       }
                       poster={`/Landing page/Carousel_Video${index + 1}_Poster.jpg`}
                       className="absolute inset-0 h-full w-full object-cover"
+                      muted
+                      playsInline
+                      loop
+                      preload="auto"
+                      autoPlay={current === index}
                     />
                   )}
                   <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
