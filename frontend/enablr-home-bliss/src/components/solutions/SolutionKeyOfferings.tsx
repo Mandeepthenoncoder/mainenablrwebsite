@@ -18,6 +18,29 @@ interface SolutionKeyOfferingsProps {
 }
 
 const SolutionKeyOfferings = ({ title, offerings }: SolutionKeyOfferingsProps) => {
+  // Helper function to ensure proper spacing when splitting titles
+  const splitWithSpacing = (title: string): [string, string] => {
+    const words = title.split(' ');
+    const midpoint = Math.ceil(words.length / 2);
+    
+    // Check if we're splitting right before a connector word
+    const connectors = ['and', 'or', 'of', 'in', 'by', 'for', 'to', 'with'];
+    
+    // If the next word after midpoint is a connector, adjust the split point
+    if (midpoint < words.length && connectors.includes(words[midpoint].toLowerCase())) {
+      // Include the connector in the first part to preserve spacing
+      return [
+        words.slice(0, midpoint + 1).join(' '), // Include connector in first part
+        words.slice(midpoint + 1).join(' ')     // Rest in second part
+      ];
+    }
+    
+    return [
+      words.slice(0, midpoint).join(' '),
+      words.slice(midpoint).join(' ')
+    ];
+  };
+
   return (
     <section className="py-10 md:py-20 bg-enablr-navy rounded-[32px] md:rounded-[48px] px-2 md:px-6 mx-2 md:mx-6 lg:mx-[72px]">
       <div className="container mx-auto">
@@ -43,9 +66,10 @@ const SolutionKeyOfferings = ({ title, offerings }: SolutionKeyOfferingsProps) =
             const Icon = offering.icon;
             const needsLineBreak = offering.title.length > 30;
             
-            // Calculate line break position if needed
-            const words = offering.title.split(' ');
-            const midpoint = Math.ceil(words.length / 2);
+            // Get split parts with proper spacing
+            const [firstPart, secondPart] = needsLineBreak 
+              ? splitWithSpacing(offering.title)
+              : [offering.title, ''];
             
             return (
               <motion.div
@@ -61,20 +85,43 @@ const SolutionKeyOfferings = ({ title, offerings }: SolutionKeyOfferingsProps) =
                     <div className="w-8 h-8 mb-2 md:mb-3 text-white group-hover:text-black transition-colors duration-300">
                       <Icon className="w-full h-full" />
                     </div>
-                    <TextStyled 
-                      variant="h4" 
-                      className="group-hover:text-black transition-colors duration-300 text-base md:text-lg"
-                      color="text-white"
-                      casing="titleCase"
-                    >
-                      {needsLineBreak ? (
-                        <>
-                          {words.slice(0, midpoint).join(' ')}
-                          <ResponsiveBreak breakOn="lg" />
-                          {words.slice(midpoint).join(' ')}
-                        </>
-                      ) : offering.title}
-                    </TextStyled>
+                    {needsLineBreak ? (
+                      <div className="flex flex-col">
+                        <TextStyled 
+                          variant="h4" 
+                          className="group-hover:text-black transition-colors duration-300 text-base md:text-lg"
+                          color="text-white"
+                          casing="titleCase"
+                        >
+                          {firstPart}
+                        </TextStyled>
+                        <TextStyled 
+                          variant="h4" 
+                          className="group-hover:text-black transition-colors duration-300 text-base md:text-lg hidden lg:block"
+                          color="text-white"
+                          casing="preserve"
+                        >
+                          {secondPart}
+                        </TextStyled>
+                        <TextStyled 
+                          variant="h4" 
+                          className="group-hover:text-black transition-colors duration-300 text-base md:text-lg lg:hidden"
+                          color="text-white"
+                          casing="preserve"
+                        >
+                          {secondPart ? ' ' + secondPart : ''}
+                        </TextStyled>
+                      </div>
+                    ) : (
+                      <TextStyled 
+                        variant="h4" 
+                        className="group-hover:text-black transition-colors duration-300 text-base md:text-lg"
+                        color="text-white"
+                        casing="titleCase"
+                      >
+                        {offering.title}
+                      </TextStyled>
+                    )}
                   </CardHeader>
                   <CardContent className="relative z-10">
                     <TextStyled 
