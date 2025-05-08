@@ -39,7 +39,7 @@ const EngagementModel = () => {
       id: 2,
       title: "Modular Services",
       description:
-        "Pick only what you need. From talent acquisition and infrastructure to operations and workspace optimization, our pay-as-you-grow model lets you plug in services that align perfectly with your GCC’s evolving needs.",
+        "Pick only what you need. From talent acquisition and infrastructure to operations and workspace optimization, our pay-as-you-grow model lets you plug in services that align perfectly with your GCC's evolving needs.",
       image: "/Landing page/engage_two.webp",
       icon: <Blocks className="w-6 h-6 text-enablr-navy" />,
       link: "/engagement/modular-services",
@@ -57,7 +57,7 @@ const EngagementModel = () => {
       id: 4,
       title: "Dedicated Teams",
       description:
-        "Bringing best-in-the-industry talent for you is our lookout. We take full ownership of recruitment, onboarding, and daily operations to build high-performing teams that operate as a seamless extension of your business and scale as per your goals.",
+        "Bringing best-in-the-industry talent for you is our lookout. We take full ownership of recruitment, onboarding, and daily operations to build high-performing teams that operate as a seamless extension of your business and scale as per your goals.",
       image: "/Landing page/engage_four.webp",
       icon: <Users className="w-6 h-6 text-enablr-navy" />,
       link: "/engagement/dedicated-team",
@@ -135,15 +135,15 @@ const EngagementModel = () => {
                   className="space-y-6"
                 >
      
-     <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium -tracking-normal text-xl md:text-2xl max-w-4xl mx-auto`}>
-    At Enablr, we understand that building and managing a GCC is not just about scale. It's about strategy, speed, and staying ahead in a constantly evolving digital landscape. We believe every enterprise is different, and so is its GCC journey. That's why we offer a range of flexible engagement models designed to fit your specific needs.
+     <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium -tracking-normal text-xl md:text-2xl max-w-5xl mx-auto`}>
+    At Enablr, we understand GCC success depends on strategy, speed, and innovation-not just scale. Each enterprise has a unique GCC journey, which is why we offer flexible engagement models tailored to your specific needs.
  </p>
                  
-<p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
-    Whether you're establishing a new GCC or enhancing an existing one, our approach is designed to support your transformation journey and align with your business priorities.
+<p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-5xl mx-auto`}>
+    Whether starting new or enhancing your existing GCC, our approach aligns with your business priorities to drive transformation and accelerate growth.
  </p>
- <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
-    We offer a suite of flexible models, ranging from Comprehensive Management, Modular Services to Build-Operate-Transfer (B-O-T) and Dedicated Teams.
+ <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-5xl mx-auto`}>
+    Our flexible models include Comprehensive Management, Modular Services, Build-Operate-Transfer (B-O-T), and Dedicated Teams-all designed to deliver maximum value for your GCC investment.
  </p>
                 </motion.div>
               </div>
@@ -153,9 +153,7 @@ const EngagementModel = () => {
 
         {/* Engagement Models Grid Section */}
         <section className="py-12 md:py-16 bg-gradient-to-b from-blue-50/70 to-gray-50 relative overflow-hidden">
-          {/* Background Grid Pattern */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-[0.03] z-0"></div>
-
+        
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
               
@@ -276,9 +274,7 @@ const EngagementModel = () => {
 
         {/* CTA Section */}
         <section className="py-20 bg-enablr-navy relative overflow-hidden">
-          {/* Background Grid Pattern */}
-          <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-10"></div>
-
+          
           {/* Gradient blobs for corners */}
           <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-r from-blue-200 to-blue-100 rounded-full -ml-32 -mt-32 opacity-30 blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-l from-blue-100 to-blue-200 rounded-full -mr-32 -mb-32 opacity-30 blur-3xl"></div>

@@ -166,38 +166,34 @@
 @layer components {
   /* Leadership card styling */
   .leadership-card {
-    background: hsl(var(--card));
-    color: hsl(var(--card-foreground));
-    border: 1px solid hsl(var(--border));
+    background: white;
+    color: #000000;
+    border: none;
     border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
     position: relative;
-    padding-bottom: 60px; /* Space for icons */
+    overflow: hidden;
+    backface-visibility: hidden;
   }
   .leadership-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 43, 123, 0.05);
   }
-
-  /* Arrow container at bottom-right of card */
-  .card-icons {
+  .leadership-card::after {
+    content: '';
     position: absolute;
-    bottom: 16px;
-    right: 16px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #002868, #7392CC);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-
-  /* Arrow icon default and hover */
-  .arrow-icon {
-    font-size: 24px;
-    opacity: 0.7;
-    color: hsl(var(--muted-foreground));
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  .arrow-icon:hover {
-    opacity: 1;
-    transform: translateX(4px);
-    color: #FF4444;
+  .leadership-card:hover::after {
+    transform: scaleX(1);
   }
 
   /* Privacy Policy utility classes */
