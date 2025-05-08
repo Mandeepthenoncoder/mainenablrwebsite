@@ -1,11 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
-import CareerHero from "@/components/careers/CareerHero";
 import CareerIntro from "@/components/careers/CareerIntro";
 import LifeAtEnablr from "@/components/careers/LifeAtEnablr";
 import CurrentOpeningsCompact from "@/components/careers/CurrentOpeningsCompact";
 import CareerCTA from "@/components/careers/CareerCTA";
+import HeroSection from "@/components/ui/HeroSection";
 
 // Spacer component to add gap
 const Spacer = ({ height }: { height: string }) => (
@@ -13,6 +13,17 @@ const Spacer = ({ height }: { height: string }) => (
 );
 
 const Careers = () => {
+  // Function to handle smooth scrolling to job openings section
+  const handleViewOpportunities = () => {
+    const jobOpeningsSection = document.getElementById('job-openings');
+    if (jobOpeningsSection) {
+      jobOpeningsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <MainLayout showNewsletter={true} showBlogHighlights={false}>
       <Helmet>
@@ -23,7 +34,18 @@ const Careers = () => {
         />
       </Helmet>
       
-      <CareerHero />
+      <HeroSection
+        title={<>Innovate. Grow. Lead.</>}
+        description="Explore opportunities and grow with us."
+        image="/Career/hero.webp"
+        ctaText="View Opportunities"
+        ctaLink="#job-openings"
+        customMobilePosition="top"
+        customDesktopPosition="center 30%"
+        enableKenBurns={true}
+        centerContent={true}
+      />
+      
       <CareerIntro />
       <LifeAtEnablr />
       <div id="job-openings">

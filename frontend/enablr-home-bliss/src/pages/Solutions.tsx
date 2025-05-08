@@ -102,30 +102,27 @@ const Solutions = () => {
         {/* Hero Section using the standardized HeroSection component */}
         <HeroSection 
           title="Explore our end-to-end GCC solutions"
-          description="Accelerate your journey to a<br />fully-functional GCC"
+          description="Accelerate your journey to a fully-functional GCC"
           image="/Solutions/Landing/Solutions_hero.webp"
-          ctaText="Get Started"
-          ctaLink="/contact"
           primaryColor="#0D214F"
-          customMobilePosition="center 70%"
+          customMobilePosition="center 80%"
           customDesktopPosition="center 40%"
           enableKenBurns={true}
-          mobileZoom="180% auto"
         />
         
-        {/* Intro Section */}
-        <section className="py-12 md:py-16 bg-white">
+        {/* Intro Section with adjusted spacing */}
+        <section className="pt-12 pb-8 md:py-16 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-8 md:gap-y-12">
               <div className="md:col-span-12">
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="space-y-6"
+                  className="space-y-4 md:space-y-6"
                 >
-                  <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-4xl mx-auto`}>
+                  <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto`}>
                     Enablr offers a wide range of flexible solutions to help businesses set up their global capability centers in India. Our domain-agnostic modular solutions accelerate the setting up of your fully-functional capability center, enabling you to work with the same tools and platforms that you currently use.
                   </p>
                 </motion.div>

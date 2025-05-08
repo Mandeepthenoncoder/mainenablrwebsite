@@ -4,7 +4,7 @@ import { typography } from "@/styles/typography";
 
 const CMIntro = () => {
   return (
-    <section className="relative py-24 bg-[#FAFAFA] overflow-hidden">
+    <section className="relative py-10 bg-[#FAFAFA] overflow-hidden">
       {/* Background texture */}
       <div 
         className="absolute inset-0 opacity-[0.07] pointer-events-none"

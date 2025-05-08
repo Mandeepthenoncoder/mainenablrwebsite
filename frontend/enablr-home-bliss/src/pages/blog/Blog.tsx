@@ -171,6 +171,10 @@ const Blog = () => {
           title="Insights & Perspectives"
           description="Discover expert insights on GCC trends, innovation, technology enablement, and talent strategies from Enablr's knowledge center."
           image="/Insights/Blog_hero.webp"
+          primaryColor="#0D214F"
+          customMobilePosition="right center"
+          customDesktopPosition="right center"
+          enableKenBurns={true}
         />
         
         {/* Search & Categories */}

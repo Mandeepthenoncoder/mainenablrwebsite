@@ -175,7 +175,7 @@ export default function HeroSection() {
       }
     }
   };
-  
+
   return (
     <section className="relative w-full min-h-[80vh] overflow-hidden rounded-b-[40px]">
       {/* Add custom styles for mobile */}
@@ -206,8 +206,8 @@ export default function HeroSection() {
                       preload="auto"
                       poster="/videos/Carousel_Video_Poster.jpg"
                       className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  ) : (
+                  />
+                ) : (
                     <video
                       key={current === index ? `active-${index}` : `inactive-${index}`}
                       src={
@@ -240,7 +240,7 @@ export default function HeroSection() {
                   <div className="max-w-4xl px-0 md:pl-12 lg:pl-24 flex flex-col items-start carousel-container">
                     <div className="mb-10 sm:mb-8 w-full">
                       {/* Title with lines animated separately */}
-                      <motion.div
+                  <motion.div
                         key={`title-${index}`}
                         initial="hidden"
                         animate={current === index ? "visible" : "hidden"}
@@ -298,10 +298,10 @@ export default function HeroSection() {
                           mx-0
                         `}
                       />
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -313,6 +313,6 @@ export default function HeroSection() {
         />
 
       </Carousel>
-    </section>
+      </section>
   );
 }

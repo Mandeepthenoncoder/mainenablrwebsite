@@ -1,5 +1,6 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { getImagePath } from "@/utils/imageUtils";
 
 interface HeroSectionProps {
   title: string | ReactNode;
@@ -13,6 +14,7 @@ interface HeroSectionProps {
   customDesktopPosition?: string;
   mobileZoom?: string;
   enableKenBurns?: boolean;
+  centerContent?: boolean;
 }
 
 /**
@@ -31,7 +33,47 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   customDesktopPosition = "center 40%",
   mobileZoom = "180% auto",
   enableKenBurns = false,
+  centerContent = false,
 }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imagePath, setImagePath] = useState("");
+  const [imageError, setImageError] = useState(false);
+  
+  // Process image path
+  useEffect(() => {
+    if (!image) return;
+    
+    // Try to use the image utils if available
+    try {
+      // Handle both absolute and relative paths
+      let processedPath = image;
+      
+      // If the image doesn't start with http or /, add / to make it absolute from root
+      if (!image.startsWith("http") && !image.startsWith("/")) {
+        processedPath = `/${image}`;
+      }
+      
+      // Use the image utility if it exists
+      const optimizedPath = getImagePath ? getImagePath(processedPath, true, true) : processedPath;
+      setImagePath(optimizedPath);
+      
+      // Preload image
+      const preloadImage = new Image();
+      preloadImage.src = optimizedPath;
+      preloadImage.onload = () => setImageLoaded(true);
+      preloadImage.onerror = (err) => {
+        console.error(`Failed to load image: ${optimizedPath}`, err);
+        setImageError(true);
+      };
+    } catch (error) {
+      console.error("Error processing image path:", error);
+      
+      // Fallback to the original image with / prefix if needed
+      const fallbackPath = !image.startsWith("http") && !image.startsWith("/") ? `/${image}` : image;
+      setImagePath(fallbackPath);
+    }
+  }, [image]);
+
   const handleInternalScroll = () => {
     if (!ctaLink) return;
     
@@ -47,8 +89,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const isInternalLink = ctaLink?.startsWith("#") || false;
 
   return (
-    <div className="mb-12">
-      <section className="relative h-[32vh] md:h-[64vh] overflow-hidden">
+    <div className="mb-0">
+      <section className="relative h-[50vh] md:h-[64vh] overflow-hidden">
         {enableKenBurns && (
           <style dangerouslySetInnerHTML={{
             __html: `
@@ -60,78 +102,134 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               .ken-burns-bg {
                 animation: kenBurns 10s ease-in-out infinite;
               }
+              /* Fix for mobile image containment */
+              @media (max-width: 768px) {
+                .hero-image-container img {
+                  height: 100% !important;
+                  width: 100% !important;
+                  object-fit: cover !important;
+                }
+              }
             `
           }} />
         )}
         
         {/* Background container with rounded corners */}
-        <div className="absolute inset-0 rounded-b-[48px] overflow-hidden">
+        <div className="absolute inset-0 rounded-b-[30px] md:rounded-b-[48px] overflow-hidden">
           {/* Background image container with proper overflow handling */}
           <div className={`absolute inset-0 z-0 ${enableKenBurns ? 'ken-burns-bg' : ''}`}>
             {/* Mobile image */}
-            <div className="block md:hidden w-full h-full">
-              <img
-                src={image}
-                alt="Hero background"
-                className="w-full h-full object-cover"
-                style={{
-                  transform: flipImage ? "scaleX(-1)" : "none",
-                  objectPosition: customMobilePosition,
-                }}
-              />
+            <div className="block md:hidden w-full h-full overflow-hidden hero-image-container">
+              {imagePath && (
+                <img
+                  src={imagePath}
+                  alt="Hero background"
+                  className="w-full h-full object-cover brightness-80"
+                  style={{
+                    transform: flipImage ? "scaleX(-1)" : "none",
+                    objectPosition: customMobilePosition,
+                  }}
+                  onLoad={() => setImageLoaded(true)}
+                  onError={(e) => {
+                    console.error("Error loading mobile hero image:", e);
+                    setImageError(true);
+                  }}
+                />
+              )}
+              
+              {/* Fallback if image fails to load */}
+              {imageError && (
+                <div 
+                  className="w-full h-full bg-gradient-to-b from-gray-700 to-gray-900"
+                  style={{ objectPosition: customMobilePosition }}
+                />
+              )}
             </div>
             
             {/* Desktop image */}
             <div className="hidden md:block w-full h-full">
-              <img
-                src={image}
-                alt="Hero background"
-                className="w-full h-full object-cover"
-                style={{
-                  transform: flipImage ? "scaleX(-1)" : "none",
-                  objectPosition: customDesktopPosition,
-                }}
-              />
+              {imagePath && (
+                <img
+                  src={imagePath}
+                  alt="Hero background"
+                  className="w-full h-full object-cover brightness-75"
+                  style={{
+                    transform: flipImage ? "scaleX(-1)" : "none",
+                    objectPosition: customDesktopPosition,
+                  }}
+                  onLoad={() => setImageLoaded(true)}
+                  onError={(e) => {
+                    console.error("Error loading desktop hero image:", e);
+                    setImageError(true);
+                  }}
+                />
+              )}
+              
+              {/* Fallback if image fails to load */}
+              {imageError && (
+                <div 
+                  className="w-full h-full bg-gradient-to-b from-gray-700 to-gray-900"
+                  style={{ objectPosition: customDesktopPosition }}
+                />
+              )}
             </div>
             
-            {/* Base overlay */}
-            <div className="absolute inset-0 bg-black/20"></div>
+            {/* Base overlay with strong darkening */}
+            <div className="absolute inset-0 bg-black/40"></div>
             
-            {/* Gradient overlay - only on the left side */}
+            {/* Gradient overlay for text contrast */}
             <div 
-              className="absolute inset-0 bg-gradient-to-r to-transparent sm:w-[60%] md:w-[50%] lg:w-[40%]"
-              style={{
-                backgroundImage: `linear-gradient(to right, ${primaryColor}E6, ${primaryColor}99, transparent)`
-              }}
+              className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"
             ></div>
           </div>
         </div>
         
-        {/* Content container */}
-        <div className="absolute inset-0 flex items-center z-10 rounded-b-[48px]">
-          <div className="container mx-auto px-4 sm:px-6 md:px-8">
-            <div className="max-w-xl">
+        {/* Content container - centered */}
+        <div className="absolute inset-0 flex flex-col justify-center z-10 rounded-b-[30px] md:rounded-b-[48px]">
+          <div className="container mx-auto px-5 sm:px-6 md:px-8">
+            <div className={`${centerContent ? 'mx-auto text-center' : ''} max-w-2xl`}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                className={centerContent ? 'text-center' : 'text-left'}
               >
                 {typeof title === 'string' ? (
                   <h1 
-                    className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 md:mb-4"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 md:mb-4"
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 ) : (
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 md:mb-4">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 md:mb-4">
                     {title}
                   </h1>
                 )}
                 
                 {description && (
                   <p 
-                    className="text-base md:text-lg text-white/90 mb-4 md:mb-8 max-w-lg"
+                    className="text-lg md:text-xl text-white mt-3 max-w-lg font-light"
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
+                )}
+                
+                {ctaText && ctaLink && (
+                  <div className="mt-6">
+                    {isInternalLink ? (
+                      <button
+                        onClick={handleInternalScroll}
+                        className="px-6 py-3 bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white border border-transparent hover:border-white transition-all duration-300 rounded-md font-medium"
+                      >
+                        {ctaText}
+                      </button>
+                    ) : (
+                      <a
+                        href={ctaLink}
+                        className="inline-block px-6 py-3 bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white border border-transparent hover:border-white transition-all duration-300 rounded-md font-medium"
+                      >
+                        {ctaText}
+                      </a>
+                    )}
+                  </div>
                 )}
               </motion.div>
             </div>
