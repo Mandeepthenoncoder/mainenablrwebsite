@@ -46,7 +46,7 @@ const whyChooseUsReasons = [
 
   },
   {
-    image: "/Solutions/Talent-and-HR/Optimizeds.jpg",
+    image: "/Solutions/Talent-and-HR/Optimized.jpg",
     title: "Optimized recruitment cost",
     description: "We have streamlined efficient processes and created a strategic approach for optimizing your hiring process, keeping it cost-effective. " 
   }

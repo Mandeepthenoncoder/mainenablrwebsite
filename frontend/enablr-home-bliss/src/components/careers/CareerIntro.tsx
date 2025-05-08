@@ -71,11 +71,11 @@ const CareerIntro = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-enablr-navy/30 to-transparent z-10"></div>
               
               {/* Updated career image */}
-              <div className="lg:w-1/2 relative min-h-[300px] md:min-h-[400px] rounded-lg overflow-hidden shadow-xl">
+              <div className="relative min-h-[300px] md:min-h-[400px] rounded-lg overflow-hidden shadow-xl w-full h-full">
                 <img 
-                  src="/Career/one.webp" 
-                  alt="Enablr Team Collaboration"
-                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-105"
+                  src="/Career/one.webp"
+                  alt="Careers at Enablr"
+                  className="w-full h-full object-cover"
                 />
               </div>
               
