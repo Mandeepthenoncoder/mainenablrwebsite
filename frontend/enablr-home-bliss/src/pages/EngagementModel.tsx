@@ -287,7 +287,7 @@ const EngagementModel = () => {
               transition={{ duration: 0.5 }}
             >
               <h2 className={`${typography.h2} text-white mb-6`}>
-                Ready To Take The Next Step Towards your GCC Goals?
+                Ready to take the next step towards your GCC goals?
               </h2>
               <Button
                 asChild
