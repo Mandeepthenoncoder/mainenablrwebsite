@@ -25,7 +25,7 @@ const MSConclusion = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className={`${typography.h2} text-white mb-12 leading-tight`}
+          className={`${typography.h2} text-white ml-10 mb-12 leading-normal whitespace-break-spaces`}
         >
           With Enablr as your partner, you name it and we will ensure support at any stage of your GCC journey.
         </motion.h2>

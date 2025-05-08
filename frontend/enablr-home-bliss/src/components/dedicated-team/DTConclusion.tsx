@@ -25,7 +25,7 @@ const DTConclusion = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className={`${typography.h2} text-white  mb-12 leading-tight`}
+          className={`${typography.h2} text-white  mb-12 leading-normal whitespace-break-spaces`}
         >
           With Enablr as your partner, we ensure speed to launch with local-global expertise, ensuring that your core business values are driven down to your global teams.
         </motion.h2>

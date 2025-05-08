@@ -70,12 +70,12 @@ const CareerIntro = () => {
               {/* Shadow overlay at the bottom for better text contrast */}
               <div className="absolute inset-0 bg-gradient-to-t from-enablr-navy/30 to-transparent z-10"></div>
               
-              {/* Updated career image */}
-              <div className="relative min-h-[300px] md:min-h-[400px] rounded-lg overflow-hidden shadow-xl w-full h-full">
+              {/* Updated career image with better mobile fit */}
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl w-full">
                 <img 
                   src="/Career/one.webp"
                   alt="Careers at Enablr"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               

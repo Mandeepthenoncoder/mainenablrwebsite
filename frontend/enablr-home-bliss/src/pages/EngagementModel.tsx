@@ -286,13 +286,13 @@ const EngagementModel = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className={`${typography.h2} text-white mb-6`}>
+              <h2 className={`${typography.h2} text-white mb-6 whitespace-nowrap`}>
                 Ready to take the next step towards your GCC goals?
               </h2>
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-enablr-navy hover:bg-white/90"
+                className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border-white font-medium transform hover:scale-105 transition-all duration-300"
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Let's Connect
