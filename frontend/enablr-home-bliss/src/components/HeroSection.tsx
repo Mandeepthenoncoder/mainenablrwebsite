@@ -217,7 +217,7 @@ export default function HeroSection() {
                               : index === 2
                               ? "/videos/Carousel_Video3.mp4"
                               : index === 3
-                              ? "/videos/Carousel_Video4.mov"
+                              ? "/videos/Carousel_Video4.mp4"
                               : "")
                           : undefined
                       }
