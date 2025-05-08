@@ -68,7 +68,7 @@ const CMBenefits = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12 text-center">
-          <SectionTitle gradientWord="Why">Why Our Comprehensive Management Model Excels</SectionTitle>
+          <SectionTitle gradientWord="Why">Why our comprehensive management model excels</SectionTitle>
           <p className="max-w-2xl text-gray-600">
             Our proven approach delivers unmatched consistency<br/>
             and strategic value across your entire GCC journey

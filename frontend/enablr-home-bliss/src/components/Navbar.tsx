@@ -10,46 +10,42 @@ const LOGO_URL = "https://kivxafsjmoplihqpotqj.supabase.co/storage/v1/object/pub
 const NavDropdown = ({ 
   trigger, 
   children, 
-  isActive 
+  isActive,
+  id,
+  activeDropdown,
+  setActiveDropdown
 }: { 
   trigger: React.ReactNode, 
   children: React.ReactNode,
-  isActive: boolean
+  isActive: boolean,
+  id: string,
+  activeDropdown: string | null,
+  setActiveDropdown: (id: string | null) => void
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<number | null>(null);
+  const isOpen = activeDropdown === id;
 
   const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      window.clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setIsOpen(true);
+    // Only open this dropdown, closing any others
+    setActiveDropdown(id);
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = window.setTimeout(() => {
-      setIsOpen(false);
-    }, 300); // Increased delay for better usability
+    // Close immediately on mouse leave
+    setActiveDropdown(null);
   };
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsOpen(!isOpen);
-    // Clear any pending close operation
-    if (timeoutRef.current) {
-      window.clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
+    setActiveDropdown(isOpen ? null : id);
   };
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node) && isOpen) {
-        setIsOpen(false);
+        setActiveDropdown(null);
       }
     };
 
@@ -57,7 +53,7 @@ const NavDropdown = ({
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
-  }, [isOpen]);
+  }, [isOpen, setActiveDropdown]);
   
   return (
     <div 
@@ -74,7 +70,7 @@ const NavDropdown = ({
           {trigger}
           <ChevronDown 
             className={cn(
-              "ml-1 h-3 w-3 transition-transform duration-300",
+              "ml-1 h-3 w-3 transition-transform duration-200",
               isOpen && "rotate-180"
             )} 
           />
@@ -83,14 +79,12 @@ const NavDropdown = ({
       
       <div 
         className={cn(
-          "absolute left-0 top-full pt-1 w-64 z-50 transition-all duration-300 ease-in-out transform origin-top",
+          "absolute left-0 top-full pt-1 w-64 z-50 transition-all duration-150 ease-in-out transform origin-top",
           isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"
         )}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         <div className={cn(
-          "bg-white rounded-lg shadow-lg p-2 transition-all duration-300",
+          "bg-white rounded-lg shadow-lg p-2 transition-all duration-150",
           isOpen ? "translate-y-0" : "-translate-y-2"
         )}>
           {children}
@@ -125,6 +119,7 @@ const DropdownMenuItem = ({
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState<{[key: string]: boolean}>({});
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -135,6 +130,12 @@ const Navbar = () => {
       [menu]: !prev[menu]
     }));
   };
+
+  // Close any active dropdowns when route changes
+  useEffect(() => {
+    setActiveDropdown(null);
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   const isActive = (path: string) => location.pathname === path;
   const isActiveOrContains = (path: string) => location.pathname.includes(path);
@@ -174,9 +175,12 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-10">
+        <div className="hidden lg:flex items-center space-x-12">
           {/* Solutions Dropdown */}
           <NavDropdown 
+            id="solutions"
+            activeDropdown={activeDropdown}
+            setActiveDropdown={setActiveDropdown}
             trigger={
               <span className={cn(
                 "text-sm font-medium transition-colors duration-300",
@@ -213,6 +217,9 @@ const Navbar = () => {
 
           {/* Engagement Models Dropdown */}
           <NavDropdown 
+            id="engagement"
+            activeDropdown={activeDropdown}
+            setActiveDropdown={setActiveDropdown}
             trigger={
               <span className={cn(
                 "text-sm font-medium transition-colors duration-300",
@@ -243,6 +250,9 @@ const Navbar = () => {
 
           {/* About Us Dropdown */}
           <NavDropdown 
+            id="about"
+            activeDropdown={activeDropdown}
+            setActiveDropdown={setActiveDropdown}
             trigger={
               <span 
                 className={cn(
@@ -275,6 +285,7 @@ const Navbar = () => {
               "text-sm font-medium transition-colors duration-300",
               isActive('/blog') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
             )}
+            onMouseEnter={() => setActiveDropdown(null)}
           >
             Insights
           </Link>
@@ -285,6 +296,7 @@ const Navbar = () => {
               "text-sm font-medium transition-colors duration-300",
               isActive('/careers') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
             )}
+            onMouseEnter={() => setActiveDropdown(null)}
           >
             Careers
           </Link>
@@ -292,6 +304,7 @@ const Navbar = () => {
           <Button 
             className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
             asChild
+            onMouseEnter={() => setActiveDropdown(null)}
           >
             <Link to="/contact">Get Started</Link>
           </Button>
@@ -574,7 +587,6 @@ const Navbar = () => {
               >
                 Careers
               </Link>
-              
               
               {/* CTA Button */}
               <div className="mt-6 px-3">

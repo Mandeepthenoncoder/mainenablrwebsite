@@ -40,7 +40,7 @@ const whyChooseUsReasons = [
   },
   
   {
-    image: "/Solutions/Talent-and-HR/Access_untapped.jpg",
+    image: "/Solutions/Talent-and-HR/Access_untapped.webp",
     title: "Access to untapped, high-quality talent pool",
     description:"We help you connect with pre-screened, qualified candidates from diverse backgrounds that fit your long-term or immediate requirements."
 
