@@ -9,7 +9,7 @@ import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import CarouselThumbnailStrip from "@/components/ui/CarouselThumbnailStrip";
+import CarouselProgressBar from "@/components/ui/CarouselProgressBar";
 
 // Define interface for hero slides
 interface HeroSlide {
@@ -306,9 +306,9 @@ export default function HeroSection() {
           ))}
         </CarouselContent>
 
-        <CarouselThumbnailStrip
+        <CarouselProgressBar
           api={api}
-          slides={heroSlides}
+          totalSlides={heroSlides.length}
           currentSlide={current}
         />
 
