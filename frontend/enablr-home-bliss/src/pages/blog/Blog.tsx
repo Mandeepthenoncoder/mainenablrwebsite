@@ -166,15 +166,11 @@ const Blog = () => {
       </Helmet>
       
       <Navbar />
-      <main>
-        {/* Hero Section */}
+      <main className="bg-gray-50">
         <HeroSection
           title="Insights & Perspectives"
           description="Discover expert insights on GCC trends, innovation, technology enablement, and talent strategies from Enablr's knowledge center."
-          image="/public/Insights/Blog_hero.webp"
-          ctaText="Explore Insights"
-          ctaLink="/blog"
-          enableKenBurns={true}
+          image="/Insights/Blog_hero.webp"
         />
         
         {/* Search & Categories */}

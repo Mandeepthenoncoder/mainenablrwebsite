@@ -37,8 +37,7 @@ const ContactUs = () => {
       <HeroSection
         title="Contact Us"
         description="We'd love to help you in setting up your GCC."
-        //description="Get in touch with Enablr for all your GCC needs and queries. We're here to answer your questions about Global Capability Centers and how we can help your business grow."
-        image="/public/Contact/Contact_hero.webp"
+        image="/Contact/Contact_hero.webp"
         ctaText="Connect with us"
         ctaLink="#contact-form"
         enableKenBurns={true}

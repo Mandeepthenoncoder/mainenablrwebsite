@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -72,13 +71,13 @@ const CareerIntro = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-enablr-navy/30 to-transparent z-10"></div>
               
               {/* Updated career image */}
-              <img
-                src="/public/Careers/Careers_1.webp"
-                alt="Enablr careers team" 
-                className="w-full h-full object-cover"
-                width={780}
-                height={585}
-              />
+              <div className="lg:w-1/2 relative min-h-[300px] md:min-h-[400px] rounded-lg overflow-hidden shadow-xl">
+                <img 
+                  src="/Careers/Careers_1.webp" 
+                  alt="Enablr Team Collaboration"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-105"
+                />
+              </div>
               
               {/* Decorative accent line on top */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-red-500"></div>

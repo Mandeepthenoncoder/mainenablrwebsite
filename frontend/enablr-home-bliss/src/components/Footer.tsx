@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-4">
               <img
-                src="public/Global/Updated-Logo.svg"
+                src="/Global/Updated-Logo.svg"
                 alt="Enablr Logo"
                 className="h-[4.2rem]"
               />
