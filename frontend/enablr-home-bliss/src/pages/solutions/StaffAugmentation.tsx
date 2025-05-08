@@ -93,7 +93,7 @@ const StaffAugmentation = () => {
         <motion.div variants={itemVariants}>
           <HeroSection
             title="Staff Augmentation Services"
-            description="Enhance your team's capabilities with our flexible and scalable staff augmentation solutions, tailored to meet your specific project needs and business goals."
+            description=" Enhance your team's capabilities with our flexible solutions, tailored to meet your specific business goals."
             image={heroImage}
             ctaText="Get Started"
             ctaLink="/contact"
