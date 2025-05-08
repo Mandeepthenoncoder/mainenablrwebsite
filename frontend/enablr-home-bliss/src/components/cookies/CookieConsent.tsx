@@ -118,19 +118,19 @@ export const CookieConsent: React.FC = () => {
                 <div className="flex flex-col md:flex-row gap-2 md:items-center">
                   <button
                     onClick={handleRejectAll}
-                    className="px-4 py-2 text-sm border border-white text-white hover:bg-white hover:text-enablr-navy transition-colors duration-300 rounded-md"
+                    className="px-4 py-2 text-sm bg-enablr-coral text-enablr-navy hover:bg-gray-600 hover:text-white transition-colors duration-300 rounded-md border "
                   >
                     Reject All
                   </button>
                   <button
                     onClick={handleCustomize}
-                    className="px-4 py-2 text-sm bg-enablr-purple text-white hover:bg-opacity-90 transition-colors duration-300 rounded-md"
+                    className="px-4 py-2 text-sm bg-white text-black border-white hover:bg-gray-300 transition-colors duration-300 rounded-md"
                   >
                     Customize
                   </button>
                   <button
                     onClick={handleAcceptAll}
-                    className="px-4 py-2 text-sm bg-white text-enablr-navy hover:bg-enablr-light-coral hover:text-enablr-navy transition-colors duration-300 rounded-md font-medium"
+                    className="px-4 py-2 text-sm bg-lime-600 hover:bg-lime-700 text-white hover:bg-enablr-lime/90 transition-colors duration-300 rounded-md font-medium"
                   >
                     Accept All
                   </button>

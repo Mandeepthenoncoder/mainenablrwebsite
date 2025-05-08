@@ -189,7 +189,7 @@ const BlogHighlights = () => {
             to="/blog" 
             className="inline-flex items-center gap-2 bg-enablr-navy text-white px-6 py-2.5 rounded-md hover:bg-white hover:text-enablr-navy hover:border-enablr-navy hover:border transition-colors font-medium"
           >
-            View all articles
+            More insights
           </Link>
         </div>
       </div>

@@ -28,7 +28,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/services/gcc-as-service"
+                  to="/solutions/gcc-as-service"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
                   GCC-as-a-Service
@@ -36,7 +36,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services/technology-enablement"
+                  to="/solutions/technology-enablement"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
                   Technology Enablement
@@ -44,7 +44,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services/workspace-solutions"
+                  to="/solutions/workspace-solutions"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
                   Workspace Solutions
@@ -52,7 +52,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services/talent-hr-solutions"
+                  to="/solutions/talent-hr-solutions"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
                   Talent & HR Solutions
@@ -60,7 +60,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services/business-operations"
+                  to="/solutions/business-operations"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
                   Business Operations
@@ -68,7 +68,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services/staff-augmentation"
+                  to="/solutions/staff-augmentation"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >
                   Staff Augmentation

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { useState, useEffect, lazy, Suspense } from "react";
 import PreloadResources from "./components/PreloadResources";
@@ -86,14 +86,22 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 
+                {/* Redirects for old service routes */}
+                <Route path="/services/gcc-as-service" element={<Navigate to="/solutions/gcc-as-service" replace />} />
+                <Route path="/services/technology-enablement" element={<Navigate to="/solutions/technology-enablement" replace />} />
+                <Route path="/services/workspace-solutions" element={<Navigate to="/solutions/workspace-solutions" replace />} />
+                <Route path="/services/talent-hr-solutions" element={<Navigate to="/solutions/talent-hr-solutions" replace />} />
+                <Route path="/services/business-operations" element={<Navigate to="/solutions/business-operations" replace />} />
+                <Route path="/services/staff-augmentation" element={<Navigate to="/solutions/staff-augmentation" replace />} />
+                
                 {/* Solutions Routes */}
                 <Route path="/solutions" element={<Solutions />} />
-                <Route path="/services/gcc-as-service" element={<GCCService />} />
-                <Route path="/services/technology-enablement" element={<TechnologyEnablement />} />
-                <Route path="/services/workspace-solutions" element={<WorkspaceSolutions />} />
-                <Route path="/services/talent-hr-solutions" element={<TalentAndHR />} />
-                <Route path="/services/business-operations" element={<BusinessOperations />} />
-                <Route path="/services/staff-augmentation" element={<StaffAugmentation />} />
+                <Route path="/solutions/gcc-as-service" element={<GCCService />} />
+                <Route path="/solutions/technology-enablement" element={<TechnologyEnablement />} />
+                <Route path="/solutions/workspace-solutions" element={<WorkspaceSolutions />} />
+                <Route path="/solutions/talent-hr-solutions" element={<TalentAndHR />} />
+                <Route path="/solutions/business-operations" element={<BusinessOperations />} />
+                <Route path="/solutions/staff-augmentation" element={<StaffAugmentation />} />
                 
                 {/* Engagement Models Routes */}
                 <Route path="/engagement" element={<EngagementModel />} />

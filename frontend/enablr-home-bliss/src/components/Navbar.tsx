@@ -193,22 +193,22 @@ const Navbar = () => {
           >
             <div className="py-1">
               <ul className="w-full space-y-1">
-                <DropdownMenuItem to="/services/gcc-as-service" index={0}>
+                <DropdownMenuItem to="/solutions/gcc-as-service" index={0}>
                   GCC-as-a-Service
                 </DropdownMenuItem>
-                <DropdownMenuItem to="/services/technology-enablement" index={1}>
+                <DropdownMenuItem to="/solutions/technology-enablement" index={1}>
                   Technology Enablement
                 </DropdownMenuItem>
-                <DropdownMenuItem to="/services/workspace-solutions" index={2}>
+                <DropdownMenuItem to="/solutions/workspace-solutions" index={2}>
                   Workspace Solutions
                 </DropdownMenuItem>
-                <DropdownMenuItem to="/services/talent-hr-solutions" index={3}>
+                <DropdownMenuItem to="/solutions/talent-hr-solutions" index={3}>
                   Talent & HR Solutions
                 </DropdownMenuItem>
-                <DropdownMenuItem to="/services/business-operations" index={4}>
+                <DropdownMenuItem to="/solutions/business-operations" index={4}>
                   Business Operations
                 </DropdownMenuItem>
-                <DropdownMenuItem to="/services/staff-augmentation" index={5}>
+                <DropdownMenuItem to="/solutions/staff-augmentation" index={5}>
                   Staff Augmentation
                 </DropdownMenuItem>
               </ul>
@@ -320,7 +320,7 @@ const Navbar = () => {
                   onClick={() => toggleSubMenu('solutions')}
                   className={cn(
                     "w-full flex items-center justify-between text-base font-medium py-2 px-3 rounded-md",
-                    (isActive('/solutions') || location.pathname.includes('/services')) 
+                    (isActive('/solutions') || location.pathname.includes('/solutions')) 
                       ? "text-[#BF0404] bg-gradient-to-r from-red-50 to-blue-50/80" 
                       : "text-gray-800 hover:bg-gray-50"
                   )}
@@ -344,10 +344,10 @@ const Navbar = () => {
                   <ul className="pl-3 space-y-1 rounded-md bg-gradient-to-br from-red-50/80 to-blue-50/80 py-2">
                     <li>
                       <Link 
-                        to="/services/gcc-as-service" 
+                        to="/solutions/gcc-as-service" 
                         className={cn(
                           "flex items-center text-sm py-2 px-4 rounded-md",
-                          isActive('/services/gcc-as-service') 
+                          isActive('/solutions/gcc-as-service') 
                             ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
                             : "text-gray-700 hover:bg-white/60"
                         )}
@@ -357,10 +357,10 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link 
-                        to="/services/technology-enablement" 
+                        to="/solutions/technology-enablement" 
                         className={cn(
                           "flex items-center text-sm py-2 px-4 rounded-md",
-                          isActive('/services/technology-enablement') 
+                          isActive('/solutions/technology-enablement') 
                             ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
                             : "text-gray-700 hover:bg-white/60"
                         )}
@@ -370,10 +370,10 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link 
-                        to="/services/workspace-solutions" 
+                        to="/solutions/workspace-solutions" 
                         className={cn(
                           "flex items-center text-sm py-2 px-4 rounded-md",
-                          isActive('/services/workspace-solutions') 
+                          isActive('/solutions/workspace-solutions') 
                             ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
                             : "text-gray-700 hover:bg-white/60"
                         )}
@@ -383,10 +383,10 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link 
-                        to="/services/talent-hr-solutions" 
+                        to="/solutions/talent-hr-solutions" 
                         className={cn(
                           "flex items-center text-sm py-2 px-4 rounded-md",
-                          isActive('/services/talent-hr-solutions') 
+                          isActive('/solutions/talent-hr-solutions') 
                             ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
                             : "text-gray-700 hover:bg-white/60"
                         )}
@@ -396,10 +396,10 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link 
-                        to="/services/business-operations" 
+                        to="/solutions/business-operations" 
                         className={cn(
                           "flex items-center text-sm py-2 px-4 rounded-md",
-                          isActive('/services/business-operations') 
+                          isActive('/solutions/business-operations') 
                             ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
                             : "text-gray-700 hover:bg-white/60"
                         )}
@@ -409,10 +409,10 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link 
-                        to="/services/staff-augmentation" 
+                        to="/solutions/staff-augmentation" 
                         className={cn(
                           "flex items-center text-sm py-2 px-4 rounded-md",
-                          isActive('/services/staff-augmentation') 
+                          isActive('/solutions/staff-augmentation') 
                             ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
                             : "text-gray-700 hover:bg-white/60"
                         )}
