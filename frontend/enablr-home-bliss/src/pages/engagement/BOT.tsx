@@ -20,7 +20,7 @@ const BOT = () => {
 
       <HeroSection
         title="Build-Operate-Transfer Model"
-        description="Learn about Enablr's Build-Operate-Transfer (BOT) model - a low-risk approach to setting up and managing your GCC with expert guidance."
+        description="Start strong and take over with confidence with our expert guidance."
         image="/bot-hero.webp"
         ctaText="Get Started"
         ctaLink="/contact"

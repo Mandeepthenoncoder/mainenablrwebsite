@@ -222,7 +222,7 @@ const Blog = () => {
           </div>
         </section>
         
-        {/* Featured Articles - Only show when viewing 'all' and no search */}
+     {/*   
         {(featuredPosts.length > 0 && showFeaturedSection) && (
           <section className="py-10 container mx-auto px-4">
             <div className="mb-8">
@@ -232,7 +232,7 @@ const Blog = () => {
               <div className="w-20 h-1 bg-enablr-lime mt-2"></div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* HERO FEATURED: Full-width image with text overlay */}
+             
               {featuredPosts[0] && (
                 <motion.div 
                   className="col-span-1 lg:col-span-2 relative min-h-[400px] h-full"
@@ -247,13 +247,13 @@ const Blog = () => {
                         alt={featuredPosts[0].title} 
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       />
-                      {/* Category at top-left */}
+                      {/* Category at top-left *
                       <span className="inline-block px-3 py-1 text-xs font-medium bg-enablr-navy bg-opacity-90 text-white rounded-full absolute top-4 left-4 z-20">
                         {featuredPosts[0].category}
                       </span>
-                      {/* Solid black overlay for text readability */}
+                      {/* Solid black overlay for text readability *
                       <div className="absolute bottom-0 left-0 w-full h-[30%] bg-black/60 z-10"></div>
-                      {/* Text overlay in bottom 40% */}
+                      {/* Text overlay in bottom 40% *
                       <div className="absolute bottom-0 left-0 w-full p-8 z-20 text-white flex flex-col justify-end" style={{height: '40%', textShadow: '0 2px 8px rgba(0,0,0,0.8)'}}>
                         <h3 className="text-2xl md:text-3xl font-bold mb-3 line-clamp-2">{featuredPosts[0].title}</h3>
                         
@@ -273,7 +273,7 @@ const Blog = () => {
                   </Link>
                 </motion.div>
               )}
-              {/* Two 50% width posts stacked vertically on the right */}
+              {/* Two 50% width posts stacked vertically on the right *
               <div className="col-span-1 flex flex-col gap-8">
                 {featuredPosts.slice(1, 3).map((post, index) => (
                   <motion.div
@@ -289,13 +289,13 @@ const Blog = () => {
                           alt={post.title} 
                           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         />
-                        {/* Category at top-left */}
+                        {/* Category at top-left *  /}
                         <span className="inline-block px-3 py-1 text-xs font-medium bg-enablr-navy bg-opacity-90 text-white rounded-full absolute top-4 left-4 z-20">
                           {post.category}
                         </span>
-                        {/* Solid black overlay for text readability */}
+                        {/* Solid black overlay for text readability *
                         <div className="absolute bottom-0 left-0 w-full h-[40%] bg-black/60 z-10"></div>
-                        {/* Text overlay in bottom 40% */}
+                        {/* Text overlay in bottom 40% *
                         <div className="absolute bottom-0 left-0 w-full p-6 z-20 text-white flex flex-col justify-end" style={{height: '40%', textShadow: '0 2px 8px rgba(0,0,0,0.8)'}}>
                           <h4 className="text-lg font-bold mb-2 line-clamp-2">{post.title}</h4>
                           
@@ -319,6 +319,7 @@ const Blog = () => {
             </div>
           </section>
         )}
+
         
         {/* Latest Articles */}
         <section className={`py-12 ${!showFeaturedSection ? 'pt-10' : 'pt-4'} bg-gray-50`}>

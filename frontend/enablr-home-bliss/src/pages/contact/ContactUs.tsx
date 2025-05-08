@@ -68,7 +68,7 @@ const ContactUs = () => {
                 <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
                 Interested in having a conversation 
                 </span>{" "}
-                about your GCC? We'd love to connect.
+                about your GCC?
               </h2>
           
             </div>
