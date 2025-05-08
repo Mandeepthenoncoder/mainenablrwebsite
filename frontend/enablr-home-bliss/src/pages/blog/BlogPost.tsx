@@ -37,7 +37,7 @@ const staticPosts: BlogPost[] = [
 <p>Steve Hall, President, ISG EMEA, and Chief AI Officer and Alex Bakker, Distinguished Analyst in their article 'What's Next for GCCs: Operating Model Challenges and GenAI Opportunities', share an interesting perspective, "While the motivation to adopt a GCC tends to focus on labor-rate savings, organizations view opportunities for AI on a more indirect basis. The idea that a GCC can provide both near-term financial relief and AI to ensure long-term efficiency, innovation and growth makes a particularly compelling strategy."</p>
 <p>Robust talent strategy, infrastructure growth, and swift technology adoption with agility sets the game right for GCCs today.</p>
 <p>At Enablr, we build more than GCCs, we build the high-impact teams that power them and stay future-ready. What's your next move on your GCC transformation agenda? Speak to our experts and get started today.</p>`,
-    cover_image: "/public/Insights/Blog-1.webp",
+    cover_image: "/Insights/Blog-1.webp",
     author: "Enablr Team",
     category: "GCCs as-a-service",
     published_at: "2024-06-15T00:00:00Z",
@@ -73,7 +73,7 @@ const staticPosts: BlogPost[] = [
 <p>For businesses, today, being efficient isn't enough anymore. You need to be resilient, adaptable, and ready to grow with purpose.</p>
 <p>Setting up a GCC starts with getting clarity on your goals and choosing the right location that you're your business. Next, most prominently is to choose a fitting partner that can bring your vision to life. From building the right team to setting up the tools and ways of working, it's all about creating a symphony that fits your business. The real magic happens when your GCC feels like a true part of your team.</p>
 <p>At Enablr, we work with you to build a GCC that truly makes a difference. With the right mix of talent, tech, and innovation, we help businesses move faster, stay flexible, and keep ahead of the game in a world that's always changing.</p>`,
-    cover_image: "/public/Insights/Blog-2.webp",
+    cover_image: "/Insights/Blog-2.webp",
     author: "Mandeep Singh",
     category: "GCCs as-a-service",
     published_at: "2024-06-01T00:00:00Z",
@@ -105,7 +105,7 @@ const staticPosts: BlogPost[] = [
 <p>The growth path for GCCs in India is set!</p>
 <p>At Enablr, we see GCCs as powerful engines for building future-ready talent. By blending hands-on learning, an environment of curiosity, and strong partnerships, we are shaping up teams that are not just skilled but adaptable and aspirational.</p>
 <p>Schedule a consultation with our leaders and experts to get your GCC roadmap up and running with the right tech, talent, and infrastructure.</p>`,
-    cover_image: "/public/Insights/Blog-3.webp",
+    cover_image: "/Insights/Blog-3.webp",
     author: "Enablr Team",
     category: "Talent & HR Solutions",
     published_at: "2024-05-25T00:00:00Z",
@@ -209,7 +209,7 @@ const staticPosts: BlogPost[] = [
 <p>It further adds, "India is currently home to about 47 percent of the global product management talent employed by mid-sized GCCs, and over 25 percent of their DeepTech workforce. Nearly 60 percent of the end-to-end product and platform ownership within enterprise portfolios, especially in the engineering R&D segment, is from India."</p>
 <p>All factors considered, GCCs are no longer just for execution, they are evolving into innovation hubs where actual research and development happens. Global organizations are looking up to GCCs for more and more experimentation and innovation, enabling them to meet their larger business objectives.</p>
 <p>At Enablr, our teams and leadership bring proven experience to accelerate your business growth and build future-ready centres that fit your purpose. We are excited to work with your ideas and build high-impact GCCs for your business needs.</p>`,
-    cover_image: "/public/Insights/Blog-6.webp",
+    cover_image: "/Insights/Blog-6.webp",
     author: "Enablr Team",
     category: "Technology Enablement Solutions",
     published_at: "2024-05-05T00:00:00Z",
@@ -274,7 +274,7 @@ const staticPosts: BlogPost[] = [
 <p>While commenting on the growing space demand for GCCs in India, Sumit Lakhani, Deputy CEO at Awfis, had mentioned, "The demand for office space from GCCs is expected to grow significantly, with projections indicating a rise from 19.69 million square feet in 2023 to 26 million square feet by 2027, as per the Knight Frank India - 3AI report. In the initial stages, GCCs often require smaller spaces of around 50 seats, however, their demand increases rapidly to 250 seats within a year as they scale operations."</p>
 <p>Having a robust IT infrastructure with the needed connectivity and tech back up is a must, but building a welcoming culture that derives values from your core messaging is equally key. Hence, working with a trusted partner who can deliver both is crucial for your GCC.</p>
 <p>At Enablr, we help you reimagine workspaces where your teams can connect with your core brand values. From designing what fits you to integrating the right tech, we make sure your capability centre is ready to take on your next move.</p>`,
-    cover_image: "/public/Insights/Blog-8.webp",
+    cover_image: "/Insights/Blog-8.webp",
     author: "Anil Kumar",
     category: "Workspace Solutions",
     published_at: "2024-04-30T00:00:00Z",

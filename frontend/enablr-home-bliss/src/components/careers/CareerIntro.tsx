@@ -73,7 +73,7 @@ const CareerIntro = () => {
               {/* Updated career image */}
               <div className="lg:w-1/2 relative min-h-[300px] md:min-h-[400px] rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="/Careers/Careers_01.webp" 
+                  src="/Career/one.webp" 
                   alt="Enablr Team Collaboration"
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-105"
                 />

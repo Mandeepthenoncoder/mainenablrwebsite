@@ -26,7 +26,7 @@ const staticPosts: BlogPost[] = [
     slug: "technology-integration-successful-gcc-operations",
     excerpt: "How seamless technology integration drives efficiency and innovation in modern Global Capability Centers.",
     content: "",
-    cover_image: "/public/Insights/Blog-2.webp",
+    cover_image: "/Insights/Blog-2.webp",
     author: "Enablr Team",
     category: "Technology Enablement Solutions",
     published_at: "2024-05-10T00:00:00Z",

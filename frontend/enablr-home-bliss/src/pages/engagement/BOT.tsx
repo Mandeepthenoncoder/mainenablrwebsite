@@ -21,7 +21,7 @@ const BOT = () => {
       <HeroSection
         title="Build-Operate-Transfer Model"
         description="Learn about Enablr's Build-Operate-Transfer (BOT) model - a low-risk approach to setting up and managing your GCC with expert guidance."
-        image="/public/Engagement_Models/Build-Operate-Transfer/Bot_hero.jpg"
+        image="/bot-hero.webp"
         ctaText="Get Started"
         ctaLink="/contact"
         enableKenBurns={true}
