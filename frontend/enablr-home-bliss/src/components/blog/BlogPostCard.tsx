@@ -4,6 +4,7 @@ import { Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import type { BlogPost } from "@/types/blog";
+import { getImagePath, getResponsiveSrcSet } from "@/utils/imageUtils";
 
 interface BlogPostCardProps {
   post: BlogPost;
@@ -36,18 +37,27 @@ const BlogPostCard = ({ post, featured = false }: BlogPostCardProps) => {
     <motion.div
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
+      className="h-full"
     >
-      <Card className={`h-full overflow-hidden transition-all duration-300 hover:shadow-lg ${
+      <Card className={`h-full overflow-hidden transition-all duration-300 hover:shadow-lg flex flex-col ${
         featured ? 'border-0 shadow-md' : 'border bg-white'
       }`}>
         <div className="relative overflow-hidden">
           <div className="aspect-[16/9]">
-            <img 
-              src={getCategoryImage(post.category)} 
-              alt={post.title}
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-            />
-              </div>
+            {(() => {
+              const imagePath = getCategoryImage(post.category);
+              return (
+                <img 
+                  src={getImagePath(imagePath, true, true)} 
+                  srcSet={getResponsiveSrcSet(imagePath)}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+              );
+            })()}
+          </div>
           
           <div className="absolute top-0 left-0 m-4">
             <span className="inline-block px-3 py-1 text-xs font-medium bg-enablr-navy bg-opacity-90 text-white rounded-full">

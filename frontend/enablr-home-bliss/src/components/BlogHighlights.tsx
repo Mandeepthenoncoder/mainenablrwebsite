@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Calendar, Clock } from "lucide-react"; // Corrected Icon import (CalendarDays -> Calendar)
 import { typography } from "@/styles/typography";
 import { motion } from "framer-motion";
+import { getImagePath, getResponsiveSrcSet } from "@/utils/imageUtils"; // Import utilities
 
 // All available blog posts
 const allBlogPosts = [
@@ -139,12 +140,19 @@ const BlogHighlights = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl shadow-md overflow-hidden h-full flex flex-col"
             >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={post.coverImage} 
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                />
+              <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden group-hover:shadow-xl transition-shadow duration-300">
+                {post.coverImage && (
+                  <img
+                    src={getImagePath(post.coverImage, true, true)}
+                    srcSet={getResponsiveSrcSet(post.coverImage)}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" // Adjust these sizes based on your layout and breakpoints
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy" 
+                    // Consider adding width & height if known, e.g., width={1600} height={900} (aspect ratio 16/9)
+                    // This helps prevent layout shift. The actual values would be for the largest desktop version.
+                  />
+                )}
               </div>
               
               <div className="p-6 flex flex-col flex-grow">

@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getImagePath } from "@/utils/imageUtils";
+import { getImagePath, getResponsiveSrcSet } from "@/utils/imageUtils";
 
 interface HeroSectionProps {
   title: string | ReactNode;
@@ -57,27 +57,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       const defaultSrc = getImagePath ? getImagePath(processedPath, true, true) : processedPath;
       setCurrentSrc(defaultSrc);
 
-      // Define typical widths for responsive images
-      const imageWidths = [640, 768, 1024, 1280, 1536, 1920];
-      let generatedSrcSet = "";
-
-      if (getImagePath) {
-        // This is a placeholder for how getImagePath might be used for srcset.
-        // It assumes getImagePath can be adapted or a new utility created
-        // to return paths for specific widths, e.g., getImagePath(path, options, width)
-        // or getImagePath(path, { width: w, ...otherOptions })
-        // For this example, we'll map widths and construct a hypothetical path.
-        // The actual implementation in imageUtils.ts would handle this.
-        generatedSrcSet = imageWidths
-          .map(w => {
-            // Hypothetical: append width query param, or imageUtils handles it
-            // This is illustrative and will need actual implementation in getImagePath
-            const sizedPath = `${getImagePath(processedPath, true, true)}?width=${w}`; 
-            return `${sizedPath} ${w}w`;
-          })
-          .join(", ");
-      }
-      setCurrentSrcSet(generatedSrcSet);
+      // Use getResponsiveSrcSet to populate currentSrcSet
+      const responsiveSrcSet = getResponsiveSrcSet ? getResponsiveSrcSet(processedPath) : "";
+      setCurrentSrcSet(responsiveSrcSet);
       
       // Preload image (the fallback src)
       const preloadImage = new Image();

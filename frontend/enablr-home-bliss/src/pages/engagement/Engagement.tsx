@@ -19,7 +19,7 @@ const Engagement = () => {
       <HeroSection
         title="Engagement Models"
         description="Explore Enablr's flexible engagement models - from Build-Operate-Transfer to Dedicated Teams."
-        image="/assets/images/engagement-hero.jpg"
+        image="/Engagement_Models/Landing/Engagement_hero.jpg"
         ctaText="Learn More"
         ctaLink="/contact"
         enableKenBurns={true}

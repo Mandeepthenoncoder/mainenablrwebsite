@@ -23,10 +23,10 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 // Configuration
 const config = {
   // Source directory for blog images
-  sourceDir: path.join(ROOT_DIR, 'public', 'images', 'blog'),
+  sourceDir: path.join(ROOT_DIR, 'public', 'Insights'),
   
   // Image extensions to process
-  extensions: ['.jpg', '.jpeg', '.png'],
+  extensions: ['.jpg', '.jpeg', '.png', '.webp'],
   
   // No size threshold - process all blog images
   

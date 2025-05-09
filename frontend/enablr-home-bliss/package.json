@@ -11,8 +11,9 @@
     "vercel-build": "node --max-old-space-size=3072 ./node_modules/vite/bin/vite.js build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "optimize-images": "node scripts/optimize-images.js",
-    "optimize-large": "node scripts/optimize-large-images.mjs"
+    "optimize-images": "node scripts/optimize-images.cjs",
+    "optimize-large": "node scripts/optimize-large-images.mjs",
+    "optimize-blog": "node scripts/optimize-blog-images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

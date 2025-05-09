@@ -33,15 +33,18 @@ export const leadershipData: Leader[] = [
     bio: "Subhendu is a seasoned B2B marketing leader with over 23 years of experience across global IT services firms. He currently serves as the Chief Marketing Officer at Covasant, where he is driving brand transformation, go-to-market strategy, and positioning of the company’s AI-led innovations. Prior to this, he was Principal Analyst and CMO Advisor at Forrester, partnering with CMOs and senior marketing leaders across large enterprises in the APAC region to enhance marketing performance, improve ROI, and modernize marketing organizations. Earlier, he served as Global CMO at Cigniti, where he led global marketing, significantly strengthened the brand, and expanded its presence across key analyst and enterprise ecosystems. Subhendu has also held marketing leadership roles at Tata BSS and Mindfire, and started his career managing large-scale tech implementations at Infosys. He holds a Fellow in Management (Marketing) from IIM Indore, an MBA from SP Jain School of Global Management, Singapore, and a B.Tech in Electrical Engineering from NIT Rourkela. Over the years, Subhendu has been recognized with numerous industry awards, including the Global SuperHero CMO Leadership Award (2020), Oracle CX Fast100 (2019), Adobe Digi100 (2018), Top 50 Brand Leaders Asia, and five consecutive years on the list of Top 100 Influential Global Marketing Leaders by the World Marketing Congress."
   },
   
-  /*
+  
   {
     id: "4",
-    name: "Rahul Veernala",
-    title: "Chief Business Officer /n Healthcare & Life Sciences",
-    photoUrl: "/lovable-uploads/Rahul_Veernala.png",
-    linkedInUrl: "https://linkedin.com/in/vincentwalden",
-    bio: "Rahul Veernala leads Covasant's Healthcare & Life Sciences division, bringing extensive experience in healthcare technology and digital transformation. His strategic vision drives innovative solutions that help healthcare organizations improve patient outcomes while optimizing operational efficiency."
-  },{
+    name: "Nanda Padmaraju",
+    title: "Chief Revenue Officer",
+    photoUrl: "/About_us/Leadership/Nanda_Padmaraju.webp",
+    linkedInUrl: "https://www.linkedin.com/in/padmaraju/",
+    bio: "Nanda Padmaraju is the Chief Revenue Officer at Enablr, where he spearheads global growth and strategic partnerships with a sharp focus on Global Capability Centers (GCCs). With deep expertise in scaling revenue through enterprise-grade AI solutions, Nanda is advancing the adoption of Agentic AI platforms and services that empower GCCs to deliver accelerated innovation, operational efficiency, and measurable business outcomes. His leadership is instrumental in positioning Enablr as a trusted partner for C-level decision makers seeking to scale their business operations through GCCs.With over 28 years of experience driving revenue growth and building strategic partnerships, Nanda has a proven track record of establishing IT services businesses from the ground up and guiding high-performing teams across multiple global regions, consistently expanding customer footprints into new geographies and industries.Before joining Enablr, Nanda held senior leadership roles at Narwal, Cigniti, AppLabs, Satyam (now Tech Mahindra), and IBM. His experience spans across building scalable go-to-market strategies, client relationship management, and leading complex digital transformation initiatives. His leadership and insights are instrumental in scaling Enablr’s impact across global enterprises.Nanda holds an MBA from Virginia Tech and brings a global mindset, commercial excellence, and a passion for building trusted, long-term partnerships."
+  },
+
+  /*
+  {
     id: "5",
     name: "Baiju Nellamakada",
     title: "Chief Business Officer /n Manufacturing",

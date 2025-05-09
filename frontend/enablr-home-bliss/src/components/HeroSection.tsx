@@ -198,7 +198,6 @@ export default function HeroSection() {
                 <>
                   {index === 0 ? (
                     <video
-                      src="/videos/Carousel_Video.mp4"
                       autoPlay
                       loop
                       muted
@@ -206,21 +205,14 @@ export default function HeroSection() {
                       preload="auto"
                       poster="/videos/Carousel_Video_Poster.jpg"
                       className="absolute inset-0 h-full w-full object-cover"
-                  />
-                ) : (
+                    >
+                      <source src="/videos/Carousel_Video-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                      <source src="/videos/Carousel_Video-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
                     <video
                       key={current === index ? `active-${index}` : `inactive-${index}`}
-                      src={
-                        current === index
-                          ? (index === 1
-                              ? "/videos/Carousel_Video2.mp4"
-                              : index === 2
-                              ? "/videos/Carousel_Video3.mp4"
-                              : index === 3
-                              ? "/videos/Carousel_Video4.mp4"
-                              : "")
-                          : undefined
-                      }
                       poster={`/videos/Carousel_Video${index + 1}_Poster.jpg`}
                       className="absolute inset-0 h-full w-full object-cover"
                       muted
@@ -228,7 +220,27 @@ export default function HeroSection() {
                       loop
                       preload="auto"
                       autoPlay={current === index}
-                    />
+                    >
+                      {index === 1 && (
+                        <>
+                          <source src="/videos/Carousel_Video2-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                          <source src="/videos/Carousel_Video2-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+                        </>
+                      )}
+                      {index === 2 && (
+                        <>
+                          <source src="/videos/Carousel_Video3-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                          <source src="/videos/Carousel_Video3-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+                        </>
+                      )}
+                      {index === 3 && (
+                        <>
+                          <source src="/videos/Carousel_Video4-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                          <source src="/videos/Carousel_Video4-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+                        </>
+                      )}
+                      Your browser does not support the video tag.
+                    </video>
                   )}
                   <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
                 </>

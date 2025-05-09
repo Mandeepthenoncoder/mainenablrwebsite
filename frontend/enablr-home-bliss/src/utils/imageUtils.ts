@@ -72,24 +72,58 @@ export const imageToWebpMap: Record<string, string> = {
 
 // Map of original image paths to their responsive srcset values
 export const imageToSrcSetMap: Record<string, string> = {
+  // IMPORTANT: User has run optimization scripts. This map now connects component paths to generated responsive sets.
+
+  // Hero Section images (processed by optimize-large-images.mjs)
+  '/Engagement_Models/Landing/Engagement_hero.jpg': '/Engagement_Models/Landing/optimized/Engagement_hero-small.webp 640w, /Engagement_Models/Landing/optimized/Engagement_hero-medium.webp 1024w, /Engagement_Models/Landing/optimized/Engagement_hero-large.webp 1280w, /Engagement_Models/Landing/optimized/Engagement_hero.webp 1920w',
+  '/About_us/Overview/Overview_hero.jpg': '/About_us/Overview/optimized/Overview_hero-small.webp 640w, /About_us/Overview/optimized/Overview_hero-medium.webp 1024w, /About_us/Overview/optimized/Overview_hero-large.webp 1280w, /About_us/Overview/optimized/Overview_hero.webp 1920w',
+  // Blog page Hero (processed by optimize-blog-images.mjs)
+  '/Insights/Blog_hero.webp': '/Insights/optimized/Blog_hero-small.webp 640w, /Insights/optimized/Blog_hero-medium.webp 1280w, /Insights/optimized/Blog_hero-large.webp 1920w, /Insights/optimized/Blog_hero.webp 1920w',
+
+  // Blog images from /Insights/ (processed by optimize-blog-images.mjs)
+  // Components use paths like /Insights/Blog-X.webp or /Insights/Blog-X.webp?v=1. 
+  // getImagePath strips query params, so keys should be clean.
+  '/Insights/Blog-1.webp': '/Insights/optimized/Blog-1-small.webp 640w, /Insights/optimized/Blog-1-medium.webp 1280w, /Insights/optimized/Blog-1-large.webp 1920w, /Insights/optimized/Blog-1.webp 1920w',
+  '/Insights/Blog-2.webp': '/Insights/optimized/Blog-2-small.webp 640w, /Insights/optimized/Blog-2-medium.webp 1280w, /Insights/optimized/Blog-2-large.webp 1920w, /Insights/optimized/Blog-2.webp 1920w',
+  '/Insights/Blog-3.webp': '/Insights/optimized/Blog-3-small.webp 640w, /Insights/optimized/Blog-3-medium.webp 1280w, /Insights/optimized/Blog-3-large.webp 1920w, /Insights/optimized/Blog-3.webp 1920w',
+  '/Insights/Blog-4.webp': '/Insights/optimized/Blog-4-small.webp 640w, /Insights/optimized/Blog-4-medium.webp 1280w, /Insights/optimized/Blog-4-large.webp 1920w, /Insights/optimized/Blog-4.webp 1920w',
+  '/Insights/Blog-5.webp': '/Insights/optimized/Blog-5-small.webp 640w, /Insights/optimized/Blog-5-medium.webp 1280w, /Insights/optimized/Blog-5-large.webp 1920w, /Insights/optimized/Blog-5.webp 1920w',
+  '/Insights/Blog-6.webp': '/Insights/optimized/Blog-6-small.webp 640w, /Insights/optimized/Blog-6-medium.webp 1280w, /Insights/optimized/Blog-6-large.webp 1920w, /Insights/optimized/Blog-6.webp 1920w',
+  '/Insights/Blog-7.webp': '/Insights/optimized/Blog-7-small.webp 640w, /Insights/optimized/Blog-7-medium.webp 1280w, /Insights/optimized/Blog-7-large.webp 1920w, /Insights/optimized/Blog-7.webp 1920w',
+  '/Insights/Blog-8.webp': '/Insights/optimized/Blog-8-small.webp 640w, /Insights/optimized/Blog-8-medium.webp 1280w, /Insights/optimized/Blog-8-large.webp 1920w, /Insights/optimized/Blog-8.webp 1920w',
+
+  // Default category images from BlogPostCard.tsx (if these were processed by a script, e.g., optimize-images.cjs)
+  // Assuming they are in /public/images/blog/ and output to /public/images/blog/optimized/
+  // You would need to run a script like optimize-images.cjs (configured for this path and JPG/PNGs) 
+  // or adapt optimize-blog-images.mjs for this directory if these are also WebP sources.
+  // Example placeholder - verify if these are processed & paths are correct:
+  // '/images/blog/trends.jpg': '/images/blog/optimized/trends-small.webp 640w, /images/blog/optimized/trends-medium.webp 1280w, /images/blog/optimized/trends-large.webp 1920w, /images/blog/optimized/trends.webp 1920w',
+  // '/images/blog/sustainability.jpg': '/images/blog/optimized/sustainability-small.webp 640w, ... ',
+  // '/images/blog/insights.jpg': '/images/blog/optimized/insights-small.webp 640w, ... ',
+  // '/images/blog/default.jpg': '/images/blog/optimized/default-small.webp 640w, ... ',
+
+  // --- Existing entries below this line --- 
+  // (Please ensure the new entries above don't conflict with keys from existing entries if they refer to the same source images)
+  // (It's generally better to have one canonical entry per source image)
+
   '/images/supabase-images/hero-slide-1.png': '/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w',
   '/images/supabase-images/hero-slide-2.png': '/images/supabase-images/optimized/hero-slide-2-small.webp 640w, /images/supabase-images/optimized/hero-slide-2-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-2-large.webp 1920w',
   '/images/supabase-images/hero-slide-3.png': '/images/supabase-images/optimized/hero-slide-3-small.webp 640w, /images/supabase-images/optimized/hero-slide-3-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-3-large.webp 1920w',
   '/images/supabase-images/TE-hero-img.jpg': '/images/supabase-images/optimized/TE-hero-img-small.webp 640w, /images/supabase-images/optimized/TE-hero-img-medium.webp 1280w, /images/supabase-images/optimized/TE-hero-img-large.webp 1920w',
   
   // Blog image srcsets
-  '/images/blog/default.jpg': '/images/blog/optimized/default-small.webp 640w, /images/blog/optimized/default-medium.webp 1280w, /images/blog/optimized/default-large.webp 1920w',
-  '/images/blog/gcc-service.jpg': '/images/blog/optimized/gcc-service-small.webp 640w, /images/blog/optimized/gcc-service-medium.webp 1280w, /images/blog/optimized/gcc-service-large.webp 1920w',
+ // '/images/blog/default.jpg': '/images/blog/optimized/default-small.webp 640w, /images/blog/optimized/default-medium.webp 1280w, /images/blog/optimized/default-large.webp 1920w',
+  //'/images/blog/gcc-service.jpg': '/images/blog/optimized/gcc-service-small.webp 640w, /images/blog/optimized/gcc-service-medium.webp 1280w, /images/blog/optimized/gcc-service-large.webp 1920w',
   '/images/blog/gcc1.jpg': '/images/blog/optimized/gcc1-small.webp 640w, /images/blog/optimized/gcc1-medium.webp 1280w, /images/blog/optimized/gcc1-large.webp 1920w',
   '/images/blog/gcc2.jpg': '/images/blog/optimized/gcc2-small.webp 640w, /images/blog/optimized/gcc2-medium.webp 1280w, /images/blog/optimized/gcc2-large.webp 1920w',
   '/images/blog/gcc3.jpg': '/images/blog/optimized/gcc3-small.webp 640w, /images/blog/optimized/gcc3-medium.webp 1280w, /images/blog/optimized/gcc3-large.webp 1920w',
-  '/images/blog/insights.jpg': '/images/blog/optimized/insights-small.webp 640w, /images/blog/optimized/insights-medium.webp 1280w, /images/blog/optimized/insights-large.webp 1920w',
-  '/images/blog/newsletter.jpg': '/images/blog/optimized/newsletter-small.webp 640w, /images/blog/optimized/newsletter-medium.webp 1280w, /images/blog/optimized/newsletter-large.webp 1920w',
-  '/images/blog/sustainability.jpg': '/images/blog/optimized/sustainability-small.webp 640w, /images/blog/optimized/sustainability-medium.webp 1280w, /images/blog/optimized/sustainability-large.webp 1920w',
-  '/images/blog/talent.jpg': '/images/blog/optimized/talent-small.webp 640w, /images/blog/optimized/talent-medium.webp 1280w, /images/blog/optimized/talent-large.webp 1920w',
-  '/images/blog/technology.jpg': '/images/blog/optimized/technology-small.webp 640w, /images/blog/optimized/technology-medium.webp 1280w, /images/blog/optimized/technology-large.webp 1920w',
-  '/images/blog/trends.jpg': '/images/blog/optimized/trends-small.webp 640w, /images/blog/optimized/trends-medium.webp 1280w, /images/blog/optimized/trends-large.webp 1920w',
-  '/images/blog/workspace.jpg': '/images/blog/optimized/workspace-small.webp 640w, /images/blog/optimized/workspace-medium.webp 1280w, /images/blog/optimized/workspace-large.webp 1920w',
+  //'/images/blog/insights.jpg': '/images/blog/optimized/insights-small.webp 640w, /images/blog/optimized/insights-medium.webp 1280w, /images/blog/optimized/insights-large.webp 1920w',
+  //  '/images/blog/newsletter.jpg': '/images/blog/optimized/newsletter-small.webp 640w, /images/blog/optimized/newsletter-medium.webp 1280w, /images/blog/optimized/newsletter-large.webp 1920w',
+  //'/images/blog/sustainability.jpg': '/images/blog/optimized/sustainability-small.webp 640w, /images/blog/optimized/sustainability-medium.webp 1280w, /images/blog/optimized/sustainability-large.webp 1920w',
+  //'/images/blog/talent.jpg': '/images/blog/optimized/talent-small.webp 640w, /images/blog/optimized/talent-medium.webp 1280w, /images/blog/optimized/talent-large.webp 1920w',
+  //'/images/blog/technology.jpg': '/images/blog/optimized/technology-small.webp 640w, /images/blog/optimized/technology-medium.webp 1280w, /images/blog/optimized/technology-large.webp 1920w',
+  //'/images/blog/trends.jpg': '/images/blog/optimized/trends-small.webp 640w, /images/blog/optimized/trends-medium.webp 1280w, /images/blog/optimized/trends-large.webp 1920w',
+  //'/images/blog/workspace.jpg': '/images/blog/optimized/workspace-small.webp 640w, /images/blog/optimized/workspace-medium.webp 1280w, /images/blog/optimized/workspace-large.webp 1920w',
   
   // New blog image srcsets 
   '/Blog Images/From support functions to strategic hubs The evolution of GCCs.jpg': '/Blog Images/optimized/From support functions to strategic hubs The evolution of GCCs-small.webp 640w, /Blog Images/optimized/From support functions to strategic hubs The evolution of GCCs-medium.webp 1280w, /Blog Images/optimized/From support functions to strategic hubs The evolution of GCCs-large.webp 1920w',
