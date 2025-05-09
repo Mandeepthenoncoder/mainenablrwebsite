@@ -17,6 +17,7 @@ interface HeroSectionProps {
   enableKenBurns?: boolean;
   centerContent?: boolean;
   buttonClassName?: string;
+  mobileTextContainerClass?: string;
 }
 
 /**
@@ -38,6 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   enableKenBurns = false,
   centerContent = false,
   buttonClassName = "px-6 py-3 bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white border border-transparent hover:border-white transition-all duration-300 rounded-md font-medium",
+  mobileTextContainerClass = "",
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [currentSrc, setCurrentSrc] = useState("");
@@ -130,7 +132,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   srcSet={currentSrcSet}
                   sizes="100vw"
                   alt="Hero background"
-                  className="w-full h-full object-cover brightness-50"
+                  className="w-full h-full object-cover brightness-90"
                   style={{
                     transform: flipImage ? "scaleX(-1)" : "none",
                     objectPosition: customMobilePosition,
@@ -160,7 +162,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   srcSet={currentSrcSet}
                   sizes="100vw"
                   alt="Hero background"
-                  className="w-full h-full object-cover brightness-45"
+                  className="w-full h-full object-cover brightness-70"
                   style={{
                     transform: flipImage ? "scaleX(-1)" : "none",
                     objectPosition: customDesktopPosition,
@@ -195,7 +197,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Content container - centered */}
         <div className="absolute inset-0 flex flex-col justify-center z-10 rounded-b-[30px] md:rounded-b-[48px]">
           <div className="container mx-auto px-5 sm:px-6 md:px-8">
-            <div className={`${centerContent ? 'mx-auto text-center' : ''} max-w-2xl`}>
+            {/* Apply new class conditionally for mobile, reset on md and up */}
+            <div className={`${centerContent ? 'mx-auto text-center' : ''} max-w-2xl ${mobileTextContainerClass ? `${mobileTextContainerClass} md:pt-0` : ''}`}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -81,6 +81,7 @@ export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [isInitialized, setIsInitialized] = useState(false);
   const lcpVideoRef = useRef<HTMLVideoElement | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const hasReinitializedRef = useRef(false);
   
   // Select handler to track the current slide (memoized to avoid recreating on every render)
@@ -146,6 +147,33 @@ export default function HeroSection() {
     }
   }, []);
   
+  // Effect for explicit play/pause
+  useEffect(() => {
+    // Handle LCP video (index 0)
+    if (lcpVideoRef.current) {
+      if (current !== 0) { // Only explicitly pause LCP video if not the current slide
+        lcpVideoRef.current.pause();
+      } else if (lcpVideoRef.current.paused && current === 0) {
+        // If it's the current slide and somehow paused (e.g., by returning to it), try to play again.
+        // This handles cases where autoplay might not have kicked in if returning to slide 0.
+        lcpVideoRef.current.play().catch(error => console.error("LCP Video play (re-attempt) error:", error));
+      }
+    }
+
+    // Handle other videos
+    videoRefs.current.forEach((videoEl, index) => {
+      if (videoEl) { // Check if ref is set
+        if (index === 0) return; // Skip LCP video, already handled
+        if (current === index) {
+          videoEl.play().catch(error => console.error(`Video ${index} play error:`, error));
+        } else {
+          videoEl.pause();
+          // Optional: videoEl.currentTime = 0; // Reset video to start
+        }
+      }
+    });
+  }, [current]);
+  
   // Autoplay plugin with 5-second interval (memoized to avoid recreation)
   const autoplayPlugin = React.useMemo(() => 
     Autoplay({ delay: 5000, stopOnInteraction: true }), 
@@ -173,31 +201,6 @@ export default function HeroSection() {
       }
     }
   };
-
-  // Pre-load videos for smoother transitions
-  const preloadVideos = useCallback(() => {
-    // Only preload adjacent videos to current slide
-    const preloadIndices = [
-      current === 0 ? heroSlides.length - 1 : current - 1,
-      current,
-      current === heroSlides.length - 1 ? 0 : current + 1
-    ];
-    
-    preloadIndices.forEach(index => {
-      if (index > 0) { // Skip first video as it's loaded with component
-        const videoEl = document.createElement('link');
-        videoEl.rel = 'preload';
-        videoEl.as = 'video';
-        videoEl.href = `/videos/Carousel_Video${index + 1}-desktop.mp4`;
-        document.head.appendChild(videoEl);
-      }
-    });
-  }, [current]);
-  
-  // Preload adjacent videos when current slide changes
-  useEffect(() => {
-    preloadVideos();
-  }, [current, preloadVideos]);
 
   return (
     <section className="relative w-full min-h-[80vh] overflow-hidden rounded-b-[40px]">
@@ -233,6 +236,7 @@ export default function HeroSection() {
                 ) : (
                   // Only load and autoplay videos when they're current or adjacent
                   <video
+                    ref={(el) => (videoRefs.current[index] = el)}
                     key={`video-${index}`}
                     poster={`/videos/Carousel_Video${index + 1}_poster.webp`}
                     className="absolute inset-0 h-full w-full object-cover"
@@ -243,7 +247,7 @@ export default function HeroSection() {
                     preload={Math.abs(current - index) <= 1 || 
                              (current === 0 && index === heroSlides.length - 1) || 
                              (current === heroSlides.length - 1 && index === 0) 
-                              ? "auto" : "none"}
+                              ? "auto" : "metadata"}
                     // Only autoplay when it's the current slide
                     autoPlay={current === index}
                   >

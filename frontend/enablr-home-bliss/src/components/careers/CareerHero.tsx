@@ -53,8 +53,6 @@ const CareerHero = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-enablr-navy/90 to-transparent"></div>
         
-        
-        
         {/* Decorative gradient blob */}
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-3xl opacity-60"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-gradient-to-r from-red-400/20 to-orange-400/20 blur-3xl opacity-60"></div>
@@ -74,23 +72,24 @@ const CareerHero = () => {
             <motion.span variants={item} className="inline-block">Lead.</motion.span>
           </motion.h1>
           
-          {/* Subtitle with delayed animation */}
+          {/* Subtitle with delayed animation - improved centering */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 2 }}
-            className="mb-8"
+            className="mb-8 flex justify-center w-full"
           >
-            <p className={cn(typography.body.lg, "text-white text-xl md:text-2xl font-light")}>
+            <p className={cn(typography.body.lg, "text-white text-xl md:text-2xl font-light text-center mx-auto max-w-xl")}>
               Explore opportunities and grow with us.
             </p>
           </motion.div>
           
-          {/* CTA Button with delayed animation */}
+          {/* CTA Button with delayed animation - added to match website */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 2.3 }}
+            className="flex justify-center"
           >
             <Button 
               size="lg" 

@@ -107,20 +107,18 @@ const EngagementModel = () => {
       </Helmet>
 
       <Navbar />
-      <main>
+      <main className="pt-16 md:pt-20">
         {/* Hero Section - Updated to use the standardized component */}
         <HeroSection 
           title="Build your GCC,<br /><span class='text-enablr-lime'>your way</span>"
           description="Own your GCC journey. We'll power the way."
           image="/Engagement_Models/Landing/Engagement_hero.jpg"
-          ctaText="Get Started"
-          ctaLink="/contact"
           primaryColor="#0D214F" 
-          customMobilePosition="center 60%"
+          
           customDesktopPosition="center 40%"
           enableKenBurns={true}
-          mobileZoom="180% auto"
         />
+
 
         {/* Intro Section */}
         <section className="py-12 md:py-16 bg-white">

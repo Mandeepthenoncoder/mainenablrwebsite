@@ -16,7 +16,7 @@ export const typography = {
   },
   // Card text
   card: {
-    title: "text-[20px] font-medium leading-tight", // Changed from semibold to medium
+    title: "text-[20px] font-semibold font-sans leading-normal", // Changed from medium to semibold
     body: "text-[14px] md:text-[16px] font-normal leading-relaxed",
   },
   // Special text styles

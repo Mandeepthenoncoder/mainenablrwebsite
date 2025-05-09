@@ -98,14 +98,13 @@ const Solutions = () => {
       </Helmet>
       
       <Navbar />
-      <main>
+      <main className="pt-16 md:pt-20">
         {/* Hero Section using the standardized HeroSection component */}
         <HeroSection 
           title="Explore our end-to-end GCC solutions"
           description="Accelerate your journey to a fully-functional GCC"
           image="/Solutions/Landing/Solutions_hero.webp"
           primaryColor="#0D214F"
-          customMobilePosition="center 80%"
           customDesktopPosition="center 40%"
           enableKenBurns={true}
         />
