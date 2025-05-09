@@ -15,8 +15,8 @@ import CarouselProgressBar from "@/components/ui/CarouselProgressBar";
 interface HeroSlide {
   imageSrc: string;
   srcset: string;
-  title: string; // Keep as string for thumbnail compatibility
-  titleLines: string[]; // Separate property for line-by-line display
+  title: string;
+  titleLines: string[];
   buttonText: string;
   buttonLink: string;
   overlayClass: string;
@@ -27,8 +27,8 @@ const heroSlides: HeroSlide[] = [
   {
     imageSrc: "/Landing page/Carousel_img.webp",
     srcset: "/images/supabase-images/optimized/hero-slide-1-small.webp 640w, /images/supabase-images/optimized/hero-slide-1-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-1-large.webp 1920w",
-    title: "Build on Proven Experience and Enterprise-Grade Quality", // For thumbnail
-    titleLines: ["Build on Proven Experience and Enterprise-Grade Quality"], // For display
+    title: "Build on Proven Experience and Enterprise-Grade Quality",
+    titleLines: ["Build on Proven Experience and Enterprise-Grade Quality"],
     buttonText: "Get Started Today",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
@@ -36,8 +36,8 @@ const heroSlides: HeroSlide[] = [
   {
     imageSrc: "/Landing page/Carousel_img2.webp",
     srcset: "/images/supabase-images/optimized/hero-slide-2-small.webp 640w, /images/supabase-images/optimized/hero-slide-2-medium.webp 1280w, /images/supabase-images/optimized/hero-slide-2-large.webp 1920w",
-    title: "Realize your GCC Success with Speed and Scale", // For thumbnail
-    titleLines: ["Realize your GCC Success", "with Speed and Scale"], // For display
+    title: "Realize your GCC Success with Speed and Scale",
+    titleLines: ["Realize your GCC Success", "with Speed and Scale"],
     buttonText: "Speak To Our Experts",
     buttonLink: "/contact",
     overlayClass: "bg-black bg-opacity-40"
@@ -45,8 +45,8 @@ const heroSlides: HeroSlide[] = [
   {
     imageSrc: "/Landing page/Carousel_img3.webp",
     srcset: "/images/lot 2/optimized/CarouselImage3-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage3-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage3-Home-large.webp 1920w",
-    title: "Accelerate your Setup with Expert Talent and Seamless Execution", // For thumbnail
-    titleLines: ["Accelerate your Setup", "with Expert Talent", "and Seamless Execution"], // Break into 3 lines
+    title: "Accelerate your Setup with Expert Talent and Seamless Execution",
+    titleLines: ["Accelerate your Setup", "with Expert Talent", "and Seamless Execution"],
     buttonText: "Connect Now",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
@@ -54,78 +54,43 @@ const heroSlides: HeroSlide[] = [
   {
     imageSrc: "/Landing page/Carousel_img4.jpg",
     srcset: "/images/lot 2/optimized/CarouselImage4-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage4-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage4-Home-large.webp 1920w",
-    title: "Your Trusted GCC Catalyst for End-to-End Setup", // For thumbnail
-    titleLines: ["Your Trusted GCC Catalyst", "for End-to-End Setup"], // Break into 3 lines
+    title: "Your Trusted GCC Catalyst for End-to-End Setup",
+    titleLines: ["Your Trusted GCC Catalyst", "for End-to-End Setup"],
     buttonText: "Talk to Our Experts",
     buttonLink: "/contact",
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
   }
 ];
 
+// Define mobile styles as a constant instead of injecting them dynamically
+// This avoids style recalculation at runtime
+const mobileCarouselClassNames = {
+  titleContainer: "text-left w-full",
+  titleLine: `
+    text-white font-semibold 
+    leading-tight sm:leading-normal tracking-normal 
+    text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 
+    mb-3 sm:mb-2 text-left break-words max-w-full px-1 sm:px-0
+    block whitespace-normal
+  `,
+  lastSlideFix: "last-slide-fix",
+};
+
 export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const lcpVideoRef = useRef<HTMLVideoElement | null>(null);
+  const hasReinitializedRef = useRef(false);
   
-  // Mobile-specific styles for carousel text
-  const mobileCarouselStyles = `
-    /* Small mobile devices */
-    @media (max-width: 374px) {
-      .carousel-title-line {
-        line-height: 1.1 !important;
-        margin-bottom: 8px !important;
-        font-size: 22px !important;
-        letter-spacing: -0.01em !important;
-      }
-      
-      .carousel-container {
-        padding-top: 20% !important;
-      }
-    }
-    
-    /* Regular mobile devices */
-    @media (min-width: 375px) and (max-width: 639px) {
-      .carousel-title-line {
-        line-height: 1.1 !important;
-        margin-bottom: 8px !important;
-        font-size: 26px !important;
-        letter-spacing: -0.01em !important;
-      }
-      
-      .carousel-container {
-        padding-top: 15% !important;
-      }
-    }
-    
-    /* Small tablets */
-    @media (min-width: 640px) and (max-width: 767px) {
-      .carousel-title-line {
-        line-height: 1.2 !important;
-        margin-bottom: 10px !important;
-        font-size: 30px !important;
-      }
-      
-      .carousel-container {
-        padding-top: 15% !important;
-      }
-    }
-    
-    /* Fix line breaks */
-    .carousel-title-line {
-      display: block !important;
-      white-space: normal !important;
-    }
-    
-    /* Additional spacing fix for third slide */
-    .last-slide-fix .carousel-title-line {
-      margin-bottom: 6px !important;
-      line-height: 1 !important;
-    }
-  `;
-  
-  // Select handler to track the current slide
+  // Select handler to track the current slide (memoized to avoid recreating on every render)
   const onSelect = useCallback(() => {
     if (!api) return;
-    setCurrent(api.selectedScrollSnap());
+    // Use requestAnimationFrame to batch the state update with browser's paint cycle
+    // This prevents forced reflow by ensuring read and write operations happen in separate frames
+    requestAnimationFrame(() => {
+      setCurrent(api.selectedScrollSnap());
+    });
   }, [api]);
   
   // Initialize the API and set up event listeners
@@ -134,21 +99,54 @@ export default function HeroSection() {
     
     // Set up the select event handler
     api.on("select", onSelect);
+    
+    // Call onSelect once to set initial state
     onSelect();
     
-    // Force a reinitialization after component mount to ensure proper layout
-    const timer = setTimeout(() => {
-      api.reInit();
-      console.log("Carousel reinitialized");
-    }, 500);
+    // Only reinitialize once after initial mount
+    // This is moved to a separate useEffect to avoid unnecessary calls
+    if (!hasReinitializedRef.current) {
+      const handleResize = () => {
+        // Throttle reinitialization to once per second maximum
+        if (!hasReinitializedRef.current) {
+          hasReinitializedRef.current = true;
+          // Delay initialization slightly to allow layout to settle
+          // This avoids calling expensive methods during rapid layout changes
+          setTimeout(() => {
+            api.reInit();
+            setIsInitialized(true);
+            hasReinitializedRef.current = false;
+          }, 300);
+        }
+      };
+      
+      // Only reinitialize on actual layout changes
+      window.addEventListener('resize', handleResize);
+      
+      // Initial reinitialization after component is mounted
+      setTimeout(() => {
+        api.reInit();
+        setIsInitialized(true);
+      }, 300);
+      
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
     
     return () => {
       api.off("select", onSelect);
-      clearTimeout(timer);
     };
   }, [api, onSelect]);
   
-  // Autoplay plugin with 5-second interval
+  // Set high priority for LCP video
+  useEffect(() => {
+    if (lcpVideoRef.current) {
+      lcpVideoRef.current.setAttribute('fetchpriority', 'high');
+    }
+  }, []);
+  
+  // Autoplay plugin with 5-second interval (memoized to avoid recreation)
   const autoplayPlugin = React.useMemo(() => 
     Autoplay({ delay: 5000, stopOnInteraction: true }), 
   []);
@@ -176,11 +174,33 @@ export default function HeroSection() {
     }
   };
 
+  // Pre-load videos for smoother transitions
+  const preloadVideos = useCallback(() => {
+    // Only preload adjacent videos to current slide
+    const preloadIndices = [
+      current === 0 ? heroSlides.length - 1 : current - 1,
+      current,
+      current === heroSlides.length - 1 ? 0 : current + 1
+    ];
+    
+    preloadIndices.forEach(index => {
+      if (index > 0) { // Skip first video as it's loaded with component
+        const videoEl = document.createElement('link');
+        videoEl.rel = 'preload';
+        videoEl.as = 'video';
+        videoEl.href = `/videos/Carousel_Video${index + 1}-desktop.mp4`;
+        document.head.appendChild(videoEl);
+      }
+    });
+  }, [current]);
+  
+  // Preload adjacent videos when current slide changes
+  useEffect(() => {
+    preloadVideos();
+  }, [current, preloadVideos]);
+
   return (
     <section className="relative w-full min-h-[80vh] overflow-hidden rounded-b-[40px]">
-      {/* Add custom styles for mobile */}
-      <style dangerouslySetInnerHTML={{ __html: mobileCarouselStyles }} />
-      
       <Carousel
         opts={{
           loop: true,
@@ -193,89 +213,86 @@ export default function HeroSection() {
         <CarouselContent className="h-full">
           {heroSlides.map((slide, index) => (
             <CarouselItem key={index} className="w-full min-h-[80vh] overflow-hidden relative">
-              {/* Background: Use video for each slide */}
+              {/* Background: Optimize video loading */}
               <div className="absolute inset-0 bg-gray-900">
-                <>
-                  {index === 0 ? (
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="auto"
-                      poster="/videos/Carousel_Video_poster.webp"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    >
-                      <source src="/videos/Carousel_Video-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-                      <source src="/videos/Carousel_Video-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
-                      Your browser does not support the video tag.
-                    </video>
-                  ) : (
-                    <video
-                      key={current === index ? `active-${index}` : `inactive-${index}`}
-                      poster={`/videos/Carousel_Video${index + 1}_poster.webp`}
-                      className="absolute inset-0 h-full w-full object-cover"
-                      muted
-                      playsInline
-                      loop
-                      preload="auto"
-                      autoPlay={current === index}
-                    >
-                      {index === 1 && (
-                        <>
-                          <source src="/videos/Carousel_Video2-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-                          <source src="/videos/Carousel_Video2-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
-                        </>
-                      )}
-                      {index === 2 && (
-                        <>
-                          <source src="/videos/Carousel_Video3-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-                          <source src="/videos/Carousel_Video3-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
-                        </>
-                      )}
-                      {index === 3 && (
-                        <>
-                          <source src="/videos/Carousel_Video4-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-                          <source src="/videos/Carousel_Video4-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
-                        </>
-                      )}
-                      Your browser does not support the video tag.
-                    </video>
-                  )}
-                  <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
-                </>
+                {index === 0 ? (
+                  // First slide video always loaded
+                  <video
+                    ref={lcpVideoRef}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  >
+                    <source src="/videos/Carousel_Video-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                    <source src="/videos/Carousel_Video-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  // Only load and autoplay videos when they're current or adjacent
+                  <video
+                    key={`video-${index}`}
+                    poster={`/videos/Carousel_Video${index + 1}_poster.webp`}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    muted
+                    playsInline
+                    loop
+                    // Reduced preloading strategy to only load video when needed
+                    preload={Math.abs(current - index) <= 1 || 
+                             (current === 0 && index === heroSlides.length - 1) || 
+                             (current === heroSlides.length - 1 && index === 0) 
+                              ? "auto" : "none"}
+                    // Only autoplay when it's the current slide
+                    autoPlay={current === index}
+                  >
+                    {index === 1 && (
+                      <>
+                        <source src="/videos/Carousel_Video2-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                        <source src="/videos/Carousel_Video2-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+                      </>
+                    )}
+                    {index === 2 && (
+                      <>
+                        <source src="/videos/Carousel_Video3-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                        <source src="/videos/Carousel_Video3-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+                      </>
+                    )}
+                    {index === 3 && (
+                      <>
+                        <source src="/videos/Carousel_Video4-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                        <source src="/videos/Carousel_Video4-desktop.mp4" type="video/mp4" media="(min-width: 769px)" />
+                      </>
+                    )}
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+                <div className={`absolute inset-0 ${slide.overlayClass}`}></div>
               </div>
               
               {/* Slide Content */}
               <div className="relative z-10 flex items-center h-full">
                 <div className="container mx-auto px-6">
-                  <div className="max-w-4xl px-0 md:pl-12 lg:pl-24 flex flex-col items-start carousel-container">
+                  <div className="max-w-4xl px-0 md:pl-12 lg:pl-24 flex flex-col items-start pt-12 sm:pt-16 md:pt-20">
                     <div className="mb-10 sm:mb-8 w-full">
                       {/* Title with lines animated separately */}
-                  <motion.div
+                      <motion.div
                         key={`title-${index}`}
                         initial="hidden"
                         animate={current === index ? "visible" : "hidden"}
                         variants={containerVariants}
-                        className={`text-left w-full ${index === 2 ? 'last-slide-fix' : ''}`}
+                        className={`${mobileCarouselClassNames.titleContainer} ${index === 2 ? mobileCarouselClassNames.lastSlideFix : ''}`}
                       >
                         {/* Use titleLines array for display */}
                         {slide.titleLines.map((line, lineIndex) => (
                           <motion.div 
                             key={`line-${lineIndex}`}
                             variants={itemVariants}
-                            className="
-                              text-white font-semibold 
-                              leading-tight sm:leading-normal tracking-normal 
-                              text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 
-                              mb-3 sm:mb-2 text-left break-words max-w-full px-1 sm:px-0
-                              carousel-title-line
-                            "
+                            className={mobileCarouselClassNames.titleLine}
                             style={{
                               wordBreak: 'break-word',
                               hyphens: 'auto',
-                              display: 'block',
-                              whiteSpace: 'normal',
                             }}
                           >
                             {line}
@@ -299,7 +316,7 @@ export default function HeroSection() {
                         link={slide.buttonLink}
                         variant="secondary"
                         size="lg"
-                        className={`
+                        className="
                           bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md
                           inline-flex items-center justify-center
                           min-h-[44px]
@@ -308,12 +325,12 @@ export default function HeroSection() {
                           text-base
                           font-medium
                           mx-0
-                        `}
+                        "
                       />
-              </motion.div>
-            </div>
-          </div>
-        </div>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -323,8 +340,22 @@ export default function HeroSection() {
           totalSlides={heroSlides.length}
           currentSlide={current}
         />
-
       </Carousel>
-      </section>
+      
+      {/* Add CSS via style tag with proper TypeScript compatibility */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            /* Small mobile devices */
+            @media (max-width: 374px) {
+              .last-slide-fix .carousel-title-line {
+                margin-bottom: 6px !important;
+                line-height: 1 !important;
+              }
+            }
+          `
+        }}
+      />
+    </section>
   );
 }
