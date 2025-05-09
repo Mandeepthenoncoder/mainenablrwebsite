@@ -26,7 +26,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-1.webp",
     author: "Enablr Team",
     category: "GCC-as-a-Service",
-    published_at: "2024-06-15T00:00:00Z",
+    published_at: "2025-05-09T00:00:00Z",
     read_time: 7
   },
   {
@@ -38,7 +38,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-2.webp",
     author: "Mandeep Singh",
     category: "GCC-as-a-Service",
-    published_at: "2024-06-01T00:00:00Z",
+    published_at: "2025-05-05T00:00:00Z",
     read_time: 5
   },
   // Talent and HR
@@ -51,7 +51,7 @@ const staticPosts: BlogPost[] = [
     cover_image:"/Insights/Blog-3.webp",
     author: "Enablr Team",
     category: "Talent & HR Solutions",
-    published_at: "2024-05-25T00:00:00Z",
+    published_at: "2025-04-28T00:00:00Z",
     read_time: 6
   },
   {
@@ -63,7 +63,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-4.webp",
     author: "Rahul Sharma",
     category: "Talent & HR Solutions",
-    published_at: "2024-05-20T00:00:00Z",
+    published_at: "2025-04-20T00:00:00Z",
     read_time: 8
   },
   // Technology Enablement
@@ -76,7 +76,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-5.webp",
     author: "Priya Patel",
     category: "Technology Enablement Solutions",
-    published_at: "2024-05-10T00:00:00Z",
+    published_at: "2025-04-12T00:00:00Z",
     read_time: 6
   },
   {
@@ -88,7 +88,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-6.webp",
     author: "Enablr Team",
     category: "Technology Enablement Solutions",
-    published_at: "2024-05-05T00:00:00Z",
+    published_at: "2025-04-05T00:00:00Z",
     read_time: 5
   },
   // Workspace Solutions
@@ -101,7 +101,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-7.webp",
     author: "Sneha Rao",
     category: "Workspace Solutions",
-    published_at: "2024-04-01T00:00:00Z",
+    published_at: "2025-03-25T00:00:00Z",
     read_time: 5
   },
   {
@@ -113,11 +113,10 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-8.webp",
     author: "Anil Kumar",
     category: "Workspace Solutions",
-    published_at: "2024-04-30T00:00:00Z",
+    published_at: "2025-03-15T00:00:00Z",
     read_time: 7
   }
 ];
-
 const staticCategories = ["all", "GCC-as-a-Service", "Technology Enablement Solutions", "Workspace Solutions","Talent & HR Solutions"];
 
 const Blog = () => {

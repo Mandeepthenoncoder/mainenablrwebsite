@@ -40,7 +40,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-1.webp",
     author: "Enablr Team",
     category: "GCCs as-a-service",
-    published_at: "2024-06-15T00:00:00Z",
+    published_at: "2025-05-25T00:00:00Z",
     read_time: 7
   },
   {
@@ -76,7 +76,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-2.webp",
     author: "Mandeep Singh",
     category: "GCCs as-a-service",
-    published_at: "2024-06-01T00:00:00Z",
+    published_at: "2025-05-10T00:00:00Z",
     read_time: 5
   },
   {
@@ -108,7 +108,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-3.webp",
     author: "Enablr Team",
     category: "Talent & HR Solutions",
-    published_at: "2024-05-25T00:00:00Z",
+    published_at: "2025-04-25T00:00:00Z",
     read_time: 6
   },
   {
@@ -145,7 +145,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-4.webp?v=1",
     author: "Rahul Sharma",
     category: "Talent & HR Solutions",
-    published_at: "2024-05-20T00:00:00Z",
+    published_at: "2025-04-15T00:00:00Z",
     read_time: 8
   },
   {
@@ -180,7 +180,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-5.webp?v=1",
     author: "Priya Patel",
     category: "Technology Enablement Solutions",
-    published_at: "2024-05-10T00:00:00Z",
+    published_at: "2025-04-05T00:00:00Z",
     read_time: 6
   },
   {
@@ -212,7 +212,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-6.webp",
     author: "Enablr Team",
     category: "Technology Enablement Solutions",
-    published_at: "2024-05-05T00:00:00Z",
+    published_at: "2025-03-30T00:00:00Z",
     read_time: 5
   },
   {
@@ -247,7 +247,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-7.webp?v=1",
     author: "Sneha Rao",
     category: "Workspace Solutions",
-    published_at: "2024-04-01T00:00:00Z",
+    published_at: "2025-03-01T00:00:00Z",
     read_time: 5
   },
   {
@@ -277,7 +277,7 @@ const staticPosts: BlogPost[] = [
     cover_image: "/Insights/Blog-8.webp",
     author: "Anil Kumar",
     category: "Workspace Solutions",
-    published_at: "2024-04-30T00:00:00Z",
+    published_at: "2025-03-15T00:00:00Z",
     read_time: 7
   }
 ];
@@ -339,7 +339,7 @@ const BlogPost = () => {
               {/* Grid Pattern Background */}
               <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-enablr-navy opacity-70"></div>
-                <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMyIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQxMl8xMTApIj48cGF0aCBkPSJNMTYwMCAwSDBWMTIwMEgxNjAwVjBaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTIwMCAwSDBWMTIwMEgxMjAwVjBaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNODAwIDEyMDBMODAwIDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik00MDAgMTIwMEw0MDAgMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTAgODAwTDEyMDAgODAwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMCA0MDBMMTI2MCA0MDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAwXzQxMl8xMTAiPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IndoaXRlIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-cover opacity-10"></div>
+                
                 <div className="absolute -left-16 -bottom-16 w-80 h-80 rounded-full bg-white/10 blur-3xl"></div>
                 <div className="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-white/10 blur-3xl"></div>
               </div>
@@ -349,7 +349,7 @@ const BlogPost = () => {
                   asChild
                   variant="ghost" 
                   size="sm"
-                  className="mb-6 text-white hover:bg-white/10 group"
+                  className="mb-6 text-white hover:text-white hover:bg-white/10 group"
                 >
                   <Link to="/blog" className="flex items-center">
                     <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" />

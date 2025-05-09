@@ -5,6 +5,7 @@ import { getImagePath } from "@/utils/imageUtils";
 interface HeroSectionProps {
   title: string | ReactNode;
   description?: string;
+  descriptionClassName?: string;
   image: string;
   ctaText?: string;
   ctaLink?: string;
@@ -15,6 +16,7 @@ interface HeroSectionProps {
   mobileZoom?: string;
   enableKenBurns?: boolean;
   centerContent?: boolean;
+  buttonClassName?: string;
 }
 
 /**
@@ -24,6 +26,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   description = "",
+  descriptionClassName,
   image,
   ctaText = "",
   ctaLink = "",
@@ -34,6 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   mobileZoom = "180% auto",
   enableKenBurns = false,
   centerContent = false,
+  buttonClassName = "px-6 py-3 bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white border border-transparent hover:border-white transition-all duration-300 rounded-md font-medium",
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imagePath, setImagePath] = useState("");
@@ -124,7 +128,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <img
                   src={imagePath}
                   alt="Hero background"
-                  className="w-full h-full object-cover brightness-80"
+                  className="w-full h-full object-cover brightness-50"
                   style={{
                     transform: flipImage ? "scaleX(-1)" : "none",
                     objectPosition: customMobilePosition,
@@ -152,7 +156,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <img
                   src={imagePath}
                   alt="Hero background"
-                  className="w-full h-full object-cover brightness-75"
+                  className="w-full h-full object-cover brightness-45"
                   style={{
                     transform: flipImage ? "scaleX(-1)" : "none",
                     objectPosition: customDesktopPosition,
@@ -207,7 +211,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 
                 {description && (
                   <p 
-                    className="text-lg md:text-xl text-white mt-3 max-w-lg font-light"
+                    className={`text-lg md:text-xl text-white mt-3 max-w-lg font-light ${descriptionClassName || ''}`}
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
                 )}
@@ -217,14 +221,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     {isInternalLink ? (
                       <button
                         onClick={handleInternalScroll}
-                        className="px-6 py-3 bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white border border-transparent hover:border-white transition-all duration-300 rounded-md font-medium"
+                        className={buttonClassName}
                       >
                         {ctaText}
                       </button>
                     ) : (
                       <a
                         href={ctaLink}
-                        className="inline-block px-6 py-3 bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white border border-transparent hover:border-white transition-all duration-300 rounded-md font-medium"
+                        className={`inline-block ${buttonClassName}`}
                       >
                         {ctaText}
                       </a>

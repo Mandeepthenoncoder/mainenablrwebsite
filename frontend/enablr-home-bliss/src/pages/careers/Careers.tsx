@@ -37,6 +37,7 @@ const Careers = () => {
       <HeroSection
         title={<>Innovate. Grow. Lead.</>}
         description="Explore opportunities and grow with us."
+        descriptionClassName="text-white text-right mt-4 mb-8"
         image="/Career/hero.webp"
         ctaText="View Opportunities"
         ctaLink="#job-openings"
@@ -44,6 +45,7 @@ const Careers = () => {
         customDesktopPosition="center 30%"
         enableKenBurns={true}
         centerContent={true}
+        buttonClassName="bg-white hover:bg-white/90 text-enablr-navy font-medium text-base min-w-[200px] px-8 py-4 rounded-md ml-auto border-0 hover:scale-105 transition-all duration-300 shadow-lg"
       />
       
       <CareerIntro />

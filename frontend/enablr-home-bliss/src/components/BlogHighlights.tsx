@@ -12,7 +12,7 @@ const allBlogPosts = [
     title: "From support functions to strategic hubs: The evolution of GCCs",
     excerpt: "Witness the transformation journey of GCCs from basic support centers to crucial strategic business hubs.",
     coverImage: "/Insights/Blog-1.webp",
-    publishedAt: "2024-06-15T00:00:00Z",
+    publishedAt: "2025-05-09T00:00:00Z",
     readTime: 7
   },
   {
@@ -21,7 +21,7 @@ const allBlogPosts = [
     title: "The 'Scalability' advantage: Why GCCs matter",
     excerpt: "Building your GCC is like drawing a blueprint for your house, ensuring every element from the ground up embeds strength and scalability to stay future proof.",
     coverImage: "/Insights/Blog-2.webp?v=1",
-    publishedAt: "2024-06-01T00:00:00Z",
+    publishedAt: "2025-05-05T00:00:00Z",
     readTime: 5
   },
   {
@@ -30,7 +30,7 @@ const allBlogPosts = [
     title: "Building the workforce of tomorrow: The role of GCCs in tech talent development",
     excerpt: "How Global Capability Centers are becoming crucial talent incubators for developing future-ready technical skills.",
     coverImage: "/Insights/Blog-3.webp",
-    publishedAt: "2024-05-25T00:00:00Z",
+    publishedAt: "2025-04-28T00:00:00Z",
     readTime: 6
   },
   {
@@ -39,7 +39,7 @@ const allBlogPosts = [
     title: "How to build a high-performance GCC: Best practices for talent, technology, and strategy",
     excerpt: "A comprehensive guide to establishing and optimizing Global Capability Centers for maximum business impact.",
     coverImage: "/Insights/Blog-4.webp?v=1",
-    publishedAt: "2024-05-20T00:00:00Z",
+    publishedAt: "2025-04-20T00:00:00Z",
     readTime: 8
   },
   {
@@ -48,7 +48,7 @@ const allBlogPosts = [
     title: "AI-powered transformation: How GCCs are driving business innovation",
     excerpt: "Exploring how Global Capability Centers are leveraging artificial intelligence to reimagine business processes and create competitive advantages.",
     coverImage: "/Insights/Blog-5.webp?v=1",
-    publishedAt: "2024-05-10T00:00:00Z",
+    publishedAt: "2025-04-12T00:00:00Z",
     readTime: 6
   },
   {
@@ -57,7 +57,7 @@ const allBlogPosts = [
     title: "GCCs are redefining digital transformation. Know more.",
     excerpt: "Explore how GCCs are at the forefront of digital transformation initiatives for global enterprises.",
     coverImage: "/Insights/Blog-6.webp",
-    publishedAt: "2024-05-05T00:00:00Z",
+    publishedAt: "2025-04-05T00:00:00Z",
     readTime: 5
   },
   {
@@ -66,7 +66,7 @@ const allBlogPosts = [
     title: "How GCCs can become a 'powerhouse' of innovation with smarter workspace solutions",
     excerpt: "Unleashing the innovation potential of Global Capability Centers through the right strategies and enablers.",
     coverImage: "/Insights/Blog-7.webp",
-    publishedAt: "2024-04-01T00:00:00Z",
+    publishedAt: "2025-03-25T00:00:00Z",
     readTime: 5
   },
   {
@@ -75,7 +75,7 @@ const allBlogPosts = [
     title: "Optimizing workspace design in GCCs: Balancing innovation, collaboration, and well-being",
     excerpt: "How thoughtful workspace design can enhance productivity, foster creativity, and improve employee satisfaction in Global Capability Centers.",
     coverImage: "/Insights/Blog-8.webp",
-    publishedAt: "2024-04-30T00:00:00Z",
+    publishedAt: "2025-03-15T00:00:00Z",
     readTime: 7
   }
 ];
