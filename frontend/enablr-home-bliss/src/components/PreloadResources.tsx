@@ -20,6 +20,9 @@ const PreloadResources: React.FC = () => {
       {/* Preconnect to domains for network optimization */}
       <link rel="preconnect" href="https://kivxafsjmoplihqpotqj.supabase.co" />
       
+      {/* Preload LCP Carousel Poster Image */}
+      <link rel="preload" as="image" href="/videos/Carousel_Video_poster.webp" type="image/webp" />
+      
       {/* Prefetch larger images that will be needed soon */}
       {largeImages.map((resource, index) => (
         <link 

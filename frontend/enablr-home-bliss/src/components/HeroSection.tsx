@@ -203,7 +203,7 @@ export default function HeroSection() {
                       muted
                       playsInline
                       preload="auto"
-                      poster="/videos/Carousel_Video_Poster.jpg"
+                      poster="/videos/Carousel_Video_poster.webp"
                       className="absolute inset-0 h-full w-full object-cover"
                     >
                       <source src="/videos/Carousel_Video-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
@@ -213,7 +213,7 @@ export default function HeroSection() {
                   ) : (
                     <video
                       key={current === index ? `active-${index}` : `inactive-${index}`}
-                      poster={`/videos/Carousel_Video${index + 1}_Poster.jpg`}
+                      poster={`/videos/Carousel_Video${index + 1}_poster.webp`}
                       className="absolute inset-0 h-full w-full object-cover"
                       muted
                       playsInline

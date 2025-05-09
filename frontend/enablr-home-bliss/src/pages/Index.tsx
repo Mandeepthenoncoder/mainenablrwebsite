@@ -1,13 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import HomeLayout from "@/components/layouts/HomeLayout";
 import HeroSection from "@/components/HeroSection";
-import EnablrEdge from "@/components/EnablrEdge";
-import Solutions from "@/components/Solutions";
-import EngageWithUs from "@/components/EngageWithUs";
-import Pillars from "@/components/Pillars";
-import GlobalTeam from "@/components/GlobalTeam";
+// Lazy load other sections
+const EnablrEdge = lazy(() => import("@/components/EnablrEdge"));
+const Solutions = lazy(() => import("@/components/Solutions"));
+const EngageWithUs = lazy(() => import("@/components/EngageWithUs"));
+const Pillars = lazy(() => import("@/components/Pillars"));
+const GlobalTeam = lazy(() => import("@/components/GlobalTeam"));
 import { Separator } from "@/components/ui/separator";
+
+// Define a simple loader for these internal sections, or rely on App.tsx's PageLoader if preferred
+const SectionLoader = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    {/* You can use a smaller spinner or a skeleton placeholder here if desired */}
+    <div className="animate-spin w-8 h-8 border-4 border-enablr-navy border-t-transparent rounded-full"></div>
+  </div>
+);
 
 const Index = () => {
   // Add smooth scrolling behavior to the entire page
@@ -38,7 +47,9 @@ const Index = () => {
         </div>
       </div>
       
-      <EnablrEdge />
+      <Suspense fallback={<SectionLoader />}>
+        <EnablrEdge />
+      </Suspense>
       
       <div className="bg-white">
         <div className="container mx-auto px-6">
@@ -46,7 +57,9 @@ const Index = () => {
         </div>
       </div>
       
-      <Solutions />
+      <Suspense fallback={<SectionLoader />}>
+        <Solutions />
+      </Suspense>
       
       <div className="bg-white">
         <div className="container mx-auto px-6">
@@ -54,7 +67,9 @@ const Index = () => {
         </div>
       </div>
       
-      <EngageWithUs />
+      <Suspense fallback={<SectionLoader />}>
+        <EngageWithUs />
+      </Suspense>
       
       <div className="bg-white">
         <div className="container mx-auto px-6">
@@ -62,7 +77,9 @@ const Index = () => {
         </div>
       </div>
       
-      <Pillars />
+      <Suspense fallback={<SectionLoader />}>
+        <Pillars />
+      </Suspense>
       
       <div className="bg-white">
         <div className="container mx-auto px-6">
@@ -70,7 +87,9 @@ const Index = () => {
         </div>
       </div>
       
-      <GlobalTeam />
+      <Suspense fallback={<SectionLoader />}>
+        <GlobalTeam />
+      </Suspense>
       
       {/* The BlogHighlights and Newsletter components will be automatically 
           added by HomeLayout since showInsights is now set to true */}

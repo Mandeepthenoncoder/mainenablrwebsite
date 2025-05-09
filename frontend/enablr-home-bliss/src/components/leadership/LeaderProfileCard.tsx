@@ -10,12 +10,12 @@ interface LeaderProfileCardProps {
 const LeaderProfileCard: React.FC<LeaderProfileCardProps> = ({ leader, onKnowMore }) => {
   return (
     <div className="leadership-card group h-full flex flex-col shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 bg-white hover:bg-[#F0F7FF]">
-      <div className="overflow-hidden rounded-t-[16px] relative">
+      <div className="overflow-hidden rounded-t-[16px] relative h-[320px]">
         <div className="absolute inset-0 bg-gradient-to-t from-[#002868]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         <img
           src={leader.photoUrl}
           alt={leader.name}
-          className="w-full object-cover object-center aspect-[4/5] transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
       </div>
       
@@ -36,4 +36,4 @@ const LeaderProfileCard: React.FC<LeaderProfileCardProps> = ({ leader, onKnowMor
   );
 };
 
-export default LeaderProfileCard; 
+export default LeaderProfileCard;

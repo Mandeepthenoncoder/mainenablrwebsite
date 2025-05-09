@@ -21,14 +21,14 @@ export default defineConfig(({ mode }) => ({
     mode === 'production' && compression({
       algorithm: 'gzip',
       ext: '.gz',
-      // Set threshold to only compress files above certain size to save build memory
       threshold: 10240, // 10KB
+      deleteOriginFile: false // Keep original files for fallback or if CDN doesn't handle encoding
     }),
-    // Use only one compression format in production to reduce memory usage
-    mode !== 'production' && compression({
+    mode === 'production' && compression({
       algorithm: 'brotliCompress',
       ext: '.br',
       threshold: 10240, // 10KB
+      deleteOriginFile: false // Keep original files
     }),
     // Only use imagemin in development 
     mode !== 'production' && viteImagemin({
@@ -88,14 +88,6 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           // Split vendor chunks for better caching
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-alert-dialog',
-            '@radix-ui/react-aspect-ratio',
-            '@radix-ui/react-avatar',
-            '@radix-ui/react-checkbox',
-            '@radix-ui/react-collapsible',
-          ],
           animation: ['framer-motion'],
           form: ['react-hook-form', 'zod'],
         },
