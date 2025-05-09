@@ -23,6 +23,7 @@ const Engagement = () => {
         ctaText="Learn More"
         ctaLink="/contact"
         enableKenBurns={true}
+        customMobilePosition="center 40%"
       />
       <EngagementIntro />
       <EngagementModelsGrid />

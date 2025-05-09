@@ -40,41 +40,59 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   buttonClassName = "px-6 py-3 bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white border border-transparent hover:border-white transition-all duration-300 rounded-md font-medium",
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [imagePath, setImagePath] = useState("");
+  const [currentSrc, setCurrentSrc] = useState("");
+  const [currentSrcSet, setCurrentSrcSet] = useState("");
   const [imageError, setImageError] = useState(false);
   
   // Process image path
   useEffect(() => {
     if (!image) return;
     
-    // Try to use the image utils if available
+    let processedPath = image;
+    if (!image.startsWith("http") && !image.startsWith("/")) {
+      processedPath = `/${image}`;
+    }
+
     try {
-      // Handle both absolute and relative paths
-      let processedPath = image;
-      
-      // If the image doesn't start with http or /, add / to make it absolute from root
-      if (!image.startsWith("http") && !image.startsWith("/")) {
-        processedPath = `/${image}`;
+      const defaultSrc = getImagePath ? getImagePath(processedPath, true, true) : processedPath;
+      setCurrentSrc(defaultSrc);
+
+      // Define typical widths for responsive images
+      const imageWidths = [640, 768, 1024, 1280, 1536, 1920];
+      let generatedSrcSet = "";
+
+      if (getImagePath) {
+        // This is a placeholder for how getImagePath might be used for srcset.
+        // It assumes getImagePath can be adapted or a new utility created
+        // to return paths for specific widths, e.g., getImagePath(path, options, width)
+        // or getImagePath(path, { width: w, ...otherOptions })
+        // For this example, we'll map widths and construct a hypothetical path.
+        // The actual implementation in imageUtils.ts would handle this.
+        generatedSrcSet = imageWidths
+          .map(w => {
+            // Hypothetical: append width query param, or imageUtils handles it
+            // This is illustrative and will need actual implementation in getImagePath
+            const sizedPath = `${getImagePath(processedPath, true, true)}?width=${w}`; 
+            return `${sizedPath} ${w}w`;
+          })
+          .join(", ");
       }
+      setCurrentSrcSet(generatedSrcSet);
       
-      // Use the image utility if it exists
-      const optimizedPath = getImagePath ? getImagePath(processedPath, true, true) : processedPath;
-      setImagePath(optimizedPath);
-      
-      // Preload image
+      // Preload image (the fallback src)
       const preloadImage = new Image();
-      preloadImage.src = optimizedPath;
+      preloadImage.src = defaultSrc;
       preloadImage.onload = () => setImageLoaded(true);
       preloadImage.onerror = (err) => {
-        console.error(`Failed to load image: ${optimizedPath}`, err);
+        console.error(`Failed to load image: ${defaultSrc}`, err);
         setImageError(true);
       };
     } catch (error) {
       console.error("Error processing image path:", error);
-      
-      // Fallback to the original image with / prefix if needed
       const fallbackPath = !image.startsWith("http") && !image.startsWith("/") ? `/${image}` : image;
-      setImagePath(fallbackPath);
+      setCurrentSrc(fallbackPath);
+      setCurrentSrcSet(""); // Clear srcset on error
+      setImageError(true); // Ensure fallback UI is triggered
     }
   }, [image]);
 
@@ -124,9 +142,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <div className={`absolute inset-0 z-0 ${enableKenBurns ? 'ken-burns-bg' : ''}`}>
             {/* Mobile image */}
             <div className="block md:hidden w-full h-full overflow-hidden hero-image-container">
-              {imagePath && (
+              {currentSrc && (
                 <img
-                  src={imagePath}
+                  src={currentSrc}
+                  srcSet={currentSrcSet}
+                  sizes="100vw"
                   alt="Hero background"
                   className="w-full h-full object-cover brightness-50"
                   style={{
@@ -152,9 +172,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             
             {/* Desktop image */}
             <div className="hidden md:block w-full h-full">
-              {imagePath && (
+              {currentSrc && (
                 <img
-                  src={imagePath}
+                  src={currentSrc}
+                  srcSet={currentSrcSet}
+                  sizes="100vw"
                   alt="Hero background"
                   className="w-full h-full object-cover brightness-45"
                   style={{
@@ -200,40 +222,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               >
                 {typeof title === 'string' ? (
                   <h1 
-                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 md:mb-4"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 md:mb-4"
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 ) : (
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 md:mb-4">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 md:mb-4">
                     {title}
                   </h1>
                 )}
                 
                 {description && (
                   <p 
-                    className={`text-lg md:text-xl text-white mt-3 max-w-lg font-light ${descriptionClassName || ''}`}
+                    className={`text-base md:text-lg text-white mt-3 max-w-lg font-light ${descriptionClassName || ''}`}
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
-                )}
-                
-                {ctaText && ctaLink && (
-                  <div className="mt-6">
-                    {isInternalLink ? (
-                      <button
-                        onClick={handleInternalScroll}
-                        className={buttonClassName}
-                      >
-                        {ctaText}
-                      </button>
-                    ) : (
-                      <a
-                        href={ctaLink}
-                        className={`inline-block ${buttonClassName}`}
-                      >
-                        {ctaText}
-                      </a>
-                    )}
-                  </div>
                 )}
               </motion.div>
             </div>
