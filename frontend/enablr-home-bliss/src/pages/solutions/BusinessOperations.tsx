@@ -11,7 +11,7 @@ import { CTAButton } from "@/components/ui/CTAButton";
 import GlobalTeam from "@/components/sections/GlobalTeam";
 import HeroSection from "@/components/ui/HeroSection";
 
-const heroImage = "/Solutions/Business-Operations/Business_op_hero.jpg";
+const heroImage = "/Solutions/Business-Operations/Business_op_hero.webp";
 
 const keyOfferings = [
   {
@@ -43,7 +43,7 @@ const whyChooseUsReasons = [
     description: "We simplify governance and reporting for your business operations, providing you useful, real-time insights and vision to make informed decisions with confidence.."
   },
   {
-    image: "/Solutions/Business-Operations/Bot.jpg",
+    image: "/Solutions/Business-Operations/Bot.webp",
     title: "Infrastructure set up with operational excellence",
     description: "Right from the start, we set up scalable infrastructure that is supported by proven and tested processes to ensure smooth operations, ensuring sustainability in your operations."
   },
@@ -120,7 +120,7 @@ const BusinessOperations = () => {
 From administration and procurement to HR, payroll, and regulatory support, we work as your behind-the-scenes engine, so that you can focus on business growth, strategy, and execution.
 
 If you are setting up a global capability center, then you can trust Enablr for the local expertise and operational muscle to make it seamless. Partner with Enablr to accelerate your GCC plans.`}
-            imagePath="/Solutions/Business-Operations/business-operations.jpg"
+            imagePath="/Solutions/Business-Operations/business-operations.webp"
           />
         </motion.div>
         

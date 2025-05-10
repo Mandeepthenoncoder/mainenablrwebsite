@@ -118,7 +118,7 @@ export const CookieConsent: React.FC = () => {
                 <div className="flex flex-col md:flex-row gap-2 md:items-center">
                   <button
                     onClick={handleRejectAll}
-                    className="px-4 py-2 text-sm bg-enablr-coral text-enablr-navy hover:bg-gray-600 hover:text-white transition-colors duration-300 rounded-md border "
+                    className="px-4 py-2 text-sm hover:bg-enablr-coral hover:text-enablr-navy bg-gray-600 text-white transition-colors duration-300 rounded-md border "
                   >
                     Reject All
                   </button>

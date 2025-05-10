@@ -9,8 +9,8 @@ const __dirname = dirname(__filename);
 
 // List of large images that need optimization
 const largeImages = [
-  '/public/Engagement_Models/Landing/Engagement_hero.jpg',
-  '/public/About_us/Overview/Overview_hero.jpg'
+  '/public/Engagement_Models/Landing/Engagement_hero.webp',
+  '/public/About_us/Overview/Overview_hero.webp'
 ];
 
 // Config for this script

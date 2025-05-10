@@ -21,7 +21,7 @@ const DedicatedTeam = () => {
       <HeroSection
         title="Dedicated Team Model"
         description="Build global teams without the extra load through our flexible engagement approach."
-        image="/Engagement_Models/Dedicated-Teams/Dedicated_hero.jpg"
+        image="/Engagement_Models/Dedicated-Teams/Dedicated_hero.webp"
         ctaText="Learn More"
         ctaLink="/contact"
         enableKenBurns={true}

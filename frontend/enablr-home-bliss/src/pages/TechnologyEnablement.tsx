@@ -123,7 +123,7 @@ const TechnologyEnablement = () => {
 Whether you're setting up new technology capabilities, integrating systems, or implementing advanced solutions, our team delivers the technical foundation for your success.
 
 We handle the complexity of technology deployment so you can focus on leveraging it for strategic advantage.`}
-            imagePath="/Solutions/Technology-Enablement/Power_your_GCC.jpg"
+            imagePath="/Solutions/Technology-Enablement/Power_your_GCC.webp"
           />
         </motion.div>
         

@@ -128,7 +128,7 @@ const GCCService = () => {
 Designed for speed, certainty, and local depth, we help you launch, operate, and grow your GCC without the complexity.
 
 Whether you're entering India for the first time or expanding your global footprint, we take care of the execution so you can stay focused on outcomes.`}
-            imagePath="/Solutions/GCC-as-a-Service/GCC_1.jpg"
+            imagePath="/Solutions/GCC-as-a-Service/GCC_1.webp"
           />
         </motion.div>
         

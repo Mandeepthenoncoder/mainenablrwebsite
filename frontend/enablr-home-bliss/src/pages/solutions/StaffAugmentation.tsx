@@ -9,7 +9,7 @@ import { Users2, Code2, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroSection from "@/components/ui/HeroSection";
 
-const heroImage = "/Solutions/Staff_Augmentation/Staff_aug_hero.jpg";
+const heroImage = "/Solutions/Staff_Augmentation/Staff_aug_hero.webp";
 
 const keyOfferings = [
   {
@@ -36,17 +36,17 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/Solutions/Staff_Augmentation/Staff_aug_2.jpg",
+    image: "/Solutions/Staff_Augmentation/Staff_aug_2.webp",
     title: "On-demand scaling of team",
     description: "We help you to swiftly grow or scale down your team as per your project requirements, helping you to meet your talent and workforce requirements at ease."
   },
   {
-    image: "/Solutions/Staff_Augmentation/Staff_aug_3.jpg",
+    image: "/Solutions/Staff_Augmentation/Staff_aug_3.webp",
     title: "Availability of niche technical expertise",
     description: "We come in to meet your specific or highly specialized skill requirements, enabling you to connect with the right experts at speed without compromising on quality."
   },
   {
-    image: "/Solutions/Staff_Augmentation/Staff_aug_4.jpg",
+    image: "/Solutions/Staff_Augmentation/Staff_aug_4.webp",
     title: "Enabling speed with agility",
     description: "We help you to maintain speed with adaptability and flexibility, ensuring that quality is intact and you are able to adjust quickly and keep up with the market dynamics"
   }
@@ -112,7 +112,7 @@ const StaffAugmentation = () => {
               We help you find ready-to-deploy professionals who are well versed in domains such as software development, engineering, and logistics. These experts are prepared to cater to the unique business needs of your global capability center.
 
               With Enablr as your GCC staff augmentation partner, you can scale quickly with pre-vetted, locally compliant talent.`}
-            imagePath="/Solutions/Staff_Augmentation/Staff_aug_1.jpg"
+            imagePath="/Solutions/Staff_Augmentation/Staff_aug_1.webp"
           />
         </motion.div>
         

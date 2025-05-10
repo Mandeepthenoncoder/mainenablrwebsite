@@ -21,7 +21,7 @@ const ModularServices = () => {
       <HeroSection
         title="Modular Services"
         description="Explore Enablr's flexible modular services tailored to your GCC priorities."
-        image="/Engagement_Models/Modular-Services/Modular_hero.jpg"
+        image="/Engagement_Models/Modular-Services/Modular_hero.webp"
         ctaText="Discover More"
         ctaLink="/contact"
         enableKenBurns={true}

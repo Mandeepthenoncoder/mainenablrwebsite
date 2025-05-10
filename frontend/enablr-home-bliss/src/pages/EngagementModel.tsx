@@ -112,7 +112,7 @@ const EngagementModel = () => {
         <HeroSection 
           title="Build your GCC,<br /><span class='text-enablr-lime'>your way</span>"
           description="Own your GCC journey. We'll power the way."
-          image="/Engagement_Models/Landing/Engagement_hero.jpg"
+          image="/Engagement_Models/Landing/Engagement_hero.webp"
           primaryColor="#0D214F" 
           
           customDesktopPosition="center 40%"

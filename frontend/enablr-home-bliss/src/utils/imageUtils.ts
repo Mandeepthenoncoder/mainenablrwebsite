@@ -75,8 +75,8 @@ export const imageToSrcSetMap: Record<string, string> = {
   // IMPORTANT: User has run optimization scripts. This map now connects component paths to generated responsive sets.
 
   // Hero Section images (processed by optimize-large-images.mjs)
-  '/Engagement_Models/Landing/Engagement_hero.jpg': '/Engagement_Models/Landing/optimized/Engagement_hero-small.webp 640w, /Engagement_Models/Landing/optimized/Engagement_hero-medium.webp 1024w, /Engagement_Models/Landing/optimized/Engagement_hero-large.webp 1280w, /Engagement_Models/Landing/optimized/Engagement_hero.webp 1920w',
-  '/About_us/Overview/Overview_hero.jpg': '/About_us/Overview/optimized/Overview_hero-small.webp 640w, /About_us/Overview/optimized/Overview_hero-medium.webp 1024w, /About_us/Overview/optimized/Overview_hero-large.webp 1280w, /About_us/Overview/optimized/Overview_hero.webp 1920w',
+  '/Engagement_Models/Landing/Engagement_hero.webp': '/Engagement_Models/Landing/optimized/Engagement_hero-small.webp 640w, /Engagement_Models/Landing/optimized/Engagement_hero-medium.webp 1024w, /Engagement_Models/Landing/optimized/Engagement_hero-large.webp 1280w, /Engagement_Models/Landing/optimized/Engagement_hero.webp 1920w',
+  '/About_us/Overview/Overview_hero.webp': '/About_us/Overview/optimized/Overview_hero-small.webp 640w, /About_us/Overview/optimized/Overview_hero-medium.webp 1024w, /About_us/Overview/optimized/Overview_hero-large.webp 1280w, /About_us/Overview/optimized/Overview_hero.webp 1920w',
   // Blog page Hero (processed by optimize-blog-images.mjs)
   '/Insights/Blog_hero.webp': '/Insights/optimized/Blog_hero-small.webp 640w, /Insights/optimized/Blog_hero-medium.webp 1280w, /Insights/optimized/Blog_hero-large.webp 1920w, /Insights/optimized/Blog_hero.webp 1920w',
 

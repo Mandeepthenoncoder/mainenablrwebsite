@@ -19,42 +19,42 @@ const Solutions = () => {
       id: 1,
       title: "GCC-as-a-Service",
       description: "End-to-end solution to establish your fully equipped global capability center.",
-      image: "/Solutions/Landing/GCC_1.jpg",
+      image: "/Solutions/Landing/GCC_1.webp",
       link: "/solutions/gcc-as-service"
     },
     {
       id: 2,
       title: "Technology enablement",
       description: "Leveraging technology to power your capability center.",
-      image: "/Solutions/Landing/Tech_2.jpg",
+      image: "/Solutions/Landing/Tech_2.webp",
       link: "/solutions/technology-enablement"
     },
     {
       id: 3,
       title: "Workspace solutions",
       description: "Future-ready workspaces for your capability center.",
-      image: "/Solutions/Landing/Workspace_3.jpg",
+      image: "/Solutions/Landing/Workspace_3.webp",
       link: "/solutions/workspace-solutions"
     },
     {
       id: 4,
       title: "Talent and HR solutions",
       description: "Comprehensive talent management for your capability center.",
-      image: "/Solutions/Landing/Talent_4.jpg",
+      image: "/Solutions/Landing/Talent_4.webp",
       link: "/solutions/talent-hr-solutions"
     },
     {
       id: 5,
       title: "Business operations",
       description: "Seamless and streamlined operations for smooth functioning.",
-      image: "/Solutions/Landing/Business_op_5.jpg",
+      image: "/Solutions/Landing/Business_op_5.webp",
       link: "/solutions/business-operations"
     },
     {
       id: 6,
       title: "Staff augmentation",
       description: "Easily available skilled talent pool for your capability center.",
-      image: "/Solutions/Landing/Staff_aug_6.jpg",
+      image: "/Solutions/Landing/Staff_aug_6.webp",
       link: "/solutions/staff-augmentation"
     }
   ];

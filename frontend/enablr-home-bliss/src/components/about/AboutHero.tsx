@@ -10,7 +10,7 @@ const AboutHero = () => {
       <HeroSection
         title="Your trusted partner for building and scaling GCCs"
         description="Solutions aligned to your processes, platforms, and pace"
-        image="/About_us/Overview/Overview_hero.jpg"
+        image="/About_us/Overview/Overview_hero.webp"
         primaryColor="#0D214F"
         customMobilePosition="center 60%"
         customDesktopPosition="center 40%"

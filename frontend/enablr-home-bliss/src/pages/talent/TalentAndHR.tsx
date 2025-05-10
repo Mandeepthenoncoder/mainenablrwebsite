@@ -34,7 +34,7 @@ const keyOfferings = [
 
 const whyChooseUsReasons = [
   {
-    image: "/Solutions/Talent-and-HR/Tier2-tier3.jpg",
+    image: "/Solutions/Talent-and-HR/Tier2-tier3.webp",
     title: "Tier-2 & Tier-3 talent awareness ",
     description: "We power your GCC with deep understanding of the talent pool not just from Tier 1, but even Tier 2 cities, enabling access to talent in emerging tech hubs."
   },
@@ -46,7 +46,7 @@ const whyChooseUsReasons = [
 
   },
   {
-    image: "/Solutions/Talent-and-HR/Optimized.jpg",
+    image: "/Solutions/Talent-and-HR/Optimized.webp",
     title: "Optimized recruitment cost",
     description: "We have streamlined efficient processes and created a strategic approach for optimizing your hiring process, keeping it cost-effective. " 
   }
@@ -94,7 +94,7 @@ const TalentAndHR = () => {
           <HeroSection
             title="Talent and HR Solutions"
             description="Build high-performing teams with Enablr's comprehensive talent and HR solutions for your capability center."
-            image="/Solutions/Talent-and-HR/Talent-HR_hero.jpeg"
+            image="/Solutions/Talent-and-HR/Talent-HR_hero.webp"
             ctaText="Get Started"
             ctaLink="/contact"
             enableKenBurns={true}
@@ -112,7 +112,7 @@ const TalentAndHR = () => {
 We streamline people operations to allow you to concentrate on core business growth. This includes managing crucial tasks such as sourcing high-quality talent, handling complex visa processes, efficiently onboarding new employees, and overseeing compliance workflows. By simplifying these essential functions, we free up your valuable time and resources.
 
 As you establish your global capability center (GCC), Enablr is your expert partner. We assist you in hiring talent more quickly, ensuring you remain compliant with regulations, and retaining employees who significantly contribute to your success. Leverage our deep understanding of the GCC domain to assemble your ideal team.`}
-            imagePath="/Solutions/Talent-and-HR/Build The Right Teams.jpg"
+            imagePath="/Solutions/Talent-and-HR/Build The Right Teams.webp"
           />
         </motion.div>
 

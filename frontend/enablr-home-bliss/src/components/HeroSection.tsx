@@ -52,7 +52,7 @@ const heroSlides: HeroSlide[] = [
     overlayClass: "bg-gradient-to-b from-black/80 via-black/50 to-black/40"
   },
   {
-    imageSrc: "/Landing page/Carousel_img4.jpg",
+    imageSrc: "/Landing page/Carousel_img4.webp",
     srcset: "/images/lot 2/optimized/CarouselImage4-Home-small.webp 640w, /images/lot 2/optimized/CarouselImage4-Home-medium.webp 1280w, /images/lot 2/optimized/CarouselImage4-Home-large.webp 1920w",
     title: "Your Trusted GCC Catalyst for End-to-End Setup",
     titleLines: ["Your Trusted GCC Catalyst", "for End-to-End Setup"],

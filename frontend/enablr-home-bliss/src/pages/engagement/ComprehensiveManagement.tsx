@@ -21,7 +21,7 @@ const ComprehensiveManagement = () => {
       <HeroSection
         title="Comprehensive Management Model"
         description="A fully orchestrated GCC experience from set up to scale for maximum strategic value."
-        image="/Engagement_Models/Comprehensive-Management/Comprehensive_hero.jpg"
+        image="/Engagement_Models/Comprehensive-Management/Comprehensive_hero.webp"
         ctaText="Explore Now"
         ctaLink="/contact"
         enableKenBurns={true}
