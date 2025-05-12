@@ -290,16 +290,31 @@ const Navbar = () => {
             Insights
           </Link>
           
-          <Link 
-            to="/careers" 
-            className={cn(
-              "text-sm font-medium transition-colors duration-300",
-              isActive('/careers') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
-            )}
-            onMouseEnter={() => setActiveDropdown(null)}
+          <NavDropdown 
+            id="careers"
+            activeDropdown={activeDropdown}
+            setActiveDropdown={setActiveDropdown}
+            trigger={
+              <span className={cn(
+                "text-sm font-medium transition-colors duration-300",
+                isActiveOrContains('/careers') ? "text-[#BF0404]" : "text-gray-700 hover:text-[#BF0404]"
+              )}>
+                <Link to="/careers">Careers</Link>
+              </span>
+            }
+            isActive={isActiveOrContains('/careers')}
           >
-            Careers
-          </Link>
+            <div className="py-1">
+              <ul className="w-full space-y-1">
+                <DropdownMenuItem to="/careers/life-at-enablr" index={0}>
+                  Life at Enablr
+                </DropdownMenuItem>
+                <DropdownMenuItem to="/careers/current-openings" index={1}>
+                  Current Openings
+                </DropdownMenuItem>
+              </ul>
+            </div>
+          </NavDropdown>
           
           <Button 
             className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
@@ -576,17 +591,62 @@ const Navbar = () => {
                 Insights
               </Link>
               
-              <Link 
-                to="/careers" 
-                className={cn(
-                  "flex items-center text-base font-medium py-3 px-3 border-b border-gray-100",
-                  isActive('/careers') 
-                    ? "text-[#BF0404] bg-gradient-to-r from-red-50/60 to-blue-50/60" 
-                    : "text-gray-800 hover:text-[#BF0404] hover:bg-gradient-to-r hover:from-red-50/30 hover:to-blue-50/30"
-                )}
-              >
-                Careers
-              </Link>
+              <div className="py-3 border-b border-gray-100">
+                <button 
+                  onClick={() => toggleSubMenu('careers')}
+                  className={cn(
+                    "w-full flex items-center justify-between text-base font-medium py-2 px-3 rounded-md",
+                    (isActive('/careers') || location.pathname.includes('/careers')) 
+                      ? "text-[#BF0404] bg-gradient-to-r from-red-50 to-blue-50/80" 
+                      : "text-gray-800 hover:bg-gray-50"
+                  )}
+                >
+                  <Link to="/careers" className="flex-grow text-left">
+                    <span>Careers</span>
+                  </Link>
+                  {expandedMenus['careers'] ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                
+                <div className={cn(
+                  subMenuAnimation,
+                  expandedMenus['careers'] 
+                    ? "max-h-[500px] opacity-100 mt-2" 
+                    : "max-h-0 opacity-0 overflow-hidden"
+                )}>
+                  <ul className="pl-3 space-y-1 rounded-md bg-gradient-to-br from-red-50/80 to-blue-50/80 py-2">
+                    <li>
+                      <Link 
+                        to="/careers/life-at-enablr" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/careers/life-at-enablr') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Life at Enablr
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/careers/current-openings" 
+                        className={cn(
+                          "flex items-center text-sm py-2 px-4 rounded-md",
+                          isActive('/careers/current-openings') 
+                            ? "text-[#BF0404] bg-gradient-to-r from-red-100 to-white" 
+                            : "text-gray-700 hover:bg-white/60"
+                        )}
+                      >
+                        Current Openings
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               
               {/* CTA Button */}
               <div className="mt-6 px-3">

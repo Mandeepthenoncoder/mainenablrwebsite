@@ -34,6 +34,11 @@ const Blog = lazy(() => import("./pages/blog/Blog"));
 const BlogPost = lazy(() => import("./pages/blog/BlogPost"));
 const BlogAdmin = lazy(() => import("./pages/blog/BlogAdmin"));
 const Careers = lazy(() => import("./pages/careers/Careers"));
+const LifeAtEnablr = lazy(() => import("./pages/careers/LifeAtEnablr"));
+const CurrentOpenings = lazy(() => import("./pages/careers/CurrentOpenings"));
+const JobDetails = lazy(() => import("./pages/careers/JobDetails"));
+const JobApplication = lazy(() => import("./pages/careers/JobApplication"));
+const GeneralApplication = lazy(() => import("./pages/careers/GeneralApplication"));
 const ContactUs = lazy(() => import("./pages/contact/ContactUs"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const CookiePolicy = lazy(() => import("./pages/legal/CookiePolicy"));
@@ -119,7 +124,15 @@ const App = () => {
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/blog/admin" element={<BlogAdmin />} />
                 
+                {/* Careers Routes */}
                 <Route path="/careers" element={<Careers />} />
+                <Route path="/careers/life-at-enablr" element={<LifeAtEnablr />} />
+                <Route path="/careers/current-openings" element={<CurrentOpenings />} />
+                <Route path="/careers/job/:id" element={<JobDetails />} />
+                <Route path="/careers/apply/:id" element={<JobApplication />} />
+                <Route path="/careers/general-application" element={<GeneralApplication />} />
+                
+                {/* Contact Routes */}
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/thank-you" element={<ThankYou />} />
                 

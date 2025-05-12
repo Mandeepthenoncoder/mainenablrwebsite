@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface JobListingProps {
   title: string;
@@ -157,12 +158,12 @@ const CurrentOpeningsCompact = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-4xl mx-auto mt-8 text-center"
         >
-          <button 
-            onClick={handleSeeAllJobsClick}
+          <Button 
             className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 px-6 py-2 rounded-md text-sm font-medium"
+            asChild
           >
-            See All Jobs
-          </button>
+            <Link to="/careers/current-openings">See all jobs</Link>
+          </Button>
         </motion.div>
       </div>
     </section>

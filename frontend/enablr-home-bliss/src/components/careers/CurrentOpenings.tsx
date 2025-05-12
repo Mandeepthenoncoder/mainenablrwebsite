@@ -4,8 +4,10 @@ import { typography } from "@/styles/typography";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Briefcase, MapPin, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface JobCardProps {
+  id: string;
   title: string;
   department: string;
   location: string;
@@ -13,7 +15,7 @@ interface JobCardProps {
   index: number;
 }
 
-const JobCard = ({ title, department, location, type, index }: JobCardProps) => {
+const JobCard = ({ id, title, department, location, type, index }: JobCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -39,48 +41,67 @@ const JobCard = ({ title, department, location, type, index }: JobCardProps) => 
           <span className="text-sm">{type}</span>
         </div>
       </div>
-      <Button 
-        className="w-full justify-between bg-white text-enablr-navy border border-enablr-navy hover:bg-enablr-navy hover:text-white transition-colors duration-300"
-      >
-        <span>View Details</span>
-        <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-      </Button>
+      <div className="flex gap-3">
+        <Button 
+          className="flex-1 justify-between bg-white text-enablr-navy border border-enablr-navy hover:bg-enablr-navy hover:text-white transition-colors duration-300"
+          asChild
+        >
+          <Link to={`/careers/job/${id}`}>
+            <span>View Details</span>
+            <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </Button>
+        <Button 
+          className="flex-1 bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-colors duration-300"
+          asChild
+        >
+          <Link to={`/careers/apply/${id}`}>
+            <span>Apply Now</span>
+          </Link>
+        </Button>
+      </div>
     </motion.div>
   );
 };
 
 const jobOpenings = [
   {
+    id: "senior-software-engineer",
     title: "Senior Software Engineer",
     department: "Engineering",
     location: "Bangalore, India",
     type: "Full-time"
   },
   {
+    id: "ux-ui-designer",
     title: "UX/UI Designer",
     department: "Design",
     location: "Remote, India",
     type: "Full-time"
   },
   {
+    id: "gcc-program-manager",
     title: "GCC Program Manager",
     department: "Operations",
     location: "Hyderabad, India",
     type: "Full-time"
   },
   {
+    id: "devops-engineer",
     title: "DevOps Engineer",
     department: "Engineering",
     location: "Bangalore, India",
     type: "Full-time"
   },
   {
+    id: "business-analyst",
     title: "Business Analyst",
     department: "Consulting",
     location: "Remote, India",
     type: "Full-time"
   },
   {
+    id: "talent-acquisition-specialist",
     title: "Talent Acquisition Specialist",
     department: "HR",
     location: "Mumbai, India",
@@ -114,6 +135,7 @@ const CurrentOpenings = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-12"
         >
+          
           <h2 className={cn(typography.h2, "text-enablr-navy mb-4")}>
             Current Openings
           </h2>
@@ -155,6 +177,7 @@ const CurrentOpenings = () => {
             {filteredJobs.map((job, index) => (
               <JobCard
                 key={index}
+                id={job.id}
                 title={job.title}
                 department={job.department}
                 location={job.location}

@@ -54,10 +54,7 @@ const CareerPillars = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className={typography.h2}
           >
-            <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">
-              What
-            </span>{" "}
-            Sets Your Journey at Enablr Apart
+           
           </motion.h2>
           
           <motion.p
