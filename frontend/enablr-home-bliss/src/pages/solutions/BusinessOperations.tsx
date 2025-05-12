@@ -27,7 +27,7 @@ const keyOfferings = [
   {
     icon: Shield,
     title: "Regulatory and compliance management",
-    description: "Your plan must not get blocked by red tape or any local regulations. Our expert teams foresee and plan for the future, aligning with local laws and requirements to keep your business compliant."
+    description: "Your plan must not get blocked by any local regulations or procedures. Our expert teams foresee and plan for the future, aligning with local laws and requirements to keep your business compliant."
   },
   {
     icon: Globe,
@@ -40,7 +40,7 @@ const whyChooseUsReasons = [
   {
     image: "/Solutions/Business-Operations/policies.webp",
     title: "Simplified governance and reporting",
-    description: "We simplify governance and reporting for your business operations, providing you useful, real-time insights and vision to make informed decisions with confidence.."
+    description: "We simplify governance and reporting for your business operations, providing you useful, real-time insights and vision to make informed decisions with confidence."
   },
   {
     image: "/Solutions/Business-Operations/Bot.webp",
@@ -50,7 +50,7 @@ const whyChooseUsReasons = [
   {
     image: "/Solutions/Business-Operations/Innovation.webp",
     title: "Continuous innovation for accelerated growth",
-    description: "We understand your need for continuous improvement and innovation through your GCC, hence, we build scalable tech frameworks and processes that power you in this dynamic marketplace.."
+    description: "We understand your need for continuous improvement and innovation through your GCC, hence, we build scalable tech frameworks and processes that power you in this dynamic marketplace."
   }
 ];
 

@@ -38,7 +38,7 @@ const LeadershipPage = () => {
           title="Our Leadership"
           description="Meet the visionary leaders driving innovation and transformation at Enablr."
           image="/About_us/Leadership/Leadership_hero.webp"
-          ctaText="Know More"
+          ctaText="Know more"
           ctaLink="/contact"
           enableKenBurns={true}
         />

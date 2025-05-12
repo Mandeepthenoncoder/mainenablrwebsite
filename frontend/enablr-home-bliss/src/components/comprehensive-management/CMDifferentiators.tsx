@@ -31,7 +31,7 @@ const CMDifferentiators = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className={`${typography.h2} text-center my-8 mx-6 -mt-2`}>
-          <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">What</span> Enablr Brings
+          <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">What</span> Enablr brings
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {differentiators.map((diff, index) => (

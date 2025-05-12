@@ -43,7 +43,7 @@ const GlobalTeam = () => {
               size="lg"
               className="bg-white text-enablr-navy hover:bg-enablr-navy-100 font-medium transform hover:scale-105 transition-all duration-300"
             >
-              Get Started
+              Get started
             </Button>
           </Link>
         </motion.div>

@@ -50,7 +50,7 @@ const SolutionCard = ({ title, description, icon, index }: { title: string; desc
     <h3 className={`${typography.h4} mb-3 text-enablr-navy`}>{title}</h3>
     <p className={`${typography.body.base} text-gray-600 mb-4`}>{description}</p>
     <Button variant="link" className="p-0 text-enablr-purple hover:text-enablr-navy">
-      Know More
+      Know more
     </Button>
   </motion.div>
 );

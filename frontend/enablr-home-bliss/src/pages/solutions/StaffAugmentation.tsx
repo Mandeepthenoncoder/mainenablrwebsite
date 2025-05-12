@@ -43,7 +43,7 @@ const whyChooseUsReasons = [
   {
     image: "/Solutions/Staff_Augmentation/Staff_aug_3.webp",
     title: "Availability of niche technical expertise",
-    description: "We fulfill your specialized skill requirements, connecting you with top experts quickly and efficiently"
+    description: "We fulfill your specialized skill requirements, connecting you with top experts quickly and efficiently."
   },
   {
     image: "/Solutions/Staff_Augmentation/Staff_aug_4.webp",

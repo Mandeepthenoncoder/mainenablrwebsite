@@ -178,7 +178,7 @@ const Solutions = () => {
                         className="w-full justify-center border-enablr-navy text-enablr-navy hover:bg-enablr-navy hover:text-white mt-auto group"
                       >
                         <Link to={solution.link} className="flex items-center gap-2">
-                          Know More
+                          Know more
                         </Link>
                       </Button>
                     </div>

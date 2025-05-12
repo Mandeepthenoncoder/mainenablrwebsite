@@ -1,0 +1,21 @@
+.blog-card-description {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: clip;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-height: 4.5em; /* Approx height for 3 lines */
+  margin-bottom: 1rem;
+}
+
+.why-choose-us-card-text {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: clip;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-height: 4.5em; /* Approx height for 3 lines */
+  margin-bottom: 1rem;
+}

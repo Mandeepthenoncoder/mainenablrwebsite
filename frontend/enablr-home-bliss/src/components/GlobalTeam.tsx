@@ -11,7 +11,7 @@ const GlobalTeam = () => {
   return (
     <PageCTA
             title="Build your global team with confidence"
-            buttonText="Get Started"
+            buttonText="Get started"
             buttonLink="/contact"
           />
   );

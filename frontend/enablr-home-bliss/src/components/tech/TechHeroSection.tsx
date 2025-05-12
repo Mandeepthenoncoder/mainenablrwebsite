@@ -113,7 +113,7 @@ const TechHeroSection: React.FC<TechHeroSectionProps> = ({
               </p>
               
               <CTAButton 
-                text="Get Started" 
+                text="Get started" 
                 link="/contact" 
                 variant="secondary"
                 size="lg"

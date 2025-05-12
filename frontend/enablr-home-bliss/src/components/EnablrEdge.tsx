@@ -102,7 +102,7 @@ const EnablrEdge = () => {
             className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
             onClick={() => window.location.href = '/about'}
           >
-            Know More
+            Know more
           </Button>
         </motion.div>
 

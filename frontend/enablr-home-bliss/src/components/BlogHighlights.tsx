@@ -55,7 +55,7 @@ const allBlogPosts = [
   {
     id: "6",
     slug: "gccs-redefining-digital-transformation", 
-    title: "GCCs are redefining digital transformation. Know more.",
+    title: "GCCs are redefining digital transformation.",
     excerpt: "Explore how GCCs are at the forefront of digital transformation initiatives for global enterprises.",
     coverImage: "/Insights/Blog-6.webp",
     publishedAt: "2025-04-05T00:00:00Z",
@@ -160,7 +160,7 @@ const BlogHighlights = () => {
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4 text-sm line-clamp-3">
+                <p className="text-gray-600 mb-4 text-sm blog-card-description">
                   {post.excerpt}
                 </p>
                 

@@ -31,7 +31,7 @@ const Pillars = () => {
     {
       image: "/Landing page/pillar_four.webp",
       srcSet: "/images/lot 2/optimized/Transparent ProcessOurPillars-Home-small.webp 640w, /images/lot 2/optimized/Transparent ProcessOurPillars-Home-medium.webp 1280w, /images/lot 2/optimized/Transparent ProcessOurPillars-Home-large.webp 1920w",
-      title: "Transparent processes, powered by on ground expertise"
+      title: "Transparent processes, powered by on-ground expertise"
     }
   ];
 

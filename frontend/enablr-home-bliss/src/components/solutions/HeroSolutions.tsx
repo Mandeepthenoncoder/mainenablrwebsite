@@ -25,7 +25,7 @@ const HeroSolutions = () => {
             size="lg"
             className="bg-white text-[#4A154B] hover:bg-gray-100"
           >
-            Get Started
+            Get started
           </Button>
         </motion.div>
       </div>

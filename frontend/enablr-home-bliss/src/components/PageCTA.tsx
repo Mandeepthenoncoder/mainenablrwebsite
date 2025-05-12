@@ -12,7 +12,7 @@ interface PageCTAProps {
 
 const PageCTA = ({ 
   title, 
-  buttonText = "Get Started",
+  buttonText = "Get started",
   buttonLink = "/contact" 
 }: PageCTAProps) => {
   return (

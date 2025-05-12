@@ -24,7 +24,7 @@ const heroSlides = [
 const keyOfferings = [
   {
     icon: Code2,
-    title: "End - End Technology Delivery",
+    title: "End to End Technology Delivery",
     description: "From product development to ongoing support, we help you build and manage the technology you need to move forward in your GCC journey. Our goal is to create a well-orchestrated system that runs seamlessly and supports your growth."
   },
   {
@@ -47,7 +47,7 @@ const keyOfferings = [
 // Define technology-specific Why Choose Us reasons
 const technologyReasons = [
   {
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    image: "/Solutions/Technology-Enablement/Seamless_Tech.webp",
     title: "Seamless Technology Integration",
     description: "We build flawless and future-proof technology frameworks that power up your GCC transformation journey."
   },
@@ -57,7 +57,7 @@ const technologyReasons = [
     description: "We bring deep expertise from our tech teams and guided by leaders for efficient decisions, enabling sustainable growth in perspective."
   },
   {
-    image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c",
+    image: "/Solutions/Technology-Enablement/Not_Just_a_Tech.webp",
     title: "Not Just a Technology Checklist, Strategic Partnership",
     description: " We work beyond just implementing technology, becoming your strategic partner to achieve technology enablement objectives."
   }

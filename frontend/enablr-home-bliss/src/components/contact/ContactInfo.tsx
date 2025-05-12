@@ -16,7 +16,7 @@ const contactInfo = [
       { number: "+91 40 45182310", country: "(IN)" },
       { number: "+1 833 326 8272", country: "(USA)" }
     ],
-    description: "Monday to Friday, 9am to 6pm"
+    description: "Monday to Friday, 9 am to 6 pm"
   },
   {
     icon: <Mail className="h-5 w-5" />,

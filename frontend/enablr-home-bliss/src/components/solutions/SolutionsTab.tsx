@@ -84,7 +84,7 @@ const SolutionsTab = () => {
                       onClick={handleContactClick}
                       className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 
                                 w-full sm:w-auto h-10 sm:h-12 text-base">
-                        Talk to Our Experts
+                        Talk to our experts
                     </Button>
       </div>
     

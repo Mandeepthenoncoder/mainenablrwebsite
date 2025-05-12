@@ -56,7 +56,7 @@ const WhyChooseUsCard = ({
             title
           )}
         </h3>
-        <p className={`${typography.body.base} text-gray-600 flex-grow line-clamp-3`}>
+        <p className={`${typography.body.base} text-gray-600 flex-grow why-choose-us-card-text`}>
           {description}
         </p>
       </div>
