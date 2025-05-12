@@ -81,7 +81,7 @@ const staticPosts: BlogPost[] = [
   },
   {
     id: "6",
-    title: "GCCs are redefining digital transformation. Know more.",
+    title: "GCCs are redefining digital transformation",
     slug: "gccs-redefining-digital-transformation",
     excerpt: "Explore how GCCs are at the forefront of digital transformation initiatives for global enterprises.",
     content: "<p>Global Capability Centers are increasingly becoming the nerve centers for digital transformation initiatives...</p>",

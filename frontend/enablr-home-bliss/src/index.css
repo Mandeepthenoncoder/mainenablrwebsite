@@ -246,3 +246,14 @@
     @apply p-4 pt-0 border-t border-border;
   }
 }
+/* Remove truncation only on blog post titles and excerpts */
+h3.font-semibold.mb-3.group-hover\:text-enablr-navy.transition-colors.line-clamp-2,
+p.text-gray-600.mb-4.line-clamp-2 {
+  overflow: visible !important;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  max-height: none !important;
+  text-overflow: unset !important;
+  white-space: normal !important;
+}
