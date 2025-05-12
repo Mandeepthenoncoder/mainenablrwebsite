@@ -14,13 +14,8 @@ interface JobListingProps {
 }
 
 const JobListing = ({ title, experience, location, type, index }: JobListingProps) => {
-  // Function to handle email click
-  const handleApplyClick = () => {
-    const emailSubject = `Application for ${title} position`;
-    const emailAddress = "careers@gccenablr.com";
-    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}`;
-    window.open(mailtoLink, "_blank");
-  };
+  // Generate slug id from title
+  const slugId = title.toLowerCase().replace(/\s+/g, '-');
 
   return (
     <motion.div 
@@ -40,12 +35,14 @@ const JobListing = ({ title, experience, location, type, index }: JobListingProp
           <span>{type}</span>
         </div>
       </div>
-      <button 
-        onClick={handleApplyClick}
+      <Button 
         className="bg-white text-enablr-navy border border-enablr-navy hover:bg-enablr-navy hover:text-white transition-colors duration-300 px-4 py-2 rounded-md text-sm font-medium"
+        asChild
       >
-        Apply
-      </button>
+        <Link to={`/careers/job/${slugId}`}>
+          Apply
+        </Link>
+      </Button>
     </motion.div>
   );
 };

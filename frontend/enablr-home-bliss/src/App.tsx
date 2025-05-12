@@ -126,7 +126,7 @@ const App = () => {
                 
                 {/* Careers Routes */}
                 <Route path="/careers" element={<Careers />} />
-                <Route path="/careers/life-at-enablr" element={<LifeAtEnablr />} />
+                <Route path="/careers/life-at-enablr" element={<Careers />} />
                 <Route path="/careers/current-openings" element={<CurrentOpenings />} />
                 <Route path="/careers/job/:id" element={<JobDetails />} />
                 <Route path="/careers/apply/:id" element={<JobApplication />} />

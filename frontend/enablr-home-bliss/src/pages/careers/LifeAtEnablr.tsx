@@ -36,7 +36,7 @@ const LifeAtEnablr = () => {
       
       <HeroSection
         title={<>Life at Enablr</>}
-        description="We believe exceptional outcomes start with empowered people."
+        description=""
         descriptionClassName="text-white text-right mt-4 mb-8"
         image="/Career/hero.webp"
         customMobilePosition="top"

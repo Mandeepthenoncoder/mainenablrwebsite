@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
 import CareerIntro from "@/components/careers/CareerIntro";
-import LifeAtEnablr from "@/components/careers/LifeAtEnablr";
 import CurrentOpeningsCompact from "@/components/careers/CurrentOpeningsCompact";
 import CareerCTA from "@/components/careers/CareerCTA";
 import HeroSection from "@/components/ui/HeroSection";
@@ -49,7 +48,6 @@ const Careers = () => {
       />
       
       <CareerIntro />
-      <LifeAtEnablr />
       <div id="job-openings">
         <CurrentOpeningsCompact />
       </div>
