@@ -25,7 +25,7 @@ const keyOfferings = [
   {
     icon: Zap,
     title: "Swift ramp-up and scale-down",
-    description: "Your staffing needs can change at any point; hence we are here to sort them for you with speed and agility. Whether you are scaling up for a new project or working with minimal resources, we make transitions smooth and hassle-free."
+    description: "Your staffing needs can change at any point. Hence, we are here to sort them for you with speed and agility. Whether you are scaling up for a new project or working with minimal resources, we make transitions smooth and hassle-free."
   },
   {
     icon: Users,
@@ -38,17 +38,17 @@ const whyChooseUsReasons = [
   {
     image: "/Solutions/Staff_Augmentation/Staff_aug_2.webp",
     title: "On-demand scaling of team",
-    description: "We help you to swiftly grow or scale down your team as per your project requirements, helping you to meet your talent and workforce requirements at ease."
+    description: "We help you flexibly adjust your team size based on project needs, making it easy to meet your workforce requirements."
   },
   {
     image: "/Solutions/Staff_Augmentation/Staff_aug_3.webp",
     title: "Availability of niche technical expertise",
-    description: "We come in to meet your specific or highly specialized skill requirements, enabling you to connect with the right experts at speed without compromising on quality."
+    description: "We fulfill your specialized skill requirements, connecting you with top experts quickly and efficiently"
   },
   {
     image: "/Solutions/Staff_Augmentation/Staff_aug_4.webp",
     title: "Enabling speed with agility",
-    description: "We help you to maintain speed with adaptability and flexibility, ensuring that quality is intact and you are able to adjust quickly and keep up with the market dynamics"
+    description: "We optimize your market responsiveness without compromising quality standards or operational efficiency."
   }
 ];
 

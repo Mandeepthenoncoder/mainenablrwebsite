@@ -58,7 +58,7 @@ const technologyReasons = [
   },
   {
     image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c",
-    title: "Not Just a Technology Check List, Strategic Partnership",
+    title: "Not Just a Technology Checklist, Strategic Partnership",
     description: " We work beyond just implementing technology, becoming your strategic partner to achieve technology enablement objectives."
   }
 ];

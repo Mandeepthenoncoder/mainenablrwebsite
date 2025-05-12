@@ -14,7 +14,10 @@ import { cn } from "@/lib/utils";
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().optional(),
+  phone: z.string()
+    .regex(/^\d{10}$/, "Phone number must be exactly 10 digits")
+    .optional()
+    .or(z.literal("")),
   subject: z.string().min(5, "Subject must be at least 5 characters"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
@@ -131,9 +134,15 @@ const ContactForm = () => {
                   <FormControl>
                     <div className="relative">
                       <Input 
-                        placeholder="Your phone number" 
+                        placeholder="10-digit phone number" 
                         {...field} 
-                        className="pl-10 border-gray-300 focus:border-enablr-navy focus:ring-1 focus:ring-enablr-navy rounded-lg py-2.5" 
+                        className="pl-10 border-gray-300 focus:border-enablr-navy focus:ring-1 focus:ring-enablr-navy rounded-lg py-2.5"
+                        maxLength={10}
+                        onInput={(e) => {
+                          const input = e.currentTarget;
+                          input.value = input.value.replace(/[^0-9]/g, '').slice(0, 10);
+                          field.onChange(input.value);
+                        }}
                       />
                       <Phone className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
                     </div>

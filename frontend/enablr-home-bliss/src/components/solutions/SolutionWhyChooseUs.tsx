@@ -23,7 +23,7 @@ const SolutionWhyChooseUs = ({ reasons }: SolutionWhyChooseUsProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto "
         >
           <h2 className={typography.h2}>
             <span className="font-bold bg-gradient-to-r from-[#EC4630] to-[#19214F] bg-clip-text text-transparent">Why</span> choose us?
