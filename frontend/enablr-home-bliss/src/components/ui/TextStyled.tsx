@@ -48,7 +48,7 @@ const applyTextCase = (text: React.ReactNode, casing: TextCasing): React.ReactNo
         // Always capitalize the first word.
         // Keep connectors lowercase if they are not the first word.
         if (index > 0 && lowercaseConnectors.includes(lowerWord)) {
-          return lowerWord + ' ';
+          return lowerWord;
         }
         // Capitalize the first letter, lowercase the rest for other words.
         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
@@ -61,7 +61,6 @@ const applyTextCase = (text: React.ReactNode, casing: TextCasing): React.ReactNo
       processedText = processedText.charAt(0).toUpperCase() + processedText.slice(1);
       // Capitalize letters after sentence terminators (. ! ?) and space
       processedText = processedText.replace(/([\.\?\!])\s+([a-z])/g, (match, p1, p2) => `${p1} ${p2.toUpperCase()}`);
-      // processedText = processedText.replace(/(AS|A)/g, match => match.toLowerCase()); // Removed this line
       break;
     case 'uppercase':
       processedText = text.toUpperCase();
@@ -74,13 +73,18 @@ const applyTextCase = (text: React.ReactNode, casing: TextCasing): React.ReactNo
       break;
   }
 
-  // Preserve specific acronyms - apply this after main casing logic
-  // Ensure this runs for both titleCase and sentenceCase if needed
-  if (casing === 'titleCase' || casing === 'sentenceCase') {
-    processedText = processedText.replace(/\bgcc\b/gi, 'GCC');
-    processedText = processedText.replace(/\bhr\b/gi, 'HR');
-    processedText = processedText.replace(/\bit\b/gi, 'IT');
-  }
+  // Preserve specific acronyms
+  processedText = processedText.replace(/\b(gcc)\b/gi, 'GCC');
+  processedText = processedText.replace(/\b(hr)\b/gi, 'HR');
+  
+  // Fix "IT" followed by a noun (IT infrastructure, IT department, etc.)
+  processedText = processedText.replace(/\b(it)\s+(infrastructure|department|services|support|systems|team|staff|security|resources|network|hardware|software|equipment|professional|operations|solutions|strategy|project|management|service)/gi, 
+    (match, it, noun) => `IT ${noun}`);
+  
+  // Now convert standalone "IT" to lowercase "it" - first find all instances
+  // This handles cases where "IT" is a pronoun and shouldn't be capitalized
+  processedText = processedText.replace(/\b(IT)\b(?!\s+(infrastructure|department|services|support|systems|team|staff|security|resources|network|hardware|software|equipment|professional|operations|solutions|strategy|project|management|service))/gi, 
+    'it');
 
   return processedText;
 };
@@ -150,4 +154,4 @@ function getDefaultColor(variant: TextVariant): string {
     return 'text-enablr-navy';
   }
   return 'text-gray-600';
-} 
+}

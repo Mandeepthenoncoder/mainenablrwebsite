@@ -1,77 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enablr - Build Your Global Team with Confidence</title>
-    <meta name="description" content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience." />
+    <meta
+      name="description"
+      content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience."
+    />
     <meta name="author" content="Enablr" />
 
     <!-- Performance optimization -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#ffffff">
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#ffffff" />
+
     <!-- Preconnect to third-party domains 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     -->
     <!-- Preload critical assets -->
-    <link rel="preload" href="/enablr-logo.png" as="image">
-    
+    <link rel="preload" href="/enablr-logo.png" as="image" />
+
     <!-- Favicon -->
-    <link rel="icon" href="/Favicon.png" type="image/png">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/Favicon.png">
-    <link rel="shortcut icon" href="/Favicon.png">
-    
+    <link rel="icon" href="/Favicon.png" type="image/png" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/Favicon.png" />
+    <link rel="shortcut icon" href="/Favicon.png" />
+
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Enablr - Build Your Global Team with Confidence" />
-    <meta property="og:description" content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience." />
+    <meta
+      property="og:title"
+      content="Enablr - Build Your Global Team with Confidence"
+    />
+    <meta
+      property="og:description"
+      content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
 
     <!-- Inline critical CSS for above-the-fold content (example: hero, header) -->
     <style>
-      body { font-family: 'Inter', sans-serif; background: #fff; color: #1A1F2C; margin: 0; }
-      .hero-banner { position: relative; overflow: hidden; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 4rem 1rem; text-align: center; }
-      .hero-banner h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
-      .hero-banner p { font-size: 1.25rem; margin-bottom: 2rem; }
-      @media (min-width: 768px) { .hero-banner h1 { font-size: 3.5rem; } }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #fff;
+        color: #1a1f2c;
+        margin: 0;
+      }
+      .hero-banner {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 4rem 1rem;
+        text-align: center;
+      }
+      .hero-banner h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      .hero-banner p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
+      @media (min-width: 768px) {
+        .hero-banner h1 {
+          font-size: 3.5rem;
+        }
+      }
       /* Critical CSS for Hero Section */
-      .absolute { position: absolute; }
-      .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
-      .h-full { height: 100%; }
-      .w-full { width: 100%; }
-      .object-cover { object-fit: cover; }
+      .absolute {
+        position: absolute;
+      }
+      .inset-0 {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+      .h-full {
+        height: 100%;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .object-cover {
+        object-fit: cover;
+      }
       /* .carousel-title-line { Add your custom styles here } */
       /* Add more as needed */
     </style>
     <!-- Preload main font and set font-display: swap -->
-    <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <style>
       @font-face {
-        font-family: 'Inter';
-        src: url('/assets/fonts/inter-var.woff2') format('woff2');
+        font-family: "Inter";
+        src: url("/assets/fonts/inter-var.woff2") format("woff2");
         font-weight: 300 700;
         font-style: normal;
         font-display: swap;
       }
     </style>
     <!-- Preload hero image for LCP -->
-    <link rel="preload" href="/images/supabase-images/optimized/hero-slide-1.webp" as="image" type="image/webp">
+    <link
+      rel="preload"
+      href="/images/supabase-images/optimized/hero-slide-1.webp"
+      as="image"
+      type="image/webp"
+    />
     <!-- Defer non-critical CSS -->
-    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
+    <link
+      rel="preload"
+      href="/src/index.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/src/index.css" /></noscript>
   </head>
 
   <body>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script
+      src="https://cdn.gpteng.co/gptengineer.js"
+      type="module"
+      defer
+    ></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

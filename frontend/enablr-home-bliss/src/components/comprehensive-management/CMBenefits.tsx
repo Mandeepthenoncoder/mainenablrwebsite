@@ -20,7 +20,7 @@ const benefits = [
   {
     id: 1,
     title: "Unified execution across\nevery phase of the GCC lifecycle",
-    description: "End-to-end support for your GCC journey.",
+    description: "End-to-End support for your GCC journey.",
     icon: Workflow
   },
   {

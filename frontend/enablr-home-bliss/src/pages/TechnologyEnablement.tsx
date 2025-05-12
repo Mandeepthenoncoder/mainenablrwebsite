@@ -24,7 +24,7 @@ const heroSlides = [
 const keyOfferings = [
   {
     icon: Code2,
-    title: "End-to-End Technology Delivery",
+    title: "End - End Technology Delivery",
     description: "From product development to ongoing support, we help you build and manage the technology you need to move forward in your GCC journey. Our goal is to create a well-orchestrated system that runs seamlessly and supports your growth."
   },
   {
@@ -35,7 +35,7 @@ const keyOfferings = [
   {
     icon: Cpu,
     title: "Access to Emerging Technologies",
-    description: "Our objective is to help you set up a future-ready global capability center(GCC). With any trending or emerging technology that you need, we help you test, adopt, and integrate without a doubt."
+    description: "Our objective is to help you set up a future-ready global capability center (GCC). With any trending or emerging technology that you need, we help you test, adopt, and integrate without a doubt."
   },
   {
     icon: Users,

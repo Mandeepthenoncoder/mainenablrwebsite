@@ -6,7 +6,7 @@ import { Code2, Cloud, Cpu, Users } from "lucide-react";
 
 const offerings = [
   {
-    title: "End-to-end technology delivery",
+    title: "End to end technology delivery",
     description: "From product development to ongoing support, we help you build and manage the technology you need to move forward in your GCC journey. Our goal is to create a well-orchestrated system that runs seamlessly and supports your growth.",
     icon: <Code2 className="w-6 h-6" />
   },
