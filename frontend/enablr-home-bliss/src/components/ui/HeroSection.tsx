@@ -7,6 +7,7 @@ interface HeroSectionProps {
   description?: string;
   descriptionClassName?: string;
   image: string;
+  imageOffsetY?: string;
   ctaText?: string;
   ctaLink?: string;
   flipImage?: boolean;
@@ -32,6 +33,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   ctaText = "",
   ctaLink = "",
   flipImage = false,
+  
   primaryColor = "#0D214F",
   customMobilePosition = "center 60%",
   customDesktopPosition = "center 40%",
@@ -132,7 +134,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   srcSet={currentSrcSet}
                   sizes="100vw"
                   alt="Hero background"
-                  className="w-full h-full object-cover brightness-90"
+                  className="w-full h-full object-cover brightness-60"
                   style={{
                     transform: flipImage ? "scaleX(-1)" : "none",
                     objectPosition: customMobilePosition,

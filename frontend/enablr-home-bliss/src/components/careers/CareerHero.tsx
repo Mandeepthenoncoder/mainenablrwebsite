@@ -107,7 +107,7 @@ const CareerHero = () => {
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1.2, delay: 2.5, ease: "easeInOut" }}
-        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-red-500 origin-left"
+        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-red-500 origin-left"
       />
     </section>
   );

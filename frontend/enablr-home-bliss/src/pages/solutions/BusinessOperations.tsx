@@ -79,7 +79,7 @@ const itemVariants = {
 const BusinessOperations = () => {
   // Custom title component with nowrap styling
   const customTitle = (
-    <span className="whitespace-nowrap">Business Operations <br /> Solutions</span>
+    <span className="whitespace-nowrap ">Business Operations Solutions</span>
   );
 
   return (

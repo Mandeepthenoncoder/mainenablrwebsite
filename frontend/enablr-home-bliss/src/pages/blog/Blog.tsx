@@ -166,16 +166,15 @@ const Blog = () => {
       
       <Navbar />
       <main className="bg-gray-50">
-        <HeroSection
-          title="Insights & Perspectives"
-          description="Discover expert insights on GCC trends, innovation, technology enablement, and talent strategies from Enablr's knowledge center."
-          image="/Insights/Blog_hero.webp"
-          primaryColor="#0D214F"
-          customMobilePosition="right center"
-          customDesktopPosition="right center"
-          enableKenBurns={true}
-        />
-        
+<HeroSection
+  title="Insights & Perspectives"
+  description="Discover expert insights on GCC trends, innovation, technology enablement, and talent strategies from Enablr's knowledge center."
+  image="/Insights/Blog_hero.webp"
+  primaryColor="#0D214F"
+  customMobilePosition="right 35%" // Try different percentages
+  customDesktopPosition="right 35%" // Try different percentages
+  enableKenBurns={true}
+/>
         {/* Search & Categories */}
         <section className="bg-gray-50 py-8 border-b">
           <div className="container mx-auto px-4">

@@ -43,8 +43,8 @@ const CareerCTA = () => {
             size="lg"
             className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
           >
-            <Link to="/careers#job-openings" className="flex items-center gap-2">
-              Check Our Current Openings
+            <Link to="/contact" className="flex items-center gap-2">
+              Lets Connect
             </Link>
           </Button>
         </motion.div>

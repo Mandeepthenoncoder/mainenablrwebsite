@@ -133,14 +133,14 @@ const EngagementModel = () => {
                   className="space-y-6"
                 >
      
-     <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium -tracking-normal text-xl md:text-2xl max-w-5xl mx-auto`}>
+     <p className={`${typography.body.base} text-gray-600 leading-relaxed font-medium -tracking-normal text-xl md:text-2xl max-w-5xl mx-auto`}>
     At Enablr, we understand GCC success depends on strategy, speed, and innovation-not just scale. Each enterprise has a unique GCC journey, which is why we offer flexible engagement models tailored to your specific needs.
  </p>
                  
-<p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-5xl mx-auto`}>
+<p className={`${typography.body.base} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-5xl mx-auto`}>
     Whether starting new or enhancing your existing GCC, our approach aligns with your business priorities to drive transformation and accelerate growth.
  </p>
- <p className={`${typography.body.lg} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-5xl mx-auto`}>
+ <p className={`${typography.body.base} text-gray-600 leading-relaxed font-medium tracking-tight text-xl md:text-2xl max-w-5xl mx-auto`}>
     Our flexible models include Comprehensive Management, Modular Services, Build-Operate-Transfer (B-O-T), and Dedicated Teams-all designed to deliver maximum value for your GCC investment.
  </p>
                 </motion.div>
