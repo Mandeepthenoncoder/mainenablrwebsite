@@ -122,6 +122,12 @@ const CurrentOpenings = () => {
     return departmentMatch && locationMatch;
   });
   
+  // Email functionality for the "Submit your resume" button
+  const handleSubmitResume = (e) => {
+    e.preventDefault();
+    window.location.href = 'mailto:careers@gccenablr.com?subject=Resume%20Submission';
+  };
+  
   return (
     <section className="py-24 relative overflow-hidden bg-blue-50/50">
       {/* Dark background with light grid */}
@@ -137,10 +143,10 @@ const CurrentOpenings = () => {
         >
           
           <h2 className={cn(typography.h2, "text-enablr-navy mb-4")}>
-            Current Openings
+Current opportunities with Enablr
           </h2>
-          <p className={cn(typography.body.lg, "text-gray-600")}>
-            Join our talented team and contribute to building world-class global capability centers.
+          <p className={cn(typography.body.base, "text-gray-600 text-nowrap")}>
+          Ask questions, think differently, stay curious, and make a real impact. Work with us to build excellence in what you do each day.
           </p>
         </motion.div>
         
@@ -204,6 +210,7 @@ const CurrentOpenings = () => {
           <p className={cn(typography.body.base, "text-gray-600 mb-4")}>Don't see a role that matches your skills?</p>
           <Button 
             className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
+            onClick={handleSubmitResume}
           >
             Submit your resume
           </Button>
@@ -213,4 +220,4 @@ const CurrentOpenings = () => {
   );
 };
 
-export default CurrentOpenings; 
+export default CurrentOpenings;

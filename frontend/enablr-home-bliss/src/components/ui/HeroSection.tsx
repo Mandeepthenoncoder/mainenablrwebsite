@@ -207,18 +207,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               >
                 {typeof title === 'string' ? (
                   <h1 
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 md:mb-4"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-normal text-nowrap  textmb-3 md:mb-4"
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 ) : (
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 md:mb-4">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight text-nowrap  mb-3 md:mb-4">
                     {title}
                   </h1>
                 )}
                 
                 {description && (
                   <p 
-                    className={`text-base md:text-lg text-white mt-3 max-w-lg font-light ${descriptionClassName || ''}`}
+                    className={`text-lg md:text-lg text-white mt-3 max-w-lg font-light ${descriptionClassName || ''}`}
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
                 )}

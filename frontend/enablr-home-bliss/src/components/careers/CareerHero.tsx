@@ -79,9 +79,9 @@ const CareerHero = () => {
             transition={{ duration: 0.6, delay: 2 }}
             className="mb-8 flex justify-center w-full"
           >
-            <p className={cn(typography.body.lg, "text-white text-xl md:text-2xl font-light text-center mx-auto max-w-xl")}>
-              Explore opportunities and grow with us.
-            </p>
+       <p className={cn(typography.body.lg, "text-white text-lg md:text-xl font-light text-center mx-auto max-w-xl")}>
+  Explore opportunities and grow with us.
+</p>
           </motion.div>
           
           {/* CTA Button with delayed animation - added to match website */}
