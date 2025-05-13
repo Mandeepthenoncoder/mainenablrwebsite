@@ -110,7 +110,7 @@ const EngagementModel = () => {
       <main className="pt-16 md:pt-20">
         {/* Hero Section - Updated to use the standardized component */}
         <HeroSection 
-          title="Build your GCC,<br /><span class='text-enablr-lime'>your way</span>"
+          title="Build your GCC, your way"
           description="Own your GCC journey. We'll power the way."
           image="/Engagement_Models/Landing/Engagement_hero.webp"
           primaryColor="#0D214F" 

@@ -122,6 +122,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           }} />
         )}
         
+        {/* Custom style for responsive text wrapping */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Set default nowrap for desktop */
+            .hero-title-text {
+              white-space: nowrap !important;
+            }
+            /* Only allow wrapping on mobile */
+            @media (max-width: 640px) {
+              .hero-title-text, .hero-description-text {
+                white-space: normal !important;
+                overflow-wrap: break-word;
+              }
+            }
+          `
+        }} />
+        
         {/* Background container with rounded corners */}
         <div className="absolute inset-0 rounded-b-[30px] md:rounded-b-[48px] overflow-hidden">
           {/* Background image container with proper overflow handling */}
@@ -209,18 +226,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               >
                 {typeof title === 'string' ? (
                   <h1 
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-normal text-nowrap  textmb-3 md:mb-4"
+                    className="hero-title-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-normal mb-3 md:mb-4"
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 ) : (
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight text-nowrap  mb-3 md:mb-4">
+                  <h1 className="hero-title-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 md:mb-4">
                     {title}
                   </h1>
                 )}
                 
                 {description && (
                   <p 
-                    className={`text-lg md:text-lg text-white mt-3 max-w-lg font-light ${descriptionClassName || ''}`}
+                    className={`hero-description-text text-lg md:text-lg text-white mt-3 max-w-lg  text-nowrap font-light ${descriptionClassName || ''}`}
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
                 )}
@@ -233,4 +250,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   );
 };
 
-export default HeroSection; 
+export default HeroSection;

@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 import { typography } from "@/styles/typography";
 
 const CareerCTA = () => {
+  const handleSubmitResume = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    window.location.href = 'mailto:careers@gccenablr.com?subject=Resume%20Submission';
+  };
+
   return (
     <section className="py-16 md:py-24 px-4 bg-enablr-navy relative overflow-hidden">
       {/* Background elements */}
@@ -28,7 +33,7 @@ const CareerCTA = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className={`${typography.h2} text-white mb-12`}
         >
-        Ready to build excellence with Enablr ?
+        Don't see a role that matches your skills?
         </motion.h2>
         
         <motion.div
@@ -38,14 +43,12 @@ const CareerCTA = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="inline-block"
         >
+         
           <Button 
-            asChild
-            size="lg"
             className="bg-white text-enablr-navy hover:bg-enablr-navy hover:text-white hover:border hover:border-white shadow-sm hover:shadow-md group transition-all duration-300 rounded-md"
+            onClick={handleSubmitResume}
           >
-            <Link to="/contact" className="flex items-center gap-2">
-              Lets Connect
-            </Link>
+            Submit your resume
           </Button>
         </motion.div>
       </motion.div>

@@ -207,13 +207,7 @@ Current opportunities with Enablr
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className={cn(typography.body.base, "text-gray-600 mb-4")}>Don't see a role that matches your skills?</p>
-          <Button 
-            className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300"
-            onClick={handleSubmitResume}
-          >
-            Submit your resume
-          </Button>
+          
         </motion.div>
       </div>
     </section>
