@@ -5,17 +5,18 @@ import HeroSection from "@/components/ui/HeroSection";
 import EngagementIntro from "@/components/engagement/EngagementIntro";
 import EngagementModelsGrid from "@/components/engagement/EngagementModelsGrid";
 import PageCTA from "@/components/PageCTA";
+import SEO from "@/components/seo/SEO";
 
 const Engagement = () => {
   return (
     <MainLayout>
-      <Helmet>
-        <title>Engagement Models - Enablr</title>
-        <meta
-          name="description"
-          content="Explore Enablr's flexible engagement models - from Build-Operate-Transfer to Dedicated Teams. Choose the perfect model for your GCC needs."
-        />
-      </Helmet>
+      <SEO
+        title="Engagement Models | Flexible GCC Partnership Options | Enablr"
+        description="Choose the right engagement model for your Global Capability Center with Enablr. From Build-Operate-Transfer to dedicated teams, find the perfect fit for your needs."
+        keywords="GCC engagement models, capability center partnership, dedicated teams, GCC management, flexible engagement, BOT model, comprehensive management, modular services, GCC solutions, partnership options"
+        canonicalUrl="https://gccenablr.com/engagement/"
+        ogImage="https://gccenablr.com/engagement-opengraph-image.png"
+      />
       <HeroSection
         title="Engagement Models"
         description="Explore Enablr's flexible engagement models - from Build-Operate-Transfer to Dedicated Teams."

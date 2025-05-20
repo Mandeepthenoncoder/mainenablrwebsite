@@ -8,6 +8,7 @@ import { leadershipData } from "@/data/leadershipData";
 import type { Leader } from "@/data/leadershipData";
 import { typography } from "@/styles/typography";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 const LeadershipPage = () => {
   const [selectedLeader, setSelectedLeader] = useState<Leader | null>(null);
@@ -22,13 +23,13 @@ const LeadershipPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Leadership - Enablr</title>
-        <meta 
-          name="description" 
-          content="Meet the leadership team at Enablr, driving innovation and transformation in the industry." 
-        />
-      </Helmet>
+      <SEO
+        title="Leadership Team | Visionary Leaders at Enablr"
+        description="Meet Enablr's leadership team - industry veterans and visionaries driving innovation in Global Capability Centers. Learn about our experienced leaders shaping the future of GCCs."
+        keywords="Enablr leadership team, GCC industry leaders, capability center experts, company leadership, executive team, GCC visionaries"
+        canonicalUrl="https://gccenablr.com/leadership/"
+        ogImage="https://gccenablr.com/leadership-opengraph-image.png"
+      />
       
       <Navbar />
       

@@ -157,14 +157,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/careers/general-application"
-                  className="text-gray-600 hover:text-enablr-navy text-sm"
-                >
-                  General Application
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/contact"
                   className="text-gray-600 hover:text-enablr-navy text-sm"
                 >

@@ -8,6 +8,7 @@ import PageCTA from "@/components/PageCTA";
 import { Users2, Code2, Zap, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 const heroImage = "/Solutions/Staff_Augmentation/Staff_aug_hero.webp";
 
@@ -77,19 +78,18 @@ const itemVariants = {
 const StaffAugmentation = () => {
   return (
     <MainLayout>
+      <SEO
+        title="Staff Augmentation | Flexible Team Extension Services | Enablr"
+        description="Scale your Global Capability Center quickly with Enablr's staff augmentation services. Access skilled talent on demand for your operations without hiring delays."
+        keywords="GCC staff augmentation, team extension, on-demand talent, capability center staffing, flexible workforce, temporary tech staffing"
+        canonicalUrl="https://gccenablr.com/solutions/staff-augmentation/"
+        ogImage="https://gccenablr.com/solutions/staff-augmentation-opengraph-image.png"
+      />
       <motion.div
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <Helmet>
-          <title>Staff Augmentation Services - Enablr</title>
-          <meta 
-            name="description" 
-            content="Access skilled talent and scale your team efficiently with Enablr's Staff Augmentation Services." 
-          />
-        </Helmet>
-        
         <motion.div variants={itemVariants}>
           <HeroSection
             title="Staff Augmentation Services"

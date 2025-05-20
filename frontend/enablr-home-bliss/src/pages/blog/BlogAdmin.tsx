@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
@@ -30,6 +29,8 @@ import SeedButton from "@/components/blog/SeedButton";
 import { supabase } from "@/integrations/supabase/client";
 import { BlogPost } from "@/types/blog";
 import { useQueryClient } from "@tanstack/react-query";
+import MainLayout from "@/components/layouts/MainLayout";
+import SEO from "@/components/seo/SEO";
 
 const BlogAdmin = () => {
   const { data: posts, isLoading, refetch } = useBlogPosts();
@@ -81,106 +82,111 @@ const BlogAdmin = () => {
   };
   
   return (
-    <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Blog Admin - Enablr</title>
-        <meta name="description" content="Admin panel for blog management" />
-      </Helmet>
+    <MainLayout>
+      <SEO
+        title="Blog Admin | Manage GCC Insights & Articles | Enablr"
+        description="Access Enablr's blog administration panel to manage GCC insights, articles, and thought leadership content. Create, edit, and publish content about Global Capability Centers."
+        keywords="blog admin, GCC content management, capability center articles, blog administration, content publishing, GCC insights management"
+        canonicalUrl="https://gccenablr.com/blog/admin/"
+        ogImage="https://gccenablr.com/blog/admin-opengraph-image.png"
+      />
       
-      <Navbar />
-      <main className="pt-16 container mx-auto px-4 py-12">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">Blog Management</h1>
-          
-          <div className="flex gap-4">
-            <SeedButton onSuccess={handleDataRefresh} />
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <main className="pt-16 container mx-auto px-4 py-12">
+          <div className="flex justify-between items-center mb-8">
+            <h1 className="text-3xl font-bold">Blog Management</h1>
             
-            <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
-              <DialogTrigger asChild>
-                <Button className="bg-enablr-purple hover:bg-enablr-purple/90">
-                  <Plus className="mr-2 h-4 w-4" /> Add New Post
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogTitle>Add New Blog Post</DialogTitle>
-                </DialogHeader>
-                <BlogPostForm onSubmit={handleFormSubmit} />
-              </DialogContent>
-            </Dialog>
+            <div className="flex gap-4">
+              <SeedButton onSuccess={handleDataRefresh} />
+              
+              <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="bg-enablr-purple hover:bg-enablr-purple/90">
+                    <Plus className="mr-2 h-4 w-4" /> Add New Post
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle>Add New Blog Post</DialogTitle>
+                  </DialogHeader>
+                  <BlogPostForm onSubmit={handleFormSubmit} />
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
-        </div>
-        
-        {isLoading ? (
-          <div className="text-center py-12">
-            <p>Loading blog posts...</p>
-          </div>
-        ) : (
-          <div className="border rounded-lg overflow-hidden">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Title</TableHead>
-                  <TableHead>Category</TableHead>
-                  <TableHead>Published</TableHead>
-                  <TableHead>Read Time</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {posts && posts.length > 0 ? (
-                  posts.map((post) => (
-                    <TableRow key={post.id}>
-                      <TableCell className="font-medium">{post.title}</TableCell>
-                      <TableCell>{post.category}</TableCell>
-                      <TableCell>{new Date(post.published_at).toLocaleDateString()}</TableCell>
-                      <TableCell>{post.read_time} min</TableCell>
-                      <TableCell className="text-right">
-                        <div className="flex justify-end gap-2">
-                          <Dialog>
-                            <DialogTrigger asChild>
-                              <Button 
-                                variant="outline" 
-                                size="sm"
-                                onClick={() => setEditingPost(post)}
-                              >
-                                <Edit className="h-4 w-4" />
-                              </Button>
-                            </DialogTrigger>
-                            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                              <DialogHeader>
-                                <DialogTitle>Edit Blog Post</DialogTitle>
-                              </DialogHeader>
-                              <BlogPostForm post={post} onSubmit={handleFormSubmit} />
-                            </DialogContent>
-                          </Dialog>
-                          
-                          <Button 
-                            variant="outline" 
-                            size="sm"
-                            onClick={() => handleDelete(post.id)}
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </div>
+          
+          {isLoading ? (
+            <div className="text-center py-12">
+              <p>Loading blog posts...</p>
+            </div>
+          ) : (
+            <div className="border rounded-lg overflow-hidden">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Title</TableHead>
+                    <TableHead>Category</TableHead>
+                    <TableHead>Published</TableHead>
+                    <TableHead>Read Time</TableHead>
+                    <TableHead className="text-right">Actions</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {posts && posts.length > 0 ? (
+                    posts.map((post) => (
+                      <TableRow key={post.id}>
+                        <TableCell className="font-medium">{post.title}</TableCell>
+                        <TableCell>{post.category}</TableCell>
+                        <TableCell>{new Date(post.published_at).toLocaleDateString()}</TableCell>
+                        <TableCell>{post.read_time} min</TableCell>
+                        <TableCell className="text-right">
+                          <div className="flex justify-end gap-2">
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  onClick={() => setEditingPost(post)}
+                                >
+                                  <Edit className="h-4 w-4" />
+                                </Button>
+                              </DialogTrigger>
+                              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                                <DialogHeader>
+                                  <DialogTitle>Edit Blog Post</DialogTitle>
+                                </DialogHeader>
+                                <BlogPostForm post={post} onSubmit={handleFormSubmit} />
+                              </DialogContent>
+                            </Dialog>
+                            
+                            <Button 
+                              variant="outline" 
+                              size="sm"
+                              onClick={() => handleDelete(post.id)}
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  ) : (
+                    <TableRow>
+                      <TableCell colSpan={5} className="text-center py-8">
+                        No blog posts found. Click "Add New Post" to create one or use the "Seed Sample Posts" button.
                       </TableCell>
                     </TableRow>
-                  ))
-                ) : (
-                  <TableRow>
-                    <TableCell colSpan={5} className="text-center py-8">
-                      No blog posts found. Click "Add New Post" to create one or use the "Seed Sample Posts" button.
-                    </TableCell>
-                  </TableRow>
-                )}
-              </TableBody>
-            </Table>
-          </div>
-        )}
-      </main>
-      
-      <Footer />
-    </div>
+                  )}
+                </TableBody>
+              </Table>
+            </div>
+          )}
+        </main>
+        
+        <Footer />
+      </div>
+    </MainLayout>
   );
 };
 

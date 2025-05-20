@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
 import CareerIntro from "@/components/careers/CareerIntro";
 import LifeAtEnablrComponent from "@/components/careers/LifeAtEnablr";
@@ -11,6 +10,7 @@ import CareerPillars from "@/components/careers/CareerPillars";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/seo/SEO";
 
 const LifeAtEnablr = () => {
   // Function to handle smooth scrolling to job openings section
@@ -25,14 +25,14 @@ const LifeAtEnablr = () => {
   };
 
   return (
-    <MainLayout showNewsletter={true} showBlogHighlights={false}>
-      <Helmet>
-        <title>Life at Enablr - Our Culture and Values</title>
-        <meta 
-          name="description" 
-          content="Discover what it's like to work at Enablr - our culture, values, and the benefits of joining our team. Learn about life at Enablr and how we support your growth." 
-        />
-      </Helmet>
+    <MainLayout>
+      <SEO
+        title="Life at Enablr | Culture, Growth & Innovation | Careers"
+        description="Discover what makes Enablr a great place to work. From our collaborative culture to growth opportunities, learn why you should join our team building Global Capability Centers."
+        keywords="Enablr culture, work life balance, career growth, employee benefits, GCC workplace, company culture, professional development"
+        canonicalUrl="https://gccenablr.com/careers/life-at-enablr/"
+        ogImage="https://gccenablr.com/careers/life-at-enablr-opengraph-image.png"
+      />
       
       <HeroSection
         title={<>Life at Enablr</>}

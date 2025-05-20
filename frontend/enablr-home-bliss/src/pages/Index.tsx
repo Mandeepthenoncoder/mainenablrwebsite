@@ -9,6 +9,7 @@ const EngageWithUs = lazy(() => import("@/components/EngageWithUs"));
 const Pillars = lazy(() => import("@/components/Pillars"));
 const GlobalTeam = lazy(() => import("@/components/GlobalTeam"));
 import { Separator } from "@/components/ui/separator";
+import SEO from "@/components/seo/SEO";
 
 // Define a simple loader for these internal sections, or rely on App.tsx's PageLoader if preferred
 const SectionLoader = () => (
@@ -31,13 +32,14 @@ const Index = () => {
   }, []);
   
   return (
-    <HomeLayout showInsights={true}>
-      <Helmet>
-        <title>Enablr - Build your global team with confidence</title>
-        <meta name="description" content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience." />
-        <meta property="og:title" content="Enablr - build your global team with confidence" />
-        <meta property="og:description" content="Enablr helps businesses build and operate their Global Capability Centers (GCC) with enterprise-grade quality and proven experience." />
-      </Helmet>
+    <HomeLayout>
+      <SEO
+        title="Enablr | GCC Experts Building Global Capability Centers"
+        description="Transform your business with Enablr's comprehensive GCC solutions. From setup to scale, we help you build and manage successful Global Capability Centers."
+        keywords="GCC enablement, global capability center, GCC setup, GCC management, talent solutions, GCC experts"
+        canonicalUrl="https://gccenablr.com/"
+        ogImage="https://gccenablr.com/opengraph-image.png"
+      />
       
       <HeroSection />
       

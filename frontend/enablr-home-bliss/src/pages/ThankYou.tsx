@@ -1,21 +1,21 @@
-
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SEO from "@/components/seo/SEO";
 
 const ThankYou = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Thank You - Enablr</title>
-        <meta 
-          name="description" 
-          content="Thank you for getting in touch with Enablr." 
-        />
-      </Helmet>
+      <SEO
+        title="Thank You | Enablr"
+        description="Thank you for getting in touch with Enablr. We have received your message and will get back to you soon."
+        keywords="thank you, Enablr, contact, message received, confirmation"
+        canonicalUrl="https://gccenablr.com/thank-you/"
+        ogImage="https://gccenablr.com/opengraph-image.png"
+      />
       
       <Navbar />
       <main className="pt-16">

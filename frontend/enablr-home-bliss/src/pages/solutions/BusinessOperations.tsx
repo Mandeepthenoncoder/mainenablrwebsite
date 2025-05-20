@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
 import GlobalTeam from "@/components/sections/GlobalTeam";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 const heroImage = "/Solutions/Business-Operations/Business_op_hero.webp";
 
@@ -84,19 +85,19 @@ const BusinessOperations = () => {
 
   return (
     <MainLayout>
+      <SEO
+        title="Business Operations Solutions | Streamline Your GCC | Enablr"
+        description="Optimize your Global Capability Center with Enablr's business operations solutions. From process optimization to compliance management, we help you build efficient and scalable GCC operations."
+        keywords="GCC business operations, capability center operations, process optimization, GCC compliance, operational excellence, GCC management, business process management"
+        canonicalUrl="https://gccenablr.com/solutions/business-operations/"
+        ogImage="https://gccenablr.com/solutions/business-operations-opengraph-image.png"
+      />
+      
       <motion.div
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <Helmet>
-          <title>Business Operations Solutions - Enablr</title>
-          <meta 
-            name="description" 
-            content="Power your business growth with Enablr's comprehensive business operations solutions for your capability center." 
-          />
-        </Helmet>
-        
         <motion.div variants={itemVariants}>
           <HeroSection
             title={customTitle}

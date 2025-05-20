@@ -38,7 +38,6 @@ const LifeAtEnablr = lazy(() => import("./pages/careers/LifeAtEnablr"));
 const CurrentOpenings = lazy(() => import("./pages/careers/CurrentOpenings"));
 const JobDetails = lazy(() => import("./pages/careers/JobDetails"));
 const JobApplication = lazy(() => import("./pages/careers/JobApplication"));
-const GeneralApplication = lazy(() => import("./pages/careers/GeneralApplication"));
 const ContactUs = lazy(() => import("./pages/contact/ContactUs"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const CookiePolicy = lazy(() => import("./pages/legal/CookiePolicy"));
@@ -130,7 +129,6 @@ const App = () => {
                 <Route path="/careers/current-openings" element={<CurrentOpenings />} />
                 <Route path="/careers/job/:id" element={<JobDetails />} />
                 <Route path="/careers/apply/:id" element={<JobApplication />} />
-                <Route path="/careers/general-application" element={<GeneralApplication />} />
                 
                 {/* Contact Routes */}
                 <Route path="/contact" element={<ContactUs />} />

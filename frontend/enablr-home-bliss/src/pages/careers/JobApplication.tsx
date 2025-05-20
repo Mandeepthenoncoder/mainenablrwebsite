@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import SEO from "@/components/seo/SEO";
 
 // Job data (copied from JobDetails)
 const jobData = [
@@ -206,219 +207,228 @@ const JobApplication = () => {
   }
   
   return (
-    <MainLayout showNewsletter={false} showBlogHighlights={false}>
-      <Helmet>
-        <title>{`Apply for ${job.title} - Enablr Careers`}</title>
-        <meta 
-          name="description" 
-          content={`Submit your application for the ${job.title} position at Enablr. Join our team and contribute to building world-class global capability centers.`} 
-        />
-      </Helmet>
-      
-      <div className="bg-blue-50/30 py-8">
-        <div className="container mx-auto px-4">
-          <Link 
-            to={`/careers/job/${id}`} 
-            className="inline-flex items-center text-enablr-navy hover:underline mb-6"
-          >
-            <ChevronLeft className="w-4 h-4 mr-1" />
-            Back to job details
-          </Link>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className={cn(typography.h2, "text-enablr-navy mb-2")}>
-              Apply for {job.title}
-            </h1>
-            <p className={cn(typography.body.lg, "text-gray-600 mb-6")}>
-              Please fill out the form below to apply for this position.
-            </p>
-          </motion.div>
-        </div>
-      </div>
-      
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-              <h2 className={cn(typography.h3, "text-enablr-navy mb-6")}>Personal Information</h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <Label htmlFor="firstName" className="mb-2 block">
-                    First Name <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    className={cn(errors.firstName && "border-red-500")}
-                  />
-                  {errors.firstName && (
-                    <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <Label htmlFor="lastName" className="mb-2 block">
-                    Last Name <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    className={cn(errors.lastName && "border-red-500")}
-                  />
-                  {errors.lastName && (
-                    <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
-                  )}
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <Label htmlFor="email" className="mb-2 block">
-                    Email <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className={cn(errors.email && "border-red-500")}
-                  />
-                  {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <Label htmlFor="phone" className="mb-2 block">
-                    Phone <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className={cn(errors.phone && "border-red-500")}
-                  />
-                  {errors.phone && (
-                    <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-                  )}
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <Label htmlFor="location" className="mb-2 block">
-                  Location
-                </Label>
-                <Input
-                  id="location"
-                  name="location"
-                  value={formData.location}
-                  onChange={handleInputChange}
-                  placeholder="City, Country"
-                />
-              </div>
-            </div>
+    <>
+      <SEO
+        title={job ? `Apply for ${job.title} - Enablr Careers` : "Job Application | Apply for Careers at Enablr"}
+        description={job ? `Submit your application for the ${job.title} position at Enablr. Join our team and contribute to building world-class global capability centers.` : "Apply for a job at Enablr. Submit your application for open positions in technology, HR, operations, and more. Join our mission to build world-class GCCs."}
+        keywords="job application, apply for job, Enablr jobs, GCC careers, submit application, technology jobs, HR jobs, operations jobs"
+        canonicalUrl="https://gccenablr.com/careers/job-application/"
+        ogImage="https://gccenablr.com/careers/opengraph-image.png"
+      />
+      <MainLayout showNewsletter={false} showBlogHighlights={false}>
+        <Helmet>
+          <title>{`Apply for ${job.title} - Enablr Careers`}</title>
+          <meta 
+            name="description" 
+            content={`Submit your application for the ${job.title} position at Enablr. Join our team and contribute to building world-class global capability centers.`} 
+          />
+        </Helmet>
+        
+        <div className="bg-blue-50/30 py-8">
+          <div className="container mx-auto px-4">
+            <Link 
+              to={`/careers/job/${id}`} 
+              className="inline-flex items-center text-enablr-navy hover:underline mb-6"
+            >
+              <ChevronLeft className="w-4 h-4 mr-1" />
+              Back to job details
+            </Link>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-              <h2 className={cn(typography.h3, "text-enablr-navy mb-6")}>Professional Information</h2>
-              
-              <div className="mb-6">
-                <Label htmlFor="resume" className="mb-2 block">
-                  Resume/CV <span className="text-red-500">*</span>
-                </Label>
-                <Input
-                  id="resume"
-                  name="resume"
-                  type="file"
-                  accept=".pdf,.doc,.docx"
-                  onChange={handleFileChange}
-                  className={cn(errors.resume && "border-red-500")}
-                />
-                <p className="text-sm text-gray-500 mt-1">
-                  Accepted formats: PDF, DOC, DOCX (Max size: 5MB)
-                </p>
-                {errors.resume && (
-                  <p className="text-red-500 text-sm mt-1">{errors.resume}</p>
-                )}
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <Label htmlFor="linkedIn" className="mb-2 block">
-                    LinkedIn Profile
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className={cn(typography.h2, "text-enablr-navy mb-2")}>
+                Apply for {job.title}
+              </h1>
+              <p className={cn(typography.body.lg, "text-gray-600 mb-6")}>
+                Please fill out the form below to apply for this position.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-3xl mx-auto">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <h2 className={cn(typography.h3, "text-enablr-navy mb-6")}>Personal Information</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <Label htmlFor="firstName" className="mb-2 block">
+                      First Name <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      className={cn(errors.firstName && "border-red-500")}
+                    />
+                    {errors.firstName && (
+                      <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+                    )}
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="lastName" className="mb-2 block">
+                      Last Name <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      className={cn(errors.lastName && "border-red-500")}
+                    />
+                    {errors.lastName && (
+                      <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <Label htmlFor="email" className="mb-2 block">
+                      Email <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className={cn(errors.email && "border-red-500")}
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                    )}
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="phone" className="mb-2 block">
+                      Phone <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className={cn(errors.phone && "border-red-500")}
+                    />
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="mb-6">
+                  <Label htmlFor="location" className="mb-2 block">
+                    Location
                   </Label>
                   <Input
-                    id="linkedIn"
-                    name="linkedIn"
-                    value={formData.linkedIn}
+                    id="location"
+                    name="location"
+                    value={formData.location}
                     onChange={handleInputChange}
-                    placeholder="https://linkedin.com/in/yourprofile"
+                    placeholder="City, Country"
                   />
+                </div>
+              </div>
+              
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <h2 className={cn(typography.h3, "text-enablr-navy mb-6")}>Professional Information</h2>
+                
+                <div className="mb-6">
+                  <Label htmlFor="resume" className="mb-2 block">
+                    Resume/CV <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    id="resume"
+                    name="resume"
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    onChange={handleFileChange}
+                    className={cn(errors.resume && "border-red-500")}
+                  />
+                  <p className="text-sm text-gray-500 mt-1">
+                    Accepted formats: PDF, DOC, DOCX (Max size: 5MB)
+                  </p>
+                  {errors.resume && (
+                    <p className="text-red-500 text-sm mt-1">{errors.resume}</p>
+                  )}
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <Label htmlFor="linkedIn" className="mb-2 block">
+                      LinkedIn Profile
+                    </Label>
+                    <Input
+                      id="linkedIn"
+                      name="linkedIn"
+                      value={formData.linkedIn}
+                      onChange={handleInputChange}
+                      placeholder="https://linkedin.com/in/yourprofile"
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="website" className="mb-2 block">
+                      Portfolio/Website
+                    </Label>
+                    <Input
+                      id="website"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleInputChange}
+                      placeholder="https://yourwebsite.com"
+                    />
+                  </div>
                 </div>
                 
                 <div>
-                  <Label htmlFor="website" className="mb-2 block">
-                    Portfolio/Website
+                  <Label htmlFor="coverLetter" className="mb-2 block">
+                    Cover Letter or Additional Information
                   </Label>
-                  <Input
-                    id="website"
-                    name="website"
-                    value={formData.website}
+                  <Textarea
+                    id="coverLetter"
+                    name="coverLetter"
+                    value={formData.coverLetter}
                     onChange={handleInputChange}
-                    placeholder="https://yourwebsite.com"
+                    rows={6}
+                    placeholder="Tell us why you're interested in this role and why you'd be a great fit..."
+                    className="resize-none"
                   />
                 </div>
               </div>
               
-              <div>
-                <Label htmlFor="coverLetter" className="mb-2 block">
-                  Cover Letter or Additional Information
-                </Label>
-                <Textarea
-                  id="coverLetter"
-                  name="coverLetter"
-                  value={formData.coverLetter}
-                  onChange={handleInputChange}
-                  rows={6}
-                  placeholder="Tell us why you're interested in this role and why you'd be a great fit..."
-                  className="resize-none"
-                />
+              <div className="flex justify-end">
+                <Button 
+                  type="submit"
+                  disabled={formSubmitting}
+                  className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 px-8 py-6 rounded-md"
+                >
+                  {formSubmitting ? (
+                    <span className="flex items-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Submitting Application...
+                    </span>
+                  ) : (
+                    "Submit Application"
+                  )}
+                </Button>
               </div>
-            </div>
-            
-            <div className="flex justify-end">
-              <Button 
-                type="submit"
-                disabled={formSubmitting}
-                className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 px-8 py-6 rounded-md"
-              >
-                {formSubmitting ? (
-                  <span className="flex items-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Submitting Application...
-                  </span>
-                ) : (
-                  "Submit Application"
-                )}
-              </Button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </MainLayout>
+      </MainLayout>
+    </>
   );
 };
 

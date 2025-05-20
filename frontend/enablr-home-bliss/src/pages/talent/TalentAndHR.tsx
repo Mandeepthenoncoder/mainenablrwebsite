@@ -8,6 +8,7 @@ import SolutionWhyChooseUs from "@/components/solutions/SolutionWhyChooseUs";
 import PageCTA from "@/components/PageCTA";
 import { ClipboardList, GraduationCap, Search, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/seo/SEO";
 
 const keyOfferings = [
   {
@@ -48,7 +49,7 @@ const whyChooseUsReasons = [
   {
     image: "/Solutions/Talent-and-HR/Optimized.webp",
     title: "Optimized recruitment cost",
-    description: "We have streamlined efficient processes and created a strategic approach for optimizing your hiring process, keeping it cost-effective. " 
+    description: "We have streamlined efficient processes and created a strategic approach for optimizing your hiring process, keeping it cost-effective. " 
   }
 ];
 
@@ -77,6 +78,13 @@ const itemVariants = {
 const TalentAndHR = () => {
   return (
     <MainLayout>
+      <SEO
+        title="Talent & HR Solutions | Strategic Workforce Management | Enablr"
+        description="Build and manage high-performing teams for your Global Capability Center. From talent acquisition to HR operations, we provide comprehensive workforce solutions for GCCs."
+        keywords="GCC talent solutions, HR operations, workforce management, talent acquisition, GCC recruitment, HR services, capability center talent"
+        canonicalUrl="https://gccenablr.com/solutions/talent-hr/"
+        ogImage="https://gccenablr.com/solutions/talent-hr-opengraph-image.png"
+      />
       <motion.div
         initial="hidden"
         animate="visible"

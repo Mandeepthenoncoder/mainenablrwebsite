@@ -13,6 +13,7 @@ import { typography } from "@/styles/typography";
 import Newsletter from "@/components/Newsletter";
 import { Link } from "react-router-dom";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 // Static blog data
 const staticPosts: BlogPost[] = [
@@ -156,13 +157,13 @@ const Blog = () => {
   
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Insights & Perspectives | GCC Knowledge Hub - Enablr</title>
-        <meta 
-          name="description" 
-          content="Discover expert insights on GCC trends, innovation, technology enablement, and talent strategies from Enablr's knowledge center." 
-        />
-      </Helmet>
+      <SEO
+        title="GCC Insights & Resources | Enablr Blog"
+        description="Explore expert insights, trends, and best practices for Global Capability Centers. Stay updated with the latest GCC strategies, technology, and talent management insights."
+        keywords="GCC insights, capability center blog, GCC trends, global teams, GCC best practices, industry insights, GCC resources"
+        canonicalUrl="https://gccenablr.com/blog/"
+        ogImage="https://gccenablr.com/blog-opengraph-image.png"
+      />
       
       <Navbar />
       <main className="bg-gray-50">

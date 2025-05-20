@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import MainLayout from "@/components/layouts/MainLayout";
 import CurrentOpeningsComponent from "@/components/careers/CurrentOpenings";
 import CareerCTA from "@/components/careers/CareerCTA";
@@ -7,18 +6,18 @@ import HeroSection from "@/components/ui/HeroSection";
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
 import { cn } from "@/lib/utils";
+import SEO from "@/components/seo/SEO";
 
 const CurrentOpenings = () => {
   return (
-    <MainLayout showNewsletter={true} showBlogHighlights={false}>
-      <Helmet>
-        <title>Current Openings at Enablr - Career Opportunities</title>
-        <meta 
-          name="description" 
-          content="Explore current job openings at Enablr. Find your ideal role and join our team of dedicated professionals building global capability centers worldwide." 
-        />
-      </Helmet>
-      
+    <MainLayout>
+      <SEO
+        title="Current Openings at Enablr | Careers in Global Capability Centers"
+        description="Browse current job openings at Enablr. Join our team and help build world-class Global Capability Centers. Apply for technology, HR, and operations roles."
+        keywords="Enablr jobs, current openings, GCC careers, technology jobs, HR jobs, operations jobs, capability center employment"
+        canonicalUrl="https://gccenablr.com/careers/current-openings/"
+        ogImage="https://gccenablr.com/careers-opengraph-image.png"
+      />
       <HeroSection
         title={<>Explore your next move with us</>}
         description="Build expertise with experience"
@@ -30,7 +29,6 @@ const CurrentOpenings = () => {
         centerContent={true}
       />
       
-     
       <CurrentOpeningsComponent />
       
       <CareerCTA />

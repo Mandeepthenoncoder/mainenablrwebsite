@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import MainLayout from "@/components/layouts/MainLayout";
 import ContactForm from "@/components/contact/ContactForm";
@@ -9,6 +8,7 @@ import { typography } from "@/styles/typography";
 import { TextStyled } from "@/components/ui/TextStyled";
 import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 const ContactUs = () => {
   const officeLocations = [
@@ -24,14 +24,14 @@ const ContactUs = () => {
   ];
 
   return (
-    <MainLayout showNewsletter={false} showBlogHighlights={false}>
-      <Helmet>
-        <title>Contact Us - Enablr</title>
-        <meta
-          name="description"
-          content="Get in touch with Enablr for all your GCC needs and queries. We're here to answer your questions about Global Capability Centers and how we can help your business grow."
-        />
-      </Helmet>
+    <MainLayout>
+      <SEO
+        title="Contact Enablr | Get in Touch with GCC Experts"
+        description="Reach out to Enablr's team of GCC experts. Whether you're looking to establish a Global Capability Center or need support with your existing operations, we're here to help."
+        keywords="contact Enablr, GCC consultation, capability center support, get in touch, GCC experts, Enablr contact, global capability center help"
+        canonicalUrl="https://gccenablr.com/contact/"
+        ogImage="https://gccenablr.com/contact-opengraph-image.png"
+      />
 
       {/* Hero Section */}
       <HeroSection

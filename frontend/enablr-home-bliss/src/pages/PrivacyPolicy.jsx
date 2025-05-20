@@ -2,18 +2,18 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Helmet } from 'react-helmet-async';
+import SEO from "@/components/seo/SEO";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <Helmet>
-        <title>Privacy Policy | Enablr</title>
-        <meta 
-          name="description" 
-          content="Enablr's privacy policy explains how we collect, use, and protect your personal information." 
-        />
-      </Helmet>
+      <SEO
+        title="Privacy Policy | Enablr"
+        description="Enablr's privacy policy explains how we collect, use, and protect your personal information."
+        keywords="privacy policy, Enablr, data protection, personal information, user privacy"
+        canonicalUrl="https://gccenablr.com/privacy-policy/"
+        ogImage="https://gccenablr.com/policy-opengraph-image.png"
+      />
 
       <Navbar />
 

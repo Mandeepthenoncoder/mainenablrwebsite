@@ -9,6 +9,7 @@ import { Building, Layout, Laptop, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 const heroImage = "/Solutions/Workspace-Solutions/Workspace_hero.webp";
 
@@ -103,13 +104,13 @@ const WorkspaceSolutions = () => {
         variants={containerVariants}
         className="workspace-solutions-page space-y-0"
       >
-        <Helmet>
-          <title>Workspace Solutions - Enablr</title>
-          <meta 
-            name="description" 
-            content="Create future-ready workspaces for your capability center with Enablr's comprehensive workplace solutions." 
-          />
-        </Helmet>
+        <SEO
+          title="Workspace Solutions | Future-Ready Workspaces for GCCs | Enablr"
+          description="Create future-ready workspaces for your capability center with Enablr's comprehensive workplace solutions."
+          keywords="workspace solutions, managed offices, flexible workspaces, GCC workspace, office solutions, Enablr"
+          canonicalUrl="https://gccenablr.com/solutions/workspace-solutions/"
+          ogImage="https://gccenablr.com/solutions/workspace-solutions-opengraph-image.png"
+        />
         
         <motion.div variants={itemVariants}>
           <HeroSection

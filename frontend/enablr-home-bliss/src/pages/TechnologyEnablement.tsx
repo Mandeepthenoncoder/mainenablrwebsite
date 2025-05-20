@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { TextStyled } from "@/components/ui/TextStyled";
 import { ResponsiveBreak } from "@/components/ui/ResponsiveBreak";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 const heroSlides = [
   {
@@ -88,19 +89,18 @@ const itemVariants = {
 const TechnologyEnablement = () => {
   return (
     <MainLayout>
+      <SEO
+        title="Technology Enablement | Digital GCC Transformation | Enablr"
+        description="Transform your Global Capability Center with Enablr's technology enablement solutions. From digital transformation to cloud infrastructure, we help you build a future-ready GCC."
+        keywords="GCC technology enablement, digital transformation, cloud infrastructure, GCC innovation, technology solutions, digital capability center, GCC modernization"
+        canonicalUrl="https://gccenablr.com/solutions/technology-enablement/"
+        ogImage="https://gccenablr.com/solutions/technology-enablement-opengraph-image.png"
+      />
       <motion.div
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <Helmet>
-          <title>Technology Enablement Solutions - Enablr</title>
-          <meta 
-            name="description" 
-            content="Leverage technology to power your capability center with Enablr's comprehensive technology solutions and services." 
-          />
-        </Helmet>
-        
         <motion.div variants={itemVariants}>
           <HeroSection
             title="Technology Enablement Solutions"

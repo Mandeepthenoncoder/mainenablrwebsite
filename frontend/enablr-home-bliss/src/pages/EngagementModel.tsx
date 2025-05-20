@@ -22,6 +22,7 @@ import { typography } from "@/styles/typography";
 import BlogHighlights from "@/components/BlogHighlights";
 import Newsletter from "@/components/Newsletter";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 const EngagementModel = () => {
   // Engagement model cards data
@@ -98,13 +99,13 @@ const EngagementModel = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Engagement Models | Build Your GCC, Your Way - Enablr</title>
-        <meta
-          name="description"
-          content="Own your GCC journey with Enablr's flexible engagement models designed to fit your specific needs, from comprehensive management to dedicated teams."
-        />
-      </Helmet>
+      <SEO
+        title="GCC Engagement Models | Flexible Partnership Options | Enablr"
+        description="Choose the right engagement model for your Global Capability Center. From comprehensive management to modular services, find the perfect partnership model for your GCC journey."
+        keywords="GCC engagement models, capability center partnership, BOT model, modular services, GCC management, flexible engagement, GCC solutions"
+        canonicalUrl="https://gccenablr.com/engagement-models/"
+        ogImage="https://gccenablr.com/engagement-models-opengraph-image.png"
+      />
 
       <Navbar />
       <main className="pt-16 md:pt-20">

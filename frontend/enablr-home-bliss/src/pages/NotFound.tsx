@@ -7,14 +7,18 @@ import { typography } from "@/styles/typography";
 import { cn } from "@/lib/utils";
 import { Home, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/seo/SEO";
 
 const NotFound = () => {
   return (
     <MainLayout showNewsletter={false} showBlogHighlights={false}>
-      <Helmet>
-        <title>Page Not Found | Enablr</title>
-        <meta name="description" content="The page you're looking for doesn't exist or has been moved." />
-      </Helmet>
+      <SEO
+        title="Page Not Found | Enablr"
+        description="The page you're looking for doesn't exist or has been moved."
+        keywords="404, page not found, Enablr, error, missing page"
+        canonicalUrl="https://gccenablr.com/404/"
+        ogImage="https://gccenablr.com/opengraph-image.png"
+      />
       
       <div className="min-h-[70vh] flex items-center justify-center px-4 py-20 relative overflow-hidden">
         {/* Background elements */}

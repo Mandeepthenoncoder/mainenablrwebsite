@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import { useParams, Link } from "react-router-dom";
 import MainLayout from "@/components/layouts/MainLayout";
 import { Button } from "@/components/ui/button";
@@ -7,6 +6,7 @@ import { ChevronLeft, Briefcase, MapPin, Clock, Calendar, ArrowRight } from "luc
 import { motion } from "framer-motion";
 import { typography } from "@/styles/typography";
 import { cn } from "@/lib/utils";
+import SEO from "@/components/seo/SEO";
 
 // This would be fetched from your API in a real application
 export const jobData = [
@@ -235,142 +235,146 @@ const JobDetails = () => {
     );
   }
   
+  // Assume jobTitle is available from props or state, otherwise fallback
+  const pageTitle = job.title ? `${job.title} | Job Details at Enablr` : "Job Details at Enablr | Careers";
+  
   return (
-    <MainLayout showNewsletter={false} showBlogHighlights={false}>
-      <Helmet>
-        <title>{`${job.title} - Career at Enablr`}</title>
-        <meta 
-          name="description" 
-          content={`Apply for the ${job.title} position at Enablr. ${job.description.slice(0, 120)}...`} 
-        />
-      </Helmet>
-      
-      <div className="bg-blue-50/30 py-8">
-        <div className="container mx-auto px-4">
-          <Link 
-            to="/careers/current-openings" 
-            className="inline-flex items-center text-enablr-navy hover:underline mb-6"
-          >
-            <ChevronLeft className="w-4 h-4 mr-1" />
-            Back to all openings
-          </Link>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className={cn(typography.h1, "text-enablr-navy mb-6")}>
-              {job.title}
-            </h1>
-            
-            <div className="flex flex-wrap gap-6 mb-8">
-              <div className="flex items-center text-gray-700">
-                <Briefcase className="w-5 h-5 mr-2 text-enablr-navy" />
-                <span>{job.department}</span>
-              </div>
-              <div className="flex items-center text-gray-700">
-                <MapPin className="w-5 h-5 mr-2 text-enablr-navy" />
-                <span>{job.location}</span>
-              </div>
-              <div className="flex items-center text-gray-700">
-                <Clock className="w-5 h-5 mr-2 text-enablr-navy" />
-                <span>{job.type}</span>
-              </div>
-              <div className="flex items-center text-gray-700">
-                <Calendar className="w-5 h-5 mr-2 text-enablr-navy" />
-                <span>Posted: {job.postedDate}</span>
-              </div>
-            </div>
-            
-            <Button 
-              className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 px-8 py-6 rounded-md mb-8"
-              onClick={handleApplyClick}
+    <>
+      <SEO
+        title={pageTitle}
+        description="View detailed information about this job opening at Enablr. Learn about responsibilities, requirements, and how to apply."
+        keywords="job details, Enablr jobs, GCC careers, job responsibilities, job requirements, apply for job"
+        canonicalUrl="https://gccenablr.com/careers/job-details/"
+        ogImage="https://gccenablr.com/careers/opengraph-image.png"
+      />
+      <MainLayout showNewsletter={false} showBlogHighlights={false}>
+        <div className="bg-blue-50/30 py-8">
+          <div className="container mx-auto px-4">
+            <Link 
+              to="/careers/current-openings" 
+              className="inline-flex items-center text-enablr-navy hover:underline mb-6"
             >
-              Apply for this Position
-            </Button>
-          </motion.div>
-        </div>
-      </div>
-      
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-10"
-          >
-            <h2 className={cn(typography.h3, "text-enablr-navy mb-4")}>Job Overview</h2>
-            <p className={cn(typography.body.lg, "text-gray-700")}>
-              {job.description}
-            </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mb-10"
-          >
-            <h2 className={cn(typography.h3, "text-enablr-navy mb-4")}>Key Responsibilities</h2>
-            <ul className="list-disc pl-6 space-y-2">
-              {job.responsibilities.map((item: string, index: number) => (
-                <li key={index} className={cn(typography.body.base, "text-gray-700")}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mb-10"
-          >
-            <h2 className={cn(typography.h3, "text-enablr-navy mb-4")}>Requirements</h2>
-            <ul className="list-disc pl-6 space-y-2">
-              {job.requirements.map((item: string, index: number) => (
-                <li key={index} className={cn(typography.body.base, "text-gray-700")}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mb-10"
-          >
-            <h2 className={cn(typography.h3, "text-enablr-navy mb-4")}>Nice to Have</h2>
-            <ul className="list-disc pl-6 space-y-2">
-              {job.qualifications.map((item: string, index: number) => (
-                <li key={index} className={cn(typography.body.base, "text-gray-700")}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-12"
-          >
-            <Button 
-              className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 px-8 py-6 rounded-md"
-              onClick={handleApplyClick}
+              <ChevronLeft className="w-4 h-4 mr-1" />
+              Back to all openings
+            </Link>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              Apply for this Position <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </motion.div>
+              <h1 className={cn(typography.h1, "text-enablr-navy mb-6")}>
+                {job.title}
+              </h1>
+              
+              <div className="flex flex-wrap gap-6 mb-8">
+                <div className="flex items-center text-gray-700">
+                  <Briefcase className="w-5 h-5 mr-2 text-enablr-navy" />
+                  <span>{job.department}</span>
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <MapPin className="w-5 h-5 mr-2 text-enablr-navy" />
+                  <span>{job.location}</span>
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <Clock className="w-5 h-5 mr-2 text-enablr-navy" />
+                  <span>{job.type}</span>
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <Calendar className="w-5 h-5 mr-2 text-enablr-navy" />
+                  <span>Posted: {job.postedDate}</span>
+                </div>
+              </div>
+              
+              <Button 
+                className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 px-8 py-6 rounded-md mb-8"
+                onClick={handleApplyClick}
+              >
+                Apply for this Position
+              </Button>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </MainLayout>
+        
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-10"
+            >
+              <h2 className={cn(typography.h3, "text-enablr-navy mb-4")}>Job Overview</h2>
+              <p className={cn(typography.body.lg, "text-gray-700")}>
+                {job.description}
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mb-10"
+            >
+              <h2 className={cn(typography.h3, "text-enablr-navy mb-4")}>Key Responsibilities</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {job.responsibilities.map((item: string, index: number) => (
+                  <li key={index} className={cn(typography.body.base, "text-gray-700")}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mb-10"
+            >
+              <h2 className={cn(typography.h3, "text-enablr-navy mb-4")}>Requirements</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {job.requirements.map((item: string, index: number) => (
+                  <li key={index} className={cn(typography.body.base, "text-gray-700")}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mb-10"
+            >
+              <h2 className={cn(typography.h3, "text-enablr-navy mb-4")}>Nice to Have</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {job.qualifications.map((item: string, index: number) => (
+                  <li key={index} className={cn(typography.body.base, "text-gray-700")}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="mt-12"
+            >
+              <Button 
+                className="bg-enablr-navy text-white hover:bg-white hover:text-enablr-navy border border-transparent hover:border-enablr-navy transition-all duration-300 px-8 py-6 rounded-md"
+                onClick={handleApplyClick}
+              >
+                Apply for this Position <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </MainLayout>
+    </>
   );
 };
 

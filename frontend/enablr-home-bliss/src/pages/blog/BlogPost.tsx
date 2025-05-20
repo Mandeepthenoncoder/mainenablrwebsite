@@ -7,6 +7,7 @@ import { Calendar, Clock, ArrowUp, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { BlogPost } from "@/types/blog";
 import { typography } from "@/styles/typography";
+import SEO from "@/components/seo/SEO";
 
 // Same static data as in Blog.tsx
 const staticPosts: BlogPost[] = [
@@ -307,15 +308,20 @@ const BlogPost = () => {
     });
   };
   
+  // Inside BlogPost component, after finding the post:
+  const canonicalUrl = `https://gccenablr.com/blog/${post.slug}/`;
+  const ogImage = post.cover_image.startsWith('http') ? post.cover_image : `https://gccenablr.com${post.cover_image}`;
+  const keywords = post.category;
+  
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>{isLoading ? "Loading..." : `${post?.title || 'Blog Post Not Found'} - Enablr`}</title>
-        <meta 
-          name="description" 
-          content={post?.excerpt || "Blog post by Enablr"} 
-        />
-      </Helmet>
+      <SEO
+        title={`${post.title} | Enablr GCC Insights`}
+        description={post.excerpt}
+        keywords={keywords}
+        canonicalUrl={canonicalUrl}
+        ogImage={ogImage}
+      />
       
       <Navbar />
       <main className="pt-16">

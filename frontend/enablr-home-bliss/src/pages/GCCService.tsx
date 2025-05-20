@@ -8,6 +8,7 @@ import HeroSection from "@/components/ui/HeroSection";
 import PageCTA from "@/components/PageCTA";
 import { Building2, Users, Cpu, Shield, Briefcase, Globe } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/seo/SEO";
 
 const heroSlide = {
   title: "GCC-as-a-Service",
@@ -93,19 +94,18 @@ const itemVariants = {
 const GCCService = () => {
   return (
     <MainLayout>
+      <SEO
+        title="GCC-as-a-Service | End-to-End Capability Center Solutions | Enablr"
+        description="Launch and scale your Global Capability Center with Enablr's comprehensive GCC-as-a-Service solution. From setup to operations, we provide everything you need for a successful GCC."
+        keywords="GCC-as-a-Service, end-to-end GCC solutions, capability center setup, GCC management, complete GCC services, GCC operations, capability center solutions"
+        canonicalUrl="https://gccenablr.com/solutions/gcc-service/"
+        ogImage="https://gccenablr.com/solutions/gcc-service-opengraph-image.png"
+      />
       <motion.div
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <Helmet>
-          <title>GCC-as-a-Service - Enablr</title>
-          <meta 
-            name="description" 
-            content="Set up your Global Capability Center with Enablr's comprehensive GCC-as-a-Service solution." 
-          />
-        </Helmet>
-        
         <motion.div variants={itemVariants}>
           <HeroSection
             title="GCC-as-a-Service"

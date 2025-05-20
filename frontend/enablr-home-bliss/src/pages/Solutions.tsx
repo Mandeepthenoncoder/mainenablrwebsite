@@ -11,6 +11,7 @@ import BlogHighlights from "@/components/BlogHighlights";
 import Newsletter from "@/components/Newsletter";
 import { cn } from "@/lib/utils";
 import HeroSection from "@/components/ui/HeroSection";
+import SEO from "@/components/seo/SEO";
 
 const Solutions = () => {
   // Solution cards data
@@ -89,13 +90,13 @@ const Solutions = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>End-to-End GCC Solutions | Enablr</title>
-        <meta 
-          name="description" 
-          content="Explore Enablr's comprehensive GCC solutions including GCC-as-a-Service, Technology Enablement, Workspace Solutions, and more." 
-        />
-      </Helmet>
+      <SEO
+        title="GCC Solutions | Comprehensive Capability Center Services | Enablr"
+        description="Explore Enablr's end-to-end Global Capability Center solutions including GCC-as-a-Service, Technology Enablement, Workspace Solutions, Talent Services, and more."
+        keywords="GCC solutions, capability center services, GCC setup, technology enablement, workspace solutions, talent acquisition"
+        canonicalUrl="https://gccenablr.com/solutions/"
+        ogImage="https://gccenablr.com/solutions-opengraph-image.png"
+      />
       
       <Navbar />
       <main className="pt-16 md:pt-20">

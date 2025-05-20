@@ -6,17 +6,18 @@ import CMIntro from "@/components/comprehensive-management/CMIntro";
 import CMDifferentiators from "@/components/comprehensive-management/CMDifferentiators";
 import CMBenefits from "@/components/comprehensive-management/CMBenefits";
 import CMConclusion from "@/components/comprehensive-management/CMConclusion";
+import SEO from "@/components/seo/SEO";
 
 const ComprehensiveManagement = () => {
   return (
     <MainLayout>
-      <Helmet>
-        <title>Comprehensive Management Model - Enablr</title>
-        <meta 
-          name="description" 
-          content="Discover Enablr's Comprehensive Management model - a fully orchestrated GCC experience from set up to scale for maximum strategic value." 
-        />
-      </Helmet>
+      <SEO
+        title="Comprehensive Management Model | End-to-End GCC Solutions | Enablr"
+        description="Discover Enablr's Comprehensive Management model for Global Capability Centers. Get a fully orchestrated GCC experience from setup to scale, delivering maximum strategic value and operational excellence."
+        keywords="comprehensive management, full-service GCC, GCC solutions, end-to-end GCC, global capability center, capability center management, strategic value, GCC management, GCC operations, operational excellence"
+        canonicalUrl="https://gccenablr.com/engagement/comprehensive-management/"
+        ogImage="https://gccenablr.com/engagement/comprehensive-management-opengraph-image.png"
+      />
 
       <HeroSection
         title="Comprehensive Management Model"

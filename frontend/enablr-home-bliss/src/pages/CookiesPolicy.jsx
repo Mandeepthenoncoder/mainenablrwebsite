@@ -2,18 +2,18 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Helmet } from 'react-helmet-async';
+import SEO from "@/components/seo/SEO";
 
 const CookiesPolicy = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <Helmet>
-        <title>Cookies Policy | Enablr</title>
-        <meta 
-          name="description" 
-          content="Enablr's cookies policy explains how we use cookies and similar technologies when you visit our website." 
-        />
-      </Helmet>
+      <SEO
+        title="Cookies Policy | Enablr"
+        description="Enablr's cookies policy explains how we use cookies and similar technologies when you visit our website."
+        keywords="cookies policy, Enablr, cookies, website cookies, user privacy, cookie usage"
+        canonicalUrl="https://gccenablr.com/cookies-policy/"
+        ogImage="https://gccenablr.com/policy-opengraph-image.png"
+      />
 
       <Navbar />
 
